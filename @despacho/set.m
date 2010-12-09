@@ -36,20 +36,20 @@ function obj= set(obj, varargin)
       % update list of arguments
       propargin= propargin(3:end);
       switch propriedade
-          case 'ms'
-              obj.ms= valor;
-          case 'mq'
-              obj.mq= valor;
-          case 'mv'
-              obj.mv= valor;
-          case 'my'
-              obj.my= valor;
-          case 'mz'
-              obj.mz= valor;
-          case 'mp'
-              obj.mp= valor;
-          case 'ma'
-              obj.ma= valor;
+          case 's'
+              obj.s= valor;
+          case 'q'
+              obj.q= valor;
+          case 'v'
+              obj.v= valor;
+          case 'y'
+              obj.y= valor;
+          case 'z'
+              obj.z= valor;
+          case 'la'
+              obj.la= valor;
+          case 'lb'
+              obj.lb= valor;
           otherwise
               error('sinopt:despacho:set:invalidProperty', ...
                   '%s is not a valid property', propriedade);

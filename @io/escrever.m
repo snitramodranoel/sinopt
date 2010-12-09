@@ -30,5 +30,5 @@
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function escrever(obj, estudo)
   % output results and statistics
-  rhmx(obj,strcat(estudo,'.rhmx'));
+  ropt_(obj,strcat(estudo,'.ropt'));
 end

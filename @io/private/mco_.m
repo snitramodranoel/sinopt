@@ -1,4 +1,4 @@
-% @io/private/ite.m reads ITE files.
+% @io/private/mco_.m reads MCO files.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,108 +28,108 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function obj= ite(obj, arquivo)
-  % abre arquivo
+function obj= mco_(obj, arquivo)
+  % open file
   fid= fopen(arquivo,'r');
   frewind(fid);
 
   % [VERS]
-  %  vers??o do arquivo
+  %  file version
   linha= fscanf(fid,'%s\n',1);
   while not(strcmp('[VERS]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % l?? vers??o do arquivo
+  % read
   v= fscanf(fid,'%f',1);
-  % verifica vers??o do arquivo
+  % check for file version
   if v ~= 2.0
     fclose(fid);
-    error('hydra:ler_ter:fileNotSupported', ...
-          'HydroLab TER file version %1.1f is not supported', v);
+    error('sinopt:io:mco:fileNotSupported', ...
+          'HydroLab MCO file version %1.1f is not supported', v);
   end
 
-  % [NUMR]
-  %  quantidade de linhas de interc??mbio
+  % [NSUB]
+  %  number of subsystems
   linha= fscanf(fid,'%s\n',1);
-  while not(strcmp('[NUMR]',linha))
+  while not(strcmp('[NSUB]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % faz leitura dos dados
-  obj.si= set(obj.si,'nl',fscanf(fid,'%d',1));
-
-  % [NUMI]
-  %  quantidade de intervalos
-  linha= fscanf(fid,'%s\n',1);
-  while not(strcmp('[NUMI]',linha))
-    linha= fscanf(fid,'%s\n',1);
-  end
-  % faz leitura dos dados
-  ni= fscanf(fid,'%d',1);
-  if ni ~= get(obj.si,'ni')
-    error('hydra:sistema:ler_ite:numberMismatch', ...
-          'wrong number of time intervals');
-  end
-
-  % [NUMS]
-  %  quantidade de subsistemas
-  linha= fscanf(fid,'%s\n',1);
-  while not(strcmp('[NUMS]',linha))
-    linha= fscanf(fid,'%s\n',1);
-  end
-  % faz leitura dos dados
+  % read
   ns= fscanf(fid,'%d',1);
-  % verifica a quantidade de subsistemas
-  if ns ~= get(obj.si,'ns')
-    error('hydra:sistema:ler_ite:numberMismatch', ...
-          'wrong number of systems');
-  end
+  obj.si= set(obj.si,'ns',ns);
 
-  % [CONX]
-  %  linhas de interc??mbio
+  % [NINT]
+  %  number of stages
   linha= fscanf(fid,'%s\n',1);
-  while not(strcmp('[CONX]',linha))
+  while not(strcmp('[NINT]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % faz leitura dos dados
-  obj.si= set(obj.si,'li',fscanf(fid,'%d',[2, get(obj.si,'nl')])');
+  % read
+  ni= fscanf(fid,'%d',1);
+  % sanity check
+  if ni ~= get(obj.si,'ni')
+    error('sinopt:io:mco:numberMismatch','Wrong number of stages');
+  end
 
-  % [LIMA]
-  %  limites m??ximos de interc??mbio por intervalo
+  % [NPAT]
+  %  number of load levels per stage
   linha= fscanf(fid,'%s\n',1);
-  while not(strcmp('[LIMA]',linha))
+  while not(strcmp('[NPAT]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  obj.si= set(obj.si,'im',...
-    fscanf(fid,'%f',[get(obj.si,'nl'), get(obj.si,'ni')]));
+  % read
+  np= zeros(ni,1);
+  for j= 1:ni
+    fscanf(fid,'%s',1); % bogus
+    np(j)= fscanf(fid,'%d',1);
+  end
+  % sanity check
+  if norm(np - get(obj.si,'np'), inf)
+    error('sinopt:io:mco:numberMismatch','Wrong number of load levels');
+  end
 
-  % [LIMI]
-  %  limites m??nimos de interc??mbio por intervalo
+  % [MSUB]
+  %  load per subsystem, load level, and stage
   linha= fscanf(fid,'%s\n',1);
-  while not(strcmp('[LIMI]',linha))
+  while not(strcmp('[MSUB]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % faz leitura dos dados
-  obj.si= set(obj.si,'in',...
-    fscanf(fid,'%f',[get(obj.si,'nl'), get(obj.si,'ni')]));
-
-  % [REAT]
-  %  reat??ncias
+  % read
+  dc= cell(ni,1);
+  for j= 1:ni
+    ms= zeros(ns,np(j));
+    fscanf(fid,'%s',1); % bogus
+    for k= 1:np(j)
+      fscanf(fid,'%d',1); % bogus
+      ms(:,k)= fscanf(fid,'%f',[ns,1]);
+    end
+    dc{j}= ms;
+  end
+  obj.si= set(obj.si,'dc',dc);
+  clear dc;
+  clear ms;
+  
+  % [GPUH]
+  %  fixed generation at small hydro plants
   linha= fscanf(fid,'%s\n',1);
-  while not(strcmp('[REAT]',linha))
+  while not(strcmp('[GPUH]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % faz leitura do n??mero de ciclos
-  nc= fscanf(fid,'%d',1);
-  obj.si= set(obj.si,'nc',nc);
-  % faz leitura dos dados
-  rt= zeros(nc,get(obj.si,'nl'));
-  for j= 1:nc
-    rt(j,:)= fscanf(fid,'%f',[get(obj.si,'nl'), 1]);
+  % read
+  gp= cell(ni,1);
+  for j= 1:ni
+    gs= zeros(ns,np(j));
+    fscanf(fid,'%s',1); % bogus
+    for k= 1:np(j)
+      fscanf(fid,'%d',1); % bogus
+      gs(:,k)= fscanf(fid,'%f',[ns,1]);
+    end
+    gp{j}= gs;
   end
-  obj.si= set(obj.si,'rt',rt);
-  clear nc;
-  clear rt;
+  obj.si= set(obj.si,'gp',gp);
+  clear gp;
+  clear gs;
 
-  % fecha arquivo
+  % close file
   fclose(fid);
 end

@@ -1,4 +1,4 @@
-% @io/private/usi.m reads USI files.
+% @io/private/uhe_.m reads UHE files.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,62 +28,65 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function obj= usi(obj, arquivo)
-  % abre arquivo
+function obj= uhe_(obj, arquivo)
+  % open file
   fid= fopen(arquivo,'r');
   frewind(fid);
 
   % [VERS]
-  %  vers??o do arquivo
+  %  file version
   linha= fscanf(fid,'%s\n',1);
   while not(strcmp('[VERS]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % l?? vers??o do arquivo
+  % read data
   v= fscanf(fid,'%f',1);
-  % verifica vers??o do arquivo
-  if v ~= 1.9
+  % check for file version
+  if v ~= 2.0
     fclose(fid);
-    error('hydra:io:usi:fileNotSupported', ...
-        'HydroLab USI file version %1.1f is not supported', v);
+    error('sinopt:io:uhe:fileNotSupported', ...
+        'HydroLab UHE file version %1.1f is not supported', v);
   end
 
-  % [NUSI]
-  %  n??mero de usinas
+  % [NUHE]
+  %  number of hydro plants
   linha= fscanf(fid,'%s\n',1);
-  while not(strcmp('[NUSI]',linha))
+  while not(strcmp('[NUHE]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % l?? n??mero de usinas
+  % read data
   nu= fscanf(fid,'%i',1);
-  % verifica a quantidade de uhe's
+  % sanity check
   if nu ~= get(obj.si,'nu');
-    error('hydra:io:usi:numberMismatch','wrong number of objects');
+    error('sinopt:io:uhe:numberMismatch','Wrong number of hydro plants');
   end
 
-  % aloca mem??ria para a lista de uhe's
+  % memory allocation for hydro plants list
   uh= cell(nu,1);
   for j= 1:nu
     uh{j}= uhe();
   end
 
-  % [NOME]
-  %  nomes das usinas
+  % [NINT]
+  %  number of stages
   linha= fscanf(fid,'%s\n',1);
-  while not(strcmp('[NOME]',linha))
+  while not(strcmp('[NINT]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % l?? nomes das usinas
-  % (1) ??ndice do aproveitamento no estudo
-  % (2) categoria:
-  %       1) hidrologia
-  %       2) reservat??rio
-  %       3) pt. controle
-  % (3) c??digo do arquivo no hidr.dat
-  % (4) c??digo ONS
-  % (5) sigla ONS
-  % (6) sigla agente
-  % (7) nome da usina
+  % read data
+  ni= fscanf(fid,'%d',1);
+  % sanity check
+  if ni ~= get(obj.si,'ni')
+    error('sinopt:io:uhe:numberMismatch', 'Wrong number of stages');
+  end
+
+  % [UHID]
+  %  hydro plant identification information
+  linha= fscanf(fid,'%s\n',1);
+  while not(strcmp('[UHID]',linha))
+    linha= fscanf(fid,'%s\n',1);
+  end
+  % read data
   for j= 1:nu
     % bogus
     fscanf(fid,'%s',1);
@@ -92,48 +95,35 @@ function obj= usi(obj, arquivo)
     fscanf(fid,'%s',1);
     fscanf(fid,'%s',1);
     fscanf(fid,'%s',1);
-    % nome da usina
+    % hydro plant identification
     uh{j}= set(uh{j}, 'nm', fgetl(fid));
   end
 
   % [NUMS]
-  %  c??digos das usinas
+  %  codes
   linha= fscanf(fid,'%s\n',1);
   while not(strcmp('[NUMS]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % l?? c??digos associados ??s usinas
-  % (1) ??ndice do aproveitamento no estudo
-  % (2) c??digo do subsistema
-  % (3) c??digo Eletrobr??s da usina
-  % (4) c??digo do aproveitamento a jusante
-  % (5) c??digo do est??gio de opera????o da usina
+  % read data
   for j= 1:nu
-    % bogus
-    fscanf(fid,'%s',1);
-    % c??digo do subsistema
-    uh{j}= set(uh{j},'ss',fscanf(fid,'%i',1));
-    % c??digo Eletrobr??s
-    uh{j}= set(uh{j},'cd',fscanf(fid,'%i',1));
-    % c??digo Eletrobr??s do aproveitamento a jusante
-    uh{j}= set(uh{j},'cj',fscanf(fid,'%i',1));
-    % bogus
-    fgetl(fid);
+    fscanf(fid,'%s',1); % bogus
+    uh{j}= set(uh{j},'ss',fscanf(fid,'%i',1)); % subsystem
+    uh{j}= set(uh{j},'cd',fscanf(fid,'%i',1)); % code
+    uh{j}= set(uh{j},'cj',fscanf(fid,'%i',1)); % downstream reservoir code
+    fgetl(fid); % bogus
   end
 
   % [TOPO]
-  %  informa????es de topologia
+  %  network topology
   linha= fscanf(fid,'%s\n',1);
   while not(strcmp('[TOPO]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % l?? informa????es de topologia
-  % (1) ??ndice do aproveitamento no estudo
-  % (2) ??ndice do aproveitamento a jusante no estudo
+  % read data
   for j= 1:nu
-    % bogus
-    fscanf(fid,'%s',1);
-    % ??ndice do aproveitamento a jusante no estudo
+    fscanf(fid,'%s',1); % bogus
+    % downstream reservoir's index
     ij = fscanf(fid,'%i',1);
     if ij ~= nu
       uh{j}= set(uh{j},'ij',ij+1);
@@ -141,10 +131,10 @@ function obj= usi(obj, arquivo)
       uh{j}= set(uh{j},'ij',0);
     end
   end
-  % limpa vari??vel
+  % clean temporary buffer
   clear ij;
 
-  % monta lista de ??ndices de aproveitamentos de montante
+  % build lists of upstream reservoirs
   for j= 1:nu
     t= 0;
     im= get(uh{j},'im');
@@ -157,36 +147,22 @@ function obj= usi(obj, arquivo)
     end
     uh{j}= set(uh{j},'im',im);
   end
+  % clean temporary buffers
   clear t;
   clear ij;
   clear im;
 
   % [PRIM]
-  %  informa????es de produtividade
+  %  productivity data
   linha= fscanf(fid,'%s\n',1);
   while not(strcmp('[PRIM]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % l?? informa????es de produtividade
-  % (1) ??ndice do aproveitamento no estudo
-  % (2) produtibilidade espec??fica
-  % (3) cota m??dia do canal de fuga
-  % (4) tipo de perda de carga
-  %       1) %
-  %       2) constante
-  %       3) q^2
-  % (5) valor da perda de carga
-  % (6) n??mero m??nimo de m??quinas sincronizadas
-  % (7) tipo de representa????o da turbinagem m??xima
-  %       1) vari??vel com a altura de queda
-  %       2) constante
+  % read data
   for j= 1:nu
-    % bogus
-    fscanf(fid,'%s',1);
-    % produtibilidade espec??fica
-    uh{j}= set(uh{j},'pe',fscanf(fid,'%f',1));
-    % cota m??dia do canal de fuga
-    uh{j}= set(uh{j},'cf',fscanf(fid,'%f',1));
+    fscanf(fid,'%s',1); % bogus
+    uh{j}= set(uh{j},'pe',fscanf(fid,'%f',1)); % productivity
+    uh{j}= set(uh{j},'cf',fscanf(fid,'%f',1)); % mean tailrace elevation
     % perda de carga hidr??ulica
     pc= {0; 0.0};
     pc{1}= fscanf(fid,'%i',1);
@@ -196,43 +172,30 @@ function obj= usi(obj, arquivo)
         pc{2}= pc{2} / 100.0;
     end
     uh{j}= set(uh{j},'pc',pc);
-    % n??mero m??nimo de m??quinas sincronizadas
+    % maximum number of generators in sync
     uh{j}= set(uh{j},'ms',fscanf(fid,'%i',1));
-    % representa????o da turbinagem m??xima
+    % type of maximum discharge computation
     uh{j}= set(uh{j},'tm',fscanf(fid,'%i',1));
   end
-  % limpa vari??vel
+  % clean temporary buffers
   clear pc;
 
   % [TUGE]
-  %  informa????es de gera????o
+  %  power generation
   linha= fscanf(fid,'%s\n',1);
   while not(strcmp('[TUGE]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % l?? informa????es de gera????o
-  % (1) ??ndice do aproveitamento no estudo
-  % (2) n??mero de conjuntos geradores
-  % (3) tipo da turbina
-  %       1) Francis
-  %       2) Kaplan
-  %       3) Pelton
-  % (4) n??mero de turbinas
-  % (5) altura efetiva
-  % (6) engolimento efetivo
-  % (7) pot??ncia efetiva
-  % (8) rendimento de cada gerador
-  % (9) restri????o de pot??ncia m??nima
+  % read data
   for j= 1:nu
-    % bogus
-    fscanf(fid,'%s',1);
-    % n??mero de conjuntos geradores
+    fscanf(fid,'%s',1); % bogus
+    % number of generators
     ng= fscanf(fid,'%i',1);
     uh{j}= set(uh{j},'ng',ng);
-    % dados do conjunto
+    % misc
     M= fscanf(fid,'%f',[7 ng])';
     cgs= get(uh{j},'cg');
-    % sumariza????o
+    % consolidation
     nt= 0;
     qef= 0.0;
     for k= 1:ng
@@ -244,9 +207,9 @@ function obj= usi(obj, arquivo)
       cgs{k}= set(cgs{k},'pe',M(k,5));
       cgs{k}= set(cgs{k},'rg',M(k,6));
       cgs{k}= set(cgs{k},'pm',M(k,7));
-      % total de turbinas
+      % number of turbines
       nt= nt + get(cgs{k},'nt');
-      % engolimento efetivo total 
+      % maximum discharge
       qef= qef + (get(cgs{k},'qe') * get(cgs{k},'nt'));
     end
     uh{j}= set(uh{j},'cg',cgs);
@@ -255,50 +218,31 @@ function obj= usi(obj, arquivo)
   end
 
   % [TXID]
-  %  informa????es de indisponibilidade
+  %  availability
   linha= fscanf(fid,'%s\n',1);
   while not(strcmp('[TXID]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % l?? informa????es de indisponibilidade
-  % (1) ??ndice do aproveitamento no estudo
-  % (2) ??ndice de disponibilidade
+  % read data
   for j= 1:nu
-    % bogus
-    fscanf(fid,'%s',1);
-    % ??ndice de disponibilidade
-    uh{j}= set(uh{j},'id',fscanf(fid,'%f',1));
+    fscanf(fid,'%s',1); % bogus
+    uh{j}= set(uh{j},'id',fscanf(fid,'%f',1)); % unavailability rate
   end
 
   % [VMDM]
-  %  limites de opera????o hidr??ulica
+  %  hydro operation constraints
   linha= fscanf(fid,'%s\n',1);
   while not(strcmp('[VMDM]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % l?? limites de opera????o hidr??ulica
-  % (1) ??ndice de aproveitamento do estudo
-  % (2) volume m??nimo
-  % (3) volume m??ximo
-  % (4) volume maximorum
-  % (5) deflu??ncia m??nima
-  % (6) deflu??ncia m??xima
-  % (7) indica????o energ??tica do reservat??rio no banco
-  % (8) indica????o energ??tica do reservat??rio no arquivo
-  %       0) acumula????o
-  %       1) fio d'??gua
+  % read data
   for j= 1:nu
-    % bogus
-    fscanf(fid,'%s',1);
-    % volume m??nimo
-    uh{j}= set(uh{j},'vn',fscanf(fid,'%f',1));
-    % volume m??ximo
-    uh{j}= set(uh{j},'vm',fscanf(fid,'%f',1));
-    % bogus
-    fscanf(fid,'%s',1);
-    % bogus
-    fscanf(fid,'%s',1);
-    % deflu??ncia m??xima
+    fscanf(fid,'%s',1);                        % bogus
+    uh{j}= set(uh{j},'vn',fscanf(fid,'%f',1)); % minimum reservoir storage
+    uh{j}= set(uh{j},'vm',fscanf(fid,'%f',1)); % maximum reservoir storage
+    fscanf(fid,'%s',1);                        % bogus
+    fscanf(fid,'%s',1);                        % bogus
+    % maximum release
     dm= fscanf(fid,'%f',1);
     if dm > 1e10
       uh{j}= set(uh{j},'dm',Inf);
@@ -307,66 +251,61 @@ function obj= usi(obj, arquivo)
     end
     % bogus
     fscanf(fid,'%s',1);
-    % indica????o energ??tica do reservat??rio
+    % operating status
     uh{j}= set(uh{j},'ie',fscanf(fid,'%i',1));
+    % clear temporary buffer
     clear dm;
   end
 
   % [POCV]
-  %  polin??mios de cota de montante
+  %  forebay elevation polynomials
   linha= fscanf(fid,'%s\n',1);
   while not(strcmp('[POCV]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % l?? polin??mios de cota de montante
-  % (1) ??ndice do aproveitamento no estudo
-  % (2) polin??mio de quarto grau
+  % read data
   for j= 1:nu
     % bogus
     fscanf(fid,'%s',1);
-    % polin??mio de cota de montante
+    % polynomial
     M= fscanf(fid,'%f',[5 1]);
     poly= get(uh{j},'yc');
     poly= set(poly,'cf',M);
     uh{j}= set(uh{j},'yc',poly);
+    % clear temporary buffers
     clear poly M;
   end
 
   % [POAC]
-  %  polin??mios de ??rea
+  %  reservoir area polynomials
   linha= fscanf(fid,'%s\n',1);
   while not(strcmp('[POAC]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % l?? polin??mios de ??rea
-  % (1) ??ndice do aproveitamento no estudo
-  % (2) polin??mio de quarto grau
+  % read data
   for j= 1:nu
     % bogus
     fscanf(fid,'%s',1);
-    % polin??mio de ??rea
+    % polynomial
     M= fscanf(fid,'%f',[5 1]);
     poly= get(uh{j},'ya');
     poly= set(poly,'cf',M);
     uh{j}= set(uh{j},'ya',poly);
+    % clear temporary buffers
     clear poly M;
   end
 
   % [POCF]
-  %  polin??mios de cota de jusante
+  %  tailrace elevation polynomials
   linha= fscanf(fid,'%s\n',1);
   while not(strcmp('[POCF]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % l?? polin??mios de cota de jusante
-  % (1) ??ndice do aproveitamento no estudo
-  % (2) n??mero de polin??mios
-  % (3) polin??mio de quarto grau
-  % (4) cota de refer??ncia
+  % read data
   for j= 1:nu
     % bogus
     fscanf(fid,'%s',1);
-    % polin??mio de cota de jusante
+    % polynomials
     np= fscanf(fid,'%i',1);
     yf= cell(np,2);
     for k= 1:np
@@ -378,12 +317,13 @@ function obj= usi(obj, arquivo)
       clear M ref;
     end
     uh{j}= set(uh{j},'yf',yf);
+    % clear temporary buffer
     clear yf;
   end
 
-  % atualiza lista de usinas
+  % update list of hydro plants
   obj.si= set(obj.si,'uh',uh);
 
-  % fecha arquivo
+  % close file
   fclose(fid);
 end

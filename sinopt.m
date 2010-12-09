@@ -28,33 +28,14 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function sinopt(estudo, varargin)
+function sinopt(estudo)
   % load data
   oio= io();
   oio= ler(oio,estudo);
-  sis= get(oio,'si');
+  prb= get(oio,'pb');
   % problem setup
-  prb= problema();
-  prb= set(prb,'si',sis);
+  prb= set(prb,'si',get(oio,'si'));
   prb= construir(prb);
-  % configure solver
-  pargin = varargin;
-  while (length(pargin) >= 2)
-    att= pargin{1};
-    vlu= pargin{2};
-    % update list of arguments
-    pargin= pargin(3:end);
-    switch att
-      case 'iterations'
-        prb= set(prb,'km',vlu);
-      case 'solver'
-        prb= set(prb,'so',vlu);
-      case 'verbosity'
-        prb= set(prb,'dv',vlu);
-      otherwise
-        error('sinopt:invalidOption', '%s is not a valid option', att);
-    end
-  end
   % solve problem
   prb= resolver(prb);
   oio= set(oio,'pb',prb);

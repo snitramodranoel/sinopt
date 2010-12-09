@@ -89,14 +89,10 @@ function obj= set(obj, varargin)
       % solver options
       case 'dv'
         obj.dv= valor;
-      case 'kh'
-        obj.kh= valor;
       case 'km'
         obj.km= valor;
       case 'so'
         obj.so= valor;
-      case 'tr'
-        obj.tr= valor;
       otherwise
         error('sinopt:problema:set:invalidProperty', ...
             '%s is not a valid property', propriedade);

@@ -42,12 +42,16 @@ function obj= set(obj, varargin)
         obj.ai= valor;
       case 'dc'
         obj.dc= valor;
+      case 'di'
+        obj.di= valor;
       case 'dn'
         obj.dn= valor;
       case 'ev'
         obj.ev= valor;
       case 'ez'
         obj.ez= valor;
+      case 'gp'
+        obj.gp= valor;
       case 'im'
         obj.im= valor;
       case 'in'
@@ -62,6 +66,8 @@ function obj= set(obj, varargin)
         obj.ni= valor;
       case 'nl'
         obj.nl= valor;
+      case 'np'
+        obj.np= valor;
       case 'nq'
         obj.nq= valor;
       case 'ns'
@@ -78,6 +84,8 @@ function obj= set(obj, varargin)
         obj.tm= valor;
       case 'tn'
         obj.tn= valor;
+      case 'tp'
+        obj.tp= valor;
       case 'uc'
         obj.uc= valor;
       case 'uh'

@@ -1,4 +1,4 @@
-% @io/private/vaz.m reads VAZ files.
+% @io/private/opt_.m reads OPT files.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,60 +28,44 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function obj= vaz(obj, arquivo)
-  % abre arquivo
+function obj= opt_(obj,arquivo)
+  % open file
   fid= fopen(arquivo,'r');
   frewind(fid);
 
-  % [NUNI]
-  %  quantidade de intervalos
+  % [VERS]
+  %  file version
   linha= fscanf(fid,'%s\n',1);
-  while not(strcmp('[NUNI]',linha))
+  while not(strcmp('[VERS]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % faz leitura dos dados
-  nu= fscanf(fid,'%d',1);
-  ni= fscanf(fid,'%d',1);
-  % verifica a quantidade de usinas
-  if nu ~= get(obj.si,'nu')
-    error('hydra:io:vaz:numberMismatch','wrong number of objects');
-  end
-  % verifica a quantidade de intervalos
-  if ni ~= get(obj.si,'ni')
-    error('hydra:io:vaz:numberMismatch','wrong number of time intervals');
+  % read file version
+  v= fscanf(fid,'%f',1);
+  % check for file version
+  if v ~= 2.0
+    fclose(fid);
+    error('sinopt:io:opt:fileNotSupported', ...
+      'HydroLab OPT file version %1.1f is not supported', v);
   end
 
-  % [VAME]
-  %  vaz??es m??dias mensais
+  % [MAXI]
+  %  maximum number of iterations
   linha= fscanf(fid,'%s\n',1);
-  while not(strcmp('[VAME]',linha))
+  while not(strcmp('[MAXI]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % l?? vaz??es m??dias mensais
-  % l?? o percentual das m??dias
-  uh= get(obj.si,'uh');
-  % bogus
-  fscanf(fid,'%s',1);
-  for j= 1:nu
-    % l?? as m??dias mensais
-    v= fscanf(fid,'%f',[12 1]);
-    uh{j}= set(uh{j},'am',v);
-    clear v;
-  end
+  % read maximum number of iterations
+  obj.pb= set(obj.pb,'km',fscanf(fid,'%i',1));
 
-  % [VAZO]
-  %  vaz??es afluentes
+  % [VERB]
+  %  verbosity
   linha= fscanf(fid,'%s\n',1);
-  while not(strcmp('[VAZO]',linha))
+  while not(strcmp('[VERB]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % faz leitura das vaz??es afluentes
-  obj.si= set(obj.si,'af', ...
-    fscanf(fid,'%f',[get(obj.si,'nu'), get(obj.si,'ni')]));
+  % read verbosity
+  obj.pb= set(obj.pb,'dv',lower(fgetl(fid)));
 
-  % atualiza lista de usinas
-  obj.si= set(obj.si,'uh',uh);
-
-  % fecha arquivo
+  % close file
   fclose(fid);
 end

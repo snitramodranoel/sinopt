@@ -42,16 +42,12 @@ function valor = get(obj, propriedade)
           valor= obj.pe .* ((1-obj.if) .* (1-obj.ip) .* obj.fc);
       case 'gn'
           valor= obj.gn;
-      case 'if'
-          valor= obj.if;
-      case 'ip'
-          valor= obj.ip;
+      case 'id'
+          valor= obj.id;
       case 'nm'
           valor= obj.nm;
       case 'pe'
           valor= obj.pe;
-      case 'pi'
-          valor= obj.pi;
       case 'ss'
           valor= obj.ss;
       otherwise

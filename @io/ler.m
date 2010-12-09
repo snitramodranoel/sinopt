@@ -30,10 +30,11 @@
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function obj= ler(obj, estudo)
   % read problem data
-  obj= hco(obj,strcat(estudo,'.hco'));
-  obj= mco(obj,strcat(estudo,'.mco'));
-  obj= usi(obj,strcat(estudo,'.usi'));
-  obj= ter(obj,strcat(estudo,'.ter'));
-  obj= vaz(obj,strcat(estudo,'.vaz'));
-  obj= ite(obj,strcat(estudo,'.ite'));
+  obj= opt_(obj,strcat(estudo,'.opt'));
+  obj= hco_(obj,strcat(estudo,'.hco'));
+  obj= mco_(obj,strcat(estudo,'.mco'));
+  obj= uhe_(obj,strcat(estudo,'.uhe'));
+  obj= ute_(obj,strcat(estudo,'.ute'));
+  obj= vaz_(obj,strcat(estudo,'.vaz'));
+  obj= net_(obj,strcat(estudo,'.net'));
 end

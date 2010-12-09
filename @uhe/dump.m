@@ -29,8 +29,6 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function dump(obj)
-  fprintf(1,'uhe.am: %dx%d\n',size(obj.am,1),size(obj.am,2));
-  fprintf(1,'uhe.as: %dx%d\n',size(obj.as,1),size(obj.as,2));
   fprintf(1,'uhe.cd: %d\n',obj.cd);
   fprintf(1,'uhe.ce: %dx%d\n',size(obj.ce,1),size(obj.ce,2));
   fprintf(1,'uhe.cf: %f\n',obj.cf);

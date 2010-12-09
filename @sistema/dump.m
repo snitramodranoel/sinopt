@@ -32,9 +32,10 @@ function dump(obj)
   fprintf(1,'sistema.af: %dx%d\n', size(obj.af,1), size(obj.af,2));
   fprintf(1,'sistema.ai: %d\n', obj.ai);
   fprintf(1,'sistema.dc: %dx%d\n', size(obj.dc,1), size(obj.dc,2));
+  fprintf(1,'sistema.di: %d\n', obj.di);
   fprintf(1,'sistema.dn: %dx%d\n', size(obj.dn,1), size(obj.dn,2));
   fprintf(1,'sistema.ev: %dx%d\n', size(obj.ev,1), size(obj.ev,2));
-  fprintf(1,'sistema.ez: %dx%d\n', size(obj.ez,1), size(obj.ez,2));
+  fprintf(1,'sistema.gp: %dx%d\n', size(obj.gp,1), size(obj.gp,2));
   fprintf(1,'sistema.im: %dx%d\n', size(obj.im,1), size(obj.im,2));
   fprintf(1,'sistema.in: %dx%d\n', size(obj.in,1), size(obj.in,2));
   fprintf(1,'sistema.li: %dx%d\n', size(obj.li,1), size(obj.li,2));
@@ -42,6 +43,7 @@ function dump(obj)
   fprintf(1,'sistema.nc: %d\n', obj.nc);
   fprintf(1,'sistema.ni: %d\n', obj.ni);
   fprintf(1,'sistema.nl: %d\n', obj.nl);
+  fprintf(1,'sistema.np: %dx%d\n', size(obj.np,1), size(obj.np,2));
   fprintf(1,'sistema.nq: %dx%d\n', size(obj.nq,1), size(obj.nq,2));
   fprintf(1,'sistema.ns: %d\n', obj.ns);
   fprintf(1,'sistema.nt: %d\n', obj.nt);
@@ -50,13 +52,12 @@ function dump(obj)
   fprintf(1,'sistema.ti: %dx%d\n', size(obj.ti,1), size(obj.ti,2));
   fprintf(1,'sistema.tm: %dx%d\n', size(obj.tm,1), size(obj.tm,2));
   fprintf(1,'sistema.tn: %dx%d\n', size(obj.tn,1), size(obj.tn,2));
+  fprintf(1,'sistema.tp: %dx%d\n', size(obj.tp,1), size(obj.tp,2));
   fprintf(1,'sistema.uc: %dx%d\n', size(obj.uc,1), size(obj.uc,2));
   fprintf(1,'sistema.uh: %dx%d\n', size(obj.uh,1), size(obj.uh,2));
   fprintf(1,'sistema.ut: %dx%d\n', size(obj.ut,1), size(obj.ut,2));
-  fprintf(1,'sistema.uz: %dx%d\n', size(obj.uz,1), size(obj.uz,2));
   fprintf(1,'sistema.vf: %dx%d\n', size(obj.vf,1), size(obj.vf,2));
   fprintf(1,'sistema.vi: %dx%d\n', size(obj.vi,1), size(obj.vi,2));
   fprintf(1,'sistema.vm: %dx%d\n', size(obj.vm,1), size(obj.vm,2));
   fprintf(1,'sistema.vn: %dx%d\n', size(obj.vn,1), size(obj.vn,2));
-  fprintf(1,'sistema.vz: %dx%d\n', size(obj.vz,1), size(obj.vz,2));
 end

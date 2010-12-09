@@ -1,0 +1,88 @@
+2010-12-10  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+	* @io/private/ropt_.m ([INTC]): Registro adicionado.
+	
+2010-12-09  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+	* @io/private/ropt_.m: Suporte a intervalos de tamanhos variados.
+	
+	* @io/private/ropt_.m ([DFLU],[TURB],[VMOT],[QMAX]):
+	Adicionado suporte a patamares de carga aos registros.
+
+	* @io/private/ropt_.m ([GUHE,GUTE]): Registros adicionados.
+
+2010-12-08  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+	* @despacho/{despacho,get,set,dump}.m (obj.la, obj.lb):
+	Propriedades adicionadas.
+	(obj.p): Propriedade removida.
+	
+2010-11-30  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+	* @io/private/ropt_.m: Recodificação para suporte a registros da versão 2.0.
+
+	* @despacho/despacho.m (obj.q, obj.y, obj.z, obj.p):
+	Suporte a patamares de carga.
+	
+2010-11-29  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+	* @io/private/usi.m: Recodificação para suporte a registros da versão 2.0.
+
+	* @io/private/ter.m: Recodificação para suporte a registros da versão 2.1.
+
+	* @ute/{ute,get,set,dump}.m (obj.pi, obj.if): Propriedades removidas.
+	(obj.id): Propriedade adicionada.
+
+	* @ute/ute.m (obj.fc, obj.gn, obj.id, obj.pe): Suporte a patamares de carga.
+
+	* @uhe/{uhe,get,set,dump}.m (obj.am, obj.as): Propriedades removidas.
+
+	* @io/private/vaz.m: Recodificação para suporte a registros da versão 2.0.
+
+	* @io/private/uhe_.m: Novo nome do arquivo @io/private/usi.m
+	(@io/private/ute_.m): Novo nome do arquivo @io/private/ter.m
+	(@io/private/net_.m): Novo nome do arquivo @io/private/net.m
+	(@io/private/opt_.m): Novo nome do arquivo @io/private/opt.m
+	(@io/private/vaz_.m): Novo nome do arquivo @io/private/vaz.m
+	(@io/private/mco_.m): Novo nome do arquivo @io/private/mco.m
+	(@io/private/hco_.m): Novo nome do arquivo @io/private/hco.m
+	(@io/private/ropt_.m): Novo nome do arquivo @io/private/rhmx.m
+
+	* @io/{ler,escrever}.m: Suporte aos novos nomes das funções privadas.
+
+2010-11-26  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+	* @sistema/{sistema,get,set,dump}.m (obj.gp): Propriedade adicionada
+	(obj.ez, obj.uz, obj.vz): Propriedades removidas.
+
+	* @io/private/mco.m: Removido cálculo do abatimento de GPUH da demanda.
+
+	* @problema/private/construir_d.m: Cálculo da demanda líquida por patamar.
+
+	* @sistema/sistema.m (obj.im, obj.in): Suporte a patamares de carga.
+
+	* @io/private/net.m: Recodificação para suporte a registros da versão 2.1.
+
+2010-11-25  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+	* sinopt.m: Argumentos de configuração do algoritmo removidos da função.
+
+	* @io/private/opt.m: Nova função adicionada para leitura de configuração.
+
+	* @problema/problema.m (obj.kh, obj.tr): Propriedades removidas.
+
+	* @sistema/{sistema,get,set,dump}.m (obj.di): Propriedade adicionada.
+
+	* @io/private/hco.m: Recodificação para suporte a registros da versão 2.0.
+
+	* @sistema/{sistema,get,set,dump}.m (obj.np): Propriedade adicionada.
+
+	* @sistema/{sistema,get,set,dump}.m (obj.tp): Propriedade adicionada.
+
+	* @sistem/sistema.m (obj.dc): Suporte a patamares de carga.
+
+	* @io/private/mco.m: Recodificação para suporte a registros da versão 2.0.
+
+Copyright 2010 Leonardo Martins, Universidade Estadual de Campinas.
+Copying and distribution of this file, with or without modification, are
+permitted provided the copyright notice and this notice are preserved.

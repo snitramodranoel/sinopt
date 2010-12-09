@@ -31,11 +31,21 @@
 function obj = construir_d(obj)
   % system dimensions
   ni= get(obj.si,'ni');
+  np= get(obj.si,'np');
   ns= get(obj.si,'ns');
   % load data
-  d= get(obj.si,'dc');
-  % data packing
-  d= reshape(d,ns*ni,1);
-  % data update
-  obj.d= d;
+  dc= get(obj.si,'dc');
+  gp= get(obj.si,'gp');
+  % memory allocation
+  obj.d= zeros(sum(ns.*np),1);
+  % compute net load
+  n= 1;
+  for j= 1:ni
+    for k= 1:np(j)
+      for t= 1:ns
+        obj.d(n)= dc{j}(t,k) - gp{j}(t,k);
+        n= n + 1;
+      end
+    end
+  end
 end

@@ -29,31 +29,29 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function obj = despacho(varargin)
-  obj.ms= []; % water storage (i,j)             [hm^3]
-  obj.mq= []; % water discharge (i,j)           [m^3/s]
-  obj.mv= []; % water spill (i,j)               [m^3/s]
-  obj.my= []; % power transmission (l,j)        [MW]
-  obj.mz= []; % thermal power generation (t,j)  [MW]
-  obj.mp= []; % hydro power generation (i,j)    [MW]
-  obj.ma= []; % hydro power generation (k,j)    [MW]
+  obj.s=  []; % water storage                      [hm^3]
+  obj.q=  {}; % water discharge                    [m^3/s]
+  obj.v=  []; % water spill                        [m^3/s]
+  obj.y=  {}; % power transmission                 [MW]
+  obj.z=  {}; % power generation at thermal plants [MW]
+  obj.la= []; % water value                        [R$/m^3/s]
+  obj.lb= {}; % marginal operating costs           [R$/MW]
 
   switch nargin
-      % default
-      case 0
-          % class instantiation
-          obj= class(obj, 'despacho');
-      % cloning
-      case 1
-          if isa(varargin{1}, 'despacho')
-              obj= varargin{1};
-          else
-              error('sinopt:despacho:invalidArgument', ...
-                  'Argument is not a valid DESPACHO object');
-          end
-          % class instantiation
-          obj= class(obj, 'despacho');
-      otherwise
-          error('sinopt:despacho:invalidArgument', ...
-              'Wrong number of arguments');
+    % default
+    case 0
+      % class instantiation
+        obj= class(obj,'despacho');
+    % cloning
+    case 1
+      if isa(varargin{1},'despacho')
+        obj= varargin{1};
+      else
+        error('sinopt:despacho:invalidArgument','Not a valid DESPACHO object');
+      end
+      % class instantiation
+      obj= class(obj, 'despacho');
+    otherwise
+      error('sinopt:despacho:invalidArgument','Wrong number of arguments');
   end
 end

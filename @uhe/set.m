@@ -36,10 +36,6 @@ function obj= set(obj, varargin)
     % atualiza vetor de argumentos
     pargin= pargin(3:end);
     switch propriedade
-      case 'am'
-        obj.am= valor;
-      case 'as'
-        obj.as= valor;
       case 'cd'
         obj.cd= valor;
       case 'cf'

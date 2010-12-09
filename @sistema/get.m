@@ -36,12 +36,14 @@ function valor= get(obj, propriedade)
       valor= obj.ai;
     case 'dc'
       valor= obj.dc;
+    case 'di'
+      valor= obj.di;
     case 'dn'
       valor= obj.dn;
     case 'ev'
       valor= obj.ev;
-    case 'ez'
-      valor= obj.ez;
+    case 'gp'
+      valor= obj.gp;
     case 'im'
       valor= obj.im;
     case 'in'
@@ -56,6 +58,8 @@ function valor= get(obj, propriedade)
       valor= obj.ni;
     case 'nl'
       valor= obj.nl;
+    case 'np'
+      valor= obj.np;
     case 'nq'
       valor= obj.nq;
     case 'ns'
@@ -72,14 +76,14 @@ function valor= get(obj, propriedade)
       valor= obj.tm;
     case 'tn'
       valor= obj.tn;
+    case 'tp'
+      valor= obj.tp;
     case 'uc'
       valor= obj.uc;
     case 'uh'
       valor= obj.uh;
     case 'ut'
       valor= obj.ut;
-    case 'uz'
-      valor= obj.uz;
     case 'vf'
       valor= obj.vf;
     case 'vi'
@@ -88,8 +92,6 @@ function valor= get(obj, propriedade)
       valor= obj.vm;
     case 'vn'
       valor= obj.vn;
-    case 'vz'
-      valor= obj.vz;
     otherwise
       error('hydra:sistema:get:invalidProperty', ...
           '%s is not a valid property', propriedade);

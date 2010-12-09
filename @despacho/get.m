@@ -30,22 +30,22 @@
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function valor = get(obj, propriedade)
   switch propriedade
-      case 'ms'
-          valor= obj.ms;
-      case 'mq'
-          valor= obj.mq;
-      case 'mv'
-          valor= obj.mv;
-      case 'my'
-          valor= obj.my;
-      case 'mz'
-          valor= obj.mz;
-      case 'mp'
-          valor= obj.mp;
-      case 'ma'
-          valor= obj.ma;
+      case 's'
+          valor= obj.s;
+      case 'q'
+          valor= obj.q;
+      case 'v'
+          valor= obj.v;
+      case 'y'
+          valor= obj.y;
+      case 'z'
+          valor= obj.z;
+      case 'la'
+          valor= obj.la;
+      case 'lb'
+          valor= obj.lb;
       otherwise
           error('sinopt:despacho:get:invalidProperty', ...
-                  '%s is not a valid property', propriedade);
+              '%s is not a valid property', propriedade);
   end
 end

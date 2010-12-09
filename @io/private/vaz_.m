@@ -1,4 +1,4 @@
-% @io/private/mco.m reads MCO files.
+% @io/private/vaz_.m reads VAZ files.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,80 +28,61 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function obj= mco(obj, arquivo)
-  % abre arquivo
+function obj= vaz_(obj, arquivo)
+  % open file
   fid= fopen(arquivo,'r');
   frewind(fid);
 
   % [VERS]
-  %  vers??o do arquivo
+  %  file version
   linha= fscanf(fid,'%s\n',1);
   while not(strcmp('[VERS]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % faz leitura dos dados
+  % read data
   v= fscanf(fid,'%f',1);
-  % verifica vers??o do arquivo
-  if v ~= 1.2
+  % check for file version
+  if v ~= 2.0
     fclose(fid);
-    error('hydra:io:mco:fileNotSupported', ...
-          'HydroLab MCO file version %1.1f is not supported', v);
+    error('sinopt:io:vaz:fileNotSupported', ...
+          'HydroLab VAZ file version %1.1f is not supported', v);
+  end
+
+  % [NUHE]
+  %  number of hydro plants
+  linha= fscanf(fid,'%s\n',1);
+  while not(strcmp('[NUHE]',linha))
+    linha= fscanf(fid,'%s\n',1);
+  end
+  % read data
+  nu= fscanf(fid,'%d',1);
+  % sanity check
+  if nu ~= get(obj.si,'nu')
+    error('sinopt:io:vaz:numberMismatch','Wrong number of hydro plants');
   end
 
   % [NINT]
-  %  quantidade de intervalos
+  %  number of hydro plants
   linha= fscanf(fid,'%s\n',1);
   while not(strcmp('[NINT]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % faz leitura dos dados
+  % read data
   ni= fscanf(fid,'%d',1);
-  % verifica a quantidade de intervalos
+  % sanity check
   if ni ~= get(obj.si,'ni')
-    error('hydra:io:mco:numberMismatch','wrong number of time intervals');
+    error('sinopt:io:vaz:numberMismatch','Wrong number of stages');
   end
 
-  % [NMER]
-  %  quantidade de subsistemas
+  % [VAZO]
+  %  inflows
   linha= fscanf(fid,'%s\n',1);
-  while not(strcmp('[NMER]',linha))
+  while not(strcmp('[VAZO]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % faz leitura dos dados
-  obj.si= set(obj.si,'ns',fscanf(fid,'%d',1));
+  % read data
+  obj.si= set(obj.si,'af',fscanf(fid,'%f',[nu,ni]));
 
-  % [MSDT]
-  %  valores de mercado por subsistema e intervalo
-  linha= fscanf(fid,'%s\n',1);
-  while not(strcmp('[MSDT]',linha))
-    linha= fscanf(fid,'%s\n',1);
-  end
-  % faz leitura dos dados
-  dc= fscanf(fid,'%f',[get(obj.si,'ns'), get(obj.si,'ni')]);
-
-  % [MAND]
-  %  mercado de exporta????o
-  %  (soma-se ao mercado do sudeste/centro-oeste)
-  linha= fscanf(fid,'%s\n',1);
-  while not(strcmp('[MAND]',linha))
-    linha= fscanf(fid,'%s\n',1);
-  end
-  ma= fscanf(fid,'%f',[1, get(obj.si,'ni')]);
-
-  % [GPCH]
-  %  gera????o de pequenas centrais hidrel??tricas
-  %  (abate-se do submercado correspondente)
-  linha= fscanf(fid,'%s\n',1);
-  while not(strcmp('[GPCH]',linha))
-    linha= fscanf(fid,'%s\n',1);
-  end
-  gp= fscanf(fid,'%f',[get(obj.si,'ns'), get(obj.si,'ni')]);
-
-  % corrige mercado
-  dc= dc - gp;
-  dc(1,:) = dc(1,:) + ma;
-  obj.si= set(obj.si,'dc',dc);
-
-  % fecha arquivo
+  % close file
   fclose(fid);
 end

@@ -48,16 +48,12 @@ function obj= set(obj, varargin)
               obj.gm= valor;
           case 'gn'
               obj.gn= valor;
-          case 'if'
-              obj.if= valor;
-          case 'ip'
-              obj.ip= valor;
+          case 'id'
+              obj.id= valor;
           case 'nm'
               obj.nm= valor;
           case 'pe'
               obj.pe= valor;
-          case 'pi'
-              obj.pi= valor;
           case 'ss'
               obj.ss= valor;
           otherwise

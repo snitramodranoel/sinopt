@@ -29,37 +29,37 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function obj= sistema(varargin)
-  obj.af= []; % inflows (i,j)        [m^3/s]
+  obj.af= []; % inflows (i,j)                                   [m^3/s]
   obj.ai=  0; % start year
-  obj.dc= []; % load (k,p,j)                   [MW]
-  obj.dn= []; % lower bound on release (i,j)                   [m^3/s]
-  obj.ev= []; % evaporation coefficients (i,j)          [mm]
-  obj.ez= []; % coeficientes saz. evapora????o        [mm]
-  obj.im= []; % upper bounds on transmission lines (l,j) [MW]
-  obj.in= []; % lower bounds on transmission lines (l,j) [MW]
+  obj.dc= {}; % load (k,p,j)                                    [MW]
+  obj.di=  0; % start day
+  obj.dn= []; % lower bound on release (i,j)                    [m^3/s]
+  obj.ev= []; % evaporation coefficients (i,j)                  [mm]
+  obj.gp= {}; % fixed generation at small hydro plants per ss   [MW]
+  obj.im= {}; % upper bounds on transmission lines (l,j)        [MW]
+  obj.in= {}; % lower bounds on transmission lines (l,j)        [MW]
   obj.li= []; % network topology; lines in the form (from,to)
   obj.mi=  0; % start month
   obj.nc=  1; % number of network loops
   obj.ni=  0; % number of discretized stages
   obj.nl=  0; % number of transmission lines
-  obj.np= []; % number of load levels of each stage
+  obj.np= []; % number of load levels per stage
   obj.nq= []; % maximum number of generators in operation (i,j)
   obj.ns=  0; % number of buses
   obj.nt=  0; % number of thermal plants
   obj.nu=  0; % number of hydro plants
-  obj.rt= []; % reactances (o,l)   [PU]
-  obj.ti= []; % duration of stages              [s]
-  obj.tm= []; % maximum thermal power generation (t,j) [MW]
-  obj.tn= []; % minimum thermal power generation (t,j) [MW]
-  obj.uc= []; % consumptive water use (i,j)    [m^3/s]
+  obj.rt= []; % reactances (o,l)                                [PU]
+  obj.ti= []; % duration of stages                              [s]
+  obj.tm= []; % maximum thermal power generation (t,j)          [MW]
+  obj.tn= []; % minimum thermal power generation (t,j)          [MW]
+  obj.tp= []; % duration of load levels for each stage          [s]
+  obj.uc= []; % consumptive water use (i,j)                     [m^3/s]
   obj.uh= {}; % list of hydro plants
   obj.ut= {}; % list of thermal plants
-  obj.uz= []; % seasonal consumptive water use              [m^3/s]
-  obj.vf= []; % final reservoir storage requirement                [hm^3]
-  obj.vi= []; % initial reservoir storage state              [hm^3]
-  obj.vm= []; % maximum reservoir storage (i,j)     [hm^3]
-  obj.vn= []; % minimum reservoir storage (i,j)     [hm^3]
-  obj.vz= []; % maximum seasonal reservoir storage
+  obj.vf= []; % final reservoir storage requirement             [hm^3]
+  obj.vi= []; % initial reservoir storage state                 [hm^3]
+  obj.vm= []; % maximum reservoir storage (i,j)                 [hm^3]
+  obj.vn= []; % minimum reservoir storage (i,j)                 [hm^3]
 
   switch nargin
       % default

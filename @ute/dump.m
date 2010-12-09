@@ -34,10 +34,8 @@ function dump(obj)
   fprintf(1,'ute.eo: %d\n', obj.eo);
   fprintf(1,'ute.fc: %dx%d\n', size(obj.fc,1), size(obj.fc,2));
   fprintf(1,'ute.gn: %dx%d\n', size(obj.gn,1), size(obj.gn,2));
-  fprintf(1,'ute.if: %dx%d\n', size(obj.if,1), size(obj.if,2));
-  fprintf(1,'ute.ip: %dx%d\n', size(obj.ip,1), size(obj.ip,2));
+  fprintf(1,'ute.id: %dx%d\n', size(obj.id,1), size(obj.id,2));
   fprintf(1,'ute.nm: %s\n', obj.nm);
   fprintf(1,'ute.pe: %dx%d\n', size(obj.pe,1), size(obj.pe,2));
-  fprintf(1,'ute.pi: %f\n', obj.pi);
   fprintf(1,'ute.ss: %d\n', obj.ss);
 end

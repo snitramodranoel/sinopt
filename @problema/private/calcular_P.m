@@ -36,9 +36,10 @@ function P= calcular_P(obj,u)
   s= obter_ms(obj,u);
   q= obter_mq(obj,u);
   v= obter_mv(obj,u);
-  % compute P(j), j = 1,2,...
+  % compute P(.) function
   P= zeros(ns,ni);
   for j= 1:ni
+    % compute P(j), j=1,2,...
     P(:,j)= calcular_Pj(obj, s(:,j), q(:,j), v(:,j));
   end
   % pack

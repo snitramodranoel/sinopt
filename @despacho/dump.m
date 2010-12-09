@@ -29,11 +29,11 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function dump(obj)
-  fprintf(1,'despacho.ms: %dx%d\n',size(obj.ms,1),size(obj.ms,2));
-  fprintf(1,'despacho.mq: %dx%d\n',size(obj.mq,1),size(obj.mq,2));
-  fprintf(1,'despacho.mv: %dx%d\n',size(obj.mv,1),size(obj.mv,2));
-  fprintf(1,'despacho.my: %dx%d\n',size(obj.my,1),size(obj.my,2));
-  fprintf(1,'despacho.mz: %dx%d\n',size(obj.mz,1),size(obj.mz,2));
-  fprintf(1,'despacho.mp: %dx%d\n',size(obj.mp,1),size(obj.mp,2));
-  fprintf(1,'despacho.ma: %dx%d\n',size(obj.ma,1),size(obj.ma,2));
+  fprintf(1,'despacho.s:  %dx%d\n',size(obj.s,1),size(obj.s,2));
+  fprintf(1,'despacho.q:  %dx%d\n',size(obj.q,1),size(obj.q,2));
+  fprintf(1,'despacho.v:  %dx%d\n',size(obj.v,1),size(obj.v,2));
+  fprintf(1,'despacho.y:  %dx%d\n',size(obj.y,1),size(obj.y,2));
+  fprintf(1,'despacho.z:  %dx%d\n',size(obj.z,1),size(obj.z,2));
+  fprintf(1,'despacho.la: %dx%d\n',size(obj.la,1),size(obj.la,2));
+  fprintf(1,'despacho.lb: %dx%d\n',size(obj.lb,1),size(obj.lb,2));
 end

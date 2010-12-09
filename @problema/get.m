@@ -100,14 +100,10 @@ function valor= get(obj, propriedade)
     % solver options
     case 'dv'
       valor= obj.dv;
-    case 'kh'
-      valor= obj.kh;
     case 'km'
       valor= obj.km;
     case 'so'
       valor= obj.so;
-    case 'tr'
-      valor= obj.tr;
     otherwise
       error('sinopt:problema:get:invalidProperty', ...
           '%s is not a valid property', propriedade);
