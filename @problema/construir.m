@@ -62,7 +62,7 @@ function obj= construir(obj)
   obj= construir_C(obj);
   % g(u) function Jacobian matrix
   obj.Jg= spalloc(obj.m, obj.n, ...
-      ni*(nnz(obj.L) + nu*(2+nj) - 1) + nq + obj.nx + (2*obj.ny) + obj.nz);
+   ni*(nnz(obj.L) + nu*(3+nj) - 1) + nq*(1+nj) + obj.nx + (2*obj.ny) + obj.nz);
   obj.Jg(1:obj.ma, 1:obj.nx)= obj.A;
   obj.Jg(obj.ma+obj.mc+1:obj.m, obj.nx+1:obj.nx+obj.ny)= obj.B;
   obj.Jg(obj.ma+1:obj.ma+obj.mc, obj.nx+1:obj.nx+obj.ny)= obj.C;
