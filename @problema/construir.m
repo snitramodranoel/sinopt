@@ -48,7 +48,7 @@ function obj= construir(obj)
   % constraint-space dimensions
   obj.ma= nu*ni;
   obj.mb= sum(ns.*np);
-  obj.mc= sum(nc.*np);
+  obj.mc= nc*ni;
   obj.m = obj.ma + obj.mb + obj.mc;
   % box constraints
   obj= construir_lb(obj);
