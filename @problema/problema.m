@@ -70,11 +70,9 @@ function obj= problema(varargin)
   obj.pf= profiler(); % statistics
   obj.si= sistema();  % power system
   % solver options
-  obj.km=   256; % maximum number of iterations
+  obj.km=   128; % maximum number of iterations
   obj.dv= 'off'; % verbosity (off, iter, notify, final)
-  obj.kh=  'on'; % Kirchhoff's Second Law (on, off)
   obj.so= 'ipf'; % solution algorithm (ipf, ipbf, sqp)
-  obj.tr=  'on'; % power transmission (on, off)
   % instantiation
   switch nargin
     % default
@@ -92,7 +90,6 @@ function obj= problema(varargin)
       % class instantiation
       obj= class(obj, 'problema');
     otherwise
-      error('sinopt:problema:invalidArgument', ...
-          'Wrong number of arguments');
+      error('sinopt:problema:invalidArgument','Wrong number of arguments');
   end
 end

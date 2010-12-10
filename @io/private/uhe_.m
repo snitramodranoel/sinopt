@@ -121,18 +121,23 @@ function obj= uhe_(obj, arquivo)
     linha= fscanf(fid,'%s\n',1);
   end
   % read data
+  nj= 0;
   for j= 1:nu
     fscanf(fid,'%s',1); % bogus
     % downstream reservoir's index
     ij = fscanf(fid,'%i',1);
     if ij ~= nu
       uh{j}= set(uh{j},'ij',ij+1);
+      nj= nj + 1;
     else
       uh{j}= set(uh{j},'ij',0);
     end
   end
+  % number of hydro plants with downstream reservoirs
+  obj.si= set(obj.si,'nj',nj);
   % clean temporary buffer
   clear ij;
+  clear nj;
 
   % build lists of upstream reservoirs
   for j= 1:nu

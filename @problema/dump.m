@@ -31,6 +31,7 @@
 function dump(obj)
   fprintf(1,'problema.dv: %s\n', obj.dv);
   fprintf(1,'problema.km: %d\n', obj.km);
+  fprintf(1,'problema.so: %s\n', obj.so);
   fprintf(1,'problema.ls: %dx%d\n', size(obj.ls,1), size(obj.ls,2));
   fprintf(1,'problema.lq: %dx%d\n', size(obj.lq,1), size(obj.lq,2));
   fprintf(1,'problema.lv: %dx%d\n', size(obj.lv,1), size(obj.lv,2));
@@ -53,7 +54,6 @@ function dump(obj)
   fprintf(1,'problema.nz: %d\n', obj.nz);
   fprintf(1,'problema.n : %d\n', obj.n);
   fprintf(1,'problema.sj: %dx%d\n', size(obj.sj,1), size(obj.sj,2));
-  fprintf(1,'problema.so: %s\n', obj.so);
   fprintf(1,'problema.us: %dx%d\n', size(obj.us,1), size(obj.us,2));
   fprintf(1,'problema.uq: %dx%d\n', size(obj.uq,1), size(obj.uq,2));
   fprintf(1,'problema.uv: %dx%d\n', size(obj.uv,1), size(obj.uv,2));

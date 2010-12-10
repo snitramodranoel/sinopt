@@ -37,12 +37,13 @@ function obj = construir_d(obj)
   dc= get(obj.si,'dc');
   gp= get(obj.si,'gp');
   % memory allocation
-  obj.d= zeros(sum(ns.*np),1);
+  obj.d= zeros(obj.mb,1);
   % compute net load
   n= 1;
   for j= 1:ni
     for k= 1:np(j)
       for t= 1:ns
+        % net load equals gross load minus fixed generation at small plants
         obj.d(n)= dc{j}(t,k) - gp{j}(t,k);
         n= n + 1;
       end

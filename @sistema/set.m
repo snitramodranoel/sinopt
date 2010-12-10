@@ -64,6 +64,8 @@ function obj= set(obj, varargin)
         obj.nc= valor;
       case 'ni'
         obj.ni= valor;
+      case 'nj'
+        obj.nj= valor;
       case 'nl'
         obj.nl= valor;
       case 'np'

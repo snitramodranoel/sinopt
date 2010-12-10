@@ -42,6 +42,7 @@ function obj= sistema(varargin)
   obj.mi=  0; % start month
   obj.nc=  1; % number of network loops
   obj.ni=  0; % number of discretized stages
+  obj.nj=  0; % number of hydro plants with downstream reservoirs
   obj.nl=  0; % number of transmission lines
   obj.np= []; % number of load levels per stage
   obj.nq= []; % maximum number of generators in operation (i,j)
