@@ -31,12 +31,12 @@
 function obj = construir_R(obj)
   % system dimensions
   ni= get(obj.si,'ni');
+  nj= get(obj.si,'nj');
   nu= get(obj.si,'nu');
   % fill elements
   obj= construir_M(obj);
-  R= sparse(zeros(nu*ni,nu*ni));
+  obj.R= spalloc(nu*ni, nu*ni, nu*ni*(1 + nj));
   for j= 1:nu:nu*ni
-      R(j:j+nu-1, j:j+nu-1)= obj.M;
+      obj.R(j:j+nu-1, j:j+nu-1)= obj.M;
   end
-  obj.R= R;
 end

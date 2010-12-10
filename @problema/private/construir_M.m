@@ -33,12 +33,11 @@ function obj = construir_M(obj)
   nu= get(obj.si,'nu');
   uh= get(obj.si,'uh');
   % fill elements
-  M= sparse(zeros(nu,nu));
+  obj.M= spalloc(nu, nu, nu*(1 + nj));
   for j= 1:nu
-    M(j,j)= 1;
+    obj.M(j,j)= 1;
     if (get(uh{j},'ij') > 0)
-      M(get(uh{j},'ij'),j)= -1;
+      obj.M(get(uh{j},'ij'),j)= -1;
     end
   end
-  obj.M= M;
 end
