@@ -34,10 +34,9 @@ function obj = construir_N(obj)
   nl= get(obj.si,'nl');
   ns= get(obj.si,'ns');
   % fill elements
-  N= sparse(zeros(ns,nl));
+  obj.N= spalloc(ns, nl, 2*nl);
   for j= 1:nl
-      N(li(j,1),j)=  1;
-      N(li(j,2),j)= -1;
+    obj.N(li(j,1),j)=  1;
+    obj.N(li(j,2),j)= -1;
   end
-  obj.N= N;
 end
