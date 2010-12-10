@@ -36,7 +36,7 @@ function obj = construir_S(obj)
   % matrix filling
   k= 0;
   obj.sj= cell(ni,1);
-  S= sparse(zeros(nu*ni,nu*ni));
+  obj.S= spalloc(nu*ni, nu*ni, ni*(2*nu - 1));
   for j= 1:nu:nu*ni
     k= k+1;
     % unit conversion factor
@@ -44,11 +44,10 @@ function obj = construir_S(obj)
     % compute submatrix S(j)
     obj.sj{j}= sparse(diag(ones(nu,1)*(1/delta)));
     % fill diagonal elements
-    S(j:j+nu-1, j:j+nu-1)= obj.sj{j};
+    obj.S(j:j+nu-1, j:j+nu-1)= obj.sj{j};
     if k > 1
       % fill subdiagonal elements
-      S(j:j+nu-1, j-nu:j-1)= -obj.sj{j};
+      obj.S(j:j+nu-1, j-nu:j-1)= -obj.sj{j};
     end
   end
-  obj.S= S;
 end
