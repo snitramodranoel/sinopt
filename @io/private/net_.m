@@ -101,13 +101,9 @@ function obj= net_(obj, arquivo)
     linha= fscanf(fid,'%s\n',1);
   end
   % read data
-  np= zeros(ni,1);
-  for j= 1:ni
-    fscanf(fid,'%s',1); % bogus
-    np(j)= fscanf(fid,'%d',1);
-  end
+  np= fscanf(fid,'%d',1);
   % sanity check
-  if norm(np - get(obj.si,'np'), inf)
+  if np ~= get(obj.si,'np')
     error('sinopt:io:net:numberMismatch','Wrong number of load levels');
   end
 
@@ -129,9 +125,9 @@ function obj= net_(obj, arquivo)
   % read data
   im= cell(ni,1);
   for j= 1:ni
-    ub= zeros(nl,np(j));
+    ub= zeros(nl,np);
     fscanf(fid,'%s',1); % bogus
-    for k= 1:np(j)
+    for k= 1:np
       fscanf(fid,'%d',1); % bogus
       ub(:,k)= fscanf(fid,'%f',[nl,1]);
     end
@@ -151,9 +147,9 @@ function obj= net_(obj, arquivo)
   % read data
   in= cell(ni,1);
   for j= 1:ni
-    lb= zeros(nl,np(j));
+    lb= zeros(nl,np);
     fscanf(fid,'%s',1); % bogus
-    for k= 1:np(j)
+    for k= 1:np
       fscanf(fid,'%d',1); % bogus
       lb(:,k)= fscanf(fid,'%f',[nl,1]);
     end

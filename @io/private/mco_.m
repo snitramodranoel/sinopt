@@ -78,13 +78,9 @@ function obj= mco_(obj, arquivo)
     linha= fscanf(fid,'%s\n',1);
   end
   % read
-  np= zeros(ni,1);
-  for j= 1:ni
-    fscanf(fid,'%s',1); % bogus
-    np(j)= fscanf(fid,'%d',1);
-  end
+  np= fscanf(fid,'%d',1);
   % sanity check
-  if norm(np - get(obj.si,'np'), inf)
+  if np ~= get(obj.si,'np');
     error('sinopt:io:mco:numberMismatch','Wrong number of load levels');
   end
 
@@ -97,15 +93,16 @@ function obj= mco_(obj, arquivo)
   % read
   dc= cell(ni,1);
   for j= 1:ni
-    ms= zeros(ns,np(j));
+    ms= zeros(ns,np);
     fscanf(fid,'%s',1); % bogus
-    for k= 1:np(j)
+    for k= 1:np
       fscanf(fid,'%d',1); % bogus
       ms(:,k)= fscanf(fid,'%f',[ns,1]);
     end
     dc{j}= ms;
   end
   obj.si= set(obj.si,'dc',dc);
+  % clear temporary buffer
   clear dc;
   clear ms;
   
@@ -118,15 +115,16 @@ function obj= mco_(obj, arquivo)
   % read
   gp= cell(ni,1);
   for j= 1:ni
-    gs= zeros(ns,np(j));
+    gs= zeros(ns,np);
     fscanf(fid,'%s',1); % bogus
-    for k= 1:np(j)
+    for k= 1:np
       fscanf(fid,'%d',1); % bogus
       gs(:,k)= fscanf(fid,'%f',[ns,1]);
     end
     gp{j}= gs;
   end
   obj.si= set(obj.si,'gp',gp);
+  % clear temporary buffer
   clear gp;
   clear gs;
 

@@ -78,13 +78,9 @@ function obj= ute_(obj,arquivo)
     linha= fscanf(fid,'%s\n',1);
   end
   % read data
-  np= zeros(ni,1);
-  for j= 1:ni
-    fscanf(fid,'%s',1); % bogus
-    np(j)= fscanf(fid,'%d',1);
-  end
+  np= fscanf(fid,'%d',1);
   % sanity check
-  if norm(np - get(obj.si,'np'), inf)
+  if np ~= get(obj.si,'np');
     error('sinopt:io:ute:numberMismatch','Wrong number of load levels');
   end
 
@@ -97,16 +93,10 @@ function obj= ute_(obj,arquivo)
   %
   for t= 1:nt
     ut{t}= ute();
-    fc{t}= cell(ni,1);
-    gn{t}= cell(ni,1);
-    id{t}= cell(ni,1);
-    pe{t}= cell(ni,1);
-    for j= 1:ni
-      fc{t}{j}= zeros(np(j),1);
-      gn{t}{j}= zeros(np(j),1);
-      id{t}{j}= zeros(np(j),1);
-      pe{t}{j}= zeros(np(j),1);      
-    end
+    fc{t}= zeros(np,ni);
+    gn{t}= zeros(np,ni);
+    id{t}= zeros(np,ni);
+    pe{t}= zeros(np,ni);
   end
 
   % [UTID]
@@ -144,11 +134,11 @@ function obj= ute_(obj,arquivo)
   % read data
   for j= 1:ni
     fscanf(fid,'%s',1); % bogus
-    for p= 1:np(j)
+    for p= 1:np
       fscanf(fid,'%d',1); % bogus
       tb= fscanf(fid,'%f',[nt,1]);
       for t= 1:nt
-        pe{t}{j}(p)= tb(t);
+        pe{t}(p,j)= tb(t);
       end
       % clear temporary buffers
       clear tb;
@@ -164,11 +154,11 @@ function obj= ute_(obj,arquivo)
   % read data
   for j= 1:ni
     fscanf(fid,'%s',1); % bogus
-    for p= 1:np(j)
+    for p= 1:np
       fscanf(fid,'%d',1); % bogus
       tb= fscanf(fid,'%f',[nt,1]);
       for t= 1:nt
-        id{t}{j}(p)= tb(t);
+        id{t}(p,j)= tb(t);
       end
       % clear temporary buffers
       clear tb;
@@ -184,11 +174,11 @@ function obj= ute_(obj,arquivo)
   % read data
   for j= 1:ni
     fscanf(fid,'%s',1); % bogus
-    for p= 1:np(j)
+    for p= 1:np
       fscanf(fid,'%d',1); % bogus
       tb= fscanf(fid,'%f',[nt,1]);
       for t= 1:nt
-        gn{t}{j}(p)= tb(t);
+        gn{t}(p,j)= tb(t);
       end
       % clear temporary buffers
       clear tb;
@@ -223,11 +213,11 @@ function obj= ute_(obj,arquivo)
   % read data
   for j= 1:ni
     fscanf(fid,'%s',1); % bogus
-    for p= 1:np(j)
+    for p= 1:np
       fscanf(fid,'%d',1); % bogus
       tb= fscanf(fid,'%f',[nt,1]);
       for t= 1:nt
-        fc{t}{j}(p)= tb(t);
+        fc{t}(p,j)= tb(t);
       end
       % clear temporary buffers
       clear tb;
@@ -241,8 +231,12 @@ function obj= ute_(obj,arquivo)
     ut{t}= set(ut{t},'id',id{t});
     ut{t}= set(ut{t},'pe',pe{t});
   end
-  %
   obj.si= set(obj.si,'ut',ut);
+  % clear temporary buffers
+  clear fc;
+  clear gn;
+  clear id;
+  clear pe;
 
   % close file
   fclose(fid);

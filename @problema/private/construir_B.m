@@ -37,10 +37,9 @@ function obj = construir_B(obj)
   obj= construir_N(obj);
   % build B matrix
   k= 1;
-  B= sparse(zeros(ns*ni,nl*ni));
+  obj.B= spalloc(obj.mb, obj.ny, 2*obj.ny);
   for j= 1:nl:nl*ni
-      B(k:k+ns-1,j:j+nl-1)= obj.N;
-      k= k+ns;
+    obj.B(k:k+ns-1,j:j+nl-1)= obj.N;
+    k= k + ns;
   end
-  obj.B= B;
 end

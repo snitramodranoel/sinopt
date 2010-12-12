@@ -29,8 +29,13 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function obj = construir_A(obj)
+  % system dimensions
+  ni= get(obj.si,'ni');
+  nj= get(obj.si,'nj');
+  np= get(obj.si,'np');
+  nu= get(obj.si,'nu');
   % build A matrix
   obj= construir_S(obj);
   obj= construir_R(obj);
-  obj.A= [obj.S, obj.R, obj.R];
+  obj.A= spalloc(obj.ma, obj.nx, ni*(nu*(3 + np + nj) - 1));
 end

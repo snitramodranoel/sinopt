@@ -38,17 +38,15 @@ function obj= construir(obj)
   ns= get(obj.si,'ns');
   nt= get(obj.si,'nt');
   nu= get(obj.si,'nu');
-  % number of water discharge variables
-  nq= sum(nu.*np);
   % variable-space dimensions
-  obj.nx= 2*nu*ni + nq;
-  obj.ny= sum(nl.*np);
-  obj.nz= sum(nt.*np);
+  obj.nx= 2*nu*ni + nu*np*ni;
+  obj.ny= nl*np*ni;
+  obj.nz= nt*np*ni;
   obj.n = obj.nx + obj.ny + obj.nz;
   % constraint-space dimensions
   obj.ma= nu*ni;
-  obj.mb= sum(ns.*np);
-  obj.mc= nc*ni;
+  obj.mb= ns*np*ni;
+  obj.mc= nc*np*ni;
   obj.m = obj.ma + obj.mb + obj.mc;
   % box constraints
   obj= construir_lb(obj);
@@ -62,7 +60,7 @@ function obj= construir(obj)
   obj= construir_C(obj);
   % g(u) function Jacobian matrix
   obj.Jg= spalloc(obj.m, obj.n, ...
-      ni*(nu*(3+nj) - 1) + nnz(obj.C) + nq*(1+nj) + obj.nx+(2*obj.ny)+obj.nz);
+      ni*(nu*(3+np+nj) - 1) + nnz(obj.C) + obj.nx + (2*obj.ny) + obj.nz);
   obj.Jg(1:obj.ma, 1:obj.nx)= obj.A;
   obj.Jg(obj.ma+obj.mc+1:obj.m, obj.nx+1:obj.nx+obj.ny)= obj.B;
   obj.Jg(obj.ma+1:obj.ma+obj.mc, obj.nx+1:obj.nx+obj.ny)= obj.C;

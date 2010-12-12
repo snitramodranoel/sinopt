@@ -33,13 +33,13 @@ function obj = construir_C(obj)
   nc= get(obj.si,'nc');
   ni= get(obj.si,'ni');
   nl= get(obj.si,'nl');
+  np= get(obj.si,'np');
   % fill elements
   obj= construir_L(obj);
-  C= sparse(zeros(nc*ni,nl*ni));
+  obj.C= spalloc(obj.mc, obj.ny, nnz(obj.L)*np*ni);
   k= 1;
   for j= 1:nl:nl*ni
-      C(k:k+nc-1,j:j+nl-1)= obj.L;
+      obj.C(k:k+nc-1, j:j+nl-1)= obj.L;
       k= k + nc;
   end
-  obj.C= C;
 end

@@ -1,3 +1,43 @@
+2010-12-13  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+	* @sistema/sistema.m (obj.np, obj.tp):
+	Removido suporte a número variável de patamares de carga por intervalo.
+	
+	* @io/private/hco_.m ([NPAT], [DPAT]):
+	Removido suporte a número variável de patamares de carga por intervalo.
+
+	* @io/private/mco_.m ([NPAT], [MSUB], [GPUH]):
+	Removido suporte a número variável de patamares de carga por intervalo.
+	
+	* @io/private/net_.m ([NPAT], [LIMA], [LIMI]):
+	Removido suporte a número variável de patamares de carga por intervalo.
+	
+	* @io/private/ute_.m ([NPAT], [PUGT], [TXID], [GMIN], [FCMX]):
+	Removido suporte a número variável de patamares de carga por intervalo.
+	
+	* @ute/ute.m (obj.fc, obj.id, obj.gn, obj.pe):
+	Removido suporte a número variável de patamares de carga por intervalo.
+	
+	* @problema/construir.m:
+	Removido suporte a número variável de patamares de carga por intervalo.
+
+	* @problema/private/construir_{A,B,C}.m:
+	Modificado cálculo das dimensões considerando número fixo de patamares.
+
+	* @problema/private/construir_d.m:
+	Modificado cálculo da demanda líquida considerando número fixo de patamares.
+
+2010-12-11  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+	* @problema/private/construir_S.m:
+	Corrigido cálculo do número de elementos não-nulos da matriz S.
+	
+	* @problema/private/construir_R.m:
+	Corrigido cálculo do número de elementos não-nulos da matriz R.
+	
+	* @problema/private/construir_M.m:
+	Corrigido cálculo do número de elementos não-nulos da matriz M.
+
 2010-12-10  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @io/private/ropt_.m ([INTC]): Registro adicionado.
@@ -15,7 +55,7 @@
 	
 	* @problema/construir.m (obj.Jg):
 	Corrigido cálculo do número máximo de elementos não-nulos da matriz.
-	
+		
 2010-12-09  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @io/private/ropt_.m: Suporte a intervalos de tamanhos variados.

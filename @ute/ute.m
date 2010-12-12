@@ -32,11 +32,11 @@ function obj = ute(varargin)
   obj.cd=           0; % code
   obj.cg= polinomio(); % cost function      [R$/MWh]
   obj.eo=           0; % operation status
-  obj.fc=          {}; % capacity factor    [0,1]
-  obj.gn=          {}; % minimum generation [MW]
-  obj.id=          {}; % availability rate  [0,1]
+  obj.fc=          []; % capacity factor    [0,1]
+  obj.gn=          []; % minimum generation [MW]
+  obj.id=          []; % availability rate  [0,1]
   obj.nm=          ''; % name
-  obj.pe=          {}; % effective power    [MW]
+  obj.pe=          []; % effective power    [MW]
   obj.ss=           0; % subsystem
   
   switch nargin

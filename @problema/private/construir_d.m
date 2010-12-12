@@ -39,14 +39,9 @@ function obj = construir_d(obj)
   % memory allocation
   obj.d= zeros(obj.mb,1);
   % compute net load
-  n= 1;
+  n= ns*np;
   for j= 1:ni
-    for k= 1:np(j)
-      for t= 1:ns
-        % net load equals gross load minus fixed generation at small plants
-        obj.d(n)= dc{j}(t,k) - gp{j}(t,k);
-        n= n + 1;
-      end
-    end
+    % net load equals gross load minus fixed generation at small plants
+    obj.d(n*(j-1)+1: n*j)= reshape(dc{j}-gp{j}, n, 1);
   end
 end
