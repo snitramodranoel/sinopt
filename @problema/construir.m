@@ -39,7 +39,7 @@ function obj= construir(obj)
   nt= get(obj.si,'nt');
   nu= get(obj.si,'nu');
   % variable-space dimensions
-  obj.nx= 2*nu*ni + nu*np*ni;
+  obj.nx= nu*ni*(2 + np);
   obj.ny= nl*np*ni;
   obj.nz= nt*np*ni;
   obj.n = obj.nx + obj.ny + obj.nz;

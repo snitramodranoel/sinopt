@@ -1,4 +1,4 @@
-% @problema/private/construir_A.m builds A matrix.
+% @problema/private/construir_Q.m builds matrix Q.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,18 +28,26 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function obj = construir_A(obj)
+function obj= construir_Q(obj)
   % system dimensions
   ni= get(obj.si,'ni');
   nj= get(obj.si,'nj');
   np= get(obj.si,'np');
   nu= get(obj.si,'nu');
-  % build submatrices
-  obj= construir_X(obj); % storage arcs
-  obj= construir_M(obj); % network topology submatrix
-  obj= construir_Q(obj); % water discharge arcs
-  obj= construir_V(obj); % water spill arcs
-  % build matrix A
-  obj.A= spalloc(obj.ma, obj.nx, ni*(nu*(3 + np + nj) - 1));
-  obj.A= [obj.X, obj.Q, obj.V];
+  % system information
+  ti= get(obj.si,'ti');
+  tp= get(obj.si,'tp');
+  % memory allocation
+  obj.Q = [];
+  obj.Ql= cell(np,1);
+  % fill in Q(l) elements, l = 1,2,...
+  for l= 1:np
+    j= 0;
+    obj.Ql{l}= spalloc(nu*ni, nu*ni, nu*(1+nj)); % memory allocation
+    for k= 1:nu:nu*ni
+      j= j+1;
+      obj.Ql{l}(k:k+nu-1, k:k+nu-1)= (tp(l,j)/ti(j)) * obj.M;
+    end
+    obj.Q= [obj.Q, obj.Ql{l}];
+  end
 end

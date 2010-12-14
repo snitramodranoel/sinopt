@@ -1,4 +1,4 @@
-% @problema/private/construir_R.m builds R matrix.
+% @problema/private/construir_X.m builds matrix X.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,15 +28,26 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function obj = construir_R(obj)
+function obj = construir_X(obj)
   % system dimensions
   ni= get(obj.si,'ni');
-  nj= get(obj.si,'nj');
   nu= get(obj.si,'nu');
-  % fill elements
-  obj= construir_M(obj);
-  obj.R= spalloc(nu*ni, nu*ni, nu*ni*(1 + nj));
+  ti= get(obj.si,'ti');
+  % matrix filling
+  k= 0;
+  obj.Xj= cell(ni,1);
+  obj.X = spalloc(nu*ni, nu*ni, ni*(2*nu - 1));
   for j= 1:nu:nu*ni
-      obj.R(j:j+nu-1, j:j+nu-1)= obj.M;
+    k= k+1;
+    % unit conversion factor
+    delta= ti(k)/10^6;
+    % compute submatrix X(j)
+    obj.Xj{j}= sparse(diag(ones(nu,1)*(1/delta)));
+    % fill diagonal elements
+    obj.X(j:j+nu-1, j:j+nu-1)= obj.Xj{j};
+    if k > 1
+      % fill subdiagonal elements
+      obj.X(j:j+nu-1, j-nu:j-1)= -obj.Xj{j};
+    end
   end
 end

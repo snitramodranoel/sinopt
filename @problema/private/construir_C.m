@@ -1,4 +1,4 @@
-% @problema/private/construir_C.m builds C matrix.
+% @problema/private/construir_C.m builds matrix C.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -34,12 +34,14 @@ function obj = construir_C(obj)
   ni= get(obj.si,'ni');
   nl= get(obj.si,'nl');
   np= get(obj.si,'np');
-  % fill elements
+  % build loop matrix
   obj= construir_L(obj);
+  % memory allocation
   obj.C= spalloc(obj.mc, obj.ny, nnz(obj.L)*np*ni);
+  % fill in elements
   k= 1;
-  for j= 1:nl:nl*ni
+  for j= 1:nl:nl*np*ni
       obj.C(k:k+nc-1, j:j+nl-1)= obj.L;
-      k= k + nc;
+      k= k+nc;
   end
 end

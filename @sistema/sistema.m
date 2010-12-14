@@ -31,13 +31,13 @@
 function obj= sistema(varargin)
   obj.af= []; % inflows (i,j)                                   [m^3/s]
   obj.ai=  0; % start year
-  obj.dc= {}; % load (k,p,j)                                    [MW]
+  obj.dc= {}; % load (j,k,p)                                    [MW]
   obj.di=  0; % start day
   obj.dn= []; % lower bound on release (i,j)                    [m^3/s]
   obj.ev= []; % evaporation coefficients (i,j)                  [mm]
   obj.gp= {}; % fixed generation at small hydro plants per ss   [MW]
-  obj.im= {}; % upper bounds on transmission lines (l,j)        [MW]
-  obj.in= {}; % lower bounds on transmission lines (l,j)        [MW]
+  obj.im= {}; % upper bounds on transmission lines (j,l,p)      [MW]
+  obj.in= {}; % lower bounds on transmission lines (j,l,p)      [MW]
   obj.li= []; % network topology; lines in the form (from,to)
   obj.mi=  0; % start month
   obj.nc=  1; % number of network loops
@@ -63,22 +63,21 @@ function obj= sistema(varargin)
   obj.vn= []; % minimum reservoir storage (i,j)                 [hm^3]
 
   switch nargin
-      % default
-      case 0
-          % object instantiation
-          obj= class(obj, 'sistema');
-      % cloning
-      case 1
-          if isa(varargin{1}, 'sistema')
-              obj= varargin{1};
-          else
-              error('sinopt:sistema:invalidArgument', ...
-                  'Argument is not a valid SISTEMA object');
-          end
-          % object instantiation
-          obj= class(obj, 'sistema');
-      otherwise
-          error('sinopt:sistema:invalidArgument', ...
-              'Wrong number of arguments');
+    % default
+    case 0
+      % object instantiation
+      obj= class(obj, 'sistema');
+    % cloning
+    case 1
+      if isa(varargin{1}, 'sistema')
+         obj= varargin{1};
+      else
+         error('sinopt:sistema:invalidArgument', ...
+             'Argument is not a valid SISTEMA object');
+      end
+        % object instantiation
+        obj= class(obj, 'sistema');
+    otherwise
+      error('sinopt:sistema:invalidArgument','Wrong number of arguments');
   end
 end

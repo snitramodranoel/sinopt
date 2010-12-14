@@ -36,9 +36,11 @@ function obj= problema(varargin)
   obj.L = []; % submatrix L of C
   obj.M = []; % submatrix M of R
   obj.N = []; % submatrix N of B
-  obj.R = []; % submatrix R of A
-  obj.S = []; % submatrix S of A
-  obj.sj= {}; % list of submatrices Sj of S
+  obj.Q = []; % submatrix Q of A
+  obj.Ql= {}; % list of submatrices Ql of Q
+  obj.V = []; % submatrix V of A
+  obj.X = []; % submatrix X of A
+  obj.Xj= {}; % list of submatrices Sj of S
   obj.b = []; % b vector
   obj.d = []; % d vector
   %  lower bounds

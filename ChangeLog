@@ -1,3 +1,19 @@
+2010-12-14  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+	* @problema/{problema,set,get,dump}.m
+	(obj.R, obj.S, obj.sj): Propriedades removidas.
+	(obj.Q, obj.Ql, obj.V, obj.X, obj.Xj): Propriedades adicionadas.
+	
+	* @problema/private/construir_R.m: Função removida.
+	
+	* @problema/private/construir_X.m:
+	Função adicionada em substituição a construir_S.
+	
+	* @problema/private/construir_Q.m:
+	Função adicionada para suporte a patamares.
+	
+	* @problema/private/construir_V.m: Função adicionada.
+
 2010-12-13  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @sistema/sistema.m (obj.np, obj.tp):

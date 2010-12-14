@@ -1,4 +1,4 @@
-% @problema/private/construir_S.m builds S matrix.
+% @problema/private/construir_V.m builds matrix V.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,26 +28,15 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function obj = construir_S(obj)
+function obj= construir_V(obj)
   % system dimensions
   ni= get(obj.si,'ni');
+  nj= get(obj.si,'nj');
   nu= get(obj.si,'nu');
-  ti= get(obj.si,'ti');
-  % matrix filling
-  k= 0;
-  obj.sj= cell(ni,1);
-  obj.S= spalloc(nu*ni, nu*ni, ni*(2*nu - 1));
+  % memory allocation
+  obj.V= spalloc(nu*ni, nu*ni, nu*ni*(1 + nj));
+  % fill in elements
   for j= 1:nu:nu*ni
-    k= k+1;
-    % unit conversion factor
-    delta= ti(k)/10^6;
-    % compute submatrix S(j)
-    obj.sj{j}= sparse(diag(ones(nu,1)*(1/delta)));
-    % fill diagonal elements
-    obj.S(j:j+nu-1, j:j+nu-1)= obj.sj{j};
-    if k > 1
-      % fill subdiagonal elements
-      obj.S(j:j+nu-1, j-nu:j-1)= -obj.sj{j};
-    end
+      obj.V(j:j+nu-1, j:j+nu-1)= obj.M;
   end
 end

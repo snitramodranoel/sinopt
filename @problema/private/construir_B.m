@@ -1,4 +1,4 @@
-% @problema/private/construir_B.m builds B matrix.
+% @problema/private/construir_B.m builds matrix B.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -32,14 +32,16 @@ function obj = construir_B(obj)
   % system dimensions
   ni= get(obj.si,'ni');
   nl= get(obj.si,'nl');
+  np= get(obj.si,'np');
   ns= get(obj.si,'ns');
-  % build N matrix
+  % build network topology submatrix
   obj= construir_N(obj);
-  % build B matrix
-  k= 1;
+  % memory allocation
   obj.B= spalloc(obj.mb, obj.ny, 2*obj.ny);
-  for j= 1:nl:nl*ni
+  % fill in elements
+  k= 1;
+  for j= 1:nl:nl*np*ni
     obj.B(k:k+ns-1,j:j+nl-1)= obj.N;
-    k= k + ns;
+    k= k+ns;
   end
 end

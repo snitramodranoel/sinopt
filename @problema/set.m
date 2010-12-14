@@ -49,12 +49,16 @@ function obj= set(obj, varargin)
         obj.M= valor;
       case 'N'
         obj.N= valor;
-      case 'R'
-        obj.R= valor;
-      case 'S'
-        obj.S= valor;
-      case 'sj'
-        obj.sj= valor;
+      case 'Q'
+        obj.Q= valor;
+      case 'Ql'
+        obj.Ql= valor;
+      case 'V'
+        obj.V= valor;
+      case 'X'
+        obj.X= valor;
+      case 'Xj'
+        obj.Xj= valor;
       case 'b'
         obj.b= valor;
       case 'd'
