@@ -39,7 +39,7 @@ function valor = get(obj, propriedade)
       case 'fc'
           valor= obj.fc;
       case 'gm'
-          valor= obj.pe .* ((1-obj.if) .* (1-obj.ip) .* obj.fc);
+          valor= obj.pe .* obj.id .* obj.fc;
       case 'gn'
           valor= obj.gn;
       case 'id'
