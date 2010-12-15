@@ -1,3 +1,17 @@
+2010-12-15  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+	* @problema/private/construir_d.m: 
+	Adaptação ao esquema de empacotamento [patamar[intervalos[subsistemas]]].
+
+	* @problema/private/construir_bb.m:
+	Função adicionada em substituição a construir_bring.
+	
+	* @io/private/mco_.m ([MSUB], [GPUH]):
+	Adaptação ao esquema de empacotamento [patamar[intervalos[subsistemas]]].
+
+	* @io/private/net_.m ([LIMA], [LIMI]):
+	Adaptação ao esquema de empacotamento [patamar[intervalos[linhas]]].
+
 2010-12-14  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @problema/{problema,set,get,dump}.m

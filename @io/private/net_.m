@@ -56,6 +56,7 @@ function obj= net_(obj, arquivo)
   end
   % read data
   nl= fscanf(fid,'%d',1);
+  % store data
   obj.si= set(obj.si,'nl',nl);
 
   % [NSUB]
@@ -79,6 +80,7 @@ function obj= net_(obj, arquivo)
   end
   % read data
   nc= fscanf(fid,'%d',1);
+  % store data
   obj.si= set(obj.si,'nc',nc);
 
   % [NINT]
@@ -113,7 +115,7 @@ function obj= net_(obj, arquivo)
   while not(strcmp('[TOPO]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % read data
+  % read and store data
   obj.si= set(obj.si,'li',fscanf(fid,'%d',[2, nl])');
 
   % [LIMA]
@@ -122,21 +124,25 @@ function obj= net_(obj, arquivo)
   while not(strcmp('[LIMA]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % read data
-  im= cell(ni,1);
-  for j= 1:ni
-    ub= zeros(nl,np);
-    fscanf(fid,'%s',1); % bogus
-    for k= 1:np
-      fscanf(fid,'%d',1); % bogus
-      ub(:,k)= fscanf(fid,'%f',[nl,1]);
-    end
-    im{j}= ub;
+  % memory allocation
+  im= cell(np,1);
+  for l= 1:np
+    im{l}= zeros(nl,ni);
   end
+  % read data
+  for j= 1:ni
+    fscanf(fid,'%s',1); % bogus
+    for l= 1:np
+      fscanf(fid,'%d',1); % bogus
+      for k= 1:nl
+        im{l}(k,j)= fscanf(fid,'%f',1);
+      end
+    end
+  end
+  % store data
   obj.si= set(obj.si,'im',im);
   % clear temporary buffers
   clear im;
-  clear ub;
 
   % [LIMI]
   %  lower bounds on power transmission
@@ -144,21 +150,25 @@ function obj= net_(obj, arquivo)
   while not(strcmp('[LIMI]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % read data
-  in= cell(ni,1);
-  for j= 1:ni
-    lb= zeros(nl,np);
-    fscanf(fid,'%s',1); % bogus
-    for k= 1:np
-      fscanf(fid,'%d',1); % bogus
-      lb(:,k)= fscanf(fid,'%f',[nl,1]);
-    end
-    in{j}= lb;
+  % memory allocation
+  in= cell(np,1);
+  for l= 1:np
+    in{l}= zeros(nl,ni);
   end
+  % read data
+  for j= 1:ni
+    fscanf(fid,'%s',1); % bogus
+    for l= 1:np
+      fscanf(fid,'%d',1); % bogus
+      for k= 1:nl
+        in{l}(k,j)= fscanf(fid,'%f',1);
+      end
+    end
+  end
+  % store data
   obj.si= set(obj.si,'in',in);
   % clear temporary buffers
   clear in;
-  clear lb;
 
   % [REAT]
   %  reactances
@@ -166,13 +176,15 @@ function obj= net_(obj, arquivo)
   while not(strcmp('[REAT]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % read data
+  % memory allocation
   rt= zeros(nc,get(obj.si,'nl'));
+  % read data
   for j= 1:nc
     rt(j,:)= fscanf(fid,'%f',[get(obj.si,'nl'), 1]);
   end
+  % store data
   obj.si= set(obj.si,'rt',rt);
-  clear nc;
+  % clear temporary buffer
   clear rt;
 
   % close file

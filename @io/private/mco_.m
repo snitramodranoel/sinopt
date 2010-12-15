@@ -90,21 +90,25 @@ function obj= mco_(obj, arquivo)
   while not(strcmp('[MSUB]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % read
-  dc= cell(ni,1);
-  for j= 1:ni
-    ms= zeros(ns,np);
-    fscanf(fid,'%s',1); % bogus
-    for k= 1:np
-      fscanf(fid,'%d',1); % bogus
-      ms(:,k)= fscanf(fid,'%f',[ns,1]);
-    end
-    dc{j}= ms;
+  % memory allocation
+  dc= cell(np,1);
+  for l= 1:np
+    dc{l}= zeros(ns,ni);
   end
+  % read
+  for j= 1:ni
+    fscanf(fid,'%s',1); % bogus
+    for l= 1:np
+      fscanf(fid,'%d',1); % bogus
+      for k= 1:ns
+        dc{l}(k,j)= fscanf(fid,'%f',1);
+      end
+    end
+  end
+  % store data
   obj.si= set(obj.si,'dc',dc);
   % clear temporary buffer
   clear dc;
-  clear ms;
   
   % [GPUH]
   %  fixed generation at small hydro plants
@@ -112,21 +116,25 @@ function obj= mco_(obj, arquivo)
   while not(strcmp('[GPUH]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % read
-  gp= cell(ni,1);
-  for j= 1:ni
-    gs= zeros(ns,np);
-    fscanf(fid,'%s',1); % bogus
-    for k= 1:np
-      fscanf(fid,'%d',1); % bogus
-      gs(:,k)= fscanf(fid,'%f',[ns,1]);
-    end
-    gp{j}= gs;
+  % memory allocation
+  gp= cell(np,1);
+  for l= 1:np
+    gp{l}= zeros(ns,ni);
   end
+  % read
+  for j= 1:ni
+    fscanf(fid,'%s',1); % bogus
+    for l= 1:np
+      fscanf(fid,'%d',1); % bogus
+      for k= 1:ns
+        gp{l}(k,j)= fscanf(fid,'%f',1);
+      end
+    end
+  end
+  % store data
   obj.si= set(obj.si,'gp',gp);
   % clear temporary buffer
   clear gp;
-  clear gs;
 
   % close file
   fclose(fid);

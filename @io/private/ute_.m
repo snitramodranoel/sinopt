@@ -105,7 +105,7 @@ function obj= ute_(obj,arquivo)
   while not(strcmp('[UTID]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % read data
+  % read and store data
   for j= 1:nt
     fscanf(fid,'%s',1); % bogus
     ut{j}= set(ut{j},'nm',fgetl(fid)); % identification
@@ -117,7 +117,7 @@ function obj= ute_(obj,arquivo)
   while not(strcmp('[PRIM]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
-  % read data
+  % read and store data
   for j= 1:nt
     fscanf(fid,'%d',1); % bogus
     ut{j}= set(ut{j},'ss',fscanf(fid,'%d',1));
@@ -195,13 +195,14 @@ function obj= ute_(obj,arquivo)
   for j= 1:nt
     % bogus
     fscanf(fid,'%s',1);
-    % polynomial
-    m= fscanf(fid,'%f',[5 1]);
-    poli= get(ut{j},'cg');
-    poli= set(poli,'cf',m);
-    ut{j}= set(ut{j},'cg',poli);
+    % read polynomial data
+    cf= fscanf(fid,'%f',[5 1]);
+    % store polinomial data
+    polinomio= set(get(ut{j},'cg'),'cf',cf);
+    ut{j}= set(ut{j},'cg',polinomio);
     % clear temporary buffers
-    clear poli m;
+    clear polinomio;
+    clear cf;
   end
 
   % [FCMX]
@@ -219,7 +220,7 @@ function obj= ute_(obj,arquivo)
       for t= 1:nt
         fc{t}(p,j)= tb(t);
       end
-      % clear temporary buffers
+      % clear temporary buffer
       clear tb;
     end
   end
