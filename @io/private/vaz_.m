@@ -80,8 +80,17 @@ function obj= vaz_(obj, arquivo)
   while not(strcmp('[VAZO]',linha))
     linha= fscanf(fid,'%s\n',1);
   end
+  % memory allocation
+  af= zeros(nu,ni);
   % read data
-  obj.si= set(obj.si,'af',fscanf(fid,'%f',[nu,ni]));
+  for j= 1:ni
+    fscanf(fid,'%s',1); % bogus
+    af(:,j)= fscanf(fid,'%f',[nu,1]);
+  end
+  % store data
+  obj.si= set(obj.si,'af',af);
+  % clear temporary buffer
+  clear af;
 
   % close file
   fclose(fid);
