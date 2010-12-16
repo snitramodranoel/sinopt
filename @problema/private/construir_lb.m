@@ -36,43 +36,73 @@ function obj = construir_lb(obj)
   in= get(obj.si,'in');
   ni= get(obj.si,'ni');
   nl= get(obj.si,'nl');
+  np= get(obj.si,'np');
   nt= get(obj.si,'nt');
   nu= get(obj.si,'nu');
   ut= get(obj.si,'ut');
   vf= get(obj.si,'vf');
   vm= get(obj.si,'vm');
   vn= get(obj.si,'vn');
-  % lower bounds on reservoir storage
+  %% lower bounds on reservoir storage
   ls= vn;
   for i= 1:nu
     for j= 1:ni-1
       if ~(vm(i,j) - ls(i,j) > 0)
-        ls(i,j)= beta*vm(i,j);
+        ls(i,j)= beta * vm(i,j);
       end
     end
   end
-  % final storage requirements
+  % set final reservoir storage requirements
   ls(:,ni)= vf;
-  % lower bounds on water discharge
-  lq= dn;
-  % lower bounds on water spill
-  lv= zeros(nu*ni,1);
-  % lower bounds on transmission
-  ly= in;
-  % lower bounds on thermal power generation
-  lz= zeros(nt,ni);
-  for t= 1:nt
-    lz(t,:)= get(ut{t},'gn');
+  % store data
+  obj.ls= reshape(ls, nu*ni, 1);
+  % clear temporary buffer
+  clear ls;
+  %% lower bounds on water discharge
+  %  memory allocation for one-dimensional data packing
+  obj.lq= zeros(nu*np*ni, 1);
+  %  fill in elements
+  n= nu*ni;
+  for l= 1:np
+    obj.lq(n*(l-1)+1 : n*l)= reshape(dn, n, 1);
   end
-  % data packing
-  ls= reshape(ls,nu*ni,1);
-  lq= reshape(lq,nu*ni,1);
-  ly= reshape(ly,nl*ni,1);
-  lz= reshape(lz,nt*ni,1);
-  % data update
-  obj.ls= ls;
-  obj.lq= lq;
-  obj.lv= lv;
-  obj.ly= ly;
-  obj.lz= lz;
+  % clear temporary buffer
+  clear n;
+  %% lower bounds on water spill
+  obj.lv= zeros(nu*ni,1);
+  %% lower bounds on transmission
+  %  memory allocation for one-dimensional data packing
+  obj.ly= zeros(obj.ny, 1);
+  %  fill in elements
+  n= nl*ni;
+  for l= 1:np
+    obj.ly(n*(l-1)+1 : n*l)= reshape(in{l}, n, 1);
+  end
+  % clear temporary buffer
+  clear n;
+  %% lower bounds on thermal power generation
+  %  three-dimensional memory allocation
+  lz= cell(np, 1);
+  for l= 1:np
+    lz{l}= zeros(nt, ni); 
+  end
+  %  fill in elements
+  for t= 1:nt
+    gn= get(ut{t},'gn');
+    for l= 1:np
+      for j= 1:ni
+        lz{l}(t,j)= gn(l,j);
+      end
+    end
+  end
+  % memory allocation for one-dimensional data packing
+  obj.lz= zeros(obj.nz, 1);
+  % store data
+  n= nt*ni;
+  for l= 1:np
+    obj.lz(n*(l-1)+1 : n*l)= reshape(lz{l}, n, 1);
+  end
+  % clear temporary buffer
+  clear gn;
+  clear lz;
 end

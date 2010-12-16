@@ -1,4 +1,4 @@
-% @problema/private/construir_bring.m builds b vector.
+% @problema/private/construir_bb.m builds vector b.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,7 +28,7 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function obj = construir_bring(obj)
+function obj = construir_bb(obj)
   % system data
   af= get(obj.si,'af');
   ni= get(obj.si,'ni');
@@ -39,7 +39,7 @@ function obj = construir_bring(obj)
   % build vector
   b= zeros(nu,ni);
   for k= 1:nu
-    up= upstream(obj.si,k);
+    up= upstream(obj.si, k);
     for j= 1:ni
       b(k,j)= af(k,j);
       for i= 1:length(up)
@@ -53,7 +53,7 @@ function obj = construir_bring(obj)
   delta= ti(1)/10^6;
   b(:,1)= b(:,1) + (1/delta)*(vi);
   % data packing
-  b= reshape(b,nu*ni,1);
+  b= reshape(b, nu*ni, 1);
   % data update
   obj.b= b;
 end

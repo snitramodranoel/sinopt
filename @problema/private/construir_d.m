@@ -1,4 +1,4 @@
-% @problema/private/construir_d.m builds d vector.
+% @problema/private/construir_d.m builds vector d.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -38,10 +38,10 @@ function obj = construir_d(obj)
   gp= get(obj.si,'gp');
   % memory allocation
   obj.d= zeros(obj.mb,1);
-  % compute net load
-  n= ns*np;
-  for j= 1:ni
-    % net load equals gross load minus fixed generation at small plants
-    obj.d(n*(j-1)+1: n*j)= reshape(dc{j}-gp{j}, n, 1);
+  % compute load
+  n= ns*ni;
+  for l= 1:np
+    % load equals gross load minus fixed generation at small plants
+    obj.d(n*(l-1)+1 : n*l)= reshape(dc{l} - gp{l}, n, 1);
   end
 end

@@ -1,3 +1,9 @@
+2010-12-16  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+	* @problema/private/construir_lb.m: Suporte a patamares de carga adicionado.
+	
+	* @problema/private/construir_ub.m: Suporte a patamares de carga adicionado.
+	
 2010-12-15  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @problema/private/construir_d.m: 

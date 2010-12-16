@@ -52,7 +52,7 @@ function obj= construir(obj)
   obj= construir_lb(obj);
   obj= construir_ub(obj);
   % hydro constraints
-  obj= construir_bring(obj);
+  obj= construir_bb(obj);
   obj= construir_A(obj);
   % power constraints
   obj= construir_d(obj);
