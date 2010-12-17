@@ -116,16 +116,4 @@ function obj = construir_ub(obj)
   clear n;
   clear gm;
   clear uz;
-  %% sanity check overlapping bounds
-  if     ~isempty(find(obj.us - obj.ls <= 0, 1))
-    error('sinopt:problema:construir_ub:invalidInput','Interior set is empty');
-  elseif ~isempty(find(obj.uq - obj.lq <= 0, 1))
-    error('sinopt:problema:construir_ub:invalidInput','Interior set is empty');
-  elseif ~isempty(find(obj.uv - obj.lv <= 0, 1))
-    error('sinopt:problema:construir_ub:invalidInput','Interior set is empty');
-  elseif ~isempty(find(obj.uy - obj.ly <= 0, 1))
-    error('sinopt:problema:construir_ub:invalidInput','Interior set is empty');
-  elseif ~isempty(find(obj.uz - obj.lz <= 0, 1))
-    error('sinopt:problema:construir_ub:invalidInput','Interior set is empty');
-  end
 end

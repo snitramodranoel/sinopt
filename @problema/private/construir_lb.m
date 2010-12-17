@@ -29,8 +29,6 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function obj = construir_lb(obj)
-  % minimum reservoir storage factor
-  beta= 0.999;
   % system data
   dn= get(obj.si,'dn');
   in= get(obj.si,'in');
@@ -41,17 +39,9 @@ function obj = construir_lb(obj)
   nu= get(obj.si,'nu');
   ut= get(obj.si,'ut');
   vf= get(obj.si,'vf');
-  vm= get(obj.si,'vm');
   vn= get(obj.si,'vn');
   %% lower bounds on reservoir storage
   ls= vn;
-  for i= 1:nu
-    for j= 1:ni-1
-      if ~(vm(i,j) - ls(i,j) > 0)
-        ls(i,j)= beta * vm(i,j);
-      end
-    end
-  end
   % set final reservoir storage requirements
   ls(:,ni)= vf;
   % store data
