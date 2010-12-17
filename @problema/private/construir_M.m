@@ -31,6 +31,7 @@
 function obj = construir_M(obj)
   % system data
   nu= get(obj.si,'nu');
+  nj= get(obj.si,'nj');
   uh= get(obj.si,'uh');
   % fill elements
   obj.M= spalloc(nu, nu, nu*(1 + nj));
