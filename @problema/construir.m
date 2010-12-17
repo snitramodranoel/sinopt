@@ -58,6 +58,8 @@ function obj= construir(obj)
   obj= construir_d(obj);
   obj= construir_B(obj);
   obj= construir_C(obj);
+  % sanity check constraints
+  obj= verificar(obj);
   % g(u) function Jacobian matrix
   obj.Jg= spalloc(obj.m, obj.n, ...
       ni*(nu*(3+np+nj) - 1) + nnz(obj.C) + obj.nx + (2*obj.ny) + obj.nz);
