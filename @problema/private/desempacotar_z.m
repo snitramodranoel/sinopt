@@ -1,4 +1,4 @@
-% @problema/private/obter_vs.m returns s vector.
+% @problema/private/desempacotar_z.m unpacks z variables.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,10 +28,15 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function s= obter_vs(obj,u)
+function Z= desempacotar_z(obj,z)
   % system dimensions
   ni= get(obj.si,'ni');
-  nu= get(obj.si,'nu');
-  % return vector
-  s= u(1:nu*ni);
+  np= get(obj.si,'np');
+  nt= get(obj.si,'nt');
+  % unpack z
+  n= nt*ni;
+  Z= cell(np,1);
+  for l= 1:np
+    Z{l}= reshape(z(n*(l-1)+1 : n*l),nt,ni);
+  end
 end

@@ -1,3 +1,41 @@
+2010-12-20  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+	* @problema/private/extrair_s.m: Função adicionada.
+
+	* @problema/private/extrair_q.m: Função adicionada.
+	
+	* @problema/private/extrair_v.m: Função adicionada.
+	
+	* @problema/private/extrair_y.m: Função adicionada.
+	
+	* @problema/private/extrair_z.m: Função adicionada.
+	
+	* @problema/private/empacotar_s.m: Função adicionada.
+	
+	* @problema/private/empacotar_q.m: Função adicionada.
+	
+	* @problema/private/empacotar_v.m: Função adicionada.
+	
+	* @problema/private/empacotar_y.m: Função adicionada.
+	
+	* @problema/private/empacotar_z.m: Função adicionada.
+	
+	* @problema/private/desempacotar_s.m: Função adicionada.
+	
+	* @problema/private/desempacotar_q.m: Função adicionada.
+	
+	* @problema/private/desempacotar_v.m: Função adicionada.
+	
+	* @problema/private/desempacotar_y.m: Função adicionada.
+	
+	* @problema/private/desempacotar_z.m: Função adicionada.
+
+2010-12-17  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+	* @problema/verificar.m: Função adicionada para verificação de restrições.
+	
+	* @problema/private/construir_{lb,ub}.m: Verificações de limites removidas.
+
 2010-12-16  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @problema/private/construir_lb.m: Suporte a patamares de carga adicionado.

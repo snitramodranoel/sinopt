@@ -1,4 +1,4 @@
-% @problema/private/obter_mq.m returns q vector in unpacked matrix form.
+% @problema/private/empacotar_q.m packs q variables in one-dimensional array.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,10 +28,15 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function q= obter_mq(obj,u)
+function q= empacotar_q(obj,Q)
   % system dimensions
   ni= get(obj.si,'ni');
+  np= get(obj.si,'np');
   nu= get(obj.si,'nu');
-  % return matrix
-  q= reshape(obter_vq(obj,u),nu,ni);
+  % pack q
+  n= nu*ni;
+  q= zeros(nu*np*ni,1);
+  for l= 1:np
+    q(q(n*(l-1)+1:n*l))= reshape(Q{l}, nu*ni, 1);
+  end
 end

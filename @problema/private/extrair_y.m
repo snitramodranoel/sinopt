@@ -1,4 +1,4 @@
-% @problema/private/obter_vv.m returns v vector.
+% @problema/private/extrair_y.m returns y vector from w.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,10 +28,6 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function v= obter_vv(obj,u)
-  % system dimensions
-  ni= get(obj.si,'ni');
-  nu= get(obj.si,'nu');
-  % return vector
-  v=  u(2*nu*ni+1:obj.nx);
+function y= extrair_y(obj,w)
+  y= w(obj.nx+1:obj.nx+obj.ny);
 end

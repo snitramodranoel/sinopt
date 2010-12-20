@@ -1,4 +1,4 @@
-% @problema/private/obter_mv.m returns v vector unpacked in matrix form.
+% @problema/private/extrair_s.m returns s vector from w.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,10 +28,10 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function v= obter_mv(obj,u)
+function s= extrair_s(obj,w)
   % system dimensions
   ni= get(obj.si,'ni');
   nu= get(obj.si,'nu');
-  % return matrix
-  v=  reshape(obter_vv(obj,u),nu,ni);
+  % return vector
+  s= w(1:nu*ni);
 end

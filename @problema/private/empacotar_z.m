@@ -1,4 +1,4 @@
-% @problema/private/obter_vx.m returns x vector.
+% @problema/private/empacotar_z.m packs z variables in one-dimensional array.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,6 +28,15 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function x= obter_vx(obj,u)
-  x= u(1:obj.nx);
+function z= empacotar_z(obj,Z)
+  % system dimensions
+  ni= get(obj.si,'ni');
+  np= get(obj.si,'np');
+  nt= get(obj.si,'nt');
+  % unpack z
+  n= nt*ni;
+  z= zeros(obj.nz,1);
+  for l= 1:np
+    z(n*(l-1)+1:n*l)= reshape(Z{l},nt*ni,1);
+  end
 end

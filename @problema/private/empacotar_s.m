@@ -1,4 +1,4 @@
-% @problema/private/obter_my.m returns y vector in unpacked matrix form.
+% @problema/private/empacotar_s.m packs s variables in one-dimensional array.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,10 +28,10 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function y= obter_my(obj,u)
+function s= empacotar_s(obj,S)
   % system dimensions
   ni= get(obj.si,'ni');
-  nl= get(obj.si,'nl');
+  nu= get(obj.si,'nu');
   % return matrix
-  y=  reshape(obter_vy(obj,u),nl,ni);
+  s= reshape(S,nu*ni,1);
 end

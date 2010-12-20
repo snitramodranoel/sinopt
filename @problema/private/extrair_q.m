@@ -1,4 +1,4 @@
-% @problema/private/obter_ms.m returns s vector unpacked in matrix form.
+% @problema/private/extrair_q.m returns q vector from w.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,10 +28,11 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function s= obter_ms(obj,u)
+function q= extrair_q(obj,w)
   % system dimensions
   ni= get(obj.si,'ni');
+  np= get(obj.np,'np');
   nu= get(obj.si,'nu');
-  % return matrix
-  s=  reshape(obter_vs(obj,u),nu,ni);
+  % return vector
+  q=  w(nu*ni+1:nu*ni*(np+1));
 end

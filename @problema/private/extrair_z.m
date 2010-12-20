@@ -1,4 +1,4 @@
-% @problema/private/obter_mz.m returns z vector in unpacked matrix form.
+% @problema/private/extrair_z.m returns z vector from w.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,10 +28,6 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function z= obter_mz(obj,u)
-  % system dimensions
-  ni= get(obj.si,'ni');
-  nt= get(obj.si,'nt');
-  % return matrix
-  z= reshape(obter_vz(obj,u),nt,ni);
+function z= extrair_z(obj,w)
+  z= w(obj.nx+obj.ny+1:obj.n);
 end

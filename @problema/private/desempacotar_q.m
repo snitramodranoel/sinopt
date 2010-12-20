@@ -1,4 +1,4 @@
-% @problema/private/obter_vy.m returns y vector.
+% @problema/private/desempacotar_q.m unpacks q variables.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,6 +28,15 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function y= obter_vy(obj,u)
-  y= u(obj.nx+1:obj.nx+obj.ny);
+function Q= desempacotar_q(obj,q)
+  % system dimensions
+  ni= get(obj.si,'ni');
+  np= get(obj.si,'np');
+  nu= get(obj.si,'nu');
+  % unpack q
+  n= nu*ni;
+  Q= cell(np,1);
+  for l= 1:np
+    Q{l}= reshape(q(n*(l-1)+1 : n*l),nu,ni);
+  end
 end
