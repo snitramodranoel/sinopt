@@ -1,5 +1,14 @@
 2010-12-20  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
+	* @problema/private/calcular_f.m:
+	Adicionado suporte a patamares de carga e removido fator multiplicador.
+
+	* @problema/private/calcular_df.m:
+	Adicionado suporte a patamares de carga e removido fator multiplicador.
+
+	* @problema/private/calcular_Hf.m:
+	Adicionado suporte a patamares de carga e removido fator multiplicador.
+	
 	* @problema/private/extrair_s.m: Função adicionada.
 
 	* @problema/private/extrair_q.m: Função adicionada.

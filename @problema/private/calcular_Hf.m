@@ -28,25 +28,28 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function Hf= calcular_Hf(obj,u)
+function Hf= calcular_Hf(obj,w)
   % list of thermal plants
   ut= get(obj.si,'ut');
   % system dimensions
   ni= get(obj.si,'ni');
+  np= get(obj.si,'np');
   nt= get(obj.si,'nt');
-  ti= get(obj.si,'ti');
   % unpack z variables
-  mz= obter_mz(obj,u);
+  z= desempacotar_z(obj, extrair_z(obj, w));
+  % memory allocation
+  Hfz= spalloc(obj.nz, obj.nz, obj.nz);
   % compute Hessian
-  ZZ= spalloc(obj.nz, obj.nz, obj.nz);
-  for k= 1:nt
-    cg= get(ut{k},'cg');
+  i= 0;
+  for l= 1:np
     for j= 1:ni
-      % compute partial derivatives
-      ZZ(k+((j-1)*nt),k+((j-1)*nt))= derivar(cg,2,mz(k,j),(ti(j)/3600)/730);
+      for k= 1:nt
+        i= i+1;
+        Hfz(k,k)= derivar(get(ut{k},'cg'), 2, z{l}(k,j));
+      end
     end
   end
   % fill Hessian elements
   Hf= spalloc(obj.n, obj.n, obj.nz);
-  Hf(obj.nx+obj.ny+1:obj.n, obj.nx+obj.ny+1:obj.n)= ZZ;
+  Hf(obj.nx+obj.ny+1:obj.n, obj.nx+obj.ny+1:obj.n)= Hfz;
 end

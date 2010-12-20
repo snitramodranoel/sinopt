@@ -28,21 +28,23 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function f= calcular_f(obj,u)
+function f= calcular_f(obj,w)
   % list of thermal plants
   ut= get(obj.si,'ut');
   % system dimensions
   ni= get(obj.si,'ni');
+  np= get(obj.si,'np');
   nt= get(obj.si,'nt');
-  ti= get(obj.si,'ti');
   % unpack z variables
-  mz= obter_mz(obj,u);
+  z=  desempacotar_z(obj, extrair_z(obj, w));
   % compute complementary thermal power generation costs
   f= 0.0;
   for k= 1:nt
     cg= get(ut{k},'cg');
     for j= 1:ni
-      f= f + calcular(cg,mz(k,j),(ti(j)/3600)/730);
+      for l= 1:np
+        f= f + calcular(cg, z{l}(k,j));
+      end
     end
   end
 end
