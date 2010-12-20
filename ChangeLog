@@ -1,5 +1,19 @@
 2010-12-20  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
+	* @problema/private/calcular_Ax.m: Adicionado suporte a patamares de carga.
+	
+	* @problema/private/calcular_By.m: Adicionado suporte a patamares de carga.
+	
+	* @problema/private/calcular_Cy.m: Adicionado suporte a patamares de carga.
+	
+	* @problema/private/calcular_P.m: Adicionado suporte a patamares de carga.
+	
+	* @problema/private/calcular_Q.m: Adicionado suporte a patamares de carga.
+
+	* @problema/private/calcular_Pj.m: Função removida.
+	
+	* @problema/private/calcular_Qj.m: Função removida.
+	
 	* @problema/private/calcular_f.m:
 	Adicionado suporte a patamares de carga e removido fator multiplicador.
 

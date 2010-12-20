@@ -28,11 +28,9 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function b = calcular_Ax(obj,u)
-  % unpack x variables
-  s= obter_vs(obj,u);
-  q= obter_vq(obj,u);
-  v= obter_vv(obj,u);
+function b = calcular_Ax(obj,w)
+  % get x variables
+  x= [extrair_s(obj,w); extrair_q(obj,w); extrair_v(obj,w)];
   % compute A*x
-  b= obj.S*s + obj.R*(q + v);
+  b= obj.A*x;
 end

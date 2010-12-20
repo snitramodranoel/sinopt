@@ -28,16 +28,9 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function b= calcular_Cy(obj,u)
-  % system dimensions
-  ni= get(obj.si,'ni');
-  nc= get(obj.si,'nc');
+function b= calcular_Cy(obj,w)
   % unpack y variables
-  y= obter_my(obj,u);
-  % compute matrix-vector multiplications
-  b= zeros(nc,ni);
-  for j= 1:ni
-    b(:,j) = obj.L*y(:,j);
-  end
-  b= reshape(b,nc*ni,1);
+  y= extrair_y(obj,w);
+  % compute C*y
+  b= obj.C*y;
 end

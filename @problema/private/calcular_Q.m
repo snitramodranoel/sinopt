@@ -28,17 +28,31 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function Q= calcular_Q(obj,u)
+function Q= calcular_Q(obj,w)
+  % system data
+  ut= get(obj.si,'ut');
   % system dimensions
   ni= get(obj.si,'ni');
+  np= get(obj.si,'np');
   ns= get(obj.si,'ns');
-  % unpack z
-  z= obter_mz(obj,u);
-  % compute Q(j), j = 1,2,...
-  Q= zeros(ns,ni);
-  for j= 1:ni
-    Q(:,j)= calcular_Qj(obj, z(:,j));
+  nt= get(obj.si,'nt');
+  % unpack z variables
+  z=  desempacotar_z(obj, extrair_z(obj,w));
+  % memory allocation
+  Q = zeros(obj.mb,1);
+  Ql= cell(np,1);
+  % compute Q()
+  n= ns*ni;
+  for l= 1:np
+    Ql{l}= zeros(ns,ni);
+    % compute P(j), j=1,2,...
+    for j= 1:ni
+      for t= 1:nt
+        k= get(ut{t},'ss');
+        Ql{l}(k,j)= Ql{l}(k,j) + z{l}(t,j);
+      end
+    end
+    % pack
+    Q(n*(l-1)+1:n*l)= reshape(Ql{l}, n, 1);
   end
-  % pack
-  Q= reshape(Q,ns*ni,1);
 end

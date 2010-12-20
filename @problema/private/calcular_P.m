@@ -28,20 +28,33 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function P= calcular_P(obj,u)
+function P= calcular_P(obj,w)
+  % system data
+  uh= get(obj.si,'uh');
   % system dimensions
   ni= get(obj.si,'ni');
+  np= get(obj.si,'np');
   ns= get(obj.si,'ns');
+  nu= get(obj.si,'nu');
   % unpack x variables
-  s= obter_ms(obj,u);
-  q= obter_mq(obj,u);
-  v= obter_mv(obj,u);
-  % compute P(.) function
-  P= zeros(ns,ni);
-  for j= 1:ni
+  s=  desempacotar_s(obj, extrair_s(obj,w));
+  q=  desempacotar_q(obj, extrair_q(obj,w));
+  v=  desempacotar_v(obj, extrair_v(obj,w));
+  % memory allocation
+  P = zeros(obj.mb,1);
+  Pl= cell(np,1);
+  % compute P()
+  n= ns*ni;
+  for l= 1:np
+    Pl{l}= zeros(ns,ni);
     % compute P(j), j=1,2,...
-    P(:,j)= calcular_Pj(obj, s(:,j), q(:,j), v(:,j));
+    for j= 1:ni
+      for i= 1:nu
+        k= get(uh{i},'ss');
+        Pl{l}(k,j)= Pl{l}(k,j) + p(uh{i}, s(i,j), q{l}(i,j), v(i,j));
+      end
+    end
+    % pack
+    P(n*(l-1)+1:n*l)= reshape(Pl{l}, n, 1);
   end
-  % pack
-  P= reshape(P,ns*ni,1);
 end
