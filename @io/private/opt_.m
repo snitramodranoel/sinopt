@@ -35,9 +35,9 @@ function obj= opt_(obj,arquivo)
 
   % [VERS]
   %  file version
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[VERS]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read file version
   v= fscanf(fid,'%f',1);
@@ -50,18 +50,18 @@ function obj= opt_(obj,arquivo)
 
   % [MAXI]
   %  maximum number of iterations
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[MAXI]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read maximum number of iterations
   obj.pb= set(obj.pb,'km',fscanf(fid,'%i',1));
 
   % [VERB]
   %  verbosity
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[VERB]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read verbosity
   obj.pb= set(obj.pb,'dv',lower(fgetl(fid)));

@@ -35,9 +35,9 @@ function obj= uhe_(obj, arquivo)
 
   % [VERS]
   %  file version
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[VERS]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   v= fscanf(fid,'%f',1);
@@ -50,9 +50,9 @@ function obj= uhe_(obj, arquivo)
 
   % [NUHE]
   %  number of hydro plants
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[NUHE]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   nu= fscanf(fid,'%i',1);
@@ -69,9 +69,9 @@ function obj= uhe_(obj, arquivo)
 
   % [NINT]
   %  number of stages
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[NINT]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   ni= fscanf(fid,'%d',1);
@@ -82,9 +82,9 @@ function obj= uhe_(obj, arquivo)
 
   % [UHID]
   %  hydro plant identification information
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[UHID]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   for j= 1:nu
@@ -96,14 +96,14 @@ function obj= uhe_(obj, arquivo)
     fscanf(fid,'%s',1);
     fscanf(fid,'%s',1);
     % hydro plant identification
-    uh{j}= set(uh{j}, 'nm', fgetl(fid));
+    uh{j}= set(uh{j}, 'nm', strtrim(fgetl(fid)));
   end
 
   % [NUMS]
   %  codes
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[NUMS]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   for j= 1:nu
@@ -116,9 +116,9 @@ function obj= uhe_(obj, arquivo)
 
   % [TOPO]
   %  network topology
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[TOPO]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   nj= 0;
@@ -159,9 +159,9 @@ function obj= uhe_(obj, arquivo)
 
   % [PRIM]
   %  productivity data
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[PRIM]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   for j= 1:nu
@@ -187,9 +187,9 @@ function obj= uhe_(obj, arquivo)
 
   % [TUGE]
   %  power generation
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[TUGE]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   for j= 1:nu
@@ -224,9 +224,9 @@ function obj= uhe_(obj, arquivo)
 
   % [TXID]
   %  availability
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[TXID]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   for j= 1:nu
@@ -236,9 +236,9 @@ function obj= uhe_(obj, arquivo)
 
   % [VMDM]
   %  hydro operation constraints
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[VMDM]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   for j= 1:nu
@@ -264,9 +264,9 @@ function obj= uhe_(obj, arquivo)
 
   % [POCV]
   %  forebay elevation polynomials
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[POCV]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   for j= 1:nu
@@ -283,9 +283,9 @@ function obj= uhe_(obj, arquivo)
 
   % [POAC]
   %  reservoir area polynomials
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[POAC]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   for j= 1:nu
@@ -302,9 +302,9 @@ function obj= uhe_(obj, arquivo)
 
   % [POCF]
   %  tailrace elevation polynomials
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[POCF]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   for j= 1:nu

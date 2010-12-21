@@ -35,9 +35,9 @@ function obj= vaz_(obj, arquivo)
 
   % [VERS]
   %  file version
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[VERS]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   v= fscanf(fid,'%f',1);
@@ -50,9 +50,9 @@ function obj= vaz_(obj, arquivo)
 
   % [NUHE]
   %  number of hydro plants
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[NUHE]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   nu= fscanf(fid,'%d',1);
@@ -63,9 +63,9 @@ function obj= vaz_(obj, arquivo)
 
   % [NINT]
   %  number of hydro plants
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[NINT]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   ni= fscanf(fid,'%d',1);
@@ -76,9 +76,9 @@ function obj= vaz_(obj, arquivo)
 
   % [VAZO]
   %  inflows
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[VAZO]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % memory allocation
   af= zeros(nu,ni);

@@ -35,9 +35,9 @@ function obj= mco_(obj, arquivo)
 
   % [VERS]
   %  file version
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[VERS]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read
   v= fscanf(fid,'%f',1);
@@ -50,9 +50,9 @@ function obj= mco_(obj, arquivo)
 
   % [NSUB]
   %  number of subsystems
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[NSUB]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read
   ns= fscanf(fid,'%d',1);
@@ -60,9 +60,9 @@ function obj= mco_(obj, arquivo)
 
   % [NINT]
   %  number of stages
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[NINT]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read
   ni= fscanf(fid,'%d',1);
@@ -73,9 +73,9 @@ function obj= mco_(obj, arquivo)
 
   % [NPAT]
   %  number of load levels per stage
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[NPAT]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read
   np= fscanf(fid,'%d',1);
@@ -86,9 +86,9 @@ function obj= mco_(obj, arquivo)
 
   % [MSUB]
   %  load per subsystem, load level, and stage
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[MSUB]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % memory allocation
   dc= cell(np,1);
@@ -112,9 +112,9 @@ function obj= mco_(obj, arquivo)
   
   % [GPUH]
   %  fixed generation at small hydro plants
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[GPUH]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % memory allocation
   gp= cell(np,1);

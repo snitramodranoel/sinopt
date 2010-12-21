@@ -35,9 +35,9 @@ function obj= ute_(obj,arquivo)
 
   % [VERS]
   %  file version
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[VERS]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   v= fscanf(fid,'%f',1);
@@ -50,9 +50,9 @@ function obj= ute_(obj,arquivo)
 
   % [NUTE]
   %  number of thermal plants
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[NUTE]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   nt= fscanf(fid,'%d',1);
@@ -60,9 +60,9 @@ function obj= ute_(obj,arquivo)
 
   % [NINT]
   %  number of stages
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[NINT]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   ni= fscanf(fid,'%d',1);
@@ -73,9 +73,9 @@ function obj= ute_(obj,arquivo)
 
   % [NPAT]
   %  number of load levels per stage
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[NPAT]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   np= fscanf(fid,'%d',1);
@@ -101,9 +101,9 @@ function obj= ute_(obj,arquivo)
 
   % [UTID]
   %  thermal plant identification
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[UTID]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read and store data
   for j= 1:nt
@@ -113,9 +113,9 @@ function obj= ute_(obj,arquivo)
 
   % [PRIM]
   %  codes
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[PRIM]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read and store data
   for j= 1:nt
@@ -129,9 +129,9 @@ function obj= ute_(obj,arquivo)
 
   % [PUGT]
   %  installed capacity
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[PUGT]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   for j= 1:ni
@@ -149,9 +149,9 @@ function obj= ute_(obj,arquivo)
 
   % [TXID]
   %  availability rate
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[TXID]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   for j= 1:ni
@@ -169,9 +169,9 @@ function obj= ute_(obj,arquivo)
 
   % [GMIN]
   %  lower bounds on power generation
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[GMIN]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   for j= 1:ni
@@ -189,9 +189,9 @@ function obj= ute_(obj,arquivo)
 
   % [CUST]
   %  cost functions
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[CUST]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   for j= 1:nt
@@ -209,9 +209,9 @@ function obj= ute_(obj,arquivo)
 
   % [FCMX]
   %  capacity factor
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[FCMX]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   for j= 1:ni

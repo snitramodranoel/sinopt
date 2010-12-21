@@ -35,9 +35,9 @@ function obj= hco_(obj,arquivo)
 
   % [VERS]
   %  file version
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while ~(strcmp('[VERS]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read
   v= fscanf(fid,'%f',1);
@@ -50,9 +50,9 @@ function obj= hco_(obj,arquivo)
 
   % [DATA]
   %  start date
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while ~(strcmp('[DATA]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read
   % (1) day, (2) month, (3) year
@@ -62,9 +62,9 @@ function obj= hco_(obj,arquivo)
   
   % [NUHE]
   %  number of hydro plants
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[NUHE]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read
   nu= fscanf(fid,'%d',1);
@@ -72,9 +72,9 @@ function obj= hco_(obj,arquivo)
 
   % [NINT]
   %  number of stages
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[NINT]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read
   ni= fscanf(fid,'%d',1);
@@ -82,9 +82,9 @@ function obj= hco_(obj,arquivo)
 
   % [NPAT]
   %  number of load levels
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[NPAT]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read
   np= fscanf(fid,'%d',1);
@@ -92,9 +92,9 @@ function obj= hco_(obj,arquivo)
 
   % [VOIF]
   %  initial and final reservoir storage requirements
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[VOIF]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read
   % (1) initial
@@ -107,9 +107,9 @@ function obj= hco_(obj,arquivo)
 
   % [VMAX]
   %  maximum reservoir storage
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[VMAX]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read
   vm= zeros(nu,ni);
@@ -123,9 +123,9 @@ function obj= hco_(obj,arquivo)
 
   % [VMIN]
   %  minimum reservoir storage
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[VMIN]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read
   vn= zeros(nu,ni);
@@ -139,9 +139,9 @@ function obj= hco_(obj,arquivo)
   
   % [EVAP]
   %  evaporation coefficients
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[EVAP]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read
   ev= zeros(nu,ni);
@@ -155,9 +155,9 @@ function obj= hco_(obj,arquivo)
 
   % [USOC]
   %  consumptive use of reservoir water
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[USOC]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read
   uc= zeros(nu,ni);
@@ -171,9 +171,9 @@ function obj= hco_(obj,arquivo)
 
   % [DEFM]
   %  minimum water release
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[DEFM]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read
   dn= zeros(nu,ni);
@@ -187,9 +187,9 @@ function obj= hco_(obj,arquivo)
 
   % [NMAQ]
   %  maximum number of generators available
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[NMAQ]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read
   nq= zeros(nu,ni);
@@ -203,9 +203,9 @@ function obj= hco_(obj,arquivo)
 
   % [DINT]
   %  duration of stages
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[DINT]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read
   ti= zeros(ni,1);
@@ -219,9 +219,9 @@ function obj= hco_(obj,arquivo)
 
   % [DPAT]
   %  load levels duration for each stage
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[DPAT]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read
   tp= zeros(np,ni);

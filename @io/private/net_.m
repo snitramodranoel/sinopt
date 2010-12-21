@@ -35,9 +35,9 @@ function obj= net_(obj, arquivo)
 
   % [VERS]
   %  file version
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[VERS]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   v= fscanf(fid,'%f',1);
@@ -50,9 +50,9 @@ function obj= net_(obj, arquivo)
 
   % [NLIN]
   %  number of transmission lines
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[NLIN]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   nl= fscanf(fid,'%d',1);
@@ -61,9 +61,9 @@ function obj= net_(obj, arquivo)
 
   % [NSUB]
   %  number of subsystems
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[NSUB]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   ns= fscanf(fid,'%d',1);
@@ -74,9 +74,9 @@ function obj= net_(obj, arquivo)
 
   % [NCYC]
   %  number of network loops
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[NCYC]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   nc= fscanf(fid,'%d',1);
@@ -85,9 +85,9 @@ function obj= net_(obj, arquivo)
 
   % [NINT]
   %  number of stages
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[NINT]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   ni= fscanf(fid,'%d',1);
@@ -98,9 +98,9 @@ function obj= net_(obj, arquivo)
 
   % [NPAT]
   %  number of load levels per stage
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[NPAT]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read data
   np= fscanf(fid,'%d',1);
@@ -111,18 +111,18 @@ function obj= net_(obj, arquivo)
 
   % [TOPO]
   %  transmission lines
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[TOPO]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % read and store data
   obj.si= set(obj.si,'li',fscanf(fid,'%d',[2, nl])');
 
   % [LIMA]
   %  upper bounds on power transmission
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[LIMA]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % memory allocation
   im= cell(np,1);
@@ -146,9 +146,9 @@ function obj= net_(obj, arquivo)
 
   % [LIMI]
   %  lower bounds on power transmission
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[LIMI]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % memory allocation
   in= cell(np,1);
@@ -172,9 +172,9 @@ function obj= net_(obj, arquivo)
 
   % [REAT]
   %  reactances
-  linha= fscanf(fid,'%s\n',1);
+  linha= fgetl(fid);
   while not(strcmp('[REAT]',linha))
-    linha= fscanf(fid,'%s\n',1);
+    linha= fgetl(fid);
   end
   % memory allocation
   rt= zeros(nc,get(obj.si,'nl'));
