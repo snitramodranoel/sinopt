@@ -108,7 +108,7 @@ function obj= ute_(obj,arquivo)
   % read and store data
   for j= 1:nt
     fscanf(fid,'%s',1); % bogus
-    ut{j}= set(ut{j},'nm',fgetl(fid)); % identification
+    ut{j}= set(ut{j},'nm',strtrim(fgetl(fid))); % identification
   end
 
   % [PRIM]
@@ -123,6 +123,8 @@ function obj= ute_(obj,arquivo)
     ut{j}= set(ut{j},'ss',fscanf(fid,'%d',1));
     ut{j}= set(ut{j},'cd',fscanf(fid,'%d',1));
     ut{j}= set(ut{j},'eo',fscanf(fid,'%d',1));
+    fscanf(fid,'%d',1); % bogus
+    fscanf(fid,'%f',1); % bogus
   end
 
   % [PUGT]
