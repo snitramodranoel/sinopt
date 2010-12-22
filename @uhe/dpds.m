@@ -1,4 +1,4 @@
-% @uhe/dp.m computes power generation first-order partial derivatives.
+% @uhe/dpds.m computes power generation first-order dp/ds partial derivative.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,38 +28,16 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function [ds,dq,dv]= dp(obj,s,q,v)
-  % compute net water head
-  h = calcular(obj.yc,s) - calcular(obj.yf{1,2},q+v);
-  switch obj.pc{1}
-    case 1
-      h= h * (1-obj.pc{2});
-    case 2
-      h= h - obj.pc{2};
-    otherwise
-      error('sinopt:uhe:p:invalidData', ...
-          'Penstock loss of type %d is invalid', obj.pc{1});
-  end
-  % compute partial derivatives
-  %  in terms of water head
+function ds= dpds(obj,s,q)
+  % compute partial derivatives in terms of water head 
   dhs= derivar(obj.yc,1,s);
-  dhq= derivar(obj.yf{1,2},1,q+v);
-  dhv= derivar(obj.yf{1,2},1,q+v);
-  %  in terms of penstock loss
+  % compute partial derivatives in terms of penstock loss
   switch obj.pc{1}
     case 1
       ds= obj.pc{2}*dhs;
-      dq= obj.pc{2}*dhq;
-      dv= obj.pc{2}*dhv;
     otherwise
       ds= 0.0;
-      dq= 0.0;
-      dv= 0.0;   
   end
-  %  compute dp/ds
+  % compute dp/ds
   ds= obj.pe*q*(dhs - ds);
-  %  compute dp/dq
-  dq= obj.pe*(h-(dhq - dq)*q);
-  %  compute dp/dv
-  dv= -obj.pe*q*(dhv - dv);
 end
