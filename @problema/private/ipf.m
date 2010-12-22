@@ -36,8 +36,6 @@ function obj= ipf(obj)
   %  lower and upper bounds
   l= [obj.ls; obj.lq; obj.lv; obj.ly; obj.lz];
   u= [obj.us; obj.uq; obj.uv; obj.uy; obj.uz];
-  %  Jacobian of Q(z)
-  JQ= calcular_JQ(obj);
   %% algorithm parameters
   %  barrier
   mu= 0.0;                   % barrier parameters
@@ -78,8 +76,7 @@ function obj= ipf(obj)
   g= calcular_g(obj,x);
   %    compute first-order derivatives of f(.) and g(.)
   gf= calcular_df(obj,x);
-  JP= calcular_JP(obj,x);
-  Jg= calcular_Jg(obj,JP,JQ);
+  Jg= calcular_Jg(obj,x);
   y= (Jg*Jg')\(Jg*(-gf + z - w));
   if (norm(y,inf) > ymax) % check for degree of linear independence
     y= zeros(obj.m,1);
@@ -355,8 +352,7 @@ function obj= ipf(obj)
     g= calcular_g(obj,x);
     % compute first-order derivatives of new solution
     gf= calcular_df(obj,x);
-    JP= calcular_JP(obj,x);
-    Jg= calcular_Jg(obj,JP,JQ);
+    Jg= calcular_Jg(obj,x);
     % update infeasibility measurement
     theta= norm([g-b; x+s-u; x-t-l]);
   end

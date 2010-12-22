@@ -28,18 +28,70 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function JP= calcular_JP(obj,u)
+function JP= calcular_JP(obj,w)
+  % system data
+  uh= get(obj.si,'uh');
   % system dimensions
   ni= get(obj.si,'ni');
+  np= get(obj.si,'np');
   ns= get(obj.si,'ns');
+  nu= get(obj.si,'nu');
+  n = nu*ni;
   % unpack x variables
-  s= obter_ms(obj,u);
-  q= obter_mq(obj,u);
-  v= obter_mv(obj,u);
-  % compute Jacobian
-  JP= spalloc(ns*ni, obj.nx, obj.nx);
-  for j= 1:ni
-    % compute gradients of P(j), j = 1,2,...
-    JP(ns*(j-1)+1:j*ns,:)= calcular_JPj(obj,j,s(:,j),q(:,j),v(:,j));
+  s= desempacotar_s(obj, extrair_s(obj,w));
+  q= desempacotar_q(obj, extrair_q(obj,w));
+  v= desempacotar_v(obj, extrair_v(obj,w));
+  % allocate memory for row index vector
+  li= zeros(n,1);
+  % allocate memory for column index vectors
+  cos= zeros(n,1);
+  coq= cell(np,1);
+  cov= zeros(n,1);
+  for l= 1:np
+    coq{l}= zeros(n,1);
   end
+  % allocate memory for partial derivatives
+  ds= zeros(n,1);
+  dq= cell(np,1);
+  dv= zeros(n,1);
+  for l= 1:np
+    dq{l}= zeros(n,1);
+  end
+  % compute JP(s), JP(v), and JP(q)(l), l = 1,2,...
+  k= 0;
+  for j= 1:ni
+    for i= 1:nu
+      k= k+1;
+      % compute row and column indexes
+      li(k)= get(uh{i},'ss') + (ns*(j-1));
+      cos(k)= i + (nu*(j-1));
+      cov(k)= n*(np+1) + cos(k);
+      % compute partial derivatives for s and v
+      ds(k)= dpds(uh{i}, s(i,j), q{l}(i,j));
+      dv(k)= dpdv(uh{i}, v(i,j), q{1}(i,j));
+      % compute partial derivatives for q(l), l = 1,2,...
+      for l= 1:np
+        dq{l}(k)= dqp(uh{i}, s(i,j), q{l}(i,j), v(i,j));
+        % compute column index for dp/dq partial derivatives
+        coq{l}(k)= n + n*(l-1) + cos(k);
+      end
+    end
+  end
+  % memory allocation
+  co= zeros(obj.nx, 1);
+  dp= zeros(obj.nx, 1);
+  % concatenate column index vectors
+  co(1:n)= cos;
+  co(n*(np+1)+1:obj.nx)= cov;
+  for l= 1:np
+    co(n*(l-1)+1:n*l)= coq{l};
+  end
+  % concatenate partial derivative vectors
+  dp(1:n)= ds;
+  dp(n*(np+1)+1:obj.nx)= dv;
+  for l= 1:np
+    dp(n*(l-1)+1:n*l)= dq{l};
+  end
+  % build Jacobian
+  JP= sparse(li, co, dp, obj.mb, n, n);
 end

@@ -28,8 +28,7 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function Jg= calcular_Jg(obj,JP,JQ)
-  obj.Jg(obj.ma+obj.mc+1:obj.m, 1:obj.nx)= -JP;
-  obj.Jg(obj.ma+obj.mc+1:obj.m, obj.nx+obj.ny+1:obj.n)= -JQ;
+function Jg= calcular_Jg(obj,w)
+  obj.Jg(obj.ma+obj.mc+1:obj.m, 1:obj.nx)= -calcular_JP(obj,w);
   Jg= obj.Jg;
 end

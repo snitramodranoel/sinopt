@@ -1,3 +1,32 @@
+2010-12-22  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+	* @problema/private/calcular_JPj.m: Função removida.
+
+	* @problema/private/calcular_JP.m: Modificação do algoritmo de construção
+	da matriz Jacobiana de P(.) com uso de vetores de índices de elementos
+	não-nulos.
+	
+2010-12-21  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+	* @problema/private/calcular_JQj.m: Função removida.
+
+	* @problema/private/calcular_Jg.m:
+	(JP, JQ): Argumentos removidos. A função calcular_JP() é chamada e JQ,
+	por ser constante, é calculado na uma única vez na função construir().
+	(w): Argumento para vetor de variáveis primais a ser passado à função
+	calcular_JP().
+	
+	* @problema/construir.m: Adicionada chamada à função calcular_JQ().
+	
+	* @problema/private/calcular_JQ.m: Modificação do algoritmo de construção
+	da matriz Jacobiana de Q(.) com uso de vetores de índices de elementos
+	não-nulos.
+	
+	* @io/private/ute_.m: Correção da leitura da tag [PRIM].
+	
+	* @io/private/{hco,mco,net,opt,uhe,ute,vaz}_.m: Modificação da leitura
+	de linhas descartáveis.
+	
 2010-12-20  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @problema/private/calcular_Ax.m: Adicionado suporte a patamares de carga.

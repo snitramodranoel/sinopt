@@ -66,4 +66,5 @@ function obj= construir(obj)
   obj.Jg(1:obj.ma, 1:obj.nx)= obj.A;
   obj.Jg(obj.ma+obj.mc+1:obj.m, obj.nx+1:obj.nx+obj.ny)= obj.B;
   obj.Jg(obj.ma+1:obj.ma+obj.mc, obj.nx+1:obj.nx+obj.ny)= obj.C;
+  obj.Jg(obj.ma+obj.mc+1:obj.m, obj.nx+obj.ny+1:obj.n)= -calcular_JQ(obj);
 end

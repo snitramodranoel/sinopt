@@ -29,13 +29,30 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function JQ= calcular_JQ(obj)
+  % system data
+  ut= get(obj.si,'ut');
   % system dimensions
   ni= get(obj.si,'ni');
+  np= get(obj.si,'np');
   ns= get(obj.si,'ns');
-  % compute the Jacobian matrix
-  JQ= spalloc(ns*ni, obj.nz, obj.nz);
-  for j= 1:ni
-    % compute gradients of Q(j), j = 1,2,...
-    JQ(ns*(j-1)+1:j*ns,:)= calcular_JQj(obj,j);
+  nt= get(obj.si,'nt');
+  % allocate memory for row index vector
+  li= zeros(obj.nz, 1);
+  % allocate memory for column index vector
+  co= zeros(obj.nz, 1);
+  % partial derivatives memory allocation and computation
+  dz= ones(obj.nz, 1);
+  % build Jacobian matrix
+  k= 0;
+  for l= 1:np
+    for j= 1:ni
+      for t= 1:nt
+        k= k+1;
+        li(k)= get(ut{t},'ss') + (ns*ni*(l-1)) + (ns*(j-1));
+        co(k)= t + (nt*ni*(l-1)) + (nt*(j-1));
+      end
+    end
   end
+  % memory allocation
+  JQ= sparse(li, co, dz, obj.mb, obj.nz, obj.nz);
 end
