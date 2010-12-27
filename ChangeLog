@@ -1,3 +1,17 @@
+2010-12-27  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+	* @uhe/Hp.m: Função removida.
+	
+	* @uhe/dpdss.m: Função adicionada.
+	
+	* @uhe/dpdsq.m: Função adicionada.
+	
+	* @uhe/dpdqq.m: Função adicionada.
+	
+	* @uhe/dpdqv.m: Função adicionada.
+	
+	* @uhe/dpdvv.m: Função adicionada.
+	
 2010-12-22  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @problema/private/calcular_JPj.m: Função removida.
@@ -5,6 +19,12 @@
 	* @problema/private/calcular_JP.m: Modificação do algoritmo de construção
 	da matriz Jacobiana de P(.) com uso de vetores de índices de elementos
 	não-nulos.
+	
+	* @uhe/dpds.m: Função adicionada.
+	
+	* @uhe/dpdq.m: Função adicionada.
+	
+	* @uhe/dpdv.m: Função adicionada.
 	
 2010-12-21  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
