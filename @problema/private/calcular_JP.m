@@ -37,61 +37,40 @@ function JP= calcular_JP(obj,w)
   ns= get(obj.si,'ns');
   nu= get(obj.si,'nu');
   n = nu*ni;
+  m = ns*ni;
   % unpack x variables
   s= desempacotar_s(obj, extrair_s(obj,w));
   q= desempacotar_q(obj, extrair_q(obj,w));
   v= desempacotar_v(obj, extrair_v(obj,w));
   % allocate memory for row index vector
-  li= zeros(n,1);
+  li= zeros(3*n*np,1);
   % allocate memory for column index vectors
-  cos= zeros(n,1);
-  coq= cell(np,1);
-  cov= zeros(n,1);
-  for l= 1:np
-    coq{l}= zeros(n,1);
-  end
+  cos= zeros(n*np,1);
+  coq= zeros(n*np,1);
+  cov= zeros(n*np,1);
   % allocate memory for partial derivatives
-  ds= zeros(n,1);
-  dq= cell(np,1);
-  dv= zeros(n,1);
-  for l= 1:np
-    dq{l}= zeros(n,1);
-  end
-  % compute JP(s), JP(v), and JP(q)(l), l = 1,2,...
+  ds= zeros(n*np,1);
+  dq= zeros(n*np,1);
+  dv= zeros(n*np,1);
+  % compute Jacobian
   k= 0;
-  for j= 1:ni
-    for i= 1:nu
-      k= k+1;
-      % compute row and column indexes
-      li(k)= get(uh{i},'ss') + (ns*(j-1));
-      cos(k)= i + (nu*(j-1));
-      cov(k)= n*(np+1) + cos(k);
-      % compute partial derivatives for s and v
-      ds(k)= dpds(uh{i}, s(i,j), q{l}(i,j));
-      dv(k)= dpdv(uh{i}, v(i,j), q{1}(i,j));
-      % compute partial derivatives for q(l), l = 1,2,...
-      for l= 1:np
-        dq{l}(k)= dqp(uh{i}, s(i,j), q{l}(i,j), v(i,j));
-        % compute column index for dp/dq partial derivatives
-        coq{l}(k)= n + n*(l-1) + cos(k);
+  for l= 1:np
+    for j= 1:ni
+      for i= 1:nu
+        k= k+1;
+        % compute row index
+        li(k)= get(uh{i},'ss') + m*(l-1) + ns*(j-1);
+        % compute column indexes
+        cos(k)= i + (nu*(j-1));
+        coq(k)= n*((l-1) + 1) + cos(k);
+        cov(k)= n*(np+1) + cos(k);
+        % compute partial derivatives
+        ds(k)= dpds(uh{i}, s(i,j), q{l}(i,j));
+        dq(k)= dpdq(uh{i}, s(i,j), q{l}(i,j), v(i,j));
+        dv(k)= dpdv(uh{i}, q{l}(i,j), v(i,j));
       end
     end
   end
-  % memory allocation
-  co= zeros(obj.nx, 1);
-  dp= zeros(obj.nx, 1);
-  % concatenate column index vectors
-  co(1:n)= cos;
-  co(n*(np+1)+1:obj.nx)= cov;
-  for l= 1:np
-    co(n*(l-1)+1:n*l)= coq{l};
-  end
-  % concatenate partial derivative vectors
-  dp(1:n)= ds;
-  dp(n*(np+1)+1:obj.nx)= dv;
-  for l= 1:np
-    dp(n*(l-1)+1:n*l)= dq{l};
-  end
   % build Jacobian
-  JP= sparse(li, co, dp, obj.mb, n, n);
+  JP= sparse(li, [cos; coq; cov], [ds; dq; dv], obj.mb, n, 3*n*np);
 end
