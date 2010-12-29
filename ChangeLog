@@ -1,3 +1,28 @@
+2010-12-29  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+	* @problema/private/calcular_JP.m: Corrigido cálculo da Jacobiana.
+
+	* @problema/private/calcular_HP.m: Adicionado suporte a patamares de carga.
+
+	* @problema/private/calcular_Hg.m: Corrigido número de elementos não-nulos
+	da matriz Hessiana das restrições.
+
+2010-12-28  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+	* @problema/private/desempacotar_lambdaa.m: Função adicionada.
+
+	* @problema/private/desempacotar_lambdab.m: Função adicionada.
+
+	* @problema/private/desempacotar_lambdac.m: Função adicionada.
+	
+	* @problema/private/extrair_lambdaa.m: Função adicionada.
+	
+	* @problema/private/extrair_lambdab.m: Função adicionada.
+	
+	* @problema/private/extrair_lambdac.m: Função adicionada.
+	
+	* @uhe/dpdv.m: Ordem dos argumentos de vazão alterada.
+
 2010-12-27  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @uhe/Hp.m: Função removida.

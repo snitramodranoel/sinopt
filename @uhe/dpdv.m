@@ -28,7 +28,7 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function dv= dpdv(obj,v,q)
+function dv= dpdv(obj,q,v)
   % compute partial derivative in terms of water head
   dhv= derivar(obj.yf{1,2},1,q+v);
   % compute partial derivative in terms of penstock loss

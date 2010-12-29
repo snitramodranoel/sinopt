@@ -1,4 +1,4 @@
-% @problema/private/obter_vlambda_c.m returns lambda_c vector.
+% @problema/private/obter_vlambda_a.m returns lambda_a vector.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,6 +28,6 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function lambda_c= obter_vlambda_c(obj,lambda)
-  lambda_c= lambda(obj.ma+1:obj.ma+obj.mc);
+function ya= extrair_lambdaa(obj,lambda)
+  ya= lambda(1:obj.ma);
 end

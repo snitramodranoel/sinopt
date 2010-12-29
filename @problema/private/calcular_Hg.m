@@ -28,11 +28,13 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function Hg= calcular_Hg(obj,u,lambda)
+function Hg= calcular_Hg(obj,w,lambda)
   % system dimensions
   ni= get(obj.si,'ni');
+  np= get(obj.si,'np');
   nu= get(obj.si,'nu');
+  n = nu*ni;
   % compute Hessian
-  Hg= spalloc(obj.n, obj.n, 7*nu*ni);
-  Hg(1:obj.nx, 1:obj.nx)= -calcular_HP(obj,u,lambda);
+  Hg= spalloc(obj.n, obj.n, n*(5*np + 2));
+  Hg(1:obj.nx, 1:obj.nx)= -calcular_HP(obj,w,lambda);
 end

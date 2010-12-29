@@ -33,9 +33,10 @@ function Q= desempacotar_q(obj,q)
   ni= get(obj.si,'ni');
   np= get(obj.si,'np');
   nu= get(obj.si,'nu');
-  % unpack q
-  n= nu*ni;
+  n = nu*ni;
+  % memory allocation
   Q= cell(np,1);
+  % unpack q
   for l= 1:np
     Q{l}= reshape(q(n*(l-1)+1 : n*l),nu,ni);
   end

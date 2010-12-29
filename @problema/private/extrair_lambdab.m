@@ -1,5 +1,4 @@
-% @problema/private/obter_mlambda_c.m returns lambda_c vector unpacked in
-% matrix form.
+% @problema/private/extrair_lambdab.m returns lambdab vector from lambda.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -29,10 +28,6 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function lambda_c= obter_mlambda_c(obj,lambda)
-  % system dimensions
-  ni= get(obj.si,'ni');
-  nc= get(obj.si,'nc');
-  % return matrix
-  lambda_c= reshape(obter_vlambda_c(obj,lambda),nc,ni);
+function yb= extrair_lambdab(obj,lambda)
+  yb= lambda(obj.ma+obj.mc+1:obj.m);
 end

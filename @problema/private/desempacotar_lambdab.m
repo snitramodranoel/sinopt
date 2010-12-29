@@ -1,5 +1,4 @@
-% @problema/private/obter_mlambda_b.m returns lambda_b vector unpacked in
-% matrix form.
+% @problema/private/desempacotar_lambdab.m unpacks lambdab variables.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -29,10 +28,16 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function lambda_b= obter_mlambda_b(obj,lambda)
+function yb= desempacotar_lambdab(obj,lambdab)
   % system dimension
   ni= get(obj.si,'ni');
+  np= get(obj.si,'np');
   ns= get(obj.si,'ns');
-  % return matrix
-  lambda_b= reshape(obter_vlambda_b(obj,lambda),ns,ni);
+  n = ns*ni;
+  % memory allocation
+  yb= cell(np,1);
+  % unpack yb
+  for l= 1:np
+    yb{l}= reshape(lambdab(n*(l-1)+1 : n*l),ns,ni);
+  end
 end

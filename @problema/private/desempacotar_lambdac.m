@@ -1,4 +1,4 @@
-% @problema/private/obter_vlambda_a.m returns lambda_a vector.
+% @problema/private/desempacotar_lambdac.m unpacks lambdac variables.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,6 +28,16 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function lambda_a= obter_vlambda_a(obj,lambda)
-  lambda_a= lambda(1:obj.ma);
+function yc= desempacotar_lambdac(obj,lambdac)
+  % system dimensions
+  ni= get(obj.si,'ni');
+  nc= get(obj.si,'nc');
+  np= get(obj.si,'np');
+  n = nc*ni;
+  % memory allocation
+  yc= cell(np,1);
+  % unpack yc
+  for l= 1:np
+    yc{l}= reshape(lambdac(n*(l-1)+1 : n*l),nc,ni);
+  end
 end
