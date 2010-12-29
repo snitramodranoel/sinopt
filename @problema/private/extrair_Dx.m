@@ -1,4 +1,4 @@
-% @problema/private/obter_Dx.m returns Dx submatrix.
+% @problema/private/extrair_Dx.m returns Dx submatrix.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,6 +28,6 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function Dx= obter_Dx(obj,D)
+function Dx= extrair_Dx(obj,D)
   Dx= D(1:obj.nx, 1:obj.nx);
 end

@@ -7,6 +7,18 @@
 	* @problema/private/calcular_Hg.m: Corrigido número de elementos não-nulos
 	da matriz Hessiana das restrições.
 
+	* @problema/private/extrair_Dx.m: Função adicionada.
+	
+	* @problema/private/extrair_Dy.m: Função adicionada.
+	
+	* @problema/private/extrair_Dz.m: Função adicionada.
+	
+	* @problema/private/obter_Dx.m: Função removida.
+
+	* @problema/private/obter_Dy.m: Função removida.
+
+	* @problema/private/obter_Dz.m: Função removida.
+
 2010-12-28  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @problema/private/desempacotar_lambdaa.m: Função adicionada.
@@ -20,6 +32,18 @@
 	* @problema/private/extrair_lambdab.m: Função adicionada.
 	
 	* @problema/private/extrair_lambdac.m: Função adicionada.
+
+	* @problema/private/obter_mlambda_a.m: Função removida.
+
+	* @problema/private/obter_mlambda_b.m: Função removida.
+
+	* @problema/private/obter_mlambda_c.m: Função removida.
+	
+	* @problema/private/obter_vlambda_a.m: Função removida.
+	
+	* @problema/private/obter_vlambda_b.m: Função removida.
+	
+	* @problema/private/obter_vlambda_c.m: Função removida.
 	
 	* @uhe/dpdv.m: Ordem dos argumentos de vazão alterada.
 

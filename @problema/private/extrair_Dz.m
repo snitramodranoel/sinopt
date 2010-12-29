@@ -1,4 +1,4 @@
-% @problema/private/obter_Dy.m returns Dy submatrix.
+% @problema/private/extrair_Dz.m returns Dz submatrix.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,6 +28,6 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function Dy= obter_Dy(obj,D)
-  Dy= D(obj.nx+1:obj.nx+obj.ny, obj.nx+1:obj.nx+obj.ny);
+function Dz= extrair_Dz(obj,D)
+  Dz= D(obj.nx+obj.ny+1:obj.n, obj.nx+obj.ny+1:obj.n);
 end
