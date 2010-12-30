@@ -94,11 +94,11 @@ function HP= calcular_HP(obj,w,lambda)
         % temporary buffer
         y= yb{l}(get(uh{i},'ss'),j);
         % compute partial derivatives
-        dss(u)= dss(u) + y * dpdss(obj,s(i,j),q{l}(i,j));
-        dsq(k)= y * dpdsq(obj,s(i,j));
-        dqq(k)= y * dpdqq(obj,q{l}(i,j),v(i,j));
-        dqv(k)= y * dpdqv(obj,q{l}(i,j),v(i,j));
-        dvv(k)= dvv(u) + y * dpdvv(obj,q{l}(i,j),v(i,j));
+        dss(u)= dss(u) + y * dpdss(uh{i},s(i,j),q{l}(i,j));
+        dsq(k)= y * dpdsq(uh{i},s(i,j));
+        dqq(k)= y * dpdqq(uh{i},q{l}(i,j),v(i,j));
+        dqv(k)= y * dpdqv(uh{i},q{l}(i,j),v(i,j));
+        dvv(k)= dvv(u) + y * dpdvv(uh{i},q{l}(i,j),v(i,j));
       end
     end
   end

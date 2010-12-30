@@ -31,7 +31,7 @@
 function q= extrair_q(obj,w)
   % system dimensions
   ni= get(obj.si,'ni');
-  np= get(obj.np,'np');
+  np= get(obj.si,'np');
   nu= get(obj.si,'nu');
   % return vector
   q=  w(nu*ni+1:nu*ni*(np+1));

@@ -43,7 +43,7 @@ function JP= calcular_JP(obj,w)
   q= desempacotar_q(obj, extrair_q(obj,w));
   v= desempacotar_v(obj, extrair_v(obj,w));
   % allocate memory for row index vector
-  li= zeros(3*n*np,1);
+  li= zeros(n*np,1);
   % allocate memory for column index vectors
   cos= zeros(n*np,1);
   coq= zeros(n*np,1);
@@ -72,5 +72,5 @@ function JP= calcular_JP(obj,w)
     end
   end
   % build Jacobian
-  JP= sparse(li, [cos; coq; cov], [ds; dq; dv], obj.mb, n, 3*n*np);
+  JP= sparse([li;li;li], [cos;coq;cov], [ds;dq;dv], obj.mb, obj.nx, 3*n*np);
 end

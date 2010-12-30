@@ -34,5 +34,5 @@ function v= extrair_v(obj,w)
   np= get(obj.si,'np');
   nu= get(obj.si,'nu');
   % return vector
-  v=  w(nu*ni*(np+2)+1:obj.nx);
+  v=  w(nu*ni*(np+1)+1:obj.nx);
 end

@@ -64,7 +64,7 @@ function obj= opt_(obj,arquivo)
     linha= fgetl(fid);
   end
   % read verbosity
-  obj.pb= set(obj.pb,'dv',lower(fgetl(fid)));
+  obj.pb= set(obj.pb,'dv',strtrim(lower(fgetl(fid))));
 
   % close file
   fclose(fid);

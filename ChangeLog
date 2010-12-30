@@ -18,6 +18,10 @@
 	* @problema/private/obter_Dy.m: Função removida.
 
 	* @problema/private/obter_Dz.m: Função removida.
+	
+	* @problema/private/calcular_D.m: Construção da matriz otimizada.
+	
+	* @problema/private/calcular_Dy.m: Otimização da construção da matriz.
 
 2010-12-28  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
