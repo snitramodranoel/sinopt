@@ -28,12 +28,10 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function D= calcular_D(obj,u,lambda,SiW,TiZ)
-  % compute diagonal matrix of complementarities
-  C= spalloc(obj.n,obj.n,obj.n);
-  for j= 1:obj.n
-    C(j,j)= SiW(j) + TiZ(j);
-  end
+function D= calcular_D(obj,w,lambda,SiW,TiZ)
+  % compute row and column indexes
+  li= 1:obj.n;
+  co= 1:obj.n;
   % compute matrix additions
-  D= calcular_H(obj,u,lambda) + C;
+  D= calcular_H(obj, w, lambda) + sparse(li, co, SiW+TiZ, obj.n, obj.n, obj.n);
 end

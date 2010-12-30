@@ -29,8 +29,9 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function Dy= calcular_Dy(obj, SiyWy, TiyUy)
-  Dy = spalloc(obj.ny, obj.ny, obj.ny);
-  for j= 1:obj.ny
-    Dy(j,j) = SiyWy(j) + TiyUy(j);
-  end
+  % compute row and column indexes
+  li= 1:obj.ny;
+  co= 1:obj.ny;
+  % compute Dy
+  Dy= sparse(li, co, SiyWy+TiyUy, obj.ny, obj.ny, obj.ny);
 end
