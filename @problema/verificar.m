@@ -113,4 +113,9 @@ function obj= verificar(obj)
   end
   % clear temporary buffer
   clear indices;
+  %% load level duration
+  if norm(sum(get(obj.si,'tp'),1)' - get(obj.si,'ti'), Inf) > 0
+    error('sinopt:problema:verificar:timeHorizonMismatch', ...
+        'load level duration does not match stage duration');
+  end
 end
