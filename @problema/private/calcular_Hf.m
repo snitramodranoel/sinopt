@@ -29,7 +29,7 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function Hf= calcular_Hf(obj,w)
-  % list of thermal plants
+  % system data
   ut= get(obj.si,'ut');
   % system dimensions
   ni= get(obj.si,'ni');

@@ -211,7 +211,7 @@ function obj= hco_(obj,arquivo)
   ti= zeros(ni,1);
   for j= 1:ni
     fscanf(fid,'%s',1); % bogus
-    ti(:,j)= fscanf(fid,'%d',1);
+    ti(j)= fscanf(fid,'%d',1);
   end
   obj.si= set(obj.si,'ti', ti);
   % clear temporary buffer

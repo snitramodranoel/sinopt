@@ -29,7 +29,7 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function df= calcular_df(obj,w)
-  % list of thermal plants
+  % system data
   ut= get(obj.si,'ut');
   % system dimensions
   ni= get(obj.si,'ni');
@@ -52,5 +52,5 @@ function df= calcular_df(obj,w)
     end
   end
   % fill in gradient elements
-  df= [zeros(obj.nx+obj.ny,1); empacotar_z(obj, z)];
+  df= [zeros(obj.nx+obj.ny,1); empacotar_z(obj, dz)];
 end
