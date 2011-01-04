@@ -98,7 +98,7 @@ function HP= calcular_HP(obj,w,lambda)
         dsq(k)= y * dpdsq(uh{i},s(i,j));
         dqq(k)= y * dpdqq(uh{i},q{l}(i,j),v(i,j));
         dqv(k)= y * dpdqv(uh{i},q{l}(i,j),v(i,j));
-        dvv(k)= dvv(u) + y * dpdvv(uh{i},q{l}(i,j),v(i,j));
+        dvv(u)= dvv(u) + y * dpdvv(uh{i},q{l}(i,j),v(i,j));
       end
     end
   end
