@@ -1,7 +1,10 @@
 2011-01-03  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @io/private/hco_.m ([DPAT]): Alteração do formato dos dados.
+	(obj.tp): Alteração das dimensões.
 	
+	* @sistema/sistema.m (obj.tp): Alteração das dimensões.
+
 	* @problema/verificar.m: Adicionada verificação da duração dos patamares.
 	
 2010-12-29  Leonardo Martins  <leonardo@cose.fee.unicamp.br>

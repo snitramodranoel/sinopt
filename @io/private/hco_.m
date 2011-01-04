@@ -223,13 +223,17 @@ function obj= hco_(obj,arquivo)
   while not(strcmp('[DPAT]',linha))
     linha= fgetl(fid);
   end
+  % memory allocation
+  tp= cell(np,1);
+  for l= 1:np
+    tp{l}= zeros(ni,1);
+  end
   % read
-  tp= zeros(np,ni);
   for j= 1:ni
     fscanf(fid,'%s',1); % bogus
     for l= 1:np
       fscanf(fid,'%d',1); % bogus
-      tp(l,j)= fscanf(fid,'%d',1);
+      tp{l}(j)= fscanf(fid,'%d',1);
     end
   end
   obj.si= set(obj.si,'tp', tp);

@@ -33,7 +33,6 @@ function obj = construir_lb(obj)
   dn= get(obj.si,'dn');
   in= get(obj.si,'in');
   ni= get(obj.si,'ni');
-  nl= get(obj.si,'nl');
   np= get(obj.si,'np');
   nt= get(obj.si,'nt');
   nu= get(obj.si,'nu');
@@ -45,31 +44,24 @@ function obj = construir_lb(obj)
   % set final reservoir storage requirements
   ls(:,ni)= vf;
   % store data
-  obj.ls= reshape(ls, nu*ni, 1);
+  obj.ls= empacotar_s(obj,ls);
   % clear temporary buffer
   clear ls;
   %% lower bounds on water discharge
-  %  memory allocation for one-dimensional data packing
-  obj.lq= zeros(nu*np*ni, 1);
+  %  memory allocation
+  lq= cell(np,1);
   %  fill in elements
-  n= nu*ni;
   for l= 1:np
-    obj.lq(n*(l-1)+1 : n*l)= reshape(dn, n, 1);
+    lq{l}= dn;
   end
-  % clear temporary buffer
-  clear n;
+  %  pack data
+  obj.lq= empacotar_q(obj,lq);
+  %  clear temporary buffer
+  clear lq;
   %% lower bounds on water spill
   obj.lv= zeros(nu*ni,1);
   %% lower bounds on transmission
-  %  memory allocation for one-dimensional data packing
-  obj.ly= zeros(obj.ny, 1);
-  %  fill in elements
-  n= nl*ni;
-  for l= 1:np
-    obj.ly(n*(l-1)+1 : n*l)= reshape(in{l}, n, 1);
-  end
-  % clear temporary buffer
-  clear n;
+  obj.ly= empacotar_y(obj,in);
   %% lower bounds on thermal power generation
   %  three-dimensional memory allocation
   lz= cell(np, 1);
@@ -85,14 +77,6 @@ function obj = construir_lb(obj)
       end
     end
   end
-  % memory allocation for one-dimensional data packing
-  obj.lz= zeros(obj.nz, 1);
-  % store data
-  n= nt*ni;
-  for l= 1:np
-    obj.lz(n*(l-1)+1 : n*l)= reshape(lz{l}, n, 1);
-  end
-  % clear temporary buffer
-  clear gn;
-  clear lz;
+  % pack data
+  obj.lz= empacotar_z(obj,lz);
 end

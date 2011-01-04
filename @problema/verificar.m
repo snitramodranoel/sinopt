@@ -29,6 +29,12 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function obj= verificar(obj)
+  % system data
+  ti= get(obj.si,'ti');
+  tp= get(obj.si,'tp');
+  % system dimensions
+  ni= get(obj.si,'ni');
+  np= get(obj.si,'np');
   %% bounds on reservoir storage
   alpha= 0.999;
   if length(obj.ls) ~= length(obj.us)
@@ -114,8 +120,14 @@ function obj= verificar(obj)
   % clear temporary buffer
   clear indices;
   %% load level duration
-  if norm(sum(get(obj.si,'tp'),1)' - get(obj.si,'ti'), Inf) > 0
-    error('sinopt:problema:verificar:timeHorizonMismatch', ...
-        'load level duration does not match stage duration');
+  for j= 1:ni
+    sp= 0;
+    for l= 1:np
+      sp= sp + tp{l}(j);
+    end
+    if sp ~= ti(j)
+      error('sinopt:problema:verificar:timeHorizonMismatch', ...
+          'load level duration does not match stage duration @ j(%d)', j);
+    end
   end
 end

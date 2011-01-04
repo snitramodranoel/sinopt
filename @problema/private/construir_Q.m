@@ -46,7 +46,7 @@ function obj= construir_Q(obj)
     obj.Ql{l}= spalloc(nu*ni, nu*ni, nu*(1+nj)); % memory allocation
     for k= 1:nu:nu*ni
       j= j+1;
-      obj.Ql{l}(k:k+nu-1, k:k+nu-1)= (tp(l,j)/ti(j)) * obj.M;
+      obj.Ql{l}(k:k+nu-1, k:k+nu-1)= (tp{l}(j)/ti(j)) * obj.M;
     end
     obj.Q= [obj.Q, obj.Ql{l}];
   end

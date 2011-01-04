@@ -35,7 +35,6 @@ function obj = construir_ub(obj)
   af= get(obj.si,'af');
   im= get(obj.si,'im');
   ni= get(obj.si,'ni');
-  nl= get(obj.si,'nl');
   np= get(obj.si,'np');
   nq= get(obj.si,'nq');
   nt= get(obj.si,'nt');
@@ -44,10 +43,10 @@ function obj = construir_ub(obj)
   ut= get(obj.si,'ut');
   vm= get(obj.si,'vm');
   %% upper bounds on reservoir storage
-  obj.us= reshape(vm, nu*ni, 1);
+  obj.us= empacotar_s(obj,vm);
   %% upper bounds on water release
   %  memory allocation
-  uq= cell(np, 1);
+  uq= cell(np,1);
   uv= zeros(nu,ni);
   for l= 1:np
     uq{l}= zeros(nu,ni);
@@ -67,30 +66,16 @@ function obj = construir_ub(obj)
       uv(k,j)= max([maf; beta*qef]);
     end
   end
-  %  memory allocation for one-dimensional data packing
-  obj.uq= zeros(nu*np*ni, 1);
-  obj.uv= reshape(uv, nu*ni, 1);
   %  store data
-  n= nu*ni;
-  for l= 1:np
-    obj.uq(n*(l-1)+1 : n*l)= reshape(uq{l}, n, 1);
-  end
+  obj.uq= empacotar_q(obj,uq);
+  obj.uv= empacotar_v(obj,uv);
   %  clear temporary buffers
-  clear n;
   clear dm;
   clear uq;
   clear uv;
   clear qef;
   %% upper bounds on power transmission
-  %  memory allocation for one-dimensional data packing
-  obj.uy= zeros(obj.ny, 1);
-  %  fill in elements
-  n= nl*ni;
-  for l= 1:np
-    obj.uy(n*(l-1)+1 : n*l)= reshape(im{l}, n, 1);
-  end
-  % clear temporary buffer
-  clear n;
+  obj.uy= empacotar_y(obj,im);
   %% upper bounds thermal power generation
   uz= cell(np, 1);
   for l= 1:np
@@ -105,15 +90,6 @@ function obj = construir_ub(obj)
       end
     end
   end
-  % memory allocation for one-dimensional data packing
-  obj.uz= zeros(obj.nz, 1);
-  % store data
-  n= nt*ni;
-  for l= 1:np
-    obj.uz(n*(l-1)+1 : n*l)= reshape(uz{l}, n, 1);
-  end
-  % clear temporary buffer
-  clear n;
-  clear gm;
-  clear uz;
+  % pack data
+  obj.uz= empacotar_z(obj,uz);
 end

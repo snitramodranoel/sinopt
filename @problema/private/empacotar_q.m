@@ -37,6 +37,6 @@ function q= empacotar_q(obj,Q)
   n= nu*ni;
   q= zeros(nu*np*ni,1);
   for l= 1:np
-    q(q(n*(l-1)+1:n*l))= reshape(Q{l}, nu*ni, 1);
+    q(n*(l-1)+1:n*l)= reshape(Q{l}, nu*ni, 1);
   end
 end
