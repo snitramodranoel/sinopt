@@ -95,10 +95,10 @@ function valor= get(obj, propriedade)
     case 'n'
       valor= obj.n;
     % objects
-    case 'dp'
-      valor= obj.dp;
     case 'pf'
       valor= obj.pf;
+    case 'rs'
+      valor= obj.rs;
     case 'si'
       valor= obj.si;
     % solver options

@@ -68,9 +68,9 @@ function obj= problema(varargin)
   % cache
   obj.Jg= []; % g(u) function Jacobian matrix
   % objects
-  obj.dp= despacho(); % results
-  obj.pf= profiler(); % statistics
-  obj.si= sistema();  % power system
+  obj.pf= profiler();  % statistics
+  obj.rs= resultado(); % results
+  obj.si= sistema();   % power system
   % solver options
   obj.km=   128; % maximum number of iterations
   obj.dv= 'off'; % verbosity (off, iter, notify, final)

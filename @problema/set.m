@@ -84,10 +84,10 @@ function obj= set(obj, varargin)
       case 'uz'
         obj.uz= valor;
       % objects
-      case 'dp'
-        obj.dp= valor;
       case 'pf'
         obj.pf= valor;
+      case 'rs'
+        obj.rs= valor;
       case 'si'
         obj.si= valor;
       % solver options
