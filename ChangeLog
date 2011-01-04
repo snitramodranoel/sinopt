@@ -1,3 +1,9 @@
+2011-01-04  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+	* @despacho: Classe removida.
+	
+	* @resultado: Classe adicionada.
+
 2011-01-03  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @io/private/hco_.m ([DPAT]): Alteração do formato dos dados.

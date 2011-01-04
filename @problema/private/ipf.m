@@ -361,35 +361,7 @@ function obj= ipf(obj)
   if (strcmp(obj.dv,'iter') || strcmp(obj.dv,'final'))
     printr();
   end
-  %% store optimal solution
-  %  unpack variables
-  ms= obter_ms(obj,x);
-  mq= obter_mq(obj,x);
-  mv= obter_mv(obj,x);
-  my= obter_my(obj,x);
-  %  compute power generation
-  ni= get(obj.si,'ni');
-  ns= get(obj.si,'ns');
-  nu= get(obj.si,'nu');
-  uh= get(obj.si,'uh');
-  %  (by hydro plant)
-  mp= zeros(nu,ni);
-  for j= 1:ni
-    for i= 1:nu
-      mp(i,j)= p(uh{i}, ms(i,j), mq(i,j), mv(i,j));
-    end
-  end
-  %  (by subsystem)
-  mpa= reshape(calcular_P(obj,x),ns,ni);
-  mza= reshape(calcular_Q(obj,x),ns,ni);
-  %  data update
-  obj.dp= set(obj.dp,'ms',ms);
-  obj.dp= set(obj.dp,'mq',mq);
-  obj.dp= set(obj.dp,'mv',mv);
-  obj.dp= set(obj.dp,'my',my);
-  obj.dp= set(obj.dp,'mz',mza);
-  obj.dp= set(obj.dp,'mp',mp);
-  obj.dp= set(obj.dp,'ma',mpa);
+  %% save optimal solution
   %% verbosity subfunctions
   %  header
   function printc()

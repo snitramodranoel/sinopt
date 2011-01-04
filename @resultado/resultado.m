@@ -1,4 +1,4 @@
-% @despacho/get.m returns object property values.
+% @resultado/resultado.m stores optimization results.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,24 +28,26 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function valor = get(obj, propriedade)
-  switch propriedade
-      case 's'
-          valor= obj.s;
-      case 'q'
-          valor= obj.q;
-      case 'v'
-          valor= obj.v;
-      case 'y'
-          valor= obj.y;
-      case 'z'
-          valor= obj.z;
-      case 'la'
-          valor= obj.la;
-      case 'lb'
-          valor= obj.lb;
-      otherwise
-          error('sinopt:despacho:get:invalidProperty', ...
-              '%s is not a valid property', propriedade);
+function obj = resultado(varargin)
+  obj.w      = []; % primal variables
+  obj.lambda = []; % dual variables
+  % instantiation
+  switch nargin
+    % default
+    case 0
+      % class instantiation
+        obj= class(obj,'resultado');
+    % cloning
+    case 1
+      if isa(varargin{1},'resultado')
+        obj= varargin{1};
+      else
+        error('sinopt:resultado:invalidArgument', ...
+            'not a valid RESULTADO object');
+      end
+      % class instantiation
+      obj= class(obj, 'resultado');
+    otherwise
+      error('sinopt:resultado:invalidArgument','wrong number of arguments');
   end
 end

@@ -1,4 +1,4 @@
-% @despacho/dump.m dumps object property values to standard output.
+% @resultado/set.m sets object property values.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,12 +28,22 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function dump(obj)
-  fprintf(1,'despacho.s:  %dx%d\n',size(obj.s,1),size(obj.s,2));
-  fprintf(1,'despacho.q:  %dx%d\n',size(obj.q,1),size(obj.q,2));
-  fprintf(1,'despacho.v:  %dx%d\n',size(obj.v,1),size(obj.v,2));
-  fprintf(1,'despacho.y:  %dx%d\n',size(obj.y,1),size(obj.y,2));
-  fprintf(1,'despacho.z:  %dx%d\n',size(obj.z,1),size(obj.z,2));
-  fprintf(1,'despacho.la: %dx%d\n',size(obj.la,1),size(obj.la,2));
-  fprintf(1,'despacho.lb: %dx%d\n',size(obj.lb,1),size(obj.lb,2));
+function obj= set(obj, varargin)
+  propargin = varargin;
+  while (length(propargin) >= 2)
+    propriedade= propargin{1};
+    valor= propargin{2};
+    % update list of arguments
+    propargin= propargin(3:end);
+    switch propriedade
+      case 'w'
+        obj.w= valor;
+      case 'lambda'
+        obj.lambda= valor;
+      otherwise
+        error('sinopt:resultado:set:invalidProperty', ...
+            '%s is not a valid property', ...
+            propriedade);
+    end
+  end
 end

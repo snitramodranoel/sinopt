@@ -1,4 +1,4 @@
-% @despacho/set.m sets object property values.
+% @resultado/get.m returns object property values.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,31 +28,15 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function obj= set(obj, varargin)
-  propargin = varargin;
-  while (length(propargin) >= 2)
-      propriedade= propargin{1};
-      valor= propargin{2};
-      % update list of arguments
-      propargin= propargin(3:end);
-      switch propriedade
-          case 's'
-              obj.s= valor;
-          case 'q'
-              obj.q= valor;
-          case 'v'
-              obj.v= valor;
-          case 'y'
-              obj.y= valor;
-          case 'z'
-              obj.z= valor;
-          case 'la'
-              obj.la= valor;
-          case 'lb'
-              obj.lb= valor;
-          otherwise
-              error('sinopt:despacho:set:invalidProperty', ...
-                  '%s is not a valid property', propriedade);
-      end
+function valor = get(obj, propriedade)
+  switch propriedade
+    case 'w'
+      valor= obj.w;
+    case 'lambda'
+      valor= obj.lambda;
+    otherwise
+      error('sinopt:despacho:get:invalidProperty', ...
+          '%s is not a valid property', ...
+          propriedade);
   end
 end

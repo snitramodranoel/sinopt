@@ -1,4 +1,4 @@
-% @despacho/despacho.m stores optimization results and statistics.
+% @resultado/dump.m dumps object property values to standard output.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,30 +28,7 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function obj = despacho(varargin)
-  obj.s=  []; % water storage                      [hm^3]
-  obj.q=  {}; % water discharge                    [m^3/s]
-  obj.v=  []; % water spill                        [m^3/s]
-  obj.y=  {}; % power transmission                 [MW]
-  obj.z=  {}; % power generation at thermal plants [MW]
-  obj.la= []; % water value                        [R$/m^3/s]
-  obj.lb= {}; % marginal operating costs           [R$/MW]
-
-  switch nargin
-    % default
-    case 0
-      % class instantiation
-        obj= class(obj,'despacho');
-    % cloning
-    case 1
-      if isa(varargin{1},'despacho')
-        obj= varargin{1};
-      else
-        error('sinopt:despacho:invalidArgument','Not a valid DESPACHO object');
-      end
-      % class instantiation
-      obj= class(obj, 'despacho');
-    otherwise
-      error('sinopt:despacho:invalidArgument','Wrong number of arguments');
-  end
+function dump(obj)
+  fprintf(1,'resultado.w:      %dx%d\n',size(obj.w,1),size(obj.w,2));
+  fprintf(1,'resultado.lambda: %dx%d\n',size(obj.lambda,1),size(obj.lambda,2));
 end
