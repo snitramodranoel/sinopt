@@ -5,6 +5,12 @@
 	* @resultado: Classe adicionada.
 	
 	* @ute/{ute,get,set,dump}.m (obj.cg): Propriedade renomeada para obj.co
+	
+	* @problema/{problema,get,set,dump} (obj.rs): Propriedade adicionada.
+	(obj.dp): Propriedade removida.
+	
+	* @problema/private/calcular_{f,df,Hf}.m:
+	Adicionado fator de ponderação por patamar ao cálculo dos custos.
 
 2011-01-03  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 

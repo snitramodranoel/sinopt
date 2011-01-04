@@ -35,15 +35,17 @@ function f= calcular_f(obj,w)
   ni= get(obj.si,'ni');
   np= get(obj.si,'np');
   nt= get(obj.si,'nt');
+  ti= get(obj.si,'ti');
+  tp= get(obj.si,'tp');
   % unpack z variables
-  z=  desempacotar_z(obj, extrair_z(obj, w));
+  z=  desempacotar_z(obj, extrair_z(obj,w));
   % compute complementary thermal power generation costs
   f= 0.0;
   for k= 1:nt
-    cg= get(ut{k},'cg');
+    co= get(ut{k},'co');
     for j= 1:ni
       for l= 1:np
-        f= f + calcular(cg, z{l}(k,j));
+        f= f + calcular(co, z{l}(k,j), tp{l}(j)/ti(j)*(ti(j)/mean(ti)));
       end
     end
   end

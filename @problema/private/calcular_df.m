@@ -35,8 +35,10 @@ function df= calcular_df(obj,w)
   ni= get(obj.si,'ni');
   np= get(obj.si,'np');
   nt= get(obj.si,'nt');
+  ti= get(obj.si,'ti');
+  tp= get(obj.si,'tp');
   % unpack z variables
-  z= desempacotar_z(obj, extrair_z(obj, w));
+  z= desempacotar_z(obj, extrair_z(obj,w));
   % memory allocation
   dz= cell(np,1);
   for l= 1:np
@@ -44,10 +46,10 @@ function df= calcular_df(obj,w)
   end
   % compute partial derivatives
   for k= 1:nt
-    cg= get(ut{k},'cg');
+    co= get(ut{k},'co');
     for j= 1:ni
       for l= 1:np
-        dz{l}(k,j)= derivar(cg, 1, z{l}(k,j));
+        dz{l}(k,j)= derivar(co, 1, z{l}(k,j), tp{l}(j)/ti(j)*(ti(j)/mean(ti)));
       end
     end
   end

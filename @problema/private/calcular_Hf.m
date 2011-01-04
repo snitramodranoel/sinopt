@@ -35,8 +35,10 @@ function Hf= calcular_Hf(obj,w)
   ni= get(obj.si,'ni');
   np= get(obj.si,'np');
   nt= get(obj.si,'nt');
+  ti= get(obj.si,'ti');
+  tp= get(obj.si,'tp');
   % unpack z variables
-  z= desempacotar_z(obj, extrair_z(obj, w));
+  z= desempacotar_z(obj, extrair_z(obj,w));
   % memory allocation
   Hfz= spalloc(obj.nz, obj.nz, obj.nz);
   % compute Hessian
@@ -45,7 +47,7 @@ function Hf= calcular_Hf(obj,w)
     for j= 1:ni
       for k= 1:nt
         i= i+1;
-        Hfz(i,i)= derivar(get(ut{k},'cg'), 2, z{l}(k,j));
+        Hfz(i,i)= derivar(get(ut{k},'co'), 2, z{l}(k,j), tp{l}(j)/ti(j)*(ti(j)/mean(ti)));
       end
     end
   end
