@@ -30,7 +30,7 @@
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function obj = ute(varargin)
   obj.cd=           0; % code
-  obj.cg= polinomio(); % cost function            [R$/MWh]
+  obj.co= polinomio(); % operation cost function  [R$/MWh]
   obj.eo=           0; % operation status
   obj.fc=          []; % capacity factor (p,j)    [0,1]
   obj.gn=          []; % minimum generation (p,j) [MW]

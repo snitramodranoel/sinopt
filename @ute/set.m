@@ -38,8 +38,8 @@ function obj= set(obj, varargin)
       switch propriedade
           case 'cd'
               obj.cd= valor;
-          case 'cg'
-              obj.cg= valor;
+          case 'co'
+              obj.co= valor;
           case 'eo'
               obj.eo= valor;
           case 'fc'

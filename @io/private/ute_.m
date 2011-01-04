@@ -200,8 +200,8 @@ function obj= ute_(obj,arquivo)
     % read polynomial data
     cf= fscanf(fid,'%f',[5 1]);
     % store polinomial data
-    polinomio= set(get(ut{j},'cg'),'cf',cf);
-    ut{j}= set(ut{j},'cg',polinomio);
+    polinomio= set(get(ut{j},'co'),'cf',cf);
+    ut{j}= set(ut{j},'co',polinomio);
     % clear temporary buffers
     clear polinomio;
     clear cf;

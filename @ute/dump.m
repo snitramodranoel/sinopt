@@ -30,7 +30,7 @@
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function dump(obj)
   fprintf(1,'ute.cd: %d\n', obj.cd);
-  fprintf(1,'ute.cg: is a polynomial\n');
+  fprintf(1,'ute.co: is a polynomial\n');
   fprintf(1,'ute.eo: %d\n', obj.eo);
   fprintf(1,'ute.fc: %dx%d\n', size(obj.fc,1), size(obj.fc,2));
   fprintf(1,'ute.gn: %dx%d\n', size(obj.gn,1), size(obj.gn,2));

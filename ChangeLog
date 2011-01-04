@@ -3,6 +3,8 @@
 	* @despacho: Classe removida.
 	
 	* @resultado: Classe adicionada.
+	
+	* @ute/{ute,get,set,dump}.m (obj.cg): Propriedade renomeada para obj.co
 
 2011-01-03  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 

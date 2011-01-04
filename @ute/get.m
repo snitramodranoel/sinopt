@@ -32,8 +32,8 @@ function valor = get(obj, propriedade)
   switch propriedade
       case 'cd'
           valor= obj.cd;
-      case 'cg'
-          valor= obj.cg;
+      case 'co'
+          valor= obj.co;
       case 'eo'
           valor= obj.eo;
       case 'fc'
