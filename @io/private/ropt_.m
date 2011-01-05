@@ -39,26 +39,27 @@ function ropt_(obj,arquivo)
   nt= get(obj.si,'nt');
   nu= get(obj.si,'nu');
   % problem data
-  af= get(obj.si,'af');                % incremental inflows
-  ai= get(obj.si,'ai');                % start year
-  di= get(obj.si,'di');                % start day
-  mi= get(obj.si,'mi');                % start month
-  uh= get(obj.si,'uh');                % list of hydro plants
-  uq= reshape(get(obj.pb,'uq'),nu,ni); % maximum discharge
-  ti= get(obj.si,'ti');                % duration of stages
-  vi= get(obj.si,'vi');                % initial reservoir storage states
+  af= get(obj.si,'af');           % incremental inflows
+  ai= get(obj.si,'ai');           % start year
+  di= get(obj.si,'di');           % start day
+  mi= get(obj.si,'mi');           % start month
+  uh= get(obj.si,'uh');           % list of hydro plants
+  ti= get(obj.si,'ti');           % duration of stages
+  vi= get(obj.si,'vi');           % initial reservoir storage states
   % optimal solution
-  s= get(get(obj.pb,'dp'),'s');        % reservoir storage
-  q= get(get(obj.pb,'dp'),'q');        % water discharge
-  v= get(get(obj.pb,'dp'),'v');        % water spill
-  y= get(get(obj.pb,'dp'),'y');        % power flow
-  z= get(get(obj.pb,'dp'),'z');        % thermal power generation
-  la= get(get(obj.pb,'dp'),'la');
-  lb= get(get(obj.pb,'dp'),'lb');
-
+  s= get(get(obj.pb,'rs'),'s');   % reservoir storage
+  q= get(get(obj.pb,'rs'),'q');   % water discharge
+  v= get(get(obj.pb,'rs'),'v');   % water spill
+  y= get(get(obj.pb,'rs'),'y');   % power flow
+  z= get(get(obj.pb,'rs'),'z');   % power generation at thermal plants
+  P= get(get(obj.pb,'rs'),'P');   % total hydro power generation
+  Q= get(get(obj.pb,'rs'),'Q');   % total thermal power generation
+  la= get(get(obj.pb,'rs'),'la'); % water value
+  lb= get(get(obj.pb,'rs'),'lb'); % marginal costs
+  uq= get(get(obj.pb,'rs'),'uq'); % maximum water discharge
   % build list of dates
   data= cell(ni+1,1);
-  data{1}= datestr(datenum(ai,mi,(di-1)));
+  data{1}= datestr(datenum(ai,mi,(di-1)),'dd/mm/yyyy');
   k= datenum(ai,mi,di);
   for j= 1:ni
     data{j+1} = datestr(k,'dd/mm/yyyy');
@@ -104,10 +105,7 @@ function ropt_(obj,arquivo)
   % [NPAT]
   % number of power transmission lines
   fprintf(fid,'\n[NPAT]\n');
-  for j= 1:ni
-    fprintf(fid,'  %s ',data{j+1});
-    fprintf(fid,'\t%d\n',np(j));
-  end
+  fprintf(fid,' %3d\n',np);
   
   % [DATA]
   % start date
@@ -118,32 +116,35 @@ function ropt_(obj,arquivo)
   % reservoir storage
   fprintf(fid,'\n[VOLA]\n');
   for j= 1:ni+1
-    fprintf(fid,'  %s ',data{j});
-    for k= 1:nu
+    fprintf(fid,'  %s     ',data{j});
+    for i= 1:nu
       if (j>1)
-        fprintf(fid,'\t%8.2f ',s(k,j-1));
+        fprintf(fid,'\t%8.2f ',s(i,j-1));
       else
-        fprintf(fid,'\t%8.2f ',vi(k));
+        fprintf(fid,'\t%8.2f ',vi(i));
       end
     end
     fprintf(fid,'\n');
   end
+  % clear temporary buffers
+  clear j;
+  clear i;
 
   % [VOLU]
   % reservoir storage (in % of total capacity)
   fprintf(fid,'\n[VOLU]\n');
   for j= 1:ni+1
-    fprintf(fid,'  %s ',data{j});
-    for k= 1:nu
-      ie= get(uh{k},'ie');
-      vm= get(uh{k},'vm');
-      vn= get(uh{k},'vn');
+    fprintf(fid,'  %s     ',data{j});
+    for i= 1:nu
+      ie= get(uh{i},'ie');
+      vm= get(uh{i},'vm');
+      vn= get(uh{i},'vn');
       switch ie
         case 0
           if (j>1)
-            fprintf(fid,'\t%8.2f ', ((s(k,j-1)-vn)/(vm-vn))*100);
+            fprintf(fid,'\t%8.2f ', ((s(i,j-1)-vn)/(vm-vn))*100);
           else
-            fprintf(fid,'\t%8.2f ', ((vi(k)-vn)/(vm-vn))*100);
+            fprintf(fid,'\t%8.2f ', ((vi(i)-vn)/(vm-vn))*100);
           end
         case 1
           fprintf(fid,'\t%8.2f ', 0);
@@ -152,6 +153,8 @@ function ropt_(obj,arquivo)
     fprintf(fid,'\n');
   end
   % clear temporary buffers
+  clear j;
+  clear i;
   clear vm;
   clear vn;
 
@@ -160,52 +163,75 @@ function ropt_(obj,arquivo)
   fprintf(fid,'\n[DFLU]\n');
   for j= 1:ni
     fprintf(fid,'  %s ',data{j+1});
-    for l= 1:np(j)
-      fprintf(fid,'             \t%2d ',l);
-      for k= 1:nu
-        fprintf(fid,'\t%8.2f ',q{j}(k,l)+v(k,j));
+    for l= 1:np
+      if l > 1
+        fprintf(fid,'            \t%2d ',l);
+      else
+        fprintf(fid,'\t%2d ',l);
+      end
+      for i= 1:nu
+        fprintf(fid,'\t%8.2f ',q{l}(i,j)+v(i,j));
       end
       fprintf(fid,'\n');
     end
   end
+  % clear temporary buffers
+  clear j;
+  clear l;
+  clear i;
 
   % [TURB]
   % water discharged
   fprintf(fid,'\n[TURB]\n');
   for j= 1:ni
     fprintf(fid,'  %s ',data{j+1});
-    for l= 1:np(j)
-      fprintf(fid,'             \t%2d ',l);
-      for k= 1:nu
-        fprintf(fid,'\t%8.2f ',q{j}(k,l));
+    for l= 1:np
+      if l > 1
+        fprintf(fid,'            \t%2d ',l);
+      else
+        fprintf(fid,'\t%2d ',l);
+      end
+      for i= 1:nu
+        fprintf(fid,'\t%8.2f ',q{l}(i,j));
       end
       fprintf(fid,'\n');
     end
   end
+  % clear temporary buffers
+  clear j;
+  clear l;
+  clear i;
 
   % [VINC]
   % incremental inflows
   fprintf(fid,'\n[VINC]\n');
   for j= 1:ni
-    fprintf(fid,'  %s ',data{j+1});
-    for k= 1:nu
-      fprintf(fid,'\t%8.2f ',af(k,j));
+    fprintf(fid,'  %s     ',data{j+1});
+    for i= 1:nu
+      fprintf(fid,'\t%8.2f ',af(i,j));
     end
     fprintf(fid,'\n');
   end
+  % clear temporary buffers
+  clear j;
+  clear i;
 
   % [VMOT]
   % forebay 
   fprintf(fid,'\n[VMOT]\n');
   for j= 1:ni
     fprintf(fid,'  %s ',data{j+1});
-    for l= 1:np(j)
-      fprintf(fid,'             \t%2d ',l);
-      for k= 1:nu
+    for l= 1:np
+      if l > 1
+        fprintf(fid,'            \t%2d ',l);
+      else
+        fprintf(fid,'\t%2d ',l);
+      end
+      for i= 1:nu
         um= 0.0;
-        im= get(uh{k},'im');
+        im= get(uh{i},'im');
         for t= 1:length(im)
-          um= um + q{j}(t,l) + v(t,j);
+          um= um + q{l}(t,j) + v(t,j);
         end
         fprintf(fid,'\t%8.2f ',um);
       end
@@ -222,91 +248,182 @@ function ropt_(obj,arquivo)
   fprintf(fid,'\n[QMAX]\n');
   for j= 1:ni
     fprintf(fid,'  %s ',data{j+1});
-    for l= 1:np(j)
-      fprintf(fid,'             \t%2d ',l);
-      for k= 1:nu
-        fprintf(fid,'\t%8.2f ',uq{j}(k,l));
+    for l= 1:np
+      if l > 1
+        fprintf(fid,'            \t%2d ',l);
+      else
+        fprintf(fid,'\t%2d ',l);
+      end
+      for i= 1:nu
+        fprintf(fid,'\t%8.2f ',uq{l}(i,j));
       end
       fprintf(fid,'\n');
     end
   end
+  % clear temporary buffers
+  clear j;
+  clear l;
+  clear i;
 
   % [VERT]
   % water spilled
   fprintf(fid,'\n[VERT]\n');
   for j= 1:ni
-    fprintf(fid,'  %s ',data{j+1});
-    for k= 1:nu
-      fprintf(fid,'\t%8.2f ', v(k,j));
+    fprintf(fid,'  %s     ',data{j+1});
+    for i= 1:nu
+      fprintf(fid,'\t%8.2f ', v(i,j));
     end
     fprintf(fid,'\n');
   end
+  % clear temporary buffers
+  clear j;
+  clear i;
 
   % [GUHE]
   % power generation at hydro plants
   fprintf(fid,'\n[GUHE]\n');
   for j= 1:ni 
     fprintf(fid,'  %s ',data{j+1});
-    for l= 1:np(j)
-      fprintf(fid,'             \t%2d ',l);
-      for k= 1:nu
-        fprintf(fid,'\t%8.2f ',p(uh{k},s(k,j),q{j}(k,l),v(k,j)));
+    for l= 1:np
+      if l > 1
+        fprintf(fid,'            \t%2d ',l);
+      else
+        fprintf(fid,'\t%2d ',l);
+      end
+      for i= 1:nu
+        fprintf(fid,'\t%8.2f ',p(uh{i},s(i,j),q{l}(i,j),v(i,j)));
       end
       fprintf(fid,'\n');
     end
   end
+  % clear temporary buffers
+  clear j;
+  clear l;
+  clear i;
 
   % [GUTE]
   % power generation at thermal plants
   fprintf(fid,'\n[GUTE]\n');
   for j= 1:ni
     fprintf(fid,'  %s ',data{j+1});
-    for l= 1:np(j)
-      fprintf(fid,'             \t%2d ',l);
-      for k= 1:nt
-        fprintf(fid,'\t%8.2f ',z{j}(k,l));
+    for l= 1:np
+      if l > 1
+        fprintf(fid,'            \t%2d ',l);
+      else
+        fprintf(fid,'\t%2d ',l);
+      end
+      for t= 1:nt
+        fprintf(fid,'\t%8.2f ',z{l}(t,j));
       end
       fprintf(fid,'\n');
     end
   end
+  % clear temporary buffers
+  clear j;
+  clear l;
+  clear t;
 
   % [GHSS]
-  % hydro power generation in subsystems
+  % total hydro power generation
   fprintf(fid,'\n[GHSS]\n');
+  for j= 1:ni
+    fprintf(fid,'  %s ',data{j+1});
+    for l= 1:np
+      if l > 1
+        fprintf(fid,'            \t%2d ',l);
+      else
+        fprintf(fid,'\t%2d ',l);
+      end
+      for k= 1:ns
+        fprintf(fid,'\t%8.2f ',P{l}(k,j));
+      end
+      fprintf(fid,'\n');
+    end
+  end
+  % clear temporary buffers
+  clear j;
+  clear l;
+  clear k;
 
   % [GTSS]
-  % thermal power generation in subsystems
+  % total thermal power generation
   fprintf(fid,'\n[GTSS]\n');
+  for j= 1:ni
+    fprintf(fid,'  %s ',data{j+1});
+    for l= 1:np
+      if l > 1
+        fprintf(fid,'            \t%2d ',l);
+      else
+        fprintf(fid,'\t%2d ',l);
+      end
+      for k= 1:ns
+        fprintf(fid,'\t%8.2f ',Q{l}(k,j));
+      end
+      fprintf(fid,'\n');
+    end
+  end
+  % clear temporary buffers
+  clear j;
+  clear l;
+  clear k;
 
   % [INTC]
   % power transmission
   fprintf(fid,'\n[INTC]\n');
   for j= 1:ni
     fprintf(fid,'  %s ',data{j+1});
-    for l= 1:np(j)
-      fprintf(fid,'             \t%2d ',l);
+    for l= 1:np
+      if l > 1
+        fprintf(fid,'            \t%2d ',l);
+      else
+        fprintf(fid,'\t%2d ',l);
+      end
       for k= 1:nl
-        fprintf(fid,'\t%8.2f ',y{j}(k,l));
+        fprintf(fid,'\t%8.2f ',y{l}(k,j));
       end
       fprintf(fid,'\n');
     end
   end
+  % clear temporary buffers
+  clear j;
+  clear l;
+  clear k;
 
   % [CMOP]
   % marginal costs
   fprintf(fid,'\n[CMOP]\n');
+  for j= 1:ni
+    fprintf(fid,'  %s ',data{j+1});
+    for l= 1:np
+      if l > 1
+        fprintf(fid,'            \t%2d ',l);
+      else
+        fprintf(fid,'\t%2d ',l);
+      end
+      for k= 1:ns
+        fprintf(fid,'\t%8.2f ',lb{l}(k,j));
+      end
+      fprintf(fid,'\n');
+    end
+  end
+  % clear temporary buffers
+  clear j;
+  clear l;
+  clear k;
 
   % [VLOR]
   % water value
   fprintf(fid,'\n[VLOR]\n');
-
-  % [BENF]
-  % transmission benefits
-  fprintf(fid,'\n[BENF]\n');
-
-  % [STAT]
-  % optimization statistics
-  fprintf(fid,'\n[STAT]\n');
+  for j= 1:ni
+    fprintf(fid,'  %s     ',data{j+1});
+    for i= 1:nu
+      fprintf(fid,'\t%8.2f ',la(i,j));
+    end
+    fprintf(fid,'\n');
+  end
+  % clear temporary buffers
+  clear j;
+  clear i;
 
   % close file
   fclose(fid);

@@ -362,6 +362,16 @@ function obj= ipf(obj)
     printr();
   end
   %% save optimal solution
+  obj.rs= set(obj.rs, 's', desempacotar_s(obj, extrair_s(obj,x)));
+  obj.rs= set(obj.rs, 'q', desempacotar_q(obj, extrair_q(obj,x)));
+  obj.rs= set(obj.rs, 'v', desempacotar_v(obj, extrair_v(obj,x)));
+  obj.rs= set(obj.rs, 'y', desempacotar_y(obj, extrair_y(obj,x)));
+  obj.rs= set(obj.rs, 'z', desempacotar_z(obj, extrair_z(obj,x)));
+  obj.rs= set(obj.rs, 'P', desempacotar_lambdab(obj, calcular_P(obj,x)));
+  obj.rs= set(obj.rs, 'Q', desempacotar_lambdab(obj, calcular_Q(obj,x)));
+  obj.rs= set(obj.rs, 'la', desempacotar_lambdaa(obj, extrair_lambdaa(obj,y)));
+  obj.rs= set(obj.rs, 'lb', desempacotar_lambdab(obj, extrair_lambdab(obj,y)));
+  obj.rs= set(obj.rs, 'uq', desempacotar_q(obj, extrair_q(obj,u)));
   %% verbosity subfunctions
   %  header
   function printc()

@@ -31,13 +31,7 @@
 function ya= desempacotar_lambdaa(obj,lambdaa)
   % system dimensions
   ni= get(obj.si,'ni');
-  np= get(obj.si,'np');
   nu= get(obj.si,'nu');
-  n = nu*ni;
-  % memory allocation
-  ya= cell(np,1);
   % unpack ya
-  for l= 1:np
-    ya{l}= reshape(lambdaa(n*(l-1)+1 : n*l),nu,ni);
-  end
+  ya= reshape(lambdaa,nu,ni);
 end

@@ -36,7 +36,7 @@ function obj= verificar(obj)
   ni= get(obj.si,'ni');
   np= get(obj.si,'np');
   %% bounds on reservoir storage
-  alpha= 0.999;
+  alpha= 0.99999;
   if length(obj.ls) ~= length(obj.us)
     error('sinopt:problema:verificar:arrayDimensionsMismatch', ...
         'dimensions of reservoir storage bounds arrays do not match');
