@@ -1,0 +1,18 @@
+Versão 2.0-RELEASE
+---------------------------------------------------------
+
+ ** Simplificação dos argumentos de chamada do otimizador.
+
+	Com a inclusão do arquivo OPT de configuração do otimizador, o único
+	argumento de chamada necessário para execução do sinopt é o nome base do
+	estudo, como no exemplo abaixo,
+	
+	C:\sinopt> sinopt.exe estudos\sin_mlt
+	
+	para o hipotético estudo de caso C:\sinopt\estudos\sin_mlt.*
+	
+ ** Suporte à versão 2 dos arquivos de dados do HydroLab.
+
+ ** Suporte a diferentes números de patamares de carga de tamanho variável.
+
+ ** Diversas otimizações do código para minimização do uso de memória.

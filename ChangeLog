@@ -1,3 +1,9 @@
+2011-01-05  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+	* Versão 2.0-RELEASE anunciada.
+
+	* @io/private/hco_.m: Adicionados seções de estatísticas da otimização.
+	
 2011-01-04  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @despacho: Classe removida.
