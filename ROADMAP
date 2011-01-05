@@ -1,0 +1,28 @@
+SINopt: Plano de desenvolvimento
+
+ ** 2.1-RELEASE
+
+	A próxima versão do SINopt introduzirá melhorias no desempenho geral do 
+	algoritmo, tanto em termos computacionais quanto numéricos, através da 
+	redução do número de variáveis:
+	
+	 * eliminação das variáveis de volume final armazenado;
+	 * eliminação das variáveis de volume em usinas fio-d'água;
+	 * eliminação das variáveis de folga de limites inferiores e suas duais 
+	   associadas.
+
+	Ainda, o arquivo de resultados conterá informações estatísticas do processo 
+	de otimização, tais como:
+	
+	 * número de iterações;
+	 * tempo de execução do algoritmo;
+	 * número de variáveis e restrições do problema;
+	 * valor da função-objetivo;
+	 * máxima violação das restrições primais e duais.
+	
+ ** 2.2-RELEASE
+
+	Estabilização numérica do algoritmo:
+	
+	 * normalização dos limites superiores;
+	 * solução do sistema linear.
