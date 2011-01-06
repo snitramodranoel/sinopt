@@ -2,6 +2,14 @@
 
 	* @problema/{problema,get,dump}.m:
 	(obj.na, obj.nq, obj.nv): Propriedades adicionadas.
+	(obj.Xj): Propriedade removida.
+	
+	* @problema/private/construir_bb.m: Volume final subtraído do vetor b.
+	
+	* @problema/private/construir_X.m: Eliminadas variáveis de volume final.
+	
+	* @problema/private/construir_{lb,ub}.m: 
+	(obj.ls, obj.us) Eliminadas variáveis de volume final.
 
 2011-01-05  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 

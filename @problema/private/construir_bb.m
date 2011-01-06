@@ -36,6 +36,7 @@ function obj = construir_bb(obj)
   ti= get(obj.si,'ti');
   uc= get(obj.si,'uc');
   vi= get(obj.si,'vi');
+  vf= get(obj.si,'vf');
   % build vector
   b= zeros(nu,ni);
   for k= 1:nu
@@ -49,9 +50,9 @@ function obj = construir_bb(obj)
   end
   % consumptive use
   b= b - uc;
-  % final reservoir storage requirements
-  delta= ti(1)/10^6;
-  b(:,1)= b(:,1) + (1/delta)*(vi);
+  % fixed initial and final reservoir states
+  b(:,1) = b(:,1) + (1/(ti(1)/10^6))*(vi);
+  b(:,ni)= b(:,ni) - (1/(ti(ni)/10^6))*(vf);
   % data packing
   b= reshape(b, nu*ni, 1);
   % data update

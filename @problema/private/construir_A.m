@@ -40,6 +40,6 @@ function obj = construir_A(obj)
   obj= construir_Q(obj); % water discharge arcs
   obj= construir_V(obj); % water spill arcs
   % build matrix A
-  obj.A= spalloc(obj.ma, obj.nx, ni*(nu*(3 + np + nj) - 1));
+  obj.A= spalloc(obj.ma, obj.nx, 2*obj.na + ni*((nu+nj)*(np+1)));
   obj.A= [obj.X, obj.Q, obj.V];
 end

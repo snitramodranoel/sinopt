@@ -51,8 +51,6 @@ function valor= get(obj, propriedade)
       valor= obj.V;
     case 'X'
       valor= obj.X;
-    case 'Xj'
-      valor= obj.Xj;
     case 'b'
       valor= obj.b;
     case 'd'

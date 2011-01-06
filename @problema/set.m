@@ -57,8 +57,6 @@ function obj= set(obj, varargin)
         obj.V= valor;
       case 'X'
         obj.X= valor;
-      case 'Xj'
-        obj.Xj= valor;
       case 'b'
         obj.b= valor;
       case 'd'

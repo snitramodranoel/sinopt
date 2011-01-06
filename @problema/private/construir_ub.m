@@ -43,7 +43,7 @@ function obj = construir_ub(obj)
   ut= get(obj.si,'ut');
   vm= get(obj.si,'vm');
   %% upper bounds on reservoir storage
-  obj.us= empacotar_s(obj,vm);
+  obj.us= empacotar_s(obj, vm(:,1:ni-1));
   %% upper bounds on water release
   %  memory allocation
   uq= cell(np,1);

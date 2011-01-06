@@ -40,7 +40,6 @@ function obj= problema(varargin)
   obj.Ql= {}; % list of submatrices Ql of Q
   obj.V = []; % submatrix V of A
   obj.X = []; % submatrix X of A
-  obj.Xj= {}; % list of submatrices Sj of S
   obj.b = []; % b vector
   obj.d = []; % d vector
   %  lower bounds

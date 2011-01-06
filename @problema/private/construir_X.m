@@ -33,21 +33,30 @@ function obj = construir_X(obj)
   ni= get(obj.si,'ni');
   nu= get(obj.si,'nu');
   ti= get(obj.si,'ti');
-  % matrix filling
+  % allocate memory for row index vectors
+  lip= zeros(obj.na,1);
+  lin= zeros(obj.na,1);
+  % allocate memory for column index vectors
+  cop= zeros(obj.na,1);
+  con= zeros(obj.na,1);
+  % allocate memory for nonzero elements
+  ep = zeros(obj.na,1); % positive elements
+  en = zeros(obj.na,1); % negative elements
+  % compute X
   k= 0;
-  obj.Xj= cell(ni,1);
-  obj.X = spalloc(nu*ni, nu*ni, ni*(2*nu - 1));
-  for j= 1:nu:nu*ni
-    k= k+1;
-    % unit conversion factor
-    delta= ti(k)/10^6;
-    % compute submatrix X(j)
-    obj.Xj{j}= sparse(diag(ones(nu,1)*(1/delta)));
-    % fill diagonal elements
-    obj.X(j:j+nu-1, j:j+nu-1)= obj.Xj{j};
-    if k > 1
-      % fill subdiagonal elements
-      obj.X(j:j+nu-1, j-nu:j-1)= -obj.Xj{j};
+  for j= 1:ni-1
+    for i= 1:nu
+      k= k+1;
+      % compute X(j)
+      lip(k)= k;
+      cop(k)= k;
+      ep(k) = 1/(ti(j)/10^6);
+      % compute -X(j+1)
+      lin(k)= k + nu;
+      con(k)= k;
+      en(k) = -1/(ti(j+1)/10^6);
     end
   end
+  % build X
+  obj.X= sparse([lip;lin], [cop;con], [ep;en], obj.ma, obj.na, 2*obj.na);
 end

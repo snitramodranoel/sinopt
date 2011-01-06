@@ -37,16 +37,9 @@ function obj = construir_lb(obj)
   nt= get(obj.si,'nt');
   nu= get(obj.si,'nu');
   ut= get(obj.si,'ut');
-  vf= get(obj.si,'vf');
   vn= get(obj.si,'vn');
   %% lower bounds on reservoir storage
-  ls= vn;
-  % set final reservoir storage requirements
-  ls(:,ni)= vf;
-  % store data
-  obj.ls= empacotar_s(obj,ls);
-  % clear temporary buffer
-  clear ls;
+  obj.ls= empacotar_s(obj, vn(:,1:ni-1));
   %% lower bounds on water discharge
   %  memory allocation
   lq= cell(np,1);
