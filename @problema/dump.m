@@ -52,6 +52,9 @@ function dump(obj)
   fprintf(1,'problema.mb: %d\n', obj.mb);
   fprintf(1,'problema.mc: %d\n', obj.mc);
   fprintf(1,'problema.m : %d\n', obj.m);
+  fprintf(1,'problema.na: %d\n', obj.na);
+  fprintf(1,'problema.nq: %d\n', obj.nq);
+  fprintf(1,'problema.nv: %d\n', obj.nv);
   fprintf(1,'problema.nx: %d\n', obj.nx);
   fprintf(1,'problema.ny: %d\n', obj.ny);
   fprintf(1,'problema.nz: %d\n', obj.nz);

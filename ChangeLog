@@ -1,3 +1,8 @@
+2011-01-06  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+	* @problema/{problema,get,dump}.m:
+	(obj.na, obj.nq, obj.nv): Propriedades adicionadas.
+
 2011-01-05  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* Versão 2.0-RELEASE anunciada.

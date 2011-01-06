@@ -86,6 +86,12 @@ function valor= get(obj, propriedade)
       valor= obj.mc;
     case 'm'
       valor= obj.m;
+    case 'na'
+      valor= obj.na;
+    case 'nq'
+      valor= obj.nq;
+    case 'nv'
+      valor= obj.nv;
     case 'nx'
       valor= obj.nx;
     case 'ny'

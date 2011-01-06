@@ -61,6 +61,9 @@ function obj= problema(varargin)
   obj.mc= 0; % number of Cy constraints
   obj.m = 0; % total number of equality constraints
   %  variable-space dimensions
+  obj.na= 0; % number of a variables
+  obj.nq= 0; % number of q variables
+  obj.nv= 0; % number of v variables
   obj.nx= 0; % number of x variables
   obj.ny= 0; % number of y variables
   obj.nz= 0; % number of z variables
