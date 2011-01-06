@@ -29,9 +29,6 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function v= empacotar_v(obj,V)
-  % system dimensions
-  ni= get(obj.si,'ni');
-  nu= get(obj.si,'nu');
   % unpack v
-  v= reshape(V,nu*ni,1);
+  v= reshape(V,obj.nv,1);
 end

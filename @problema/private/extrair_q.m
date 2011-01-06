@@ -34,5 +34,5 @@ function q= extrair_q(obj,w)
   np= get(obj.si,'np');
   nu= get(obj.si,'nu');
   % return vector
-  q=  w(nu*ni+1:nu*ni*(np+1));
+  q=  w(obj.na+1:nu*ni*(np+1));
 end

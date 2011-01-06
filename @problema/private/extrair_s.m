@@ -29,9 +29,6 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function s= extrair_s(obj,w)
-  % system dimensions
-  ni= get(obj.si,'ni');
-  nu= get(obj.si,'nu');
   % return vector
-  s= w(1:nu*ni);
+  s= w(1:obj.na);
 end

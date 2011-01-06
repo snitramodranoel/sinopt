@@ -10,6 +10,12 @@
 	
 	* @problema/private/construir_{lb,ub}.m: 
 	(obj.ls, obj.us) Eliminadas variáveis de volume final.
+	
+	* @problema/private/extrair_{s,q,v}.m: Eliminadas variáveis de volume final.
+	
+	* @problema/private/empacotar_s.m: Eliminadas variáveis de volume final.
+	
+	* @problema/private/desempacotar_s.m: Eliminadas variáveis de volume final.
 
 2011-01-05  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 

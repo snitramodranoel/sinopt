@@ -33,5 +33,5 @@ function S= desempacotar_s(obj,s)
   ni= get(obj.si,'ni');
   nu= get(obj.si,'nu');
   % return matrix
-  S= reshape(s,nu,ni);
+  S= reshape(s,nu,ni-1);
 end
