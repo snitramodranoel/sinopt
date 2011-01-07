@@ -31,6 +31,7 @@
 function JP= calcular_JP(obj,w)
   % system data
   uh= get(obj.si,'uh');
+  vf= get(obj.si,'vf');
   % system dimensions
   ni= get(obj.si,'ni');
   np= get(obj.si,'np');
@@ -38,39 +39,59 @@ function JP= calcular_JP(obj,w)
   nu= get(obj.si,'nu');
   n = nu*ni;
   m = ns*ni;
+  % compute number of nonzero elements
+  nze= np*(2*n + obj.na);
   % unpack x variables
   s= desempacotar_s(obj, extrair_s(obj,w));
   q= desempacotar_q(obj, extrair_q(obj,w));
   v= desempacotar_v(obj, extrair_v(obj,w));
-  % allocate memory for row index vector
-  li= zeros(n*np,1);
+  % allocate memory for row index vectors
+  lis= zeros(obj.na*np,1);
+  liq= zeros(n*np,1);
+  liv= zeros(n*np,1);
   % allocate memory for column index vectors
-  cos= zeros(n*np,1);
+  cos= zeros(obj.na*np,1);
   coq= zeros(n*np,1);
   cov= zeros(n*np,1);
   % allocate memory for partial derivatives
-  ds= zeros(n*np,1);
+  ds= zeros(obj.na*np,1);
   dq= zeros(n*np,1);
   dv= zeros(n*np,1);
   % compute Jacobian
   k= 0;
+  u= 0;
   for l= 1:np
     for j= 1:ni
+      % check for final stage
+      if j < ni
+        a= s(:,j);
+      else
+        a= vf;
+      end
+      % compute 
       for i= 1:nu
         k= k+1;
-        % compute row index
-        li(k)= get(uh{i},'ss') + m*(l-1) + ns*(j-1);
-        % compute column indexes
-        cos(k)= i + (nu*(j-1));
-        coq(k)= n*((l-1) + 1) + cos(k);
-        cov(k)= n*(np+1) + cos(k);
-        % compute partial derivatives
-        ds(k)= dpds(uh{i}, s(i,j), q{l}(i,j));
-        dq(k)= dpdq(uh{i}, s(i,j), q{l}(i,j), v(i,j));
-        dv(k)= dpdv(uh{i}, q{l}(i,j), v(i,j));
+        % compute index vectors and partial derivatives for storage variables
+        if j < ni % check for final stage
+          u= u+1;
+          ds(u) = dpds(uh{i}, a(i), q{l}(i,j));
+          lis(u)= get(uh{i},'ss') + m*(l-1) + ns*(j-1);
+          cos(u)= i + (nu*(j-1));
+        end
+        % compute index vectors and partial derivatives for discharge variables
+        dq(k) = dpdq(uh{i}, a(i), q{l}(i,j), v(i,j));
+        liq(k)= get(uh{i},'ss') + m*(l-1) + ns*(j-1);
+        coq(k)= obj.na + n*(l-1) + nu*(j-1) + i;
+        % compute index vectors and partial derivatives for spill variables
+        dv(k) = dpdv(uh{i}, q{l}(i,j), v(i,j));
+        liv(k)= get(uh{i},'ss') + m*(l-1) + ns*(j-1);
+        cov(k)= obj.na + obj.nq + nu*(j-1) + i;
       end
     end
   end
   % build Jacobian
-  JP= sparse([li;li;li], [cos;coq;cov], [ds;dq;dv], obj.mb, obj.nx, 3*n*np);
+  li= [lis;liq;liv];
+  co= [cos;coq;cov];
+  dp= [ ds; dq; dv];
+  JP= sparse(li, co, dp, obj.mb, obj.nx, nze);
 end

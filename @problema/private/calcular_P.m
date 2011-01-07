@@ -31,6 +31,7 @@
 function P= calcular_P(obj,w)
   % system data
   uh= get(obj.si,'uh');
+  vf= get(obj.si,'vf');
   % system dimensions
   ni= get(obj.si,'ni');
   np= get(obj.si,'np');
@@ -49,9 +50,16 @@ function P= calcular_P(obj,w)
     Pl{l}= zeros(ns,ni);
     % compute P(j), j=1,2,...
     for j= 1:ni
+      % check for final stage
+      if j < ni
+        a= s(:,j);
+      else
+        a= vf;
+      end
+      % compute hydro power generation
       for i= 1:nu
         k= get(uh{i},'ss');
-        Pl{l}(k,j)= Pl{l}(k,j) + p(uh{i}, s(i,j), q{l}(i,j), v(i,j));
+        Pl{l}(k,j)= Pl{l}(k,j) + p(uh{i}, a(i), q{l}(i,j), v(i,j));
       end
     end
     % pack

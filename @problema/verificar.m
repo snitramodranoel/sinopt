@@ -36,7 +36,6 @@ function obj= verificar(obj)
   ni= get(obj.si,'ni');
   np= get(obj.si,'np');
   %% bounds on reservoir storage
-  alpha= 0.99999;
   if length(obj.ls) ~= length(obj.us)
     error('sinopt:problema:verificar:arrayDimensionsMismatch', ...
         'dimensions of reservoir storage bounds arrays do not match');
@@ -48,10 +47,6 @@ function obj= verificar(obj)
       if obj.us(k) - obj.ls(k) < 0
         error('sinopt:problema:verificar:emptySet', ...
             'reservoir storage bounds define an empty set @ s(%d)', k);
-      else
-        obj.ls(k)= obj.ls(k) * alpha;
-        warning('sinopt:problema:verificar:boundRelaxation', ...
-            'reservoir storage lower bounds relaxed @ s(%d)', k);
       end
     end
   end

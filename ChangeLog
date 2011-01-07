@@ -16,6 +16,11 @@
 	* @problema/private/empacotar_s.m: Eliminadas variáveis de volume final.
 	
 	* @problema/private/desempacotar_s.m: Eliminadas variáveis de volume final.
+	
+	* @problema/verificar.m: Eliminada correção de volume mínimo igual a máximo.
+	
+	* @problema/private/calcular_{P,JP,HP}.m:
+	Considerada eliminação das variáveis de volume final.
 
 2011-01-05  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 

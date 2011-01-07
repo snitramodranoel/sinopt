@@ -31,11 +31,14 @@
 function HP= calcular_HP(obj,w,lambda)
   % system data
   uh= get(obj.si,'uh');
+  vf= get(obj.si,'vf');
   % system dimensions
   ni= get(obj.si,'ni');
   np= get(obj.si,'np');
   nu= get(obj.si,'nu');
   n = nu*ni;
+  % compute number of nonzeros elements
+  nze= obj.na*(2*np + 1) + n*(3*np + 1);
   % unpack primal variables
   s= desempacotar_s(obj, extrair_s(obj,w));
   q= desempacotar_q(obj, extrair_q(obj,w));
@@ -43,59 +46,79 @@ function HP= calcular_HP(obj,w,lambda)
   % unpack dual variables
   yb= desempacotar_lambdab(obj, extrair_lambdab(obj,lambda));
   % allocate memory for row index vectors
-  liss= zeros(n,1);
-  lisq= zeros(n*np,1);
-  liqs= zeros(n*np,1);
+  liss= zeros(obj.na,1);
+  lisq= zeros(obj.na*np,1);
+  liqs= zeros(obj.na*np,1);
   liqq= zeros(n*np,1);
   liqv= zeros(n*np,1);
   livq= zeros(n*np,1);
   livv= zeros(n,1);
   % allocate memory for column index vectors
-  coss= zeros(n,1);
-  cosq= zeros(n*np,1);
-  coqs= zeros(n*np,1);
+  coss= zeros(obj.na,1);
+  cosq= zeros(obj.na*np,1);
+  coqs= zeros(obj.na*np,1);
   coqq= zeros(n*np,1);
   coqv= zeros(n*np,1);
   covq= zeros(n*np,1);
   covv= zeros(n,1);
   % allocate memory for partial derivatives
-  dss= zeros(n,1);
-  dsq= zeros(n*np,1);
+  dss= zeros(obj.na,1);
+  dsq= zeros(obj.na*np,1);
   dqq= zeros(n*np,1);
   dqv= zeros(n*np,1);
   dvv= zeros(n,1);
   % compute Hessian
   k= 0;
   u= 0;
+  r= 0;
+  t= 0;
   for j= 1:ni
+    % check for final stage
+    if j < ni
+      a= s(:,j);
+    else
+      a= vf;
+    end
+    % perform computations
     for i= 1:nu
+      % check for final stage
+      if j < ni
+        r= r+1;
+        % compute row, column indexes for dp/dss partial derivatives
+        liss(r)= r;
+        coss(r)= liss(r);
+      end
+      % compute row, column indexes for dp/dvv partial derivatives
       u= u+1;
-      % compute row indexes for dp/dss, dp/dvv partial derivatives
-      liss(u)= u;
-      livv(u)= n*(np+1) + u;
-      % compute column indexes for dp/dss, dp/dvv partial derivatives
-      coss(u)= liss(u);
+      livv(u)= obj.na + obj.nq + u;
       covv(u)= livv(u);
       for l= 1:np
         k= k+1;
-        % compute row indexes
-        lisq(k)= liss(u);
-        liqq(k)= n*((l-1) + 1) + u;
-        liqv(k)= liqq(k);
-        % compute column indexes
-        cosq(k)= n*((l-1) + 1) + u;
-        coqq(k)= liqq(k);
-        coqv(k)= covv(u);
-        % compute tranpose indexes
-        liqs(k)= cosq(k);
-        livq(k)= coqv(k);
-        coqs(k)= lisq(k);
-        covq(k)= liqv(k);
         % temporary buffer
         y= yb{l}(get(uh{i},'ss'),j);
+        % check for final stage
+        if j < ni
+          t= t+1;
+          % compute row, column indexes for dp/dsq partial derivatives
+          lisq(t)= liss(r);
+          cosq(t)= obj.na + n*(l-1) + u;
+          % compute transpose indexes for dp/dqs partial derivatives
+          liqs(t)= cosq(t);
+          coqs(t)= lisq(t);
+          % compute dp/dss and dp/dsq partial derivatives
+          dss(r)= dss(r) + y * dpdss(uh{i},a(i),q{l}(i,j));
+          dsq(t)= y * dpdsq(uh{i},a(i));
+        end
+        % compute row indexes for dp/dqq and dp/dqv partial derivatives
+        liqq(k)= obj.na + n*(l-1) + u;
+        liqv(k)= liqq(k);
+        % compute column indexes for dp/dqq and dp/dqv partial derivatives
+        coqq(k)= liqq(k);
+        coqv(k)= covv(u);
+        % compute tranpose indexes for dp/dvq partial derivatives
+        livq(k)= coqv(k);
+        covq(k)= liqv(k);
         % compute partial derivatives
-        dss(u)= dss(u) + y * dpdss(uh{i},s(i,j),q{l}(i,j));
-        dsq(k)= y * dpdsq(uh{i},s(i,j));
         dqq(k)= y * dpdqq(uh{i},q{l}(i,j),v(i,j));
         dqv(k)= y * dpdqv(uh{i},q{l}(i,j),v(i,j));
         dvv(u)= dvv(u) + y * dpdvv(uh{i},q{l}(i,j),v(i,j));
@@ -107,5 +130,5 @@ function HP= calcular_HP(obj,w,lambda)
   co= [coss; cosq; coqs; coqq; coqv; covq; covv];
   dp= [ dss;  dsq;  dsq;  dqq;  dqv;  dqv;  dvv];
   % build Hessian
-  HP= sparse(li, co, dp, obj.nx, obj.nx, n*(5*np+2));
+  HP= sparse(li, co, dp, obj.nx, obj.nx, nze);
 end

@@ -35,6 +35,6 @@ function Hg= calcular_Hg(obj,w,lambda)
   nu= get(obj.si,'nu');
   n = nu*ni;
   % compute Hessian
-  Hg= spalloc(obj.n, obj.n, n*(5*np + 2));
+  Hg= spalloc(obj.n, obj.n, obj.na*(2*np + 1) + n*(3*np + 1));
   Hg(1:obj.nx, 1:obj.nx)= -calcular_HP(obj,w,lambda);
 end

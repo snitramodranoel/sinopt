@@ -32,7 +32,6 @@ function obj= construir(obj)
   % system dimensions
   nc= get(obj.si,'nc');
   ni= get(obj.si,'ni');
-  nj= get(obj.si,'nj');
   nl= get(obj.si,'nl');
   np= get(obj.si,'np');
   ns= get(obj.si,'ns');
@@ -65,7 +64,7 @@ function obj= construir(obj)
   obj= verificar(obj);
   % g(u) function Jacobian matrix
   obj.Jg= spalloc(obj.m, obj.n, ...
-      ni*(nu*(3+np+nj) - 1) + nnz(obj.C) + obj.nx + (2*obj.ny) + obj.nz);
+      nnz(obj.A) + nnz(obj.B) + nnz(obj.C) + obj.nz + np*(2*nu*ni + obj.na));
   obj.Jg(1:obj.ma, 1:obj.nx)= obj.A;
   obj.Jg(obj.ma+obj.mc+1:obj.m, obj.nx+1:obj.nx+obj.ny)= obj.B;
   obj.Jg(obj.ma+1:obj.ma+obj.mc, obj.nx+1:obj.nx+obj.ny)= obj.C;
