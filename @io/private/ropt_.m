@@ -46,6 +46,7 @@ function ropt_(obj,arquivo)
   uh= get(obj.si,'uh');           % list of hydro plants
   ti= get(obj.si,'ti');           % duration of stages
   vi= get(obj.si,'vi');           % initial reservoir storage states
+  vf= get(obj.si,'vf');           % final reservoir storage requirements
   % optimal solution
   s= get(get(obj.pb,'rs'),'s');   % reservoir storage
   q= get(get(obj.pb,'rs'),'q');   % water discharge
@@ -118,8 +119,12 @@ function ropt_(obj,arquivo)
   for j= 1:ni+1
     fprintf(fid,'  %s     ',data{j});
     for i= 1:nu
-      if (j>1)
-        fprintf(fid,'\t%8.2f ',s(i,j-1));
+      if (j > 1)
+        if (j < ni+1)
+          fprintf(fid,'\t%8.2f ',s(i,j-1));
+        else
+          fprintf(fid,'\t%8.2f ',vf(i));
+        end
       else
         fprintf(fid,'\t%8.2f ',vi(i));
       end
@@ -141,8 +146,12 @@ function ropt_(obj,arquivo)
       vn= get(uh{i},'vn');
       switch ie
         case 0
-          if (j>1)
-            fprintf(fid,'\t%8.2f ', ((s(i,j-1)-vn)/(vm-vn))*100);
+          if (j > 1)
+            if (j < ni+1)
+              fprintf(fid,'\t%8.2f ', ((s(i,j-1)-vn)/(vm-vn))*100);
+            else
+              fprintf(fid,'\t%8.2f ', ((vf(i)-vn)/(vm-vn))*100);
+            end
           else
             fprintf(fid,'\t%8.2f ', ((vi(i)-vn)/(vm-vn))*100);
           end
@@ -291,7 +300,11 @@ function ropt_(obj,arquivo)
         fprintf(fid,'\t%2d ',l);
       end
       for i= 1:nu
-        fprintf(fid,'\t%8.2f ',p(uh{i},s(i,j),q{l}(i,j),v(i,j)));
+        if (j < ni)
+          fprintf(fid,'\t%8.2f ',p(uh{i},s(i,j),q{l}(i,j),v(i,j)));
+        else
+          fprintf(fid,'\t%8.2f ',p(uh{i},vf(i),q{l}(i,j),v(i,j)));
+        end
       end
       fprintf(fid,'\n');
     end
