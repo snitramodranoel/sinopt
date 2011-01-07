@@ -1,6 +1,8 @@
 2011-01-07  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
-	* @io/private/hco_.m: Considerada eliminação das variáveis de volume final.
+	* @io/private/ropt_.m: 
+	([VOLA],[VOLU]) Considerada eliminação das variáveis de volume final.
+	([VOLU]) Corrigido cálculo do volume útil em usinas fio-d'água.
 
 	* @sistema/{sistema,get,set,dump}.m:
 	(obj.nf, obj.nr, obj.uf, obj.ur): Propriedades adicionadas.

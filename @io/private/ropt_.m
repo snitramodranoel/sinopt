@@ -148,15 +148,15 @@ function ropt_(obj,arquivo)
         case 0
           if (j > 1)
             if (j < ni+1)
-              fprintf(fid,'\t%8.2f ', ((s(i,j-1)-vn)/(vm-vn))*100);
+              fprintf(fid,'\t%8.2f ', 100*((s(i,j-1)-vn)/(vm-vn)));
             else
-              fprintf(fid,'\t%8.2f ', ((vf(i)-vn)/(vm-vn))*100);
+              fprintf(fid,'\t%8.2f ', 100*((vf(i)-vn)/(vm-vn)));
             end
           else
-            fprintf(fid,'\t%8.2f ', ((vi(i)-vn)/(vm-vn))*100);
+            fprintf(fid,'\t%8.2f ', 100*((vi(i)-vn)/(vm-vn)));
           end
         case 1
-          fprintf(fid,'\t%8.2f ', 100);
+          fprintf(fid,'\t%8.2f ', 100*(vi(i)/vm));
       end
     end
     fprintf(fid,'\n');
