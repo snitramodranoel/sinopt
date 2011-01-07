@@ -156,7 +156,7 @@ function ropt_(obj,arquivo)
             fprintf(fid,'\t%8.2f ', ((vi(i)-vn)/(vm-vn))*100);
           end
         case 1
-          fprintf(fid,'\t%8.2f ', 0);
+          fprintf(fid,'\t%8.2f ', 100);
       end
     end
     fprintf(fid,'\n');

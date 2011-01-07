@@ -56,6 +56,8 @@ function valor= get(obj, propriedade)
       valor= obj.nc;
     case 'ni'
       valor= obj.ni;
+    case 'nf'
+      valor= obj.nf;
     case 'nj'
       valor= obj.nj;
     case 'nl'
@@ -64,6 +66,8 @@ function valor= get(obj, propriedade)
       valor= obj.np;
     case 'nq'
       valor= obj.nq;
+    case 'nr'
+      valor= obj.nr;
     case 'ns'
       valor= obj.ns;
     case 'nt'

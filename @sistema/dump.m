@@ -41,11 +41,13 @@ function dump(obj)
   fprintf(1,'sistema.li: %dx%d\n', size(obj.li,1), size(obj.li,2));
   fprintf(1,'sistema.mi: %d\n', obj.mi);
   fprintf(1,'sistema.nc: %d\n', obj.nc);
+  fprintf(1,'sistema.nf: %d\n', obj.nf);
   fprintf(1,'sistema.ni: %d\n', obj.ni);
   fprintf(1,'sistema.nj: %d\n', obj.nj);
   fprintf(1,'sistema.nl: %d\n', obj.nl);
   fprintf(1,'sistema.np: %dx%d\n', size(obj.np,1), size(obj.np,2));
   fprintf(1,'sistema.nq: %dx%d\n', size(obj.nq,1), size(obj.nq,2));
+  fprintf(1,'sistema.nr: %d\n', obj.nr);
   fprintf(1,'sistema.ns: %d\n', obj.ns);
   fprintf(1,'sistema.nt: %d\n', obj.nt);
   fprintf(1,'sistema.nu: %d\n', obj.nu);

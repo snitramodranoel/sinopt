@@ -241,6 +241,8 @@ function obj= uhe_(obj, arquivo)
     linha= fgetl(fid);
   end
   % read data
+  nf= 0;
+  nr= 0;
   for j= 1:nu
     fscanf(fid,'%s',1);                        % bogus
     uh{j}= set(uh{j},'vn',fscanf(fid,'%f',1)); % minimum reservoir storage
@@ -256,11 +258,25 @@ function obj= uhe_(obj, arquivo)
     end
     % bogus
     fscanf(fid,'%s',1);
-    % operating status
-    uh{j}= set(uh{j},'ie',fscanf(fid,'%i',1));
-    % clear temporary buffer
-    clear dm;
+    % reservoir operating status
+    ie= fscanf(fid,'%i',1);
+    switch ie
+      case 0
+        nr= nr+1;
+      case 1
+        nf= nf+1;
+    end
+    % save data
+    uh{j}= set(uh{j},'ie',ie);
   end
+  % save data
+  obj.si= set(obj.si,'nf',nf);
+  obj.si= set(obj.si,'nr',nr);
+  % clear temporary buffers
+  clear dm;
+  clear ie;
+  clear nf;
+  clear nr;
 
   % [POCV]
   %  forebay elevation polynomials
