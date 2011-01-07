@@ -240,9 +240,10 @@ function obj= uhe_(obj, arquivo)
   while not(strcmp('[VMDM]',linha))
     linha= fgetl(fid);
   end
+  % allocate temporary buffer
+  nf=  0;
+  nr=  0;
   % read data
-  nf= 0;
-  nr= 0;
   for j= 1:nu
     fscanf(fid,'%s',1);                        % bogus
     uh{j}= set(uh{j},'vn',fscanf(fid,'%f',1)); % minimum reservoir storage
@@ -269,14 +270,35 @@ function obj= uhe_(obj, arquivo)
     % save data
     uh{j}= set(uh{j},'ie',ie);
   end
+  % populate list of indexes
+  ff= 0;
+  rr= 0;
+  uf= zeros(nf,1);
+  ur= zeros(nr,1);
+  for j= 1:nu
+    switch get(uh{j},'ie')
+      case 0
+        rr= rr+1;
+        ur(rr)= j;
+      case 1
+        ff= ff+1;
+        uf(ff)= j;
+    end
+  end
   % save data
   obj.si= set(obj.si,'nf',nf);
+  obj.si= set(obj.si,'uf',uf);
   obj.si= set(obj.si,'nr',nr);
+  obj.si= set(obj.si,'ur',ur);
   % clear temporary buffers
   clear dm;
   clear ie;
   clear nf;
+  clear uf;
   clear nr;
+  clear ur;
+  clear ff;
+  clear rr;
 
   % [POCV]
   %  forebay elevation polynomials

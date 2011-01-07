@@ -96,6 +96,10 @@ function obj= set(obj, varargin)
         obj.uc= valor;
       case 'uh'
         obj.uh= valor;
+      case 'uf'
+        obj.uf= valor;
+      case 'ur'
+        obj.ur= valor;
       case 'ut'
         obj.ut= valor;
       case 'uz'

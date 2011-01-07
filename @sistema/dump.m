@@ -58,6 +58,8 @@ function dump(obj)
   fprintf(1,'sistema.tp: %dx%d\n', size(obj.tp,1), size(obj.tp,2));
   fprintf(1,'sistema.uc: %dx%d\n', size(obj.uc,1), size(obj.uc,2));
   fprintf(1,'sistema.uh: %dx%d\n', size(obj.uh,1), size(obj.uh,2));
+  fprintf(1,'sistema.uf: %dx%d\n', size(obj.uf,1), size(obj.uf,2));
+  fprintf(1,'sistema.ur: %dx%d\n', size(obj.ur,1), size(obj.ur,2));
   fprintf(1,'sistema.ut: %dx%d\n', size(obj.ut,1), size(obj.ut,2));
   fprintf(1,'sistema.vf: %dx%d\n', size(obj.vf,1), size(obj.vf,2));
   fprintf(1,'sistema.vi: %dx%d\n', size(obj.vi,1), size(obj.vi,2));

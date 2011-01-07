@@ -3,7 +3,7 @@
 	* @io/private/hco_.m: Considerada eliminação das variáveis de volume final.
 
 	* @sistema/{sistema,get,set,dump}.m:
-	(obj.nf, obj.nr): Propriedades adicionadas.
+	(obj.nf, obj.nr, obj.uf, obj.ur): Propriedades adicionadas.
 	
 	* @io/private/uhe_.m: Adicionado cálculo do número de usinas fio-d'água.
 	
