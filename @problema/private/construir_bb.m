@@ -31,13 +31,16 @@
 function obj = construir_bb(obj)
   % system data
   af= get(obj.si,'af');
-  ni= get(obj.si,'ni');
-  nu= get(obj.si,'nu');
-  ti= get(obj.si,'ti');
   uc= get(obj.si,'uc');
+  ur= get(obj.si,'ur');
   vi= get(obj.si,'vi');
   vf= get(obj.si,'vf');
-  % build vector
+  % system dimensions
+  ni= get(obj.si,'ni');
+  nr= get(obj.si,'nr');
+  nu= get(obj.si,'nu');
+  ti= get(obj.si,'ti');  
+  % compute initial vector
   b= zeros(nu,ni);
   for k= 1:nu
     up= upstream(obj.si, k);
@@ -48,11 +51,14 @@ function obj = construir_bb(obj)
       end
     end
   end
-  % consumptive use
+  % compute consumptive use
   b= b - uc;
-  % fixed initial and final reservoir states
-  b(:,1) = b(:,1) + (1/(ti(1)/10^6))*(vi);
-  b(:,ni)= b(:,ni) - (1/(ti(ni)/10^6))*(vf);
+  % compute initial, final fixed reservoir states
+  % only hydro plants with a reservoir
+  for i= 1:nr
+    b(ur(i),1) = b(ur(i),1) + vi(ur(i))*(1/(ti(1)/10^6));
+    b(ur(i),ni)= b(ur(i),ni) - vf(ur(i))*(1/(ti(ni)/10^6));
+  end
   % data packing
   b= reshape(b, nu*ni, 1);
   % data update

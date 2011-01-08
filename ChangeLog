@@ -1,7 +1,10 @@
 2011-01-08  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @problema/private/construir_{lb,ub}.m:
-	(obj.ls, obj.us): Eliminação das variáveis de volume de usinas fio-d'água.
+	(obj.ls, obj.us): Eliminadas as variáveis de volume de usinas fio-d'água.
+
+	* @problema/private/construir_{A,X,bb}.m:
+	Eliminadas as variáveis de volume de usinas fio-d'água.
 
 2011-01-07  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 

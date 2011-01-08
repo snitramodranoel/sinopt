@@ -31,7 +31,7 @@
 function obj = construir_X(obj)
   % system dimensions
   ni= get(obj.si,'ni');
-  nu= get(obj.si,'nu');
+  nr= get(obj.si,'nr');
   ti= get(obj.si,'ti');
   % allocate memory for row index vectors
   lip= zeros(obj.na,1);
@@ -45,14 +45,15 @@ function obj = construir_X(obj)
   % compute X
   k= 0;
   for j= 1:ni-1
-    for i= 1:nu
+    % only hydro plants with a reservoir
+    for i= 1:nr
       k= k+1;
       % compute X(j)
       lip(k)= k;
       cop(k)= k;
       ep(k) = 1/(ti(j)/10^6);
       % compute -X(j+1)
-      lin(k)= k + nu;
+      lin(k)= k + nr;
       con(k)= k;
       en(k) = -1/(ti(j+1)/10^6);
     end

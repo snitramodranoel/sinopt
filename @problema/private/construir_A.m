@@ -33,12 +33,15 @@ function obj = construir_A(obj)
   ni= get(obj.si,'ni');
   nj= get(obj.si,'nj');
   np= get(obj.si,'np');
+  nr= get(obj.si,'nr');
   nu= get(obj.si,'nu');
   % build submatrices
-  obj= construir_X(obj); % storage arcs
-  obj= construir_M(obj); % network topology submatrix
-  obj= construir_Q(obj); % water discharge arcs
-  obj= construir_V(obj); % water spill arcs
+  if nr > 0 % check for hydro plants with a reservoir
+    obj= construir_X(obj); % storage arcs
+  end
+  obj= construir_M(obj);   % network topology submatrix
+  obj= construir_Q(obj);   % water discharge arcs
+  obj= construir_V(obj);   % water spill arcs
   % build matrix A
   obj.A= spalloc(obj.ma, obj.nx, 2*obj.na + ni*((nu+nj)*(np+1)));
   obj.A= [obj.X, obj.Q, obj.V];
