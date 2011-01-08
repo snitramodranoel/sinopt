@@ -32,14 +32,24 @@ function obj = construir_lb(obj)
   % system data
   dn= get(obj.si,'dn');
   in= get(obj.si,'in');
-  ni= get(obj.si,'ni');
-  np= get(obj.si,'np');
-  nt= get(obj.si,'nt');
-  nu= get(obj.si,'nu');
+  ur= get(obj.si,'ur');
   ut= get(obj.si,'ut');
   vn= get(obj.si,'vn');
+  % system dimensions
+  ni= get(obj.si,'ni');
+  np= get(obj.si,'np');
+  nr= get(obj.si,'nr');
+  nt= get(obj.si,'nt');
+  nu= get(obj.si,'nu');  
   %% lower bounds on reservoir storage
-  obj.ls= empacotar_s(obj, vn(:,1:ni-1));
+  ls= zeros(nr,ni-1);
+  for i= 1:nr
+    ls(i,:)= vn(ur(i), 1:ni-1);
+  end
+  %  store data
+  obj.ls= empacotar_s(obj,ls);
+  %  clear temporary buffer
+  clear ls;
   %% lower bounds on water discharge
   %  memory allocation
   lq= cell(np,1);

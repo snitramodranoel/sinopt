@@ -34,16 +34,26 @@ function obj = construir_ub(obj)
   % system data
   af= get(obj.si,'af');
   im= get(obj.si,'im');
-  ni= get(obj.si,'ni');
-  np= get(obj.si,'np');
   nq= get(obj.si,'nq');
-  nt= get(obj.si,'nt');
-  nu= get(obj.si,'nu');
   uh= get(obj.si,'uh');
+  ur= get(obj.si,'ur');
   ut= get(obj.si,'ut');
   vm= get(obj.si,'vm');
+  % system dimensions
+  ni= get(obj.si,'ni');
+  np= get(obj.si,'np');
+  nr= get(obj.si,'nr');
+  nt= get(obj.si,'nt');
+  nu= get(obj.si,'nu');
   %% upper bounds on reservoir storage
-  obj.us= empacotar_s(obj, vm(:,1:ni-1));
+  us= zeros(nr,ni-1);
+  for i= 1:nr
+    us(i,:)= vm(ur(i),1:ni-1);
+  end
+  %  store data
+  obj.us= empacotar_s(obj,us);
+  %  clear temporary buffer
+  clear us;
   %% upper bounds on water release
   %  memory allocation
   uq= cell(np,1);
@@ -51,19 +61,19 @@ function obj = construir_ub(obj)
   for l= 1:np
     uq{l}= zeros(nu,ni);
   end
-  for k= 1:nu
+  for i= 1:nu
     % maximum incremental inflow
-    maf= max(af(k,:));
+    maf= max(af(i,:));
     % upper limit
     for j= 1:ni
       % compute maximum water discharge 
       % as a function of the number of available generators
-      qef= qm(uh{k}, nq(k,j));
+      qef= qm(uh{i}, nq(i,j));
       for l= 1:np
-        uq{l}(k,j)= qef;
+        uq{l}(i,j)= qef;
       end
       % compute maximum water spill
-      uv(k,j)= max([maf; beta*qef]);
+      uv(i,j)= max([maf; beta*qef]);
     end
   end
   %  store data

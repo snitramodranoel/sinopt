@@ -34,11 +34,12 @@ function obj= construir(obj)
   ni= get(obj.si,'ni');
   nl= get(obj.si,'nl');
   np= get(obj.si,'np');
+  nr= get(obj.si,'nr');
   ns= get(obj.si,'ns');
   nt= get(obj.si,'nt');
   nu= get(obj.si,'nu');
   % variable-space dimensions
-  obj.na= nu*(ni-1);
+  obj.na= nr*(ni-1);
   obj.nq= nu*ni*np;
   obj.nv= nu*ni;
   obj.nx= obj.na + obj.nq + obj.nv;
