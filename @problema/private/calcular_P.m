@@ -31,38 +31,48 @@
 function P= calcular_P(obj,w)
   % system data
   uh= get(obj.si,'uh');
+  uf= get(obj.si,'uf');
+  ur= get(obj.si,'ur');
+  vi= get(obj.si,'vi');
   vf= get(obj.si,'vf');
   % system dimensions
   ni= get(obj.si,'ni');
+  nf= get(obj.si,'nf');
   np= get(obj.si,'np');
+  nr= get(obj.si,'nr');
   ns= get(obj.si,'ns');
-  nu= get(obj.si,'nu');
   % unpack x variables
-  s=  desempacotar_s(obj, extrair_s(obj,w));
-  q=  desempacotar_q(obj, extrair_q(obj,w));
-  v=  desempacotar_v(obj, extrair_v(obj,w));
+  s = desempacotar_s(obj, extrair_s(obj,w));
+  q = desempacotar_q(obj, extrair_q(obj,w));
+  v = desempacotar_v(obj, extrair_v(obj,w));
   % memory allocation
+  a = zeros(nr,1);
+  L = cell(np,1);
   P = zeros(obj.mb,1);
-  Pl= cell(np,1);
   % compute P()
-  n= ns*ni;
   for l= 1:np
-    Pl{l}= zeros(ns,ni);
+    L{l}= zeros(ns,ni);
     % compute P(j), j=1,2,...
     for j= 1:ni
       % check for final stage
-      if j < ni
+      if (j < ni)
         a= s(:,j);
       else
-        a= vf;
+        for i= 1:nr
+          a(ur(i))= vf(ur(i));
+        end
       end
-      % compute hydro power generation
-      for i= 1:nu
-        k= get(uh{i},'ss');
-        Pl{l}(k,j)= Pl{l}(k,j) + p(uh{i}, a(i), q{l}(i,j), v(i,j));
+      % compute hydro power generation in run-off-river plants
+      for i= 1:nf
+        L{l}(k,j)= L{l}(k,j) + p(uh{uf(i)},vi(uf(i)),q{l}(uf(i),j),v(uf(i),j));
+      end
+      % compute hydro power generation in plants with a reservoir
+      for i= 1:nr
+        k= get(uh{ur(i)},'ss');
+        L{l}(k,j)= L{l}(k,j) + p(uh{ur(i)},a(ur(i)),q{l}(ur(i),j),v(ur(i),j));
       end
     end
-    % pack
-    P(n*(l-1)+1:n*l)= reshape(Pl{l}, n, 1);
+    % pack data
+    P(ns*ni*(l-1)+1:ns*ni*l)= reshape(L{l}, ns*ni, 1);
   end
 end

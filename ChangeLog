@@ -1,3 +1,8 @@
+2011-01-09  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+	* @problema/private/calcular_P.m: 
+	Eliminadas variáveis de volume de usinas fio-d'água.
+
 2011-01-08  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @problema/private/construir_{lb,ub}.m:
