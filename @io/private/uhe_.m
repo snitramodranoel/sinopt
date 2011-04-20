@@ -42,7 +42,7 @@ function obj= uhe_(obj, arquivo)
   % read data
   v= fscanf(fid,'%f',1);
   % check for file version
-  if v ~= 2.0
+  if v ~= 3.0
     fclose(fid);
     error('sinopt:io:uhe:fileNotSupported', ...
         'HydroLab UHE file version %1.1f is not supported', v);
@@ -65,19 +65,6 @@ function obj= uhe_(obj, arquivo)
   uh= cell(nu,1);
   for j= 1:nu
     uh{j}= uhe();
-  end
-
-  % [NINT]
-  %  number of stages
-  linha= fgetl(fid);
-  while not(strcmp('[NINT]',linha))
-    linha= fgetl(fid);
-  end
-  % read data
-  ni= fscanf(fid,'%d',1);
-  % sanity check
-  if ni ~= get(obj.si,'ni')
-    error('sinopt:io:uhe:numberMismatch', 'Wrong number of stages');
   end
 
   % [UHID]
