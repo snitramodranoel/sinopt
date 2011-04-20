@@ -45,7 +45,7 @@ function f= calcular_f(obj,w)
     co= get(ut{k},'co');
     for j= 1:ni
       for l= 1:np
-        f= f + calcular(co, z{l}(k,j), tp{l}(j)/ti(j)*(ti(j)/mean(ti)));
+        f= f + calcular(co, z{l}(k,j), (tp{l}(j)/ti(j))*(ti(j)/mean(ti)));
       end
     end
   end
