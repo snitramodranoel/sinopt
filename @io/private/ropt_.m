@@ -119,11 +119,16 @@ function ropt_(obj,arquivo)
   for j= 1:ni+1
     fprintf(fid,'  %s     ',data{j});
     for i= 1:nu
-      if (j > 1)
-        if (j < ni+1)
-          fprintf(fid,'\t%8.2f ',s(i,j-1));
+      ror= get(uh{i},'ie');
+      if ~ror
+        if (j > 1)
+          if (j < ni+1)
+            fprintf(fid,'\t%8.2f ',s(i,j-1));
+          else
+            fprintf(fid,'\t%8.2f ',vf(i));
+          end
         else
-          fprintf(fid,'\t%8.2f ',vf(i));
+          fprintf(fid,'\t%8.2f ',vi(i));
         end
       else
         fprintf(fid,'\t%8.2f ',vi(i));
@@ -134,6 +139,7 @@ function ropt_(obj,arquivo)
   % clear temporary buffers
   clear j;
   clear i;
+  clear ror;
 
   % [VOLU]
   % reservoir storage (in % of total capacity)
@@ -141,22 +147,21 @@ function ropt_(obj,arquivo)
   for j= 1:ni+1
     fprintf(fid,'  %s     ',data{j});
     for i= 1:nu
-      ie= get(uh{i},'ie');
-      vm= get(uh{i},'vm');
-      vn= get(uh{i},'vn');
-      switch ie
-        case 0
-          if (j > 1)
-            if (j < ni+1)
-              fprintf(fid,'\t%8.2f ', 100*((s(i,j-1)-vn)/(vm-vn)));
-            else
-              fprintf(fid,'\t%8.2f ', 100*((vf(i)-vn)/(vm-vn)));
-            end
+      ror= get(uh{i},'ie');
+      vm = get(uh{i},'vm');
+      vn = get(uh{i},'vn');
+      if ~ror
+        if (j > 1)
+          if (j < ni+1)
+            fprintf(fid,'\t%8.2f ', 100*((s(i,j-1)-vn)/(vm-vn)));
           else
-            fprintf(fid,'\t%8.2f ', 100*((vi(i)-vn)/(vm-vn)));
+            fprintf(fid,'\t%8.2f ', 100*((vf(i)-vn)/(vm-vn)));
           end
-        case 1
-          fprintf(fid,'\t%8.2f ', 100*(vi(i)/vm));
+        else
+          fprintf(fid,'\t%8.2f ', 100*((vi(i)-vn)/(vm-vn)));
+        end
+      else
+        fprintf(fid,'\t%8.2f ', 100*(vi(i)/vm));
       end
     end
     fprintf(fid,'\n');
@@ -166,6 +171,7 @@ function ropt_(obj,arquivo)
   clear i;
   clear vm;
   clear vn;
+  clear ror;
 
   % [DFLU]
   % water released
@@ -300,10 +306,15 @@ function ropt_(obj,arquivo)
         fprintf(fid,'\t%2d ',l);
       end
       for i= 1:nu
-        if (j < ni)
-          fprintf(fid,'\t%8.2f ',p(uh{i},s(i,j),q{l}(i,j),v(i,j)));
+        ror= get(uh{i},'ie');
+        if ~ror
+          if (j < ni)
+            fprintf(fid,'\t%8.2f ',p(uh{i},s(i,j),q{l}(i,j),v(i,j)));
+          else
+            fprintf(fid,'\t%8.2f ',p(uh{i},vf(i),q{l}(i,j),v(i,j)));
+          end
         else
-          fprintf(fid,'\t%8.2f ',p(uh{i},vf(i),q{l}(i,j),v(i,j)));
+          fprintf(fid,'\t%8.2f ',p(uh{i},vi(i),q{l}(i,j),v(i,j)));
         end
       end
       fprintf(fid,'\n');
@@ -313,6 +324,7 @@ function ropt_(obj,arquivo)
   clear j;
   clear l;
   clear i;
+  clear ror;
 
   % [GUTE]
   % power generation at thermal plants

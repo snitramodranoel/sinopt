@@ -29,8 +29,11 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function obj = construir_X(obj)
+  % system data
+  ur= get(obj.si,'ur');
   % system dimensions
   ni= get(obj.si,'ni');
+  nu= get(obj.si,'nu');
   nr= get(obj.si,'nr');
   ti= get(obj.si,'ti');
   % allocate memory for row index vectors
@@ -49,11 +52,11 @@ function obj = construir_X(obj)
     for i= 1:nr
       k= k+1;
       % compute X(j)
-      lip(k)= k;
+      lip(k)= ur(i) + nu*(j-1);
       cop(k)= k;
       ep(k) = 1/(ti(j)/10^6);
       % compute -X(j+1)
-      lin(k)= k + nr;
+      lin(k)= ur(i) + nu*j;
       con(k)= k;
       en(k) = -1/(ti(j+1)/10^6);
     end
