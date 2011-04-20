@@ -31,7 +31,7 @@
 function S= desempacotar_s(obj,s)
   % system dimensions
   ni= get(obj.si,'ni');
-  nu= get(obj.si,'nu');
+  nr= get(obj.si,'nr');
   % return matrix
-  S= reshape(s,nu,ni-1);
+  S= reshape(s,nr,ni-1);
 end
