@@ -31,11 +31,13 @@
 function HP= calcular_HP(obj,w,lambda)
   % system data
   uh= get(obj.si,'uh');
+  ur= get(obj.si,'ur');
   vf= get(obj.si,'vf');
   % system dimensions
   ni= get(obj.si,'ni');
   np= get(obj.si,'np');
   nu= get(obj.si,'nu');
+  nr= get(obj.si,'nr');
   n = nu*ni;
   % compute number of nonzeros elements
   nze= obj.na*(2*np + 1) + n*(3*np + 1);
@@ -77,16 +79,22 @@ function HP= calcular_HP(obj,w,lambda)
     if j < ni
       a= s(:,j);
     else
-      a= vf;
+      for i= 1:nr
+        a(i)= vf(ur(i));
+      end
     end
     % perform computations
     for i= 1:nu
-      % check for final stage
-      if j < ni
-        r= r+1;
-        % compute row, column indexes for dp/dss partial derivatives
-        liss(r)= r;
-        coss(r)= liss(r);
+      ror= get(uh{i},'ie');
+      % check for plants with a reservoir
+      if ~ror
+        % check for final stage
+        if j < ni
+          r= r+1;
+          % compute row, column indexes for dp/dss partial derivatives
+          liss(r)= r;
+          coss(r)= liss(r);
+        end
       end
       % compute row, column indexes for dp/dvv partial derivatives
       u= u+1;
@@ -94,20 +102,23 @@ function HP= calcular_HP(obj,w,lambda)
       covv(u)= livv(u);
       for l= 1:np
         k= k+1;
-        % temporary buffer
-        y= yb{l}(get(uh{i},'ss'),j);
-        % check for final stage
-        if j < ni
-          t= t+1;
-          % compute row, column indexes for dp/dsq partial derivatives
-          lisq(t)= liss(r);
-          cosq(t)= obj.na + n*(l-1) + u;
-          % compute transpose indexes for dp/dqs partial derivatives
-          liqs(t)= cosq(t);
-          coqs(t)= lisq(t);
-          % compute dp/dss and dp/dsq partial derivatives
-          dss(r)= dss(r) + y * dpdss(uh{i},a(i),q{l}(i,j));
-          dsq(t)= y * dpdsq(uh{i},a(i));
+        % check for plants with a reservoir
+        if ~ror
+          % temporary buffer
+          y= yb{l}(get(uh{i},'ss'),j);
+          % check for final stage
+          if j < ni
+            t= t+1;
+            % compute row, column indexes for dp/dsq partial derivatives
+            lisq(t)= liss(r);
+            cosq(t)= obj.na + n*(l-1) + u;
+            % compute transpose indexes for dp/dqs partial derivatives
+            liqs(t)= cosq(t);
+            coqs(t)= lisq(t);
+            % compute dp/dss and dp/dsq partial derivatives
+            dss(r)= dss(r) + y * dpdss(uh{i},a(i),q{l}(i,j));
+            dsq(t)= y * dpdsq(uh{i},a(i));
+          end
         end
         % compute row indexes for dp/dqq and dp/dqv partial derivatives
         liqq(k)= obj.na + n*(l-1) + u;

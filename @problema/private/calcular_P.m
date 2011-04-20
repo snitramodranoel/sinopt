@@ -59,17 +59,18 @@ function P= calcular_P(obj,w)
         a= s(:,j);
       else
         for i= 1:nr
-          a(ur(i))= vf(ur(i));
+          a(i)= vf(ur(i));
         end
       end
       % compute hydro power generation in run-off-river plants
       for i= 1:nf
+        k= get(uh{uf(i)},'ss');
         L{l}(k,j)= L{l}(k,j) + p(uh{uf(i)},vi(uf(i)),q{l}(uf(i),j),v(uf(i),j));
       end
       % compute hydro power generation in plants with a reservoir
       for i= 1:nr
         k= get(uh{ur(i)},'ss');
-        L{l}(k,j)= L{l}(k,j) + p(uh{ur(i)},a(ur(i)),q{l}(ur(i),j),v(ur(i),j));
+        L{l}(k,j)= L{l}(k,j) + p(uh{ur(i)},a(i),q{l}(ur(i),j),v(ur(i),j));
       end
     end
     % pack data
