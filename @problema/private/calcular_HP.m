@@ -83,11 +83,14 @@ function HP= calcular_HP(obj,w,lambda)
         a(i)= vf(ur(i));
       end
     end
+    % reset index of plants with a reservoir
+    z = 0;
     % perform computations
     for i= 1:nu
       ror= get(uh{i},'ie');
       % check for plants with a reservoir
       if ~ror
+        z= z+1;
         % check for final stage
         if j < ni
           r= r+1;
@@ -102,10 +105,10 @@ function HP= calcular_HP(obj,w,lambda)
       covv(u)= livv(u);
       for l= 1:np
         k= k+1;
+        % buffer
+        y= yb{l}(get(uh{i},'ss'),j);
         % check for plants with a reservoir
         if ~ror
-          % temporary buffer
-          y= yb{l}(get(uh{i},'ss'),j);
           % check for final stage
           if j < ni
             t= t+1;
@@ -116,8 +119,8 @@ function HP= calcular_HP(obj,w,lambda)
             liqs(t)= cosq(t);
             coqs(t)= lisq(t);
             % compute dp/dss and dp/dsq partial derivatives
-            dss(r)= dss(r) + y * dpdss(uh{i},a(i),q{l}(i,j));
-            dsq(t)= y * dpdsq(uh{i},a(i));
+            dss(r)= dss(r) + y * dpdss(uh{i},a(z),q{l}(i,j));
+            dsq(t)= y * dpdsq(uh{i},a(z));
           end
         end
         % compute row indexes for dp/dqq and dp/dqv partial derivatives
