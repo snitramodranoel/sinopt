@@ -218,7 +218,7 @@ function obj= uhe_(obj, arquivo)
   % read data
   for j= 1:nu
     fscanf(fid,'%s',1); % bogus
-    uh{j}= set(uh{j},'id',fscanf(fid,'%f',1)); % unavailability rate
+    uh{j}= set(uh{j},'id',fscanf(fid,'%f',1)); % availability rate
   end
 
   % [VMDM]

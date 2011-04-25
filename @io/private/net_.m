@@ -42,7 +42,7 @@ function obj= net_(obj, arquivo)
   % read data
   v= fscanf(fid,'%f',1);
   % check for file version
-  if v ~= 2.1
+  if v ~= 3.0
     fclose(fid);
     error('sinopt:io:net:fileNotSupported', ...
         'HydroLab NET file version %1.1f is not supported', v);

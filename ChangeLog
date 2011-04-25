@@ -1,3 +1,23 @@
+2011-04-25  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+	* @io/private/net_.m:
+	([VERS]): Atualização da versão do arquivo de dados para 3.0.
+
+	* @io/private/ute_.m:
+	([VERS]): Atualização da versão do arquivo de dados para 3.0.
+
+2011-04-20  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+	* @problema/private/calcular_JP.m: 
+	Eliminadas variáveis de volume de usinas fio-d'água.
+
+	* @problema/private/calcular_HP.m:
+	Eliminadas variáveis de volume de usinas fio-d'água.
+
+	* @io/private/uhe_.m:
+	([NLIN]): Eliminação da seção.
+	([VERS]): Atualização da versão do arquivo de dados para 3.0.
+
 2011-01-09  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @problema/private/calcular_P.m: 
