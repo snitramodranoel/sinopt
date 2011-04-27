@@ -81,7 +81,7 @@ function JP= calcular_JP(obj,w)
           u = u+1;
           ds(u) = dpds(uh{ur(i)}, a(i), q{l}(ur(i),j));
           lis(u)= get(uh{ur(i)},'ss') + m*(l-1) + ns*(j-1);
-          cos(u)= ur(i) + (nr*(j-1));
+          cos(u)= i + (nr*(j-1));
         end
         k = k+1;
         % discharge variables
