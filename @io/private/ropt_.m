@@ -117,13 +117,15 @@ function ropt_(obj,arquivo)
   % reservoir storage
   fprintf(fid,'\n[VOLA]\n');
   for j= 1:ni+1
+    k= 0;
     fprintf(fid,'  %s     ',data{j});
     for i= 1:nu
       ror= get(uh{i},'ie');
       if ~ror
+        k= k+1;
         if (j > 1)
           if (j < ni+1)
-            fprintf(fid,'\t%8.2f ',s(i,j-1));
+            fprintf(fid,'\t%8.2f ',s(k,j-1));
           else
             fprintf(fid,'\t%8.2f ',vf(i));
           end
@@ -137,23 +139,26 @@ function ropt_(obj,arquivo)
     fprintf(fid,'\n');
   end
   % clear temporary buffers
-  clear j;
   clear i;
+  clear j;
+  clear k;
   clear ror;
 
   % [VOLU]
   % reservoir storage (in % of total capacity)
   fprintf(fid,'\n[VOLU]\n');
   for j= 1:ni+1
+    k= 0;
     fprintf(fid,'  %s     ',data{j});
     for i= 1:nu
       ror= get(uh{i},'ie');
       vm = get(uh{i},'vm');
       vn = get(uh{i},'vn');
       if ~ror
+        k= k+1;
         if (j > 1)
           if (j < ni+1)
-            fprintf(fid,'\t%8.2f ', 100*((s(i,j-1)-vn)/(vm-vn)));
+            fprintf(fid,'\t%8.2f ', 100*((s(k,j-1)-vn)/(vm-vn)));
           else
             fprintf(fid,'\t%8.2f ', 100*((vf(i)-vn)/(vm-vn)));
           end
@@ -167,8 +172,9 @@ function ropt_(obj,arquivo)
     fprintf(fid,'\n');
   end
   % clear temporary buffers
-  clear j;
   clear i;
+  clear j;
+  clear k;
   clear vm;
   clear vn;
   clear ror;
@@ -305,11 +311,13 @@ function ropt_(obj,arquivo)
       else
         fprintf(fid,'\t%2d ',l);
       end
+      k= 0;
       for i= 1:nu
         ror= get(uh{i},'ie');
         if ~ror
+          k= k+1;
           if (j < ni)
-            fprintf(fid,'\t%8.2f ',p(uh{i},s(i,j),q{l}(i,j),v(i,j)));
+            fprintf(fid,'\t%8.2f ',p(uh{i},s(k,j),q{l}(i,j),v(i,j)));
           else
             fprintf(fid,'\t%8.2f ',p(uh{i},vf(i),q{l}(i,j),v(i,j)));
           end
@@ -321,9 +329,10 @@ function ropt_(obj,arquivo)
     end
   end
   % clear temporary buffers
-  clear j;
-  clear l;
   clear i;
+  clear j;
+  clear k;
+  clear l;
   clear ror;
 
   % [GUTE]
