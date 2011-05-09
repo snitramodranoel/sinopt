@@ -30,9 +30,8 @@
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function obj = construir_ub(obj)
   % maximum water spill factor
-  beta= 10;
+  beta= 2;
   % system data
-  af= get(obj.si,'af');
   im= get(obj.si,'im');
   nq= get(obj.si,'nq');
   uh= get(obj.si,'uh');
@@ -62,18 +61,22 @@ function obj = construir_ub(obj)
     uq{l}= zeros(nu,ni);
   end
   for i= 1:nu
-    % maximum incremental inflow
-    maf= max(af(i,:));
+    yf= get(uh{i},'yf');        % tailrace data
+    mq= qm(uh{i},max(nq(i,:))); % maximum water discharge
     % upper limit
     for j= 1:ni
       % compute maximum water discharge 
       % as a function of the number of available generators
-      qef= qm(uh{i}, nq(i,j));
+      qef= qm(uh{i},nq(i,j));
       for l= 1:np
         uq{l}(i,j)= qef;
       end
       % compute maximum water spill
-      uv(i,j)= max([maf; beta*qef]);
+      if yf{1,3} > 0
+        uv(i,j)= yf{1,3} - mq;
+      else
+        uv(i,j)= beta*mq;
+      end
     end
   end
   %  store data

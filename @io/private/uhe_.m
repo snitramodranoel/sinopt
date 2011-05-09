@@ -303,7 +303,8 @@ function obj= uhe_(obj, arquivo)
     poly= set(poly,'cf',M);
     uh{j}= set(uh{j},'yc',poly);
     % clear temporary buffers
-    clear poly M;
+    clear M;
+    clear poly;
   end
 
   % [POAC]
@@ -322,7 +323,8 @@ function obj= uhe_(obj, arquivo)
     poly= set(poly,'cf',M);
     uh{j}= set(uh{j},'ya',poly);
     % clear temporary buffers
-    clear poly M;
+    clear M;
+    clear poly;
   end
 
   % [POCF]
@@ -337,14 +339,17 @@ function obj= uhe_(obj, arquivo)
     fscanf(fid,'%s',1);
     % polynomials
     np= fscanf(fid,'%i',1);
-    yf= cell(np,2);
+    yf= cell(np,3);
     for k= 1:np
-      M= fscanf(fid,'%f',[5 1]);
+      pol= fscanf(fid,'%f',[5 1]);
       ref= fscanf(fid,'%f',1);
+      lim= fscanf(fid,'%f',1);
       yf{k,1}= ref;
-      yf{k,2}= polinomio();
-      yf{k,2}= set(yf{k,2},'cf',M);
-      clear M ref;
+      yf{k,2}= set(polinomio(),'cf',pol);
+      yf{k,3}= lim;
+      clear pol;
+      clear ref;
+      clear lim;
     end
     uh{j}= set(uh{j},'yf',yf);
     % clear temporary buffer
