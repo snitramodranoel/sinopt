@@ -1,3 +1,22 @@
+SINopt 2.2-RELEASE: Novidades
+
+ ** Maior redução do espaço de variáveis.
+
+	Eliminação das variáveis de volume armazenado nas usinas fio-d'água.
+
+ ** Melhoramentos de convergência.
+
+	Além da eliminação de variáveis, que contribui para melhores taxas
+	de convergência, o suporte a polinômios PCF com ponto de inflexão
+	foi adicionado.
+ 
+SINopt 2.1-RELEASE: Novidades
+
+ ** Redução do espaço de variáveis.
+
+	Eliminação das variáveis de volume final armazenado em todas usinas
+	hidrelétricas.
+
 SINopt 2.0-RELEASE: Novidades
 
  ** Simplificação dos argumentos de chamada do otimizador.

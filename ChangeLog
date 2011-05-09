@@ -1,3 +1,7 @@
+2011-05-06  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+	* @uhe/uhe.m (obj.yf): Adição da dimensão referente ao ponto de inflexão.
+
 2011-04-25  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @io/private/net_.m:
