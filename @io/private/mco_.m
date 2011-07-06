@@ -32,7 +32,6 @@ function obj= mco_(obj, arquivo)
   % open file
   fid= fopen(arquivo,'r');
   frewind(fid);
-
   % [VERS]
   %  file version
   linha= fgetl(fid);
@@ -47,7 +46,6 @@ function obj= mco_(obj, arquivo)
     error('sinopt:io:mco:fileNotSupported', ...
           'HydroLab MCO file version %1.1f is not supported', v);
   end
-
   % [NSUB]
   %  number of subsystems
   linha= fgetl(fid);
@@ -57,7 +55,6 @@ function obj= mco_(obj, arquivo)
   % read
   ns= fscanf(fid,'%d',1);
   obj.si= set(obj.si,'ns',ns);
-
   % [NINT]
   %  number of stages
   linha= fgetl(fid);
@@ -70,7 +67,6 @@ function obj= mco_(obj, arquivo)
   if ni ~= get(obj.si,'ni')
     error('sinopt:io:mco:numberMismatch','Wrong number of stages');
   end
-
   % [NPAT]
   %  number of load levels per stage
   linha= fgetl(fid);
@@ -83,7 +79,6 @@ function obj= mco_(obj, arquivo)
   if np ~= get(obj.si,'np');
     error('sinopt:io:mco:numberMismatch','Wrong number of load levels');
   end
-
   % [MSUB]
   %  load per subsystem, load level, and stage
   linha= fgetl(fid);
@@ -109,7 +104,6 @@ function obj= mco_(obj, arquivo)
   obj.si= set(obj.si,'dc',dc);
   % clear temporary buffer
   clear dc;
-  
   % [GPUH]
   %  fixed generation at small hydro plants
   linha= fgetl(fid);
@@ -135,7 +129,6 @@ function obj= mco_(obj, arquivo)
   obj.si= set(obj.si,'gp',gp);
   % clear temporary buffer
   clear gp;
-
   % close file
   fclose(fid);
 end

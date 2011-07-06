@@ -32,7 +32,6 @@ function obj= ute_(obj,arquivo)
   % open file
   fid= fopen(arquivo,'r');
   frewind(fid);
-
   % [VERS]
   %  file version
   linha= fgetl(fid);
@@ -47,7 +46,6 @@ function obj= ute_(obj,arquivo)
     error('sinopt:io:ute:fileNotSupported', ...
           'HydroLab UTE file version %1.1f is not supported', v);
   end
-
   % [NUTE]
   %  number of thermal plants
   linha= fgetl(fid);
@@ -57,7 +55,6 @@ function obj= ute_(obj,arquivo)
   % read data
   nt= fscanf(fid,'%d',1);
   obj.si= set(obj.si,'nt',nt);
-
   % [NINT]
   %  number of stages
   linha= fgetl(fid);
@@ -70,7 +67,6 @@ function obj= ute_(obj,arquivo)
   if ni ~= get(obj.si,'ni')
     error('sinopt:io:ute:numberMismatch', 'Wrong number of stages');
   end
-
   % [NPAT]
   %  number of load levels per stage
   linha= fgetl(fid);
@@ -83,7 +79,6 @@ function obj= ute_(obj,arquivo)
   if np ~= get(obj.si,'np');
     error('sinopt:io:ute:numberMismatch','Wrong number of load levels');
   end
-
   % memory allocation
   ut= cell(get(obj.si,'nt'),1);
   fc= cell(nt,1);
@@ -98,7 +93,6 @@ function obj= ute_(obj,arquivo)
     id{t}= zeros(np,ni);
     pe{t}= zeros(np,ni);
   end
-
   % [UTID]
   %  thermal plant identification
   linha= fgetl(fid);
@@ -110,7 +104,6 @@ function obj= ute_(obj,arquivo)
     fscanf(fid,'%s',1); % bogus
     ut{j}= set(ut{j},'nm',strtrim(fgetl(fid))); % identification
   end
-
   % [PRIM]
   %  codes
   linha= fgetl(fid);
@@ -126,7 +119,6 @@ function obj= ute_(obj,arquivo)
     fscanf(fid,'%d',1); % bogus
     fscanf(fid,'%f',1); % bogus
   end
-
   % [PUGT]
   %  installed capacity
   linha= fgetl(fid);
@@ -146,7 +138,6 @@ function obj= ute_(obj,arquivo)
       clear tb;
     end
   end
-
   % [TXID]
   %  availability rate
   linha= fgetl(fid);
@@ -166,7 +157,6 @@ function obj= ute_(obj,arquivo)
       clear tb;
     end
   end
-
   % [GMIN]
   %  lower bounds on power generation
   linha= fgetl(fid);
@@ -186,7 +176,6 @@ function obj= ute_(obj,arquivo)
       clear tb;
     end
   end
-
   % [CUST]
   %  cost functions
   linha= fgetl(fid);
@@ -206,7 +195,6 @@ function obj= ute_(obj,arquivo)
     clear polinomio;
     clear cf;
   end
-
   % [FCMX]
   %  capacity factor
   linha= fgetl(fid);
@@ -226,7 +214,6 @@ function obj= ute_(obj,arquivo)
       clear tb;
     end
   end
-
   % update list of thermal plants
   for t= 1:nt
     ut{t}= set(ut{t},'fc',fc{t});
@@ -240,7 +227,6 @@ function obj= ute_(obj,arquivo)
   clear gn;
   clear id;
   clear pe;
-
   % close file
   fclose(fid);
 end

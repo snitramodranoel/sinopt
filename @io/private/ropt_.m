@@ -68,51 +68,41 @@ function ropt_(obj,arquivo)
   end
   % clear temporary buffer
   clear k;
-
   % header
   fprintf(fid,'// SINopt\n');
   fprintf(fid,'// Resultados\n');
-
   % [VERS]
   % file version
   fprintf(fid,'\n[VERS]\n');
   fprintf(fid,' 2.0\n');
-
   % [NUHE]
   % number of hydro plants
   fprintf(fid,'\n[NUHE]\n');
   fprintf(fid,' %3d\n',nu);
-
   % [NUTE]
   % number of thermal plants
   fprintf(fid,'\n[NUTE]\n');
   fprintf(fid,' %3d\n',nt);
-
   % [NSUB]
   %  number of subsystems
   fprintf(fid,'\n[NSUB]\n');
   fprintf(fid,' %3d\n',ns);
-
   % [NLIN]
   % number of power transmission lines
   fprintf(fid,'\n[NLIN]\n');
   fprintf(fid,' %3d\n',nl);
-
   % [NINT]
   % number of stages of the optimization horizon
   fprintf(fid,'\n[NINT]\n');
   fprintf(fid,' %3d\n',ni);
-
   % [NPAT]
   % number of power transmission lines
   fprintf(fid,'\n[NPAT]\n');
   fprintf(fid,' %3d\n',np);
-  
   % [DATA]
   % start date
   fprintf(fid,'\n[DATA]\n');
   fprintf(fid,'  %2d %2d %4d\n',di,mi,ai);
-
   % [VOLA]
   % reservoir storage
   fprintf(fid,'\n[VOLA]\n');
@@ -143,7 +133,6 @@ function ropt_(obj,arquivo)
   clear j;
   clear k;
   clear ror;
-
   % [VOLU]
   % reservoir storage (in % of total capacity)
   fprintf(fid,'\n[VOLU]\n');
@@ -178,7 +167,6 @@ function ropt_(obj,arquivo)
   clear vm;
   clear vn;
   clear ror;
-
   % [DFLU]
   % water released
   fprintf(fid,'\n[DFLU]\n');
@@ -200,7 +188,6 @@ function ropt_(obj,arquivo)
   clear j;
   clear l;
   clear i;
-
   % [TURB]
   % water discharged
   fprintf(fid,'\n[TURB]\n');
@@ -222,7 +209,6 @@ function ropt_(obj,arquivo)
   clear j;
   clear l;
   clear i;
-
   % [VINC]
   % incremental inflows
   fprintf(fid,'\n[VINC]\n');
@@ -236,7 +222,6 @@ function ropt_(obj,arquivo)
   % clear temporary buffers
   clear j;
   clear i;
-
   % [VMOT]
   % forebay 
   fprintf(fid,'\n[VMOT]\n');
@@ -263,7 +248,6 @@ function ropt_(obj,arquivo)
   clear t;
   clear im;
   clear um;
-
   % [QMAX]
   % maximum water discharge
   fprintf(fid,'\n[QMAX]\n');
@@ -285,7 +269,6 @@ function ropt_(obj,arquivo)
   clear j;
   clear l;
   clear i;
-
   % [VERT]
   % water spilled
   fprintf(fid,'\n[VERT]\n');
@@ -299,7 +282,6 @@ function ropt_(obj,arquivo)
   % clear temporary buffers
   clear j;
   clear i;
-
   % [GUHE]
   % power generation at hydro plants
   fprintf(fid,'\n[GUHE]\n');
@@ -334,7 +316,6 @@ function ropt_(obj,arquivo)
   clear k;
   clear l;
   clear ror;
-
   % [GUTE]
   % power generation at thermal plants
   fprintf(fid,'\n[GUTE]\n');
@@ -356,7 +337,6 @@ function ropt_(obj,arquivo)
   clear j;
   clear l;
   clear t;
-
   % [GHSS]
   % total hydro power generation
   fprintf(fid,'\n[GHSS]\n');
@@ -378,7 +358,6 @@ function ropt_(obj,arquivo)
   clear j;
   clear l;
   clear k;
-
   % [GTSS]
   % total thermal power generation
   fprintf(fid,'\n[GTSS]\n');
@@ -400,7 +379,6 @@ function ropt_(obj,arquivo)
   clear j;
   clear l;
   clear k;
-
   % [INTC]
   % power transmission
   fprintf(fid,'\n[INTC]\n');
@@ -422,7 +400,6 @@ function ropt_(obj,arquivo)
   clear j;
   clear l;
   clear k;
-
   % [CMOP]
   % marginal costs
   fprintf(fid,'\n[CMOP]\n');
@@ -444,7 +421,6 @@ function ropt_(obj,arquivo)
   clear j;
   clear l;
   clear k;
-
   % [VLOR]
   % water value
   fprintf(fid,'\n[VLOR]\n');
@@ -458,7 +434,6 @@ function ropt_(obj,arquivo)
   % clear temporary buffers
   clear j;
   clear i;
-
   % close file
   fclose(fid);
 end

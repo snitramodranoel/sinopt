@@ -32,7 +32,6 @@ function obj= hco_(obj,arquivo)
   % open file
   fid= fopen(arquivo,'r');
   frewind(fid);
-
   % [VERS]
   %  file version
   linha= fgetl(fid);
@@ -47,7 +46,6 @@ function obj= hco_(obj,arquivo)
     error('sinopt:io:hco:fileNotSupported', ...
       'HydroLab HCO file version %1.1f is not supported', v);
   end
-
   % [DATA]
   %  start date
   linha= fgetl(fid);
@@ -59,7 +57,6 @@ function obj= hco_(obj,arquivo)
   obj.si= set(obj.si,'di',fscanf(fid,'%d',1));
   obj.si= set(obj.si,'mi',fscanf(fid,'%d',1));
   obj.si= set(obj.si,'ai',fscanf(fid,'%d',1));
-  
   % [NUHE]
   %  number of hydro plants
   linha= fgetl(fid);
@@ -69,7 +66,6 @@ function obj= hco_(obj,arquivo)
   % read
   nu= fscanf(fid,'%d',1);
   obj.si= set(obj.si,'nu',nu);
-
   % [NINT]
   %  number of stages
   linha= fgetl(fid);
@@ -79,7 +75,6 @@ function obj= hco_(obj,arquivo)
   % read
   ni= fscanf(fid,'%d',1);
   obj.si= set(obj.si,'ni',ni);
-
   % [NPAT]
   %  number of load levels
   linha= fgetl(fid);
@@ -89,7 +84,6 @@ function obj= hco_(obj,arquivo)
   % read
   np= fscanf(fid,'%d',1);
   obj.si= set(obj.si,'np',np);
-
   % [VOIF]
   %  initial and final reservoir storage requirements
   linha= fgetl(fid);
@@ -104,7 +98,6 @@ function obj= hco_(obj,arquivo)
   obj.si= set(obj.si,'vf',voif(2,:)');
   % clear temporary buffer
   clear voif;
-
   % [VMAX]
   %  maximum reservoir storage
   linha= fgetl(fid);
@@ -120,7 +113,6 @@ function obj= hco_(obj,arquivo)
   obj.si= set(obj.si,'vm', vm);
   % clear temporary buffer
   clear vm;
-
   % [VMIN]
   %  minimum reservoir storage
   linha= fgetl(fid);
@@ -136,7 +128,6 @@ function obj= hco_(obj,arquivo)
   obj.si= set(obj.si,'vn', vn);
   % clear temporary buffer
   clear vn;
-  
   % [EVAP]
   %  evaporation coefficients
   linha= fgetl(fid);
@@ -152,7 +143,6 @@ function obj= hco_(obj,arquivo)
   obj.si= set(obj.si,'ev', ev);
   % clear temporary buffer
   clear ev;
-
   % [USOC]
   %  consumptive use of reservoir water
   linha= fgetl(fid);
@@ -168,7 +158,6 @@ function obj= hco_(obj,arquivo)
   obj.si= set(obj.si,'uc', uc);
   % clear temporary buffer
   clear uc;
-
   % [DEFM]
   %  minimum water release
   linha= fgetl(fid);
@@ -184,7 +173,6 @@ function obj= hco_(obj,arquivo)
   obj.si= set(obj.si,'dn', dn);
   % clear temporary buffer
   clear dn;
-
   % [NMAQ]
   %  maximum number of generators available
   linha= fgetl(fid);
@@ -200,7 +188,6 @@ function obj= hco_(obj,arquivo)
   obj.si= set(obj.si,'nq', nq);
   % clear temporary buffer
   clear nq;
-
   % [DINT]
   %  duration of stages
   linha= fgetl(fid);
@@ -216,7 +203,6 @@ function obj= hco_(obj,arquivo)
   obj.si= set(obj.si,'ti', ti);
   % clear temporary buffer
   clear ti;
-
   % [DPAT]
   %  load levels duration for each stage
   linha= fgetl(fid);
@@ -239,7 +225,6 @@ function obj= hco_(obj,arquivo)
   obj.si= set(obj.si,'tp', tp);
   % clear temporary buffer
   clear tp;
-
   % fecha arquivo
   fclose(fid);
 end

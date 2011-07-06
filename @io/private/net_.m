@@ -32,7 +32,6 @@ function obj= net_(obj, arquivo)
   % open file
   fid= fopen(arquivo,'r');
   frewind(fid);
-
   % [VERS]
   %  file version
   linha= fgetl(fid);
@@ -47,7 +46,6 @@ function obj= net_(obj, arquivo)
     error('sinopt:io:net:fileNotSupported', ...
         'HydroLab NET file version %1.1f is not supported', v);
   end
-
   % [NSUB]
   %  number of subsystems
   linha= fgetl(fid);
@@ -60,7 +58,6 @@ function obj= net_(obj, arquivo)
   if ns ~= get(obj.si,'ns')
     error('sinopt:io:net:numberMismatch', 'Wrong number of subsystems');
   end
- 
   % [NCYC]
   %  number of network loops
   linha= fgetl(fid);
@@ -71,7 +68,6 @@ function obj= net_(obj, arquivo)
   nc= fscanf(fid,'%d',1);
   % store data
   obj.si= set(obj.si,'nc',nc);
-
   % [NINT]
   %  number of stages
   linha= fgetl(fid);
@@ -84,7 +80,6 @@ function obj= net_(obj, arquivo)
   if ni ~= get(obj.si,'ni')
     error('sinopt:io:net:numberMismatch', 'Wrong number of stages');
   end
-
   % [NPAT]
   %  number of load levels per stage
   linha= fgetl(fid);
@@ -97,7 +92,6 @@ function obj= net_(obj, arquivo)
   if np ~= get(obj.si,'np')
     error('sinopt:io:net:numberMismatch','Wrong number of load levels');
   end
-
   % [NLIN]
   %  number of transmission lines
   linha= fgetl(fid);
@@ -108,7 +102,6 @@ function obj= net_(obj, arquivo)
   nl= fscanf(fid,'%d',1);
   % store data
   obj.si= set(obj.si,'nl',nl);
-
   % [TOPO]
   %  transmission lines
   linha= fgetl(fid);
@@ -117,7 +110,6 @@ function obj= net_(obj, arquivo)
   end
   % read and store data
   obj.si= set(obj.si,'li',fscanf(fid,'%d',[2, nl])');
-
   % [LIMA]
   %  upper bounds on power transmission
   linha= fgetl(fid);
@@ -143,7 +135,6 @@ function obj= net_(obj, arquivo)
   obj.si= set(obj.si,'im',im);
   % clear temporary buffers
   clear im;
-
   % [LIMI]
   %  lower bounds on power transmission
   linha= fgetl(fid);
@@ -169,7 +160,6 @@ function obj= net_(obj, arquivo)
   obj.si= set(obj.si,'in',in);
   % clear temporary buffers
   clear in;
-
   % [REAT]
   %  reactances
   linha= fgetl(fid);
@@ -186,7 +176,6 @@ function obj= net_(obj, arquivo)
   obj.si= set(obj.si,'rt',rt);
   % clear temporary buffer
   clear rt;
-
   % close file
   fclose(fid);
 end

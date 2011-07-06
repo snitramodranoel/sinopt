@@ -32,7 +32,6 @@ function obj= opt_(obj,arquivo)
   % open file
   fid= fopen(arquivo,'r');
   frewind(fid);
-
   % [VERS]
   %  file version
   linha= fgetl(fid);
@@ -47,7 +46,6 @@ function obj= opt_(obj,arquivo)
     error('sinopt:io:opt:fileNotSupported', ...
       'HydroLab OPT file version %1.1f is not supported', v);
   end
-
   % [MAXI]
   %  maximum number of iterations
   linha= fgetl(fid);
@@ -56,7 +54,6 @@ function obj= opt_(obj,arquivo)
   end
   % read maximum number of iterations
   obj.pb= set(obj.pb,'km',fscanf(fid,'%i',1));
-
   % [VERB]
   %  verbosity
   linha= fgetl(fid);
@@ -65,7 +62,6 @@ function obj= opt_(obj,arquivo)
   end
   % read verbosity
   obj.pb= set(obj.pb,'dv',strtrim(lower(fgetl(fid))));
-
   % close file
   fclose(fid);
 end
