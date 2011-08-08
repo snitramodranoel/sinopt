@@ -28,7 +28,7 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function dqq= dpdqq(obj,q,v)
+function dqq= dpdqq(obj,zeta,q,v)
   % compute second-order partial derivatives in terms of water head
   dhq=  derivar(obj.yf{1,2}, 1, q+v);
   d2hq= derivar(obj.yf{1,2}, 2, q+v);
@@ -42,5 +42,5 @@ function dqq= dpdqq(obj,q,v)
       d2pq= 0.0;
   end
   % combine derivatives
-  dqq= -obj.pe*(2*(dhq - dpq) + (d2hq - d2pq)*q);
+  dqq= -zeta*obj.pe*(2*(dhq - dpq) + (d2hq - d2pq)*q);
 end

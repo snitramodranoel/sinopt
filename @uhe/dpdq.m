@@ -28,7 +28,7 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function dq= dpdq(obj,s,q,v)
+function dq= dpdq(obj,zeta,s,q,v)
   % compute net water head
   h = calcular(obj.yc,s) - calcular(obj.yf{1,2},q+v);
   switch obj.pc{1}
@@ -50,5 +50,5 @@ function dq= dpdq(obj,s,q,v)
       dq= 0.0;
   end
   % compute dp/dq
-  dq= obj.pe*(h - (dhq-dq)*q);
+  dq= zeta*obj.pe*(h - (dhq-dq)*q);
 end
