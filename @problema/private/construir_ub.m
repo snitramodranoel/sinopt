@@ -29,9 +29,8 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function obj = construir_ub(obj)
-  % maximum water spill factor
-  beta= 2;
   % system data
+  af= get(obj.si,'af');
   im= get(obj.si,'im');
   nq= get(obj.si,'nq');
   uh= get(obj.si,'uh');
@@ -44,57 +43,65 @@ function obj = construir_ub(obj)
   nr= get(obj.si,'nr');
   nt= get(obj.si,'nt');
   nu= get(obj.si,'nu');
-  %% upper bounds on reservoir storage
+  % maximum water spill factor
+  b= 10;
+  %
+  % upper bounds on reservoir storage
   us= zeros(nr,ni-1);
   for i= 1:nr
     us(i,:)= vm(ur(i),1:ni-1);
   end
-  %  store data
+  % store data
   obj.us= empacotar_s(obj,us);
-  %  clear temporary buffer
+  % clear temporary buffer
   clear us;
-  %% upper bounds on water release
-  %  memory allocation
+  %
+  % upper bounds on water release
+  % memory allocation
   uq= cell(np,1);
   uv= zeros(nu,ni);
+  lq= desempacotar_q(obj,obj.lq);
   for l= 1:np
     uq{l}= zeros(nu,ni);
   end
   for i= 1:nu
-    yf= get(uh{i},'yf');        % tailrace data
-    mq= qm(uh{i},max(nq(i,:))); % maximum water discharge
+    % maximum incremental inflow
+    maf= max(af(i,:));
     % upper limit
     for j= 1:ni
       % compute maximum water discharge 
       % as a function of the number of available generators
-      qef= qm(uh{i},nq(i,j));
+      qm= qef(uh{i}, nq(i,j));
+      if (qm <= lq{1}(i,j))
+        qm= lq{1}(i,j) + 1;
+      end
+      % copy maximum water discharge over levels
       for l= 1:np
-        uq{l}(i,j)= qef;
+        uq{l}(i,j)= qm;
       end
       % compute maximum water spill
-      if yf{1,3} > 0
-        uv(i,j)= yf{1,3} - mq;
-      else
-        uv(i,j)= beta*mq;
-      end
+      uv(i,j)= max([maf; b*qm]);
     end
   end
-  %  store data
+  % store data
   obj.uq= empacotar_q(obj,uq);
   obj.uv= empacotar_v(obj,uv);
-  %  clear temporary buffers
+  % clear temporary buffers
+  clear qm;
   clear dm;
   clear uq;
   clear uv;
-  clear qef;
-  %% upper bounds on power transmission
+  clear lq;
+  %
+  % upper bounds on power transmission
   obj.uy= empacotar_y(obj,im);
-  %% upper bounds thermal power generation
+  %
+  % upper bounds thermal power generation
   uz= cell(np, 1);
   for l= 1:np
     uz{l}= zeros(nt, ni); 
   end
-  %  fill in elements
+  % fill in elements
   for t= 1:nt
     gm= get(ut{t},'gm');
     for l= 1:np

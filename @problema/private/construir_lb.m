@@ -32,16 +32,19 @@ function obj = construir_lb(obj)
   % system data
   dn= get(obj.si,'dn');
   in= get(obj.si,'in');
+  uh= get(obj.si,'uh');
   ur= get(obj.si,'ur');
   ut= get(obj.si,'ut');
   vn= get(obj.si,'vn');
   % system dimensions
   ni= get(obj.si,'ni');
   np= get(obj.si,'np');
+  nq= get(obj.si,'nq');
   nr= get(obj.si,'nr');
   nt= get(obj.si,'nt');
   nu= get(obj.si,'nu');  
-  %% lower bounds on reservoir storage
+  %
+  % lower bounds on reservoir storage
   ls= zeros(nr,ni-1);
   for i= 1:nr
     ls(i,:)= vn(ur(i), 1:ni-1);
@@ -50,28 +53,44 @@ function obj = construir_lb(obj)
   obj.ls= empacotar_s(obj,ls);
   %  clear temporary buffer
   clear ls;
-  %% lower bounds on water discharge
-  %  memory allocation
+  %
+  % lower bounds on water release
+  % water spill
+  lv= zeros(nu,ni);
+  % water discharge
   lq= cell(np,1);
-  %  fill in elements
-  for l= 1:np
-    lq{l}= dn;
+  for j= 1:ni
+    for i= 1:nu
+      qn= qef(uh{i}, nq(i,j));
+      if (qn >= dn(i,j))
+        qn= dn(i,j);
+      else
+        % recalculate lower bounds on release
+        lv(i,j)= dn(i,j) - qn;
+      end
+      % copy minimum water discharge over levels
+      for l= 1:np
+        lq{l}(i,j)= qn;
+      end        
+    end
   end
-  %  pack data
+  % pack data
   obj.lq= empacotar_q(obj,lq);
-  %  clear temporary buffer
+  obj.lv= empacotar_v(obj,lv);
+  % clear temporary buffer
   clear lq;
-  %% lower bounds on water spill
-  obj.lv= zeros(nu*ni,1);
-  %% lower bounds on transmission
+  clear lv;
+  %
+  % lower bounds on transmission
   obj.ly= empacotar_y(obj,in);
-  %% lower bounds on thermal power generation
-  %  three-dimensional memory allocation
+  %
+  % lower bounds on thermal power generation
+  % three-dimensional memory allocation
   lz= cell(np, 1);
   for l= 1:np
     lz{l}= zeros(nt, ni); 
   end
-  %  fill in elements
+  % fill in elements
   for t= 1:nt
     gn= get(ut{t},'gn');
     for l= 1:np

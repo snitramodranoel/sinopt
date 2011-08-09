@@ -35,7 +35,8 @@ function obj= verificar(obj)
   % system dimensions
   ni= get(obj.si,'ni');
   np= get(obj.si,'np');
-  %% bounds on reservoir storage
+  %
+  % bounds on reservoir storage
   if length(obj.ls) ~= length(obj.us)
     error('sinopt:problema:verificar:arrayDimensionsMismatch', ...
         'dimensions of reservoir storage bounds arrays do not match');
@@ -52,7 +53,8 @@ function obj= verificar(obj)
   end
   % clear temporary buffer
   clear indices;
-  %% bounds on water spill
+  %
+  % bounds on water spill
   if length(obj.lv) ~= length(obj.uv)
     error('sinopt:problema:verificar:arrayDimensionsMismatch', ...
         'dimensions of water spill bounds arrays do not match');
@@ -65,7 +67,8 @@ function obj= verificar(obj)
   end
   % clear temporary buffer
   clear indices;
-  %% bounds on water discharge
+  %
+  % bounds on water discharge
   if length(obj.lq) ~= length(obj.uq)
     error('sinopt:problema:verificar:arrayDimensionsMismatch', ...
         'dimensions of water discharge bounds arrays do not match');
@@ -81,7 +84,8 @@ function obj= verificar(obj)
   end
   % clear temporary buffer
   clear indices;
-  %% bounds on power transmission
+  %
+  % bounds on power transmission
   if length(obj.ly) ~= length(obj.uy)
     error('sinopt:problema:verificar:arrayDimensionsMismatch', ...
         'dimensions of power transmission bounds arrays do not match');
@@ -100,7 +104,8 @@ function obj= verificar(obj)
   end
   % clear temporary buffer
   clear indices;
-  %% bounds on thermal power generation
+  %
+  % bounds on thermal power generation
   if length(obj.lz) ~= length(obj.uz)
     error('sinopt:problema:verificar:arrayDimensionsMismatch', ...
         'array dimensions of thermal power generation bounds do not match');
@@ -114,7 +119,8 @@ function obj= verificar(obj)
   end
   % clear temporary buffer
   clear indices;
-  %% load level duration
+  %
+  % load level duration
   for j= 1:ni
     sp= 0;
     for l= 1:np
