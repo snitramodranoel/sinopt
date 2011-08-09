@@ -35,6 +35,7 @@ function ropt_(obj,arquivo)
   ni= get(obj.si,'ni');
   nl= get(obj.si,'nl');
   np= get(obj.si,'np');
+  nq= get(obj.si,'nq');
   ns= get(obj.si,'ns');
   nt= get(obj.si,'nt');
   nu= get(obj.si,'nu');
@@ -296,15 +297,22 @@ function ropt_(obj,arquivo)
       k= 0;
       for i= 1:nu
         ror= get(uh{i},'ie');
+        % check for power generation availability
+        if nq(i,j) > 0
+          zeta= 1;
+        else
+          zeta= 0;
+        end
+        % check for plants with a reservoir
         if ~ror
           k= k+1;
           if (j < ni)
-            fprintf(fid,'\t%8.2f ',p(uh{i},s(k,j),q{l}(i,j),v(i,j)));
+            fprintf(fid,'\t%8.2f ',p(uh{i},zeta,s(k,j),q{l}(i,j),v(i,j)));
           else
-            fprintf(fid,'\t%8.2f ',p(uh{i},vf(i),q{l}(i,j),v(i,j)));
+            fprintf(fid,'\t%8.2f ',p(uh{i},zeta,vf(i),q{l}(i,j),v(i,j)));
           end
         else
-          fprintf(fid,'\t%8.2f ',p(uh{i},vi(i),q{l}(i,j),v(i,j)));
+          fprintf(fid,'\t%8.2f ',p(uh{i},zeta,vi(i),q{l}(i,j),v(i,j)));
         end
       end
       fprintf(fid,'\n');

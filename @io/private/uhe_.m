@@ -32,7 +32,6 @@ function obj= uhe_(obj, arquivo)
   % open file
   fid= fopen(arquivo,'r');
   frewind(fid);
-
   % [VERS]
   %  file version
   linha= fgetl(fid);
@@ -47,7 +46,6 @@ function obj= uhe_(obj, arquivo)
     error('sinopt:io:uhe:fileNotSupported', ...
         'HydroLab UHE file version %1.1f is not supported', v);
   end
-
   % [NUHE]
   %  number of hydro plants
   linha= fgetl(fid);
@@ -60,13 +58,11 @@ function obj= uhe_(obj, arquivo)
   if nu ~= get(obj.si,'nu');
     error('sinopt:io:uhe:numberMismatch','Wrong number of hydro plants');
   end
-
   % memory allocation for hydro plants list
   uh= cell(nu,1);
   for j= 1:nu
     uh{j}= uhe();
   end
-
   % [UHID]
   %  hydro plant identification information
   linha= fgetl(fid);
@@ -85,7 +81,6 @@ function obj= uhe_(obj, arquivo)
     % hydro plant identification
     uh{j}= set(uh{j}, 'nm', strtrim(fgetl(fid)));
   end
-
   % [NUMS]
   %  codes
   linha= fgetl(fid);
@@ -100,7 +95,6 @@ function obj= uhe_(obj, arquivo)
     uh{j}= set(uh{j},'cj',fscanf(fid,'%i',1)); % downstream reservoir code
     fgetl(fid); % bogus
   end
-
   % [TOPO]
   %  network topology
   linha= fgetl(fid);
@@ -125,7 +119,6 @@ function obj= uhe_(obj, arquivo)
   % clean temporary buffer
   clear ij;
   clear nj;
-
   % build lists of upstream reservoirs
   for j= 1:nu
     t= 0;
@@ -143,7 +136,6 @@ function obj= uhe_(obj, arquivo)
   clear t;
   clear ij;
   clear im;
-
   % [PRIM]
   %  productivity data
   linha= fgetl(fid);
@@ -171,7 +163,6 @@ function obj= uhe_(obj, arquivo)
   end
   % clean temporary buffers
   clear pc;
-
   % [TUGE]
   %  power generation
   linha= fgetl(fid);
@@ -184,31 +175,36 @@ function obj= uhe_(obj, arquivo)
     % number of generators
     ng= fscanf(fid,'%i',1);
     uh{j}= set(uh{j},'ng',ng);
-    % misc
-    M= fscanf(fid,'%f',[7 ng])';
-    cgs= get(uh{j},'cg');
-    % consolidation
-    nt= 0;
-    qef= 0.0;
-    for k= 1:ng
-      cgs{k}= cg();
-      cgs{k}= set(cgs{k},'tt',round(M(k,1)));
-      cgs{k}= set(cgs{k},'nt',round(M(k,2)));
-      cgs{k}= set(cgs{k},'he',M(k,3));
-      cgs{k}= set(cgs{k},'qe',M(k,4));
-      cgs{k}= set(cgs{k},'pe',M(k,5));
-      cgs{k}= set(cgs{k},'rg',M(k,6));
-      cgs{k}= set(cgs{k},'pm',M(k,7));
-      % number of turbines
-      nt= nt + get(cgs{k},'nt');
-      % maximum discharge
-      qef= qef + (get(cgs{k},'qe') * get(cgs{k},'nt'));
+    if ng > 0
+      % consolidation
+      nt= 0;
+      qef= 0.0;
+      cgs= get(uh{j},'cg');
+      for k= 1:ng
+        % read data
+        tg= fscanf(fid,'%f',[7 1])'; % misc
+        fgetl(fid); % bogus
+        cgs{k}= cg();
+        cgs{k}= set(cgs{k},'tt',round(tg(1)));
+        cgs{k}= set(cgs{k},'nt',round(tg(2)));
+        cgs{k}= set(cgs{k},'he',tg(3));
+        cgs{k}= set(cgs{k},'qe',tg(4));
+        cgs{k}= set(cgs{k},'pe',tg(5));
+        cgs{k}= set(cgs{k},'rg',tg(6));
+        cgs{k}= set(cgs{k},'pm',tg(7));
+        % number of turbines
+        nt= nt + get(cgs{k},'nt');
+        % maximum discharge
+        qef= qef + (get(cgs{k},'qe') * get(cgs{k},'nt'));
+      end
+      uh{j}= set(uh{j},'cg',cgs);
+      uh{j}= set(uh{j},'nt',nt);
+      uh{j}= set(uh{j},'qb',qef/nt);
+      % clear temporary buffer
+      clear ng;
+      clear tg;
     end
-    uh{j}= set(uh{j},'cg',cgs);
-    uh{j}= set(uh{j},'nt',nt);
-    uh{j}= set(uh{j},'qb',qef/nt);
   end
-
   % [TXID]
   %  availability
   linha= fgetl(fid);
@@ -220,7 +216,6 @@ function obj= uhe_(obj, arquivo)
     fscanf(fid,'%s',1); % bogus
     uh{j}= set(uh{j},'id',fscanf(fid,'%f',1)); % availability rate
   end
-
   % [VMDM]
   %  hydro operation constraints
   linha= fgetl(fid);
@@ -286,7 +281,6 @@ function obj= uhe_(obj, arquivo)
   clear ur;
   clear ff;
   clear rr;
-
   % [POCV]
   %  forebay elevation polynomials
   linha= fgetl(fid);
@@ -298,15 +292,14 @@ function obj= uhe_(obj, arquivo)
     % bogus
     fscanf(fid,'%s',1);
     % polynomial
-    M= fscanf(fid,'%f',[5 1]);
+    coef= fscanf(fid,'%f',[5 1]);
     poly= get(uh{j},'yc');
-    poly= set(poly,'cf',M);
+    poly= set(poly,'cf',coef);
     uh{j}= set(uh{j},'yc',poly);
     % clear temporary buffers
-    clear M;
+    clear coef;
     clear poly;
   end
-
   % [POAC]
   %  reservoir area polynomials
   linha= fgetl(fid);
@@ -318,15 +311,14 @@ function obj= uhe_(obj, arquivo)
     % bogus
     fscanf(fid,'%s',1);
     % polynomial
-    M= fscanf(fid,'%f',[5 1]);
+    coef= fscanf(fid,'%f',[5 1]);
     poly= get(uh{j},'ya');
-    poly= set(poly,'cf',M);
+    poly= set(poly,'cf',coef);
     uh{j}= set(uh{j},'ya',poly);
     % clear temporary buffers
-    clear M;
+    clear coef;
     clear poly;
   end
-
   % [POCF]
   %  tailrace elevation polynomials
   linha= fgetl(fid);
@@ -355,10 +347,8 @@ function obj= uhe_(obj, arquivo)
     % clear temporary buffer
     clear yf;
   end
-
   % update list of hydro plants
   obj.si= set(obj.si,'uh',uh);
-
   % close file
   fclose(fid);
 end
