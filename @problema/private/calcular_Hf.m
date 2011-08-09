@@ -35,7 +35,6 @@ function Hf= calcular_Hf(obj,w)
   ni= get(obj.si,'ni');
   np= get(obj.si,'np');
   nt= get(obj.si,'nt');
-  ti= get(obj.si,'ti');
   tp= get(obj.si,'tp');
   % unpack z variables
   z= desempacotar_z(obj, extrair_z(obj,w));
@@ -47,7 +46,7 @@ function Hf= calcular_Hf(obj,w)
     for j= 1:ni
       for k= 1:nt
         i= i+1;
-        Hfz(i,i)= derivar(get(ut{k},'co'),2,z{l}(k,j),tp{l}(j)/mean(ti));
+        Hfz(i,i)= derivar(get(ut{k},'co'),2,z{l}(k,j),tp{l}(j)/3.6e+3);
       end
     end
   end
