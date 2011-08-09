@@ -47,7 +47,7 @@ function Hf= calcular_Hf(obj,w)
     for j= 1:ni
       for k= 1:nt
         i= i+1;
-        Hfz(i,i)= derivar(get(ut{k},'co'), 2, z{l}(k,j), tp{l}(j)/ti(j)*(ti(j)/mean(ti)));
+        Hfz(i,i)= derivar(get(ut{k},'co'),2,z{l}(k,j),tp{l}(j)/mean(ti));
       end
     end
   end

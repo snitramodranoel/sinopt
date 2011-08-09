@@ -39,12 +39,13 @@ function P= calcular_P(obj,w)
   ni= get(obj.si,'ni');
   nf= get(obj.si,'nf');
   np= get(obj.si,'np');
-  nr= get(obj.si,'nr');
+  nq= get(obj.si,'nq');
+  nr= get(obj.si,'nr');            
   ns= get(obj.si,'ns');
   % unpack x variables
-  s = desempacotar_s(obj, extrair_s(obj,w));
-  q = desempacotar_q(obj, extrair_q(obj,w));
-  v = desempacotar_v(obj, extrair_v(obj,w));
+  ss = desempacotar_s(obj, extrair_s(obj,w));
+  qq = desempacotar_q(obj, extrair_q(obj,w));
+  vv = desempacotar_v(obj, extrair_v(obj,w));
   % memory allocation
   a = zeros(nr,1);
   L = cell(np,1);
@@ -56,7 +57,7 @@ function P= calcular_P(obj,w)
     for j= 1:ni
       % check for final stage
       if (j < ni)
-        a= s(:,j);
+        a= ss(:,j);
       else
         for i= 1:nr
           a(i)= vf(ur(i));
@@ -64,16 +65,38 @@ function P= calcular_P(obj,w)
       end
       % compute hydro power generation in run-off-river plants
       for i= 1:nf
+        % scalar buffers
         k= get(uh{uf(i)},'ss');
-        L{l}(k,j)= L{l}(k,j) + p(uh{uf(i)},vi(uf(i)),q{l}(uf(i),j),v(uf(i),j));
+        s= vi(uf(i));
+        q= qq{l}(uf(i),j);
+        v= vv(uf(i),j);
+        % check for power generation availability
+        if nq(uf(i),j) > 0
+          zeta= 1;
+        else
+          zeta= 0;
+        end
+        % compute summation
+        L{l}(k,j)= L{l}(k,j) + p(uh{uf(i)},zeta,s,q,v);
       end
       % compute hydro power generation in plants with a reservoir
       for i= 1:nr
+        % scalar buffers
         k= get(uh{ur(i)},'ss');
-        L{l}(k,j)= L{l}(k,j) + p(uh{ur(i)},a(i),q{l}(ur(i),j),v(ur(i),j));
+        s= a(i);
+        q= qq{l}(ur(i),j);
+        v= vv(ur(i),j);
+        % check for availability
+        if nq(ur(i),j) > 0
+          zeta= 1;
+        else
+          zeta= 0;
+        end
+        % compute summation
+        L{l}(k,j)= L{l}(k,j) + p(uh{ur(i)},zeta,s,q,v);
       end
     end
     % pack data
-    P(ns*ni*(l-1)+1:ns*ni*l)= reshape(L{l}, ns*ni, 1);
+    P(ns*ni*(l-1)+1:ns*ni*l)= reshape(L{l},ns*ni,1);
   end
 end

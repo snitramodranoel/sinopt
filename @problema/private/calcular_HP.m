@@ -36,15 +36,16 @@ function HP= calcular_HP(obj,w,lambda)
   % system dimensions
   ni= get(obj.si,'ni');
   np= get(obj.si,'np');
+  nq= get(obj.si,'nq');
   nu= get(obj.si,'nu');
   nr= get(obj.si,'nr');
   n = nu*ni;
   % compute number of nonzeros elements
   nze= obj.na*(2*np + 1) + n*(3*np + 1);
   % unpack primal variables
-  s= desempacotar_s(obj, extrair_s(obj,w));
-  q= desempacotar_q(obj, extrair_q(obj,w));
-  v= desempacotar_v(obj, extrair_v(obj,w));
+  ss= desempacotar_s(obj, extrair_s(obj,w));
+  qq= desempacotar_q(obj, extrair_q(obj,w));
+  vv= desempacotar_v(obj, extrair_v(obj,w));
   % unpack dual variables
   yb= desempacotar_lambdab(obj, extrair_lambdab(obj,lambda));
   % allocate memory for row index vectors
@@ -77,7 +78,7 @@ function HP= calcular_HP(obj,w,lambda)
   for j= 1:ni
     % check for final stage
     if j < ni
-      a= s(:,j);
+      a= ss(:,j);
     else
       for i= 1:nr
         a(i)= vf(ur(i));
@@ -87,10 +88,20 @@ function HP= calcular_HP(obj,w,lambda)
     z = 0;
     % perform computations
     for i= 1:nu
+      % scalar buffers
+      v= vv(i,j);
       ror= get(uh{i},'ie');
+      % check for power generation availability
+      if nq(i,j) > 0
+        zeta= 1;
+      else
+        zeta= 0;
+      end
       % check for plants with a reservoir
       if ~ror
         z= z+1;
+        % scalar buffer
+        s= a(z);
         % check for final stage
         if j < ni
           r= r+1;
@@ -105,7 +116,8 @@ function HP= calcular_HP(obj,w,lambda)
       covv(u)= livv(u);
       for l= 1:np
         k= k+1;
-        % buffer
+        % scalar buffers
+        q= qq{l}(i,j);
         y= yb{l}(get(uh{i},'ss'),j);
         % check for plants with a reservoir
         if ~ror
@@ -119,8 +131,8 @@ function HP= calcular_HP(obj,w,lambda)
             liqs(t)= cosq(t);
             coqs(t)= lisq(t);
             % compute dp/dss and dp/dsq partial derivatives
-            dss(r)= dss(r) + y * dpdss(uh{i},a(z),q{l}(i,j));
-            dsq(t)= y * dpdsq(uh{i},a(z));
+            dss(r)= dss(r) + y * dpdss(uh{i},zeta,s,q);
+            dsq(t)= y * dpdsq(uh{i},zeta,s);
           end
         end
         % compute row indexes for dp/dqq and dp/dqv partial derivatives
@@ -133,9 +145,9 @@ function HP= calcular_HP(obj,w,lambda)
         livq(k)= coqv(k);
         covq(k)= liqv(k);
         % compute partial derivatives
-        dqq(k)= y * dpdqq(uh{i},q{l}(i,j),v(i,j));
-        dqv(k)= y * dpdqv(uh{i},q{l}(i,j),v(i,j));
-        dvv(u)= dvv(u) + y * dpdvv(uh{i},q{l}(i,j),v(i,j));
+        dqq(k)= y * dpdqq(uh{i},zeta,q,v);
+        dqv(k)= y * dpdqv(uh{i},zeta,q,v);
+        dvv(u)= dvv(u) + y * dpdvv(uh{i},zeta,q,v);
       end
     end
   end

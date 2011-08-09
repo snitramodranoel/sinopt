@@ -49,7 +49,7 @@ function df= calcular_df(obj,w)
     co= get(ut{k},'co');
     for j= 1:ni
       for l= 1:np
-        dz{l}(k,j)= derivar(co, 1, z{l}(k,j), tp{l}(j)/ti(j)*(ti(j)/mean(ti)));
+        dz{l}(k,j)= derivar(co, 1, z{l}(k,j), tp{l}(j)/mean(ti));
       end
     end
   end

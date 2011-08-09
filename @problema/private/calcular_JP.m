@@ -39,6 +39,7 @@ function JP= calcular_JP(obj,w)
   ni= get(obj.si,'ni');
   nf= get(obj.si,'nf');
   np= get(obj.si,'np');
+  nq= get(obj.si,'nq');
   nr= get(obj.si,'nr');
   ns= get(obj.si,'ns');
   nu= get(obj.si,'nu');
@@ -47,9 +48,9 @@ function JP= calcular_JP(obj,w)
   % compute number of nonzero elements
   nze= np*(2*n + obj.na);
   % unpack x variables
-  s= desempacotar_s(obj, extrair_s(obj,w));
-  q= desempacotar_q(obj, extrair_q(obj,w));
-  v= desempacotar_v(obj, extrair_v(obj,w));
+  ss= desempacotar_s(obj, extrair_s(obj,w));
+  qq= desempacotar_q(obj, extrair_q(obj,w));
+  vv= desempacotar_v(obj, extrair_v(obj,w));
   % allocate memory for row index vectors
   lis= zeros(obj.na*np,1);
   liq= zeros(n*np,1);
@@ -69,7 +70,7 @@ function JP= calcular_JP(obj,w)
     for j= 1:ni
       % check for final stage
       if j < ni
-        a= s(:,j);
+        a= ss(:,j);
       else
         for i= 1:nr
           a(i)= vf(ur(i));
@@ -77,39 +78,61 @@ function JP= calcular_JP(obj,w)
       end
       % compute indexes and partial derivatives for plants with a reservoir
       for i= 1:nr
+        % scalar buffers
+        s= a(i);
+        q= qq{l}(ur(i),j);
+        v= vv(ur(i),j);
+        % check for power generation availability
+        if nq(ur(i),j) > 0
+          zeta= 1;
+        else
+          zeta= 0;
+        end
+        % check for final stage
         if j < ni
           u = u+1;
-          ds(u) = dpds(uh{ur(i)}, a(i), q{l}(ur(i),j));
+          ds(u) = dpds(uh{ur(i)},zeta,s,q);
           lis(u)= get(uh{ur(i)},'ss') + m*(l-1) + ns*(j-1);
           cos(u)= i + (nr*(j-1));
         end
         k = k+1;
         % discharge variables
-        dq(k) = dpdq(uh{ur(i)}, a(i), q{l}(ur(i),j), v(ur(i),j));
+        dq(k) = dpdq(uh{ur(i)},zeta,s,q,v);
         liq(k)= get(uh{ur(i)},'ss') + m*(l-1) + ns*(j-1);
         coq(k)= obj.na + n*(l-1) + nu*(j-1) + ur(i);
         % spill variables
-        dv(k) = dpdv(uh{ur(i)}, q{l}(ur(i),j), v(ur(i),j));
+        dv(k) = dpdv(uh{ur(i)},zeta,q,v);
         liv(k)= get(uh{ur(i)},'ss') + m*(l-1) + ns*(j-1);
         cov(k)= obj.na + obj.nq + nu*(j-1) + ur(i);
       end
       % compute indexes and partial derivatives for run-off-river plants
       for i= 1:nf
-        k = k+1;
+        k= k+1;
+        % scalar buffers
+        s= vi(uf(i));
+        q= qq{l}(uf(i),j);
+        v= vv(uf(i),j);
+        % check for power generation availability
+        if nq(uf(i),j) > 0
+          zeta= 1;
+        else
+          zeta= 0;
+        end
         % discharge variables
-        dq(k) = dpdq(uh{uf(i)}, vi(uf(i)), q{l}(uf(i),j), v(uf(i),j));
+        dq(k) = dpdq(uh{uf(i)},zeta,s,q,v);
         liq(k)= get(uh{uf(i)},'ss') + m*(l-1) + ns*(j-1);
         coq(k)= obj.na + n*(l-1) + nu*(j-1) + uf(i);
         % spill variables
-        dv(k) = dpdv(uh{uf(i)}, q{l}(uf(i),j), v(uf(i),j));
+        dv(k) = dpdv(uh{uf(i)},zeta,q,v);
         liv(k)= get(uh{uf(i)},'ss') + m*(l-1) + ns*(j-1);
         cov(k)= obj.na + obj.nq + nu*(j-1) + uf(i);
       end
     end
   end
-  % build Jacobian
+  % merge indexes and partial derivatives
   li= [lis;liq;liv];
   co= [cos;coq;cov];
   dp= [ ds; dq; dv];
+  % build Jacobian matrix
   JP= sparse(li, co, dp, obj.mb, obj.nx, nze);
 end
