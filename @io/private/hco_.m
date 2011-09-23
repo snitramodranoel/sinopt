@@ -46,6 +46,15 @@ function obj= hco_(obj,arquivo)
     error('sinopt:io:hco:fileNotSupported', ...
       'HydroLab HCO file version %1.1f is not supported', v);
   end
+  % [NINT]
+  %  number of stages
+  linha= fgetl(fid);
+  while not(strcmp('[NINT]',linha))
+    linha= fgetl(fid);
+  end
+  % read
+  ni= fscanf(fid,'%d',1);
+  obj.si= set(obj.si,'ni',ni);
   % [DATA]
   %  start date
   linha= fgetl(fid);
@@ -66,15 +75,6 @@ function obj= hco_(obj,arquivo)
   % read
   nu= fscanf(fid,'%d',1);
   obj.si= set(obj.si,'nu',nu);
-  % [NINT]
-  %  number of stages
-  linha= fgetl(fid);
-  while not(strcmp('[NINT]',linha))
-    linha= fgetl(fid);
-  end
-  % read
-  ni= fscanf(fid,'%d',1);
-  obj.si= set(obj.si,'ni',ni);
   % [NPAT]
   %  number of load levels
   linha= fgetl(fid);

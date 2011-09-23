@@ -41,7 +41,7 @@ function obj= ute_(obj,arquivo)
   % read data
   v= fscanf(fid,'%f',1);
   % check for file version
-  if v ~= 3.0
+  if v ~= 3.1
     fclose(fid);
     error('sinopt:io:ute:fileNotSupported', ...
           'HydroLab UTE file version %1.1f is not supported', v);
@@ -116,13 +116,11 @@ function obj= ute_(obj,arquivo)
     ut{j}= set(ut{j},'ss',fscanf(fid,'%d',1));
     ut{j}= set(ut{j},'cd',fscanf(fid,'%d',1));
     ut{j}= set(ut{j},'eo',fscanf(fid,'%d',1));
-    fscanf(fid,'%d',1); % bogus
-    fscanf(fid,'%f',1); % bogus
   end
-  % [PUGT]
+  % [PUTE]
   %  installed capacity
   linha= fgetl(fid);
-  while not(strcmp('[PUGT]',linha))
+  while not(strcmp('[PUTE]',linha))
     linha= fgetl(fid);
   end
   % read data
