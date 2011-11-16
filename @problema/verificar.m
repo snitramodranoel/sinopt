@@ -110,11 +110,14 @@ function obj= verificar(obj)
     error('sinopt:problema:verificar:arrayDimensionsMismatch', ...
         'array dimensions of thermal power generation bounds do not match');
   else
-    indices= find(obj.uz - obj.lz < 0, 1);
+    indices= find(obj.uz - obj.lz < 0);
     if ~isempty(indices)
-      error('sinopt:problema:verificar:emptySet', ...
-          'thermal power generation bounds define an empty set @ z(%d)', ...
-          indices(1));
+      for j= 1:length(indices)
+        obj.uz(indices(j)) = obj.lz(indices(j));
+        warning('sinopt:problema:verificar:zBounds', ...
+            'empty bounds @ z(%d)', ...
+            indices(1));
+      end
     end
   end
   % clear temporary buffer
