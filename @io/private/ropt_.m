@@ -45,7 +45,9 @@ function ropt_(obj,arquivo)
   di= get(obj.si,'di');           % start day
   mi= get(obj.si,'mi');           % start month
   uh= get(obj.si,'uh');           % list of hydro plants
+  ut= get(obj.si,'ut');           % list of thermal plants
   ti= get(obj.si,'ti');           % duration of stages
+  tp= get(obj.si,'tp');           % duration of load levels
   vi= get(obj.si,'vi');           % initial reservoir storage states
   vf= get(obj.si,'vf');           % final reservoir storage requirements
   % optimal solution
@@ -336,7 +338,8 @@ function ropt_(obj,arquivo)
         fprintf(fid,'\t%2d ',l);
       end
       for t= 1:nt
-        fprintf(fid,'\t%8.2f ',z{l}(t,j));
+        gn= get(ut{t},'gn');
+        fprintf(fid,'\t%8.2f ', z{l}(t,j) - gn(l,j));
       end
       fprintf(fid,'\n');
     end
@@ -420,7 +423,7 @@ function ropt_(obj,arquivo)
         fprintf(fid,'\t%2d ',l);
       end
       for k= 1:ns
-        fprintf(fid,'\t%8.2f ',lb{l}(k,j));
+        fprintf(fid,'\t%8.2f ',lb{l}(k,j)/(tp{l}(j)/3.6e+3));
       end
       fprintf(fid,'\n');
     end
