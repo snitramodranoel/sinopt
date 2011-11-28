@@ -39,18 +39,15 @@ function Hf= calcular_Hf(obj,w)
   % unpack z variables
   z= desempacotar_z(obj, extrair_z(obj,w));
   % memory allocation
-  Hfz= spalloc(obj.nz, obj.nz, obj.nz);
+  Hf= zeros(obj.nz,1);
   % compute Hessian
   i= 0;
   for l= 1:np
     for j= 1:ni
       for k= 1:nt
         i= i+1;
-        Hfz(i,i)= derivar(get(ut{k},'co'),2,z{l}(k,j),tp{l}(j)/3.6e+3);
+        Hf(i)= derivar(get(ut{k},'co'),2,z{l}(k,j),tp{l}(j)/3.6e+3);
       end
     end
   end
-  % fill Hessian elements
-  Hf= spalloc(obj.n, obj.n, obj.nz);
-  Hf(obj.nx+obj.ny+1:obj.n, obj.nx+obj.ny+1:obj.n)= Hfz;
 end

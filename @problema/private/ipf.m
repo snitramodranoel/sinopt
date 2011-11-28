@@ -76,7 +76,7 @@ function obj= ipf(obj)
   g= calcular_g(obj,x);
   %    compute first-order derivatives of f(.) and g(.)
   gf= calcular_df(obj,x);
-  Jg= calcular_Jg(obj,x);
+  Jg= calcular_J(obj,x);
   y= (Jg*Jg')\(Jg*(-gf + z - w));
   if (norm(y,inf) > ymax) % check for degree of linear independence
     y= zeros(obj.m,1);
@@ -352,7 +352,7 @@ function obj= ipf(obj)
     g= calcular_g(obj,x);
     % compute first-order derivatives of new solution
     gf= calcular_df(obj,x);
-    Jg= calcular_Jg(obj,x);
+    Jg= calcular_J(obj,x);
     % update infeasibility measurement
     theta= norm([g-b; x+s-u; x-t-l]);
   end

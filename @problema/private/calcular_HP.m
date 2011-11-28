@@ -40,30 +40,12 @@ function HP= calcular_HP(obj,w,lambda)
   nu= get(obj.si,'nu');
   nr= get(obj.si,'nr');
   n = nu*ni;
-  % compute number of nonzeros elements
-  nze= obj.na*(2*np + 1) + n*(3*np + 1);
   % unpack primal variables
   ss= desempacotar_s(obj, extrair_s(obj,w));
   qq= desempacotar_q(obj, extrair_q(obj,w));
   vv= desempacotar_v(obj, extrair_v(obj,w));
   % unpack dual variables
   yb= desempacotar_lambdab(obj, extrair_lambdab(obj,lambda));
-  % allocate memory for row index vectors
-  liss= zeros(obj.na,1);
-  lisq= zeros(obj.na*np,1);
-  liqs= zeros(obj.na*np,1);
-  liqq= zeros(n*np,1);
-  liqv= zeros(n*np,1);
-  livq= zeros(n*np,1);
-  livv= zeros(n,1);
-  % allocate memory for column index vectors
-  coss= zeros(obj.na,1);
-  cosq= zeros(obj.na*np,1);
-  coqs= zeros(obj.na*np,1);
-  coqq= zeros(n*np,1);
-  coqv= zeros(n*np,1);
-  covq= zeros(n*np,1);
-  covv= zeros(n,1);
   % allocate memory for partial derivatives
   dss= zeros(obj.na,1);
   dsq= zeros(obj.na*np,1);
@@ -105,15 +87,10 @@ function HP= calcular_HP(obj,w,lambda)
         % check for final stage
         if j < ni
           r= r+1;
-          % compute row, column indexes for dp/dss partial derivatives
-          liss(r)= r;
-          coss(r)= liss(r);
         end
       end
       % compute row, column indexes for dp/dvv partial derivatives
       u= u+1;
-      livv(u)= obj.na + obj.nq + u;
-      covv(u)= livv(u);
       for l= 1:np
         k= k+1;
         % scalar buffers
@@ -124,26 +101,11 @@ function HP= calcular_HP(obj,w,lambda)
           % check for final stage
           if j < ni
             t= t+1;
-            % compute row, column indexes for dp/dsq partial derivatives
-            lisq(t)= liss(r);
-            cosq(t)= obj.na + n*(l-1) + u;
-            % compute transpose indexes for dp/dqs partial derivatives
-            liqs(t)= cosq(t);
-            coqs(t)= lisq(t);
             % compute dp/dss and dp/dsq partial derivatives
             dss(r)= dss(r) + y * dpdss(uh{i},zeta,s,q);
             dsq(t)= y * dpdsq(uh{i},zeta,s);
           end
         end
-        % compute row indexes for dp/dqq and dp/dqv partial derivatives
-        liqq(k)= obj.na + n*(l-1) + u;
-        liqv(k)= liqq(k);
-        % compute column indexes for dp/dqq and dp/dqv partial derivatives
-        coqq(k)= liqq(k);
-        coqv(k)= covv(u);
-        % compute tranpose indexes for dp/dvq partial derivatives
-        livq(k)= coqv(k);
-        covq(k)= liqv(k);
         % compute partial derivatives
         dqq(k)= y * dpdqq(uh{i},zeta,q,v);
         dqv(k)= y * dpdqv(uh{i},zeta,q,v);
@@ -151,10 +113,6 @@ function HP= calcular_HP(obj,w,lambda)
       end
     end
   end
-  % concatenate vectors
-  li= [liss; lisq; cosq; liqq; liqv; livq; livv];
-  co= [coss; cosq; coqs; coqq; coqv; covq; covv];
-  dp= [ dss;  dsq;  dsq;  dqq;  dqv;  dqv;  dvv];
-  % build Hessian
-  HP= sparse(li, co, dp, obj.nx, obj.nx, nze);
+  % concatenate derivative value arrays
+  HP= [dss; dsq; dsq; dqq; dqv; dqv; dvv];
 end

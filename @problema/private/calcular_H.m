@@ -1,4 +1,4 @@
-% @problema/private/calcular_H.m computes Hessian of Lagrangian function.
+% @problema/private/calcular_H.m computes Hessian of L(w,y).
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,8 +28,11 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function H= calcular_H(obj,u,lambda)
-  F= calcular_Hf(obj,u);
-  G= calcular_Hg(obj,u,lambda);
-  H= F + G;
+function H= calcular_H(obj,u,sigma,lambda)
+  H= sparse(obj.H(:,1), ...
+      obj.H(:,2), ...
+      [calcular_Hg(obj,u,lambda); sigma*calcular_Hf(obj,u)], ...
+      obj.n, ...
+      obj.n, ...
+      length(obj.H(:,1)));
 end

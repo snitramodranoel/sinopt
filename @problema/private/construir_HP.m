@@ -28,7 +28,7 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function [li,co]= construir_HP(obj)
+function obj= construir_HP(obj)
   % system data
   uh= get(obj.si,'uh');
   % system dimensions
@@ -105,7 +105,11 @@ function [li,co]= construir_HP(obj)
       end
     end
   end
-  % concatenate vectors
+  % concatenate index vectors
   li= [liss; lisq; cosq; liqq; liqv; livq; livv];
   co= [coss; cosq; coqs; coqq; coqv; covq; covv];
+  % memory allocation
+  obj.HP= zeros(length(li),2);
+  obj.HP(:,1)= li;
+  obj.HP(:,2)= co;
 end

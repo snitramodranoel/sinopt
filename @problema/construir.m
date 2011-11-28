@@ -61,13 +61,9 @@ function obj= construir(obj)
   obj= construir_d(obj);
   obj= construir_B(obj);
   obj= construir_C(obj);
-  % sanity check constraints
+  % check constraints for sanity
   obj= verificar(obj);
-  % g(u) function Jacobian matrix
-  obj.Jg= spalloc(obj.m, obj.n, ...
-      nnz(obj.A) + nnz(obj.B) + nnz(obj.C) + obj.nz + np*(2*nu*ni + obj.na));
-  obj.Jg(1:obj.ma, 1:obj.nx)= obj.A;
-  obj.Jg(obj.ma+obj.mc+1:obj.m, obj.nx+1:obj.nx+obj.ny)= obj.B;
-  obj.Jg(obj.ma+1:obj.ma+obj.mc, obj.nx+1:obj.nx+obj.ny)= obj.C;
-  obj.Jg(obj.ma+obj.mc+1:obj.m, obj.nx+obj.ny+1:obj.n)= -calcular_JQ(obj);
+  % compute matrix structures
+  obj= construir_J(obj);
+  obj= construir_H(obj);
 end

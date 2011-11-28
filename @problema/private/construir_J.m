@@ -1,6 +1,6 @@
-% @problema/private/calcular_Jg.m computes Jacobian of g(u).
+% @problema/private/construir_J.m builds structure of Jacobian of g(w).
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
+% Copyright (c) 2011 Leonardo Martins, Universidade Estadual de Campinas
 %
 % @package sinopt
 % @author  Leonardo Martins
@@ -28,7 +28,22 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function Jg= calcular_Jg(obj,w)
-  obj.Jg(obj.ma+obj.mc+1:obj.m, 1:obj.nx)= -calcular_JP(obj,w);
-  Jg= obj.Jg;
+function obj= construir_J(obj)
+  % compute number of constant Jacobian elements
+  nze= nnz(obj.A) + nnz(obj.B) + nnz(obj.C) + obj.nz;
+  % compute constant elements
+  J= spalloc(obj.m, obj.n, nze);
+  J(1:obj.ma, 1:obj.nx)= obj.A;
+  J(obj.ma+obj.mc+1:obj.m, obj.nx+1:obj.nx+obj.ny)= obj.B;
+  J(obj.ma+1:obj.ma+obj.mc, obj.nx+1:obj.nx+obj.ny)= obj.C;
+  J(obj.ma+obj.mc+1:obj.m, obj.nx+obj.ny+1:obj.n)= -calcular_JQ(obj);
+  %
+  [rows,cols,vlus]= find(J);
+  % memory allocation
+  obj.J= zeros(length(rows),3);
+  obj.J(:,1)= rows;
+  obj.J(:,2)= cols;
+  obj.J(:,3)= vlus;
+  %
+  obj= construir_JP(obj);
 end

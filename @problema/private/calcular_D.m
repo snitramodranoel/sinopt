@@ -33,5 +33,6 @@ function D= calcular_D(obj,w,lambda,SiW,TiZ)
   li= 1:obj.n;
   co= 1:obj.n;
   % compute matrix additions
-  D= calcular_H(obj, w, lambda) + sparse(li, co, SiW+TiZ, obj.n, obj.n, obj.n);
+  D= calcular_H(obj, w, 1, lambda) + ...
+      sparse(li, co, SiW+TiZ, obj.n, obj.n, obj.n);
 end

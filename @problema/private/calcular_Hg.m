@@ -29,12 +29,5 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function Hg= calcular_Hg(obj,w,lambda)
-  % system dimensions
-  ni= get(obj.si,'ni');
-  np= get(obj.si,'np');
-  nu= get(obj.si,'nu');
-  n = nu*ni;
-  % compute Hessian
-  Hg= spalloc(obj.n, obj.n, obj.na*(2*np + 1) + n*(3*np + 1));
-  Hg(1:obj.nx, 1:obj.nx)= -calcular_HP(obj,w,lambda);
+  Hg= -calcular_HP(obj,w,lambda);
 end

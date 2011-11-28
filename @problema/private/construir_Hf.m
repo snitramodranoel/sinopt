@@ -1,4 +1,4 @@
-% @problema/private/construir_Hg.m builds structure of Hessian of g(u).
+% @problema/private/construir_Hf.m builds structure of Hessian of f(z).
 %
 % Copyright (c) 2011 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -28,7 +28,12 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function obj= construir_Hg(obj)
-  obj= construir_HP(obj);
-  obj.Hg= obj.HP;
+function obj= construir_Hf(obj)
+  % memory allocation
+  obj.Hf= zeros(obj.nz,2);
+  % compute row, column indexes
+  for ii= 1:obj.nz
+    obj.Hf(ii,1)= obj.nx + obj.ny + ii;
+    obj.Hf(ii,2)= obj.Hf(ii,1);
+  end
 end

@@ -67,8 +67,14 @@ function obj= problema(varargin)
   obj.ny= 0; % number of y variables
   obj.nz= 0; % number of z variables
   obj.n = 0; % total number of variables
-  % cache
-  obj.Jg= []; % g(u) function Jacobian matrix
+  % Jacobian
+  obj.J = [];
+  obj.JP= [];
+  % Hessian
+  obj.H = [];
+  obj.Hf= [];
+  obj.Hg= [];
+  obj.HP= [];
   % objects
   obj.pf= profiler();  % statistics
   obj.rs= resultado(); % results

@@ -28,7 +28,7 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function [li,co]= construir_JP(obj)
+function obj= construir_JP(obj)
   % system data
   uh= get(obj.si,'uh');
   uf= get(obj.si,'uf');
@@ -83,7 +83,11 @@ function [li,co]= construir_JP(obj)
       end
     end
   end
-  % merge indexes
+  % buffer
   li= [lis;liq;liv];
   co= [cos;coq;cov];
+  % memory allocation
+  obj.JP= zeros(length(lis)+length(liq)+length(liv), 2);
+  obj.JP(:,1)= (obj.ma+obj.mc)*ones(length(li),1) + li;
+  obj.JP(:,2)= co;
 end

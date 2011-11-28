@@ -41,24 +41,12 @@ function JP= calcular_JP(obj,w)
   np= get(obj.si,'np');
   nq= get(obj.si,'nq');
   nr= get(obj.si,'nr');
-  ns= get(obj.si,'ns');
   nu= get(obj.si,'nu');
   n = nu*ni;
-  m = ns*ni;
-  % compute number of nonzero elements
-  nze= np*(2*n + obj.na);
   % unpack x variables
   ss= desempacotar_s(obj, extrair_s(obj,w));
   qq= desempacotar_q(obj, extrair_q(obj,w));
   vv= desempacotar_v(obj, extrair_v(obj,w));
-  % allocate memory for row index vectors
-  lis= zeros(obj.na*np,1);
-  liq= zeros(n*np,1);
-  liv= zeros(n*np,1);
-  % allocate memory for column index vectors
-  cos= zeros(obj.na*np,1);
-  coq= zeros(n*np,1);
-  cov= zeros(n*np,1);
   % allocate memory for partial derivatives
   ds= zeros(obj.na*np,1);
   dq= zeros(n*np,1);
@@ -92,18 +80,12 @@ function JP= calcular_JP(obj,w)
         if j < ni
           u = u+1;
           ds(u) = dpds(uh{ur(i)},zeta,s,q);
-          lis(u)= get(uh{ur(i)},'ss') + m*(l-1) + ns*(j-1);
-          cos(u)= i + (nr*(j-1));
         end
         k = k+1;
         % discharge variables
         dq(k) = dpdq(uh{ur(i)},zeta,s,q,v);
-        liq(k)= get(uh{ur(i)},'ss') + m*(l-1) + ns*(j-1);
-        coq(k)= obj.na + n*(l-1) + nu*(j-1) + ur(i);
         % spill variables
         dv(k) = dpdv(uh{ur(i)},zeta,q,v);
-        liv(k)= get(uh{ur(i)},'ss') + m*(l-1) + ns*(j-1);
-        cov(k)= obj.na + obj.nq + nu*(j-1) + ur(i);
       end
       % compute indexes and partial derivatives for run-off-river plants
       for i= 1:nf
@@ -120,19 +102,11 @@ function JP= calcular_JP(obj,w)
         end
         % discharge variables
         dq(k) = dpdq(uh{uf(i)},zeta,s,q,v);
-        liq(k)= get(uh{uf(i)},'ss') + m*(l-1) + ns*(j-1);
-        coq(k)= obj.na + n*(l-1) + nu*(j-1) + uf(i);
         % spill variables
         dv(k) = dpdv(uh{uf(i)},zeta,q,v);
-        liv(k)= get(uh{uf(i)},'ss') + m*(l-1) + ns*(j-1);
-        cov(k)= obj.na + obj.nq + nu*(j-1) + uf(i);
       end
     end
   end
-  % merge indexes and partial derivatives
-  li= [lis;liq;liv];
-  co= [cos;coq;cov];
-  dp= [ ds; dq; dv];
   % build Jacobian matrix
-  JP= sparse(li, co, dp, obj.mb, obj.nx, nze);
+  JP= [ds;dq;dv];
 end
