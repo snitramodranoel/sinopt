@@ -113,7 +113,7 @@ function obj= verificar(obj)
     indices= find(obj.uz - obj.lz < 0);
     if ~isempty(indices)
       for j= 1:length(indices)
-        obj.uz(indices(j)) = obj.lz(indices(j));
+        obj.lz(indices(j)) = obj.uz(indices(j));
         warning('sinopt:problema:verificar:zBounds', ...
             'empty bounds @ z(%d)', ...
             indices(1));
