@@ -120,7 +120,7 @@ function obj= verificar(obj)
         obj.lz(indices(j)) = obj.uz(indices(j));
         warning('sinopt:problema:verificar:zBounds', ...
             'empty bounds @ z(%d)', ...
-            indices(1));
+            indices(j));
       end
     end
   end
