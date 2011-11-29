@@ -30,9 +30,13 @@
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function obj= verificar(obj)
   % system data
+  af= get(obj.si,'af');
+  dn= get(obj.si,'dn');
   ti= get(obj.si,'ti');
   tp= get(obj.si,'tp');
+  uf= get(obj.si,'uf');
   % system dimensions
+  nf= get(obj.si,'nf');
   ni= get(obj.si,'ni');
   np= get(obj.si,'np');
   %
@@ -46,7 +50,7 @@ function obj= verificar(obj)
       k= indices(j);
       % sanity check
       if obj.us(k) - obj.ls(k) < 0
-        error('sinopt:problema:verificar:emptySet', ...
+        error('sinopt:problema:verificar:xBounds', ...
             'reservoir storage bounds define an empty set @ s(%d)', k);
       end
     end
@@ -61,7 +65,7 @@ function obj= verificar(obj)
   else
     indices= find(obj.uv - obj.lv <= 0, 1);
     if ~isempty(indices)
-      error('sinopt:problema:verificar:emptySet', ...
+      error('sinopt:problema:verificar:xBounds', ...
           'water spill bounds define an empty set @ v(%d)', indices(1));
     end
   end
@@ -78,7 +82,7 @@ function obj= verificar(obj)
       k= indices(j);
       obj.lv(k)= obj.lv(k) + (obj.lq(k) - obj.uq(k));
       obj.lq(k)= 0;
-      warning('sinopt:problema:verificar:boundRelaxation', ...
+      warning('sinopt:problema:verificar:xBounds', ...
           'water discharge lower bounds relaxed @ q(%d)', k);
     end
   end
@@ -94,7 +98,7 @@ function obj= verificar(obj)
     for j= 1:length(indices)
       k= indices(j);
       if obj.uy - obj.ly < 0
-        error('sinopt:problema:verificar:emptySet', ...
+        error('sinopt:problema:verificar:yBounds', ...
             'power transmission bounds define an empty set @ y(%d)', k);
       else
         warning('sinopt:problema:verificar:directedArc', ...
@@ -133,5 +137,19 @@ function obj= verificar(obj)
       error('sinopt:problema:verificar:timeHorizonMismatch', ...
           'load level duration does not match stage duration @ j(%d)', j);
     end
+  end
+  %
+  % lower bounds on release for upstream run-off-river plants
+  for i= 1:nf
+    up= upstream(obj.si,uf(i));
+    if isempty(up)
+      indices= find(af(uf(i),:) - dn(uf(i),:) < 0, 1);
+      if ~isempty(indices)
+        error('sinopt:problema:verificar:xBounds', ...
+            'infeasible minimum release @ r(%d,%d)', uf(i), indices(1));
+      end
+    end
+    % clear temporary buffer
+    clear indices;
   end
 end
