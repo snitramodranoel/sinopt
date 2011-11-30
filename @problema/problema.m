@@ -82,7 +82,7 @@ function obj= problema(varargin)
   % solver options
   obj.km=   128; % maximum number of iterations
   obj.dv= 'off'; % verbosity (off, iter, notify, final)
-  obj.so= 'ipf'; % solution algorithm (ipf, ipbf, sqp)
+  obj.so= 'ipf'; % solution algorithm (ipf, ipo)
   % instantiation
   switch nargin
     % default

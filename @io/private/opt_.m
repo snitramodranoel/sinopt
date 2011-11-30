@@ -41,11 +41,19 @@ function obj= opt_(obj,arquivo)
   % read file version
   v= fscanf(fid,'%f',1);
   % check for file version
-  if v ~= 2.0
+  if v ~= 2.1
     fclose(fid);
     error('sinopt:io:opt:fileNotSupported', ...
       'HydroLab OPT file version %1.1f is not supported', v);
   end
+  % [ALGO]
+  %  optimization algorithm to be run
+  linha= fgetl(fid);
+  while not(strcmp('[ALGO]',linha))
+    linha= fgetl(fid);
+  end
+  % read algorithm
+  obj.pb= set(obj.pb,'so',strtrim(lower(fgetl(fid))));
   % [MAXI]
   %  maximum number of iterations
   linha= fgetl(fid);
