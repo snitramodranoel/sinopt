@@ -42,16 +42,16 @@ function obj= verificar(obj)
   %
   % bounds on reservoir storage
   if length(obj.ls) ~= length(obj.us)
-    error('sinopt:problema:verificar:arrayDimensionsMismatch', ...
-        'dimensions of reservoir storage bounds arrays do not match');
+    error('SINopt:problema:arrayDimensionsMismatch', ...
+        'Storage bound array dimensions do not match');
   else
     indices= find(obj.us - obj.ls <= 0);
     for j= 1:length(indices)
       k= indices(j);
       % sanity check
       if obj.us(k) - obj.ls(k) < 0
-        error('sinopt:problema:verificar:xBounds', ...
-            'reservoir storage bounds define an empty set @ s(%d)', k);
+        error('SINopt:problema:xBounds', ...
+            'Storage bounds define an empty set @ s(%d)', k);
       end
     end
   end
@@ -60,13 +60,13 @@ function obj= verificar(obj)
   %
   % bounds on water spill
   if length(obj.lv) ~= length(obj.uv)
-    error('sinopt:problema:verificar:arrayDimensionsMismatch', ...
-        'dimensions of water spill bounds arrays do not match');
+    error('SINopt:problema:arrayDimensionsMismatch', ...
+        'Water spill bound array dimensions do not match');
   else
     indices= find(obj.uv - obj.lv <= 0, 1);
     if ~isempty(indices)
-      error('sinopt:problema:verificar:xBounds', ...
-          'water spill bounds define an empty set @ v(%d)', indices(1));
+      error('SINopt:problema:xBounds', ...
+          'Water spill bounds define an empty set @ v(%d)', indices(1));
     end
   end
   % clear temporary buffer
@@ -74,35 +74,33 @@ function obj= verificar(obj)
   %
   % bounds on water discharge
   if length(obj.lq) ~= length(obj.uq)
-    error('sinopt:problema:verificar:arrayDimensionsMismatch', ...
-        'dimensions of water discharge bounds arrays do not match');
+    error('SINopt:problema:arrayDimensionsMismatch', ...
+        'Water discharge bound array dimensions do not match');
   else
     indices= find(obj.uq - obj.lq <= 0);
     for j= 1:length(indices)
       k= indices(j);
       obj.lv(k)= obj.lv(k) + (obj.lq(k) - obj.uq(k));
       obj.lq(k)= 0;
-      warning('sinopt:problema:verificar:xBounds', ...
-          'water discharge lower bounds relaxed @ q(%d)', k);
+      warning('SINopt:problema:xBounds', ...
+          'Water discharge lower bounds relaxed @ q(%d)', k);
     end
   end
-  % clear temporary buffer
+  % clear temporary buffers
+  clear k;
   clear indices;
   %
   % bounds on power transmission
   if length(obj.ly) ~= length(obj.uy)
-    error('sinopt:problema:verificar:arrayDimensionsMismatch', ...
-        'dimensions of power transmission bounds arrays do not match');
+    error('SINopt:problema:arrayDimensionsMismatch', ...
+        'Power transmission bound array dimensions do not match');
   else
     indices= find(obj.uy - obj.ly < obj.uy);
     for j= 1:length(indices)
       k= indices(j);
       if obj.uy - obj.ly < 0
-        error('sinopt:problema:verificar:yBounds', ...
-            'power transmission bounds define an empty set @ y(%d)', k);
-      else
-        warning('sinopt:problema:verificar:directedArc', ...
-            'directed arc detected @ y(%d)', k);
+        error('SINopt:problema:yBounds', ...
+            'Power transmission bounds define an empty set @ y(%d)', k);
       end
     end
   end
@@ -111,15 +109,15 @@ function obj= verificar(obj)
   %
   % bounds on thermal power generation
   if length(obj.lz) ~= length(obj.uz)
-    error('sinopt:problema:verificar:arrayDimensionsMismatch', ...
-        'array dimensions of thermal power generation bounds do not match');
+    error('SINopt:problema:arrayDimensionsMismatch', ...
+        'Thermal power generation bound array dimensions do not match');
   else
     indices= find(obj.uz - obj.lz < 0);
     if ~isempty(indices)
       for j= 1:length(indices)
         obj.lz(indices(j)) = obj.uz(indices(j));
-        warning('sinopt:problema:verificar:zBounds', ...
-            'empty bounds @ z(%d)', ...
+        warning('SINopt:problema:zBounds', ...
+            'Thermal power generation bounds define an empty set @ z(%d)', ...
             indices(j));
       end
     end
@@ -134,8 +132,8 @@ function obj= verificar(obj)
       sp= sp + tp{l}(j);
     end
     if sp ~= ti(j)
-      error('sinopt:problema:verificar:timeHorizonMismatch', ...
-          'load level duration does not match stage duration @ j(%d)', j);
+      error('SINopt:problema:timeMismatch', ...
+          'Load level duration does not match stage duration @ j(%d)', j);
     end
   end
   %
@@ -145,8 +143,8 @@ function obj= verificar(obj)
     if isempty(up)
       indices= find(af(uf(i),:) - dn(uf(i),:) < 0, 1);
       if ~isempty(indices)
-        error('sinopt:problema:verificar:xBounds', ...
-            'infeasible minimum release @ r(%d,%d)', uf(i), indices(1));
+        error('SINopt:problema:xBounds', ...
+            'Infeasible minimum release @ r(%d,%d)', uf(i), indices(1));
       end
     end
     % clear temporary buffer

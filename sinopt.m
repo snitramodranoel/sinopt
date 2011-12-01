@@ -34,15 +34,36 @@ function sinopt(estudo)
   try
     oio= ler(oio,estudo);
   catch err
-      errordlg(err.message, 'Error', 'modal');
-      return;
+    if strcmp(err.identifier, 'MATLAB:FileIO:InvalidFid')
+      msg= 'Problem files do not exist';
+    else
+      msg= err.message;
+    end
+    errordlg(msg, 'Error', 'modal');
+    return;
   end
   prb= get(oio,'pb');
   % problem setup
   prb= set(prb,'si',get(oio,'si'));
-  prb= construir(prb);
+  try
+    prb= construir(prb);
+  catch err
+    msg= err.message;
+    errordlg(msg, 'Error', 'modal');
+    return;
+  end
   % solve problem
-  prb= resolver(prb);
+  try
+    prb= resolver(prb);
+  catch err
+    if strcmp(err.identifier, 'MATLAB:UndefinedFunction')
+      msg= sprintf('Solver %s is not available', upper(get(prb,'so')));
+    else
+      msg= err.message;
+    end
+    errordlg(msg, 'Error', 'modal');
+    return;
+  end
   oio= set(oio,'pb',prb);
   % output optimization results
   escrever(oio,estudo);
