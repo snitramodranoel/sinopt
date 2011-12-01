@@ -43,7 +43,7 @@ function obj= vaz_(obj, arquivo)
   % check for file version
   if v ~= 2.0
     fclose(fid);
-    error('sinopt:io:vaz:fileNotSupported', ...
+    error('SINopt:io:fileNotSupported', ...
           'HydroLab VAZ file version %1.1f is not supported', v);
   end
   % [NUHE]
@@ -56,7 +56,7 @@ function obj= vaz_(obj, arquivo)
   nu= fscanf(fid,'%d',1);
   % sanity check
   if nu ~= get(obj.si,'nu')
-    error('sinopt:io:vaz:numberMismatch','Wrong number of hydro plants');
+    error('SINopt:io:numberMismatch','Wrong number of hydroplants');
   end
   % [NINT]
   %  number of hydro plants
@@ -68,7 +68,7 @@ function obj= vaz_(obj, arquivo)
   ni= fscanf(fid,'%d',1);
   % sanity check
   if ni ~= get(obj.si,'ni')
-    error('sinopt:io:vaz:numberMismatch','Wrong number of stages');
+    error('SINopt:io:numberMismatch','Wrong number of stages');
   end
   % [VAZO]
   %  inflows

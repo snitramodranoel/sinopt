@@ -43,7 +43,7 @@ function obj= opt_(obj,arquivo)
   % check for file version
   if v ~= 2.1
     fclose(fid);
-    error('sinopt:io:opt:fileNotSupported', ...
+    error('SINopt:io:fileNotSupported', ...
       'HydroLab OPT file version %1.1f is not supported', v);
   end
   % [ALGO]

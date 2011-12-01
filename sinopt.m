@@ -31,7 +31,12 @@
 function sinopt(estudo)
   % load data
   oio= io();
-  oio= ler(oio,estudo);
+  try
+    oio= ler(oio,estudo);
+  catch err
+      errordlg(err.message, 'Error', 'modal');
+      return;
+  end
   prb= get(oio,'pb');
   % problem setup
   prb= set(prb,'si',get(oio,'si'));

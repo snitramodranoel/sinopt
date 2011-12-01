@@ -43,7 +43,7 @@ function obj= uhe_(obj, arquivo)
   % check for file version
   if v ~= 3.0
     fclose(fid);
-    error('sinopt:io:uhe:fileNotSupported', ...
+    error('SINopt:io:fileNotSupported', ...
         'HydroLab UHE file version %1.1f is not supported', v);
   end
   % [NUHE]
@@ -56,7 +56,7 @@ function obj= uhe_(obj, arquivo)
   nu= fscanf(fid,'%i',1);
   % sanity check
   if nu ~= get(obj.si,'nu');
-    error('sinopt:io:uhe:numberMismatch','Wrong number of hydro plants');
+    error('SINopt:io:numberMismatch','Wrong number of hydroplants');
   end
   % memory allocation for hydro plants list
   uh= cell(nu,1);

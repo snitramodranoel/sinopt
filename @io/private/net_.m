@@ -43,7 +43,7 @@ function obj= net_(obj, arquivo)
   % check for file version
   if v ~= 3.0
     fclose(fid);
-    error('sinopt:io:net:fileNotSupported', ...
+    error('SINopt:io:fileNotSupported', ...
         'HydroLab NET file version %1.1f is not supported', v);
   end
   % [NSUB]
@@ -56,7 +56,7 @@ function obj= net_(obj, arquivo)
   ns= fscanf(fid,'%d',1);
   % sanity check
   if ns ~= get(obj.si,'ns')
-    error('sinopt:io:net:numberMismatch', 'Wrong number of subsystems');
+    error('SINopt:io:numberMismatch', 'Wrong number of subsystems');
   end
   % [NCYC]
   %  number of network loops
@@ -78,7 +78,7 @@ function obj= net_(obj, arquivo)
   ni= fscanf(fid,'%d',1);
   % sanity check
   if ni ~= get(obj.si,'ni')
-    error('sinopt:io:net:numberMismatch', 'Wrong number of stages');
+    error('SINopt:io:numberMismatch', 'Wrong number of stages');
   end
   % [NPAT]
   %  number of load levels per stage
@@ -90,7 +90,7 @@ function obj= net_(obj, arquivo)
   np= fscanf(fid,'%d',1);
   % sanity check
   if np ~= get(obj.si,'np')
-    error('sinopt:io:net:numberMismatch','Wrong number of load levels');
+    error('SINopt:io:numberMismatch','Wrong number of load levels');
   end
   % [NLIN]
   %  number of transmission lines

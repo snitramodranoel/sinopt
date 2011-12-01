@@ -43,7 +43,7 @@ function obj= mco_(obj, arquivo)
   % check for file version
   if v ~= 2.0
     fclose(fid);
-    error('sinopt:io:mco:fileNotSupported', ...
+    error('SINopt:io:fileNotSupported', ...
           'HydroLab MCO file version %1.1f is not supported', v);
   end
   % [NSUB]
@@ -65,7 +65,7 @@ function obj= mco_(obj, arquivo)
   ni= fscanf(fid,'%d',1);
   % sanity check
   if ni ~= get(obj.si,'ni')
-    error('sinopt:io:mco:numberMismatch','Wrong number of stages');
+    error('SINopt:io:numberMismatch','Wrong number of stages');
   end
   % [NPAT]
   %  number of load levels per stage
@@ -77,7 +77,7 @@ function obj= mco_(obj, arquivo)
   np= fscanf(fid,'%d',1);
   % sanity check
   if np ~= get(obj.si,'np');
-    error('sinopt:io:mco:numberMismatch','Wrong number of load levels');
+    error('SINopt:io:numberMismatch','Wrong number of load levels');
   end
   % [MSUB]
   %  load per subsystem, load level, and stage
