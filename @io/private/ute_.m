@@ -174,10 +174,10 @@ function obj= ute_(obj,arquivo)
       clear tb;
     end
   end
-  % [CUST]
+  % [CUSP]
   %  cost functions
   linha= fgetl(fid);
-  while not(strcmp('[CUST]',linha))
+  while not(strcmp('[CUSP]',linha))
     linha= fgetl(fid);
   end
   % read data
