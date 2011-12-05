@@ -40,20 +40,20 @@ function obj = ute(varargin)
   obj.ss=           0; % subsystem
   
   switch nargin
-      % default
-      case 0
-          % class instantiation
-          obj= class(obj, 'ute');
-      % cloning
-      case 1
-          if isa(varargin{1}, 'ute')
-              obj= varargin{1};
-          else
-              error('sinopt:ute:invalidArgument','Not a valid UTE object');
-          end
-          % class instantiation
-          obj= class(obj, 'ute');
-      otherwise
-          error('sinopt:ute:invalidArgument', 'Wrong number of arguments');
+    % default
+    case 0
+      % class instantiation
+      obj= class(obj, 'ute');
+    % cloning
+    case 1
+      if isa(varargin{1}, 'ute')
+          obj= varargin{1};
+      else
+          error('SINopt:ute:invalidArgument','Not a valid @ute object');
+      end
+      % class instantiation
+      obj= class(obj, 'ute');
+    otherwise
+      error('SINopt:ute:invalidArgument', 'Wrong number of arguments');
   end
 end

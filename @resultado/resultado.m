@@ -44,18 +44,18 @@ function obj = resultado(varargin)
     % default
     case 0
       % class instantiation
-        obj= class(obj,'resultado');
+      obj= class(obj,'resultado');
     % cloning
     case 1
       if isa(varargin{1},'resultado')
         obj= varargin{1};
       else
-        error('sinopt:resultado:invalidArgument', ...
-            'not a valid RESULTADO object');
+        error('SINopt:resultado:invalidArgument', ...
+            'Argument is not a valid @resultado object');
       end
       % class instantiation
       obj= class(obj, 'resultado');
     otherwise
-      error('sinopt:resultado:invalidArgument','wrong number of arguments');
+      error('SINopt:resultado:invalidArgument','Wrong number of arguments');
   end
 end

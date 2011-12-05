@@ -94,12 +94,12 @@ function obj= problema(varargin)
       if isa(varargin{1}, 'problema')
         obj= varargin{1};
       else
-        error('sinopt:problema:invalidArgument', ...
-              'Argument is not a valid PROBLEMA object');
+        error('SINopt:problema:invalidArgument', ...
+              'Argument is not a valid @problema object');
       end
       % class instantiation
       obj= class(obj, 'problema');
     otherwise
-      error('sinopt:problema:invalidArgument','Wrong number of arguments');
+      error('SINopt:problema:invalidArgument','Wrong number of arguments');
   end
 end

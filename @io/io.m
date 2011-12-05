@@ -43,13 +43,12 @@ function obj= io(varargin)
       if isa(varargin{1}, 'io')
         obj= varargin{1};
       else
-        error('sinopt:io:invalidArgument', ...
-              'Argument is not a valid IO object');
+        error('SINopt:io:invalidArgument', ...
+              'Argument is not a valid @io object');
       end
       % class instantiation
       obj= class(obj, 'io');
     otherwise
-      error('sinopt:io:invalidArgument', ...
-          'Wrong number of arguments');
+      error('SINopt:io:invalidArgument', 'Wrong number of arguments');
   end
 end

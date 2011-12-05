@@ -76,12 +76,12 @@ function obj= sistema(varargin)
       if isa(varargin{1}, 'sistema')
          obj= varargin{1};
       else
-         error('sinopt:sistema:invalidArgument', ...
-             'Argument is not a valid SISTEMA object');
+         error('SINopt:sistema:invalidArgument', ...
+             'Argument is not a valid @sistema object');
       end
         % object instantiation
         obj= class(obj, 'sistema');
     otherwise
-      error('sinopt:sistema:invalidArgument','Wrong number of arguments');
+      error('SINopt:sistema:invalidArgument','Wrong number of arguments');
   end
 end

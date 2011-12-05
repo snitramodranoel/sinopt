@@ -54,13 +54,12 @@ function obj= profiler(varargin)
       if isa(varargin{1}, 'profiler')
         obj= varargin{1};
       else
-        error('sinopt:profiler:invalidArgument', ...
-              'Argument is not a valid PROFILER object');
+        error('SINopt:profiler:invalidArgument', ...
+              'Argument is not a valid @profiler object');
       end
       % class instantiation
       obj= class(obj, 'profiler');
     otherwise
-      error('sinopt:profiler:invalidArgument', ...
-          'Wrong number of arguments');
+      error('SINopt:profiler:invalidArgument', 'Wrong number of arguments');
   end
 end

@@ -43,13 +43,12 @@ function obj= filtro(varargin)
       if isa(varargin{1}, 'filtro')
         obj= varargin{1};
       else
-        error('sinopt:filtro:invalidArgument', ...
-              'Argument is not a valid FILTRO object');
+        error('SINopt:filtro:invalidArgument', ...
+              'Argument is not a valid @filtro object');
       end
       % class instantiation
       obj= class(obj, 'filtro');
     otherwise
-      error('sinopt:filtro:invalidArgument', ...
-          'Wrong number of arguments');
+      error('SINopt:filtro:invalidArgument', 'Wrong number of arguments');
   end
 end

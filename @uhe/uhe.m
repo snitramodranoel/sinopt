@@ -55,20 +55,20 @@ function obj = uhe(varargin)
   obj.yf=          {}; % water release x tailrace elevation polynomials
 
   switch nargin
-      % default
-      case 0
-          % class instantiation
-          obj= class(obj, 'uhe');
-      % cloning
-      case 1
-          if isa(varargin{1}, 'uhe')
-              obj= varargin{1};
-          else
-              error('sinopt:uhe:invalidArgument','Not a valid UHE object');
-          end
-          % class instantiation
-          obj= class(obj, 'uhe');
-      otherwise
-          error('sinopt:uhe:invalidArgument','Wrong number of arguments');
+    % default
+    case 0
+      % class instantiation
+      obj= class(obj, 'uhe');
+    % cloning
+    case 1
+      if isa(varargin{1}, 'uhe')
+          obj= varargin{1};
+      else
+          error('SINopt:uhe:invalidArgument','Not a valid @uhe object');
+      end
+      % class instantiation
+      obj= class(obj, 'uhe');
+    otherwise
+      error('SINopt:uhe:invalidArgument','Wrong number of arguments');
   end
 end

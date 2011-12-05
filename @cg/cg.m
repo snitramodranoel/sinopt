@@ -50,13 +50,12 @@ function obj= cg(varargin)
           if isa(varargin{1}, 'cg')
               obj= varargin{1};
           else
-              error('sinopt:cg:invalidArgument', ...
-                  'Argument is not a valid CG object');
+              error('SINopt:cg:invalidArgument', ...
+                  'Argument is not a valid @cg object');
           end
           % instanciamento
           obj= class(obj, 'cg');
       otherwise
-          error('sinopt:cg:invalidArgument', ...
-              'Wrong number of arguments');
+          error('SINopt:cg:invalidArgument', 'Wrong number of arguments');
   end
 end

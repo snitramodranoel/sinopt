@@ -29,26 +29,25 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function obj= polinomio(varargin)
-  obj.dg=   1; % polynomial order
-  obj.cf=  []; % polynomial coefficients
+  obj.dg=  1; % polynomial order
+  obj.cf= []; % polynomial coefficients
 
   switch nargin
-      % default
-      case 0
-          % class instantiation
-          obj= class(obj, 'polinomio');
-      % cloning
-      case 1
-          if isa(varargin{1}, 'polinomio')
-              obj= varargin{1};
-          else
-              error('sinopt:polinomio:invalidArgument', ...
-                  'Argument is not a valid POLYNOMIAL object');
-          end
-          % class instantiation
-          obj= class(obj, 'polinomio');
-      otherwise
-          error('sinopt:polinomio:invalidArgument', ...
-              'Wrong number of arguments');
+    % default
+    case 0
+      % class instantiation
+      obj= class(obj, 'polinomio');
+    % cloning
+    case 1
+      if isa(varargin{1}, 'polinomio')
+        obj= varargin{1};
+      else
+        error('SINopt:polinomio:invalidArgument', ...
+            'Argument is not a valid @polynomial object');
+      end
+      % class instantiation
+      obj= class(obj, 'polinomio');
+    otherwise
+      error('SINopt:polinomio:invalidArgument', 'Wrong number of arguments');
   end
 end
