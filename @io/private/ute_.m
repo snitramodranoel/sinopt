@@ -136,10 +136,10 @@ function obj= ute_(obj,arquivo)
       clear tb;
     end
   end
-  % [TXID]
+  % [DISP]
   %  availability rate
   linha= fgetl(fid);
-  while not(strcmp('[TXID]',linha))
+  while not(strcmp('[DISP]',linha))
     linha= fgetl(fid);
   end
   % read data
