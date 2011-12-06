@@ -96,7 +96,7 @@ function obj= set(obj, varargin)
       case 'so'
         obj.so= valor;
       otherwise
-        error('sinopt:problema:set:invalidProperty', ...
+        error('SINopt:problema:invalidProperty', ...
             '%s is not a valid property', propriedade);
     end
   end

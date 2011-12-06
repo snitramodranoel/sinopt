@@ -77,7 +77,7 @@ function valor = get(obj, propriedade)
     case 'yf'
       valor= obj.yf;
     otherwise
-      error('sinopt:uhe:get:invalidProperty', ...
+      error('SINopt:uhe:invalidProperty', ...
         '%s is not a valid property', propriedade);
   end
 end

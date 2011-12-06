@@ -57,9 +57,8 @@ function obj= set(obj, varargin)
       case 'uq'
         obj.uq= valor;
       otherwise
-        error('sinopt:resultado:set:invalidProperty', ...
-            '%s is not a valid property', ...
-            propriedade);
+        error('SINopt:resultado:invalidProperty', ...
+            '%s is not a valid property', propriedade);
     end
   end
 end

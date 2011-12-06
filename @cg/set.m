@@ -51,7 +51,7 @@ function obj= set(obj, varargin)
           case 'rg'
               obj.rg= valor;
           otherwise
-              error('sinopt:cg:set:invalidProperty', ...
+              error('SINopt:cg:invalidProperty', ...
                   '%s is not a valid property', propriedade);
       end
   end

@@ -45,7 +45,7 @@ function valor= get(obj, propriedade)
       case 'rg'
           valor= obj.rg;
       otherwise
-          error('sinopt:cg:get:invalidProperty', ...
+          error('SINopt:cg:invalidProperty', ...
               '%s is not a valid property', propriedade);
   end
 end

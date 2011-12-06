@@ -40,7 +40,7 @@ function obj= set(obj, varargin)
               obj.cf= valor;
               obj.dg= length(valor) - 1;
           otherwise
-              error('sinopt:polinomio:set:invalidProperty', ...
+              error('SINopt:polinomio:invalidProperty', ...
                   '%s is not a valid property', propriedade);
       end
   end

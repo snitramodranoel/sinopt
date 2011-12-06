@@ -113,7 +113,7 @@ function valor= get(obj, propriedade)
     case 'so'
       valor= obj.so;
     otherwise
-      error('sinopt:problema:get:invalidProperty', ...
+      error('SINopt:problema:invalidProperty', ...
           '%s is not a valid property', propriedade);
   end
 end

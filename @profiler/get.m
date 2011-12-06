@@ -59,7 +59,7 @@ function valor= get(obj, propriedade)
     case 't'
       valor= obj.t;
     otherwise
-      error('hydra:profiler:get:invalidProperty', ...
+      error('SINopt:profiler:invalidProperty', ...
           '%s is not a valid property', propriedade);
   end
 end

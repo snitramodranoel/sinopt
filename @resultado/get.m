@@ -51,8 +51,7 @@ function valor = get(obj, propriedade)
     case 'uq'
       valor= obj.uq;
     otherwise
-      error('sinopt:despacho:get:invalidProperty', ...
-          '%s is not a valid property', ...
-          propriedade);
+      error('SINopt:despacho:get:invalidProperty', ...
+          '%s is not a valid property', propriedade);
   end
 end

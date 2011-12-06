@@ -85,7 +85,7 @@ function obj= set(obj, varargin)
       case 'yf'
         obj.yf= valor;
       otherwise
-        error('sinopt:uhe:set:invalidProperty', ...
+        error('SINopt:uhe:invalidProperty', ...
           '%s is not a valid property', propriedade);
     end
   end

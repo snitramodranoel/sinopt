@@ -65,7 +65,7 @@ function obj= set(obj, varargin)
       case 't'
         obj.t= valor;
       otherwise
-        error('hydra:profiler:set:invalidProperty', ...
+        error('SINopt:profiler:invalidProperty', ...
             '%s is not a valid property', propriedade);
     end
   end

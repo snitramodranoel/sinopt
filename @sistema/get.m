@@ -103,7 +103,7 @@ function valor= get(obj, propriedade)
     case 'vn'
       valor= obj.vn;
     otherwise
-      error('hydra:sistema:get:invalidProperty', ...
+      error('SINopt:sistema:invalidProperty', ...
           '%s is not a valid property', propriedade);
   end
 end

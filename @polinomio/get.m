@@ -35,7 +35,7 @@ function valor= get(obj, propriedade)
       case 'dg'
           valor= obj.dg;
       otherwise
-          error('sinopt:polinomio:get:invalidProperty', ...
+          error('SINopt:polinomio:invalidProperty', ...
               '%s is not a valid property', propriedade);
   end
 end

@@ -115,7 +115,7 @@ function obj= set(obj, varargin)
       case 'vz'
         obj.vz= valor;
       otherwise
-        error('sistema:sistema:set:invalidProperty', ...
+        error('SINopt:sistema:invalidProperty', ...
           '%s is not a valid property', propriedade);
     end
   end
