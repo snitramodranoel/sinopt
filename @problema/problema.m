@@ -77,7 +77,6 @@ function obj= problema(varargin)
   obj.HP= [];
   % objects
   obj.pf= profiler();  % statistics
-  obj.rs= resultado(); % results
   obj.si= sistema();   % power system
   % solver options
   obj.km=   128; % maximum number of iterations

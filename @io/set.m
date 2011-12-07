@@ -40,6 +40,8 @@ function obj= set(obj, varargin)
         obj.fi= valor;
       case 'pb'
         obj.pb= valor;
+      case 'rs'
+        obj.rs= valor;
       case 'si'
         obj.si= valor;
       otherwise

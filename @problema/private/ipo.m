@@ -24,7 +24,9 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function obj= ipo(obj)
+function rs= ipo(obj)
+  % memory allocation for object @resultado
+  rs= resultado();
   % set up callbacks
   funcs.objective= @(x) calcular_f(obj,x);
   funcs.constraints= @(x) calcular_g(obj,x);
@@ -56,7 +58,6 @@ function obj= ipo(obj)
   % solve problem
   [x,info]= ipopt(x,funcs,options);
   % compute solution
-  rs= resultado();
   y= info.lambda;
   rs= set(rs,'s',desempacotar_s(obj,extrair_s(obj,x)));
   rs= set(rs,'q',desempacotar_q(obj,extrair_q(obj,x)));
@@ -68,7 +69,6 @@ function obj= ipo(obj)
   rs= set(rs,'la',desempacotar_lambdaa(obj,extrair_lambdaa(obj,y)));
   rs= set(rs,'lb',desempacotar_lambdab(obj,extrair_lambdab(obj,y)));
   rs= set(rs,'uq',desempacotar_q(obj, extrair_q(obj,options.ub)));
-  obj.rs= rs;
   %
   % subfunctions
   % @problema/private/ipo.m:jacobianstructure computes jacobian structure

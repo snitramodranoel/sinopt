@@ -29,7 +29,9 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function obj= ipf(obj)
+function rs= ipf(obj)
+  % memory allocation for object @resultado
+  rs= resultado();
   %% input data 
   %  inflows and load demand
   b= [obj.b; zeros(obj.mc,1); -obj.d];
@@ -362,16 +364,16 @@ function obj= ipf(obj)
     printr();
   end
   %% save optimal solution
-  obj.rs= set(obj.rs, 's', desempacotar_s(obj, extrair_s(obj,x)));
-  obj.rs= set(obj.rs, 'q', desempacotar_q(obj, extrair_q(obj,x)));
-  obj.rs= set(obj.rs, 'v', desempacotar_v(obj, extrair_v(obj,x)));
-  obj.rs= set(obj.rs, 'y', desempacotar_y(obj, extrair_y(obj,x)));
-  obj.rs= set(obj.rs, 'z', desempacotar_z(obj, extrair_z(obj,x)));
-  obj.rs= set(obj.rs, 'P', desempacotar_lambdab(obj, calcular_P(obj,x)));
-  obj.rs= set(obj.rs, 'Q', desempacotar_lambdab(obj, calcular_Q(obj,x)));
-  obj.rs= set(obj.rs, 'la', desempacotar_lambdaa(obj, extrair_lambdaa(obj,y)));
-  obj.rs= set(obj.rs, 'lb', desempacotar_lambdab(obj, extrair_lambdab(obj,y)));
-  obj.rs= set(obj.rs, 'uq', desempacotar_q(obj, extrair_q(obj,u)));
+  rs= set(rs, 's', desempacotar_s(obj, extrair_s(obj,x)));
+  rs= set(rs, 'q', desempacotar_q(obj, extrair_q(obj,x)));
+  rs= set(rs, 'v', desempacotar_v(obj, extrair_v(obj,x)));
+  rs= set(rs, 'y', desempacotar_y(obj, extrair_y(obj,x)));
+  rs= set(rs, 'z', desempacotar_z(obj, extrair_z(obj,x)));
+  rs= set(rs, 'P', desempacotar_lambdab(obj, calcular_P(obj,x)));
+  rs= set(rs, 'Q', desempacotar_lambdab(obj, calcular_Q(obj,x)));
+  rs= set(rs, 'la', desempacotar_lambdaa(obj, extrair_lambdaa(obj,y)));
+  rs= set(rs, 'lb', desempacotar_lambdab(obj, extrair_lambdab(obj,y)));
+  rs= set(rs, 'uq', desempacotar_q(obj, extrair_q(obj,u)));
   %% verbosity subfunctions
   %  header
   function printc()

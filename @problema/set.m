@@ -84,8 +84,6 @@ function obj= set(obj, varargin)
       % objects
       case 'pf'
         obj.pf= valor;
-      case 'rs'
-        obj.rs= valor;
       case 'si'
         obj.si= valor;
       % solver options

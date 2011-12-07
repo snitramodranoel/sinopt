@@ -32,6 +32,7 @@ function obj= io(varargin)
   % allocate data objects
   obj.fi= '';          % case study base filename (w/o extension)
   obj.pb= problema();  % @problema object
+  obj.rs= resultado(); % @resultado object
   obj.si= sistema();   % @sistema object
 
   switch nargin

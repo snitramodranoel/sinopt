@@ -57,7 +57,7 @@ function sinopt(estudo)
   end
   % solve problem
   try
-    prb= resolver(prb);
+    rs= resolver(prb);
   catch err
     if strcmp(err.identifier, 'MATLAB:UndefinedFunction')
       msg= sprintf('Solver %s is not available', upper(get(prb,'so')));
@@ -68,7 +68,7 @@ function sinopt(estudo)
     errordlg(strcat(eid,',',msg), 'Error', 'modal');
     return;
   end
-  ioo= set(ioo,'pb',prb);
+  ioo= set(ioo,'rs',rs);
   % output optimization results
   escrever(ioo);
 end

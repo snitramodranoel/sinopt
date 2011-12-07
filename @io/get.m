@@ -34,6 +34,8 @@ function valor= get(obj, propriedade)
       valor= obj.fi;
     case 'pb'
       valor= obj.pb;
+    case 'rs'
+      valor= obj.rs;
     case 'si'
       valor= obj.si;
     otherwise

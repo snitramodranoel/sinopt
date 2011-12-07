@@ -40,27 +40,27 @@ function ropt_(obj)
   nt= get(obj.si,'nt');
   nu= get(obj.si,'nu');
   % problem data
-  af= get(obj.si,'af');           % incremental inflows
-  ai= get(obj.si,'ai');           % start year
-  di= get(obj.si,'di');           % start day
-  mi= get(obj.si,'mi');           % start month
-  uh= get(obj.si,'uh');           % list of hydro plants
-  ut= get(obj.si,'ut');           % list of thermal plants
-  ti= get(obj.si,'ti');           % duration of stages
-  tp= get(obj.si,'tp');           % duration of load levels
-  vi= get(obj.si,'vi');           % initial reservoir storage states
-  vf= get(obj.si,'vf');           % final reservoir storage requirements
+  af= get(obj.si,'af'); % incremental inflows
+  ai= get(obj.si,'ai'); % start year
+  di= get(obj.si,'di'); % start day
+  mi= get(obj.si,'mi'); % start month
+  uh= get(obj.si,'uh'); % list of hydro plants
+  ut= get(obj.si,'ut'); % list of thermal plants
+  ti= get(obj.si,'ti'); % duration of stages
+  tp= get(obj.si,'tp'); % duration of load levels
+  vi= get(obj.si,'vi'); % initial reservoir storage states
+  vf= get(obj.si,'vf'); % final reservoir storage requirements
   % optimal solution
-  s= get(get(obj.pb,'rs'),'s');   % reservoir storage
-  q= get(get(obj.pb,'rs'),'q');   % water discharge
-  v= get(get(obj.pb,'rs'),'v');   % water spill
-  y= get(get(obj.pb,'rs'),'y');   % power flow
-  z= get(get(obj.pb,'rs'),'z');   % power generation at thermal plants
-  P= get(get(obj.pb,'rs'),'P');   % total hydro power generation
-  Q= get(get(obj.pb,'rs'),'Q');   % total thermal power generation
-  la= get(get(obj.pb,'rs'),'la'); % water value
-  lb= get(get(obj.pb,'rs'),'lb'); % marginal costs
-  uq= get(get(obj.pb,'rs'),'uq'); % maximum water discharge
+  s= get(obj.rs,'s');   % reservoir storage
+  q= get(obj.rs,'q');   % water discharge
+  v= get(obj.rs,'v');   % water spill
+  y= get(obj.rs,'y');   % power flow
+  z= get(obj.rs,'z');   % power generation at thermal plants
+  P= get(obj.rs,'P');   % total hydro power generation
+  Q= get(obj.rs,'Q');   % total thermal power generation
+  la= get(obj.rs,'la'); % water value
+  lb= get(obj.rs,'lb'); % marginal costs
+  uq= get(obj.rs,'uq'); % maximum water discharge
   % build list of dates
   data= cell(ni+1,1);
   data{1}= datestr(datenum(ai,mi,(di-1)),'dd/mm/yyyy');
