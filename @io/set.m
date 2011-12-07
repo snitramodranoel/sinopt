@@ -36,6 +36,8 @@ function obj= set(obj, varargin)
     % update list of arguments
     pargin= pargin(3:end);
     switch propriedade
+      case 'fi'
+        obj.fi= valor;
       case 'pb'
         obj.pb= valor;
       case 'si'

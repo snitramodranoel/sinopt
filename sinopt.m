@@ -30,26 +30,29 @@
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function sinopt(estudo)
   % load data
-  oio= io();
+  ioo= io();
+  ioo= set(ioo, 'fi', estudo);
   try
-    oio= ler(oio,estudo);
+    ioo= ler(ioo);
   catch err
     if strcmp(err.identifier, 'MATLAB:FileIO:InvalidFid')
       msg= 'Problem files do not exist';
     else
       msg= err.message;
     end
-    errordlg(msg, 'Error', 'modal');
+    eid= err.identifier;
+    errordlg(strcat(eid,',',msg), 'Error', 'modal');
     return;
   end
-  prb= get(oio,'pb');
+  prb= get(ioo,'pb');
   % problem setup
-  prb= set(prb,'si',get(oio,'si'));
+  prb= set(prb,'si',get(ioo,'si'));
   try
     prb= construir(prb);
   catch err
     msg= err.message;
-    errordlg(msg, 'Error', 'modal');
+    eid= err.identifier;
+    errordlg(strcat(eid,',',msg), 'Error', 'modal');
     return;
   end
   % solve problem
@@ -61,10 +64,11 @@ function sinopt(estudo)
     else
       msg= err.message;
     end
-    errordlg(msg, 'Error', 'modal');
+    eid= err.identifier;
+    errordlg(strcat(eid,',',msg), 'Error', 'modal');
     return;
   end
-  oio= set(oio,'pb',prb);
+  ioo= set(ioo,'pb',prb);
   % output optimization results
-  escrever(oio,estudo);
+  escrever(ioo);
 end

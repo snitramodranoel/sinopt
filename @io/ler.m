@@ -28,13 +28,13 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function obj= ler(obj, estudo)
+function obj= ler(obj)
   % read problem data
-  obj= opt_(obj,strcat(estudo,'.opt'));
-  obj= hco_(obj,strcat(estudo,'.hco'));
-  obj= mco_(obj,strcat(estudo,'.mco'));
-  obj= uhe_(obj,strcat(estudo,'.uhe'));
-  obj= ute_(obj,strcat(estudo,'.ute'));
-  obj= vaz_(obj,strcat(estudo,'.vaz'));
-  obj= net_(obj,strcat(estudo,'.net'));
+  obj= opt_(obj);
+  obj= hco_(obj);
+  obj= mco_(obj);
+  obj= uhe_(obj);
+  obj= ute_(obj);
+  obj= vaz_(obj);
+  obj= net_(obj);
 end

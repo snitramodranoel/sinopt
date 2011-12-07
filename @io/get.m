@@ -30,6 +30,8 @@
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function valor= get(obj, propriedade)
   switch propriedade
+    case 'fi'
+      valor= obj.fi;
     case 'pb'
       valor= obj.pb;
     case 'si'

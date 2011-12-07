@@ -30,8 +30,9 @@
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function obj= io(varargin)
   % allocate data objects
-  obj.pb= problema();
-  obj.si= sistema();
+  obj.fi= '';          % case study base filename (w/o extension)
+  obj.pb= problema();  % @problema object
+  obj.si= sistema();   % @sistema object
 
   switch nargin
     % default

@@ -28,9 +28,9 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function ropt_(obj,arquivo)
+function ropt_(obj)
   % open file
-  fid= fopen(arquivo,'w+');
+  fid= fopen(strcat(obj.fi,'.ropt'),'w+');
   % system dimensions
   ni= get(obj.si,'ni');
   nl= get(obj.si,'nl');
