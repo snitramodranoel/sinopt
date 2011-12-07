@@ -41,7 +41,7 @@ function obj= ute_(obj,arquivo)
   % read data
   v= fscanf(fid,'%f',1);
   % check for file version
-  if v ~= 3.1
+  if v ~= 3.2
     fclose(fid);
     error('SINopt:io:fileNotSupported', ...
           'HydroLab UTE file version %1.1f is not supported', v);
