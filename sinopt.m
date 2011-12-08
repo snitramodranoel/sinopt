@@ -44,8 +44,8 @@ function sinopt(estudo)
     errordlg(strcat(eid,',',msg), 'Error', 'modal');
     return;
   end
-  prb= get(ioo,'pb');
   % problem setup
+  prb= get(ioo,'pb');
   prb= set(prb,'si',get(ioo,'si'));
   try
     prb= construir(prb);

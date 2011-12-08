@@ -1,10 +1,6 @@
-% @problema/construir.m builds optimization problem.
+% @problema/swap.m swaps plants between ROR and regulating reservoir lists.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2011 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -28,44 +24,43 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function obj= construir(obj)
-  % swap plants between ROR and regulation reservoir lists
-  obj= swap(obj);
+function obj= swap(obj)
+  % system data
+  uf= get(obj.si,'uf');
+  ur= get(obj.si,'ur');
+  vm= get(obj.si,'vm');
+  vn= get(obj.si,'vn');
   % system dimensions
-  nc= get(obj.si,'nc');
-  ni= get(obj.si,'ni');
-  nl= get(obj.si,'nl');
-  np= get(obj.si,'np');
+  nf= get(obj.si,'nf');
   nr= get(obj.si,'nr');
-  ns= get(obj.si,'ns');
-  nt= get(obj.si,'nt');
-  nu= get(obj.si,'nu');
-  % variable-space dimensions
-  obj.na= nr*(ni-1);
-  obj.nq= nu*ni*np;
-  obj.nv= nu*ni;
-  obj.nx= obj.na + obj.nq + obj.nv;
-  obj.ny= nl*np*ni;
-  obj.nz= nt*np*ni;
-  obj.n = obj.nx + obj.ny + obj.nz;
-  % constraint-space dimensions
-  obj.ma= nu*ni;
-  obj.mb= ns*np*ni;
-  obj.mc= nc*np*ni;
-  obj.m = obj.ma + obj.mb + obj.mc;
-  % box constraints
-  obj= construir_lb(obj);
-  obj= construir_ub(obj);
-  % hydro constraints
-  obj= construir_bb(obj);
-  obj= construir_A(obj);
-  % power constraints
-  obj= construir_d(obj);
-  obj= construir_B(obj);
-  obj= construir_C(obj);
-  % check constraints for sanity
-  obj= verificar(obj);
-  % compute matrix structures
-  obj= construir_J(obj);
-  obj= construir_H(obj);
+  %
+  % search for swappable plants 
+  % ROR plants with filling reservoir over the planning horizon
+  isf= []; % list of indexes to be swapped
+  for i= 1:nf
+    if min(vn(uf(i),:)) ~= max(vn(uf(i),:))
+      isf= [isf; i]; %#ok<AGROW>
+    end
+  end
+  % reservoir plants without storage capacity over the planning horizon
+  isr= []; % list of indexes to be swapped
+  for i= 1:nr
+    if max(vm(ur(i),:)) == 0
+      isr= [isr; i]; %#ok<AGROW>
+    end
+  end
+  %
+  % swap 'em
+  % first, compute plant indexes
+  sf= uf(isf);
+  sr= ur(isr);
+  % secondly, remove from original list
+  uf(isf)= [];
+  ur(isr)= [];
+  % then, update list counters
+  obj.si= set(obj.si, 'nf', nf - length(isf) + length(isr));
+  obj.si= set(obj.si, 'nr', nr - length(isr) + length(isf));
+  % finally, add to the new list
+  obj.si= set(obj.si, 'uf', sort([uf; sr]));
+  obj.si= set(obj.si, 'ur', sort([ur; sf]));
 end
