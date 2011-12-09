@@ -41,7 +41,7 @@ function obj= hco_(obj)
   % read
   v= fscanf(fid,'%f',1);
   % check for file version
-  if v ~= 2.0
+  if v ~= 2.1
     fclose(fid);
     error('SINopt:io:fileNotSupported', ...
       'HydroLab HCO file version %1.1f is not supported', v);
