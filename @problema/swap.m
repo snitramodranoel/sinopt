@@ -26,6 +26,7 @@
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function obj= swap(obj)
   % system data
+  uh= get(obj.si,'uh');
   uf= get(obj.si,'uf');
   ur= get(obj.si,'ur');
   vm= get(obj.si,'vm');
@@ -40,6 +41,7 @@ function obj= swap(obj)
   for i= 1:nf
     if min(vn(uf(i),:)) ~= max(vn(uf(i),:))
       isf= [isf; i]; %#ok<AGROW>
+      uh{uf(i)}= set(uh{uf(i)}, 'ie', 0);
     end
   end
   % reservoir plants without storage capacity over the planning horizon
@@ -47,6 +49,7 @@ function obj= swap(obj)
   for i= 1:nr
     if max(vm(ur(i),:)) == 0
       isr= [isr; i]; %#ok<AGROW>
+      uh{ur(i)}= set(uh{ur(i)}, 'ie', 1);
     end
   end
   %
@@ -63,4 +66,5 @@ function obj= swap(obj)
   % finally, add to the new list
   obj.si= set(obj.si, 'uf', sort([uf; sr]));
   obj.si= set(obj.si, 'ur', sort([ur; sf]));
+  obj.si= set(obj.si, 'uh', uh);
 end
