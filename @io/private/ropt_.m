@@ -45,7 +45,6 @@ function ropt_(obj)
   di= get(obj.si,'di'); % start day
   mi= get(obj.si,'mi'); % start month
   uh= get(obj.si,'uh'); % list of hydro plants
-  ut= get(obj.si,'ut'); % list of thermal plants
   ti= get(obj.si,'ti'); % duration of stages
   tp= get(obj.si,'tp'); % duration of load levels
   vi= get(obj.si,'vi'); % initial reservoir storage states
@@ -338,8 +337,7 @@ function ropt_(obj)
         fprintf(fid,'\t%2d ',l);
       end
       for t= 1:nt
-        gn= get(ut{t},'gn');
-        fprintf(fid,'\t%8.2f ', z{l}(t,j) - gn(l,j));
+        fprintf(fid,'\t%8.2f ', z{l}(t,j));
       end
       fprintf(fid,'\n');
     end
