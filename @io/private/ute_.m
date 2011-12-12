@@ -2,10 +2,6 @@
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
-%
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
 % are met:
@@ -206,7 +202,7 @@ function obj= ute_(obj)
       fscanf(fid,'%d',1); % bogus
       tb= fscanf(fid,'%f',[nt,1]);
       for t= 1:nt
-        fc{t}(p,j)= tb(t);
+        fc{t}(p,j)= tb(t)/100.0;
       end
       % clear temporary buffer
       clear tb;
