@@ -143,7 +143,7 @@ function obj= verificar(obj)
     if isempty(up)
       indices= find(af(uf(i),:) - dn(uf(i),:) < 0, 1);
       if ~isempty(indices)
-        error('SINopt:problema:xBounds', ...
+        warning('SINopt:problema:xBounds', ...
             'Infeasible minimum release @ r(%d,%d)', uf(i), indices(1));
       end
     end
