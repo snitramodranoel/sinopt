@@ -75,7 +75,7 @@ function rs= ipo(obj)
       rs= set(rs,'message','Optimal solution found');
     otherwise
       rs= set(rs,'status',1);
-      rs= set(rs,'message','');
+      rs= set(rs,'message','Infeasible problem detected');
   end
   %
   % subfunctions
