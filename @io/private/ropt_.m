@@ -60,6 +60,9 @@ function ropt_(obj)
   la= get(obj.rs,'la'); % water value
   lb= get(obj.rs,'lb'); % marginal costs
   uq= get(obj.rs,'uq'); % maximum water discharge
+  % status
+  status= get(obj.rs,'status');
+  message= get(obj.rs,'message');
   % build list of dates
   data= cell(ni+1,1);
   data{1}= datestr(datenum(ai,mi,(di-1)),'dd/mm/yyyy');
@@ -76,7 +79,15 @@ function ropt_(obj)
   % [VERS]
   % file version
   fprintf(fid,'\n[VERS]\n');
-  fprintf(fid,' 2.0\n');
+  fprintf(fid,' 2.1\n');
+  % [STAT]
+  % status
+  fprintf(fid,'\n[STAT]\n');
+  fprintf(fid,'  %d %s\n',status,message);
+  if status < 0
+    fclose(fid);
+    return;
+  end
   % [NUHE]
   % number of hydro plants
   fprintf(fid,'\n[NUHE]\n');
