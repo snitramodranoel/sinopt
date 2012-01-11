@@ -52,7 +52,7 @@ function rs= ipo(obj)
   options.ipopt.constr_viol_tol= 1e-02;
   options.ipopt.linear_solver= 'ma57';
   options.ipopt.mu_strategy= 'adaptive';
-  options.ipopt.print_level= 5;
+  options.ipopt.print_level= 0;
   options.ipopt.tol= 1e-06;
   %
   % solve problem
@@ -69,6 +69,14 @@ function rs= ipo(obj)
   rs= set(rs,'la',desempacotar_lambdaa(obj,extrair_lambdaa(obj,y)));
   rs= set(rs,'lb',desempacotar_lambdab(obj,extrair_lambdab(obj,y)));
   rs= set(rs,'uq',desempacotar_q(obj, extrair_q(obj,options.ub)));
+  switch info.status
+    case {0,1}
+      rs= set(rs,'status',0);
+      rs= set(rs,'message','Optimal solution found');
+    otherwise
+      rs= set(rs,'status',1);
+      rs= set(rs,'message','');
+  end
   %
   % subfunctions
   % @problema/private/ipo.m:jacobianstructure computes jacobian structure

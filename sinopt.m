@@ -41,7 +41,12 @@ function sinopt(estudo)
       msg= err.message;
     end
     eid= err.identifier;
-    errordlg(strcat(eid,',',msg), 'Error', 'modal');
+    % setup error identification
+    rs= get(ioo,'rs');
+    rs= set(rs,'status',-1);
+    rs= set(rs, 'message', strcat(eid,',',msg));
+    ioo= set(ioo, 'rs', rs);
+    escrever(ioo);
     return;
   end
   % problem setup
@@ -52,7 +57,12 @@ function sinopt(estudo)
   catch err
     msg= err.message;
     eid= err.identifier;
-    errordlg(strcat(eid,',',msg), 'Error', 'modal');
+    % setup error identification
+    rs= get(ioo,'rs');
+    rs= set(rs,'status',-1);
+    rs= set(rs, 'message', strcat(eid,',',msg));
+    ioo= set(ioo, 'rs', rs);
+    escrever(ioo);
     return;
   end
   % solve problem
@@ -65,7 +75,12 @@ function sinopt(estudo)
       msg= err.message;
     end
     eid= err.identifier;
-    errordlg(strcat(eid,',',msg), 'Error', 'modal');
+    % setup error identification
+    rs= get(ioo,'rs');
+    rs= set(rs,'status',-1);
+    rs= set(rs, 'message', strcat(eid,',',msg));
+    ioo= set(ioo, 'rs', rs);
+    escrever(ioo);
     return;
   end
   ioo= set(ioo,'rs',rs);
