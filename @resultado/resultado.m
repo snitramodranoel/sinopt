@@ -39,6 +39,9 @@ function obj = resultado(varargin)
   obj.la= []; % water value                        [R$/m^3/s]
   obj.lb= {}; % marginal operation cost            [R$/MWh]
   obj.uq= {}; % maximum water discharge            [m^3/s]
+  % status identification
+  obj.status= 0;
+  obj.message= '';
   % instantiation
   switch nargin
     % default

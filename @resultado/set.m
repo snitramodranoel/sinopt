@@ -56,6 +56,10 @@ function obj= set(obj, varargin)
         obj.lb= valor;
       case 'uq'
         obj.uq= valor;
+      case 'status'
+        obj.status= valor;
+      case 'message'
+        obj.message= valor;
       otherwise
         error('SINopt:resultado:invalidProperty', ...
             '%s is not a valid property', propriedade);

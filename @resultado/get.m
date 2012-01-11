@@ -50,6 +50,10 @@ function valor = get(obj, propriedade)
       valor= obj.lb;
     case 'uq'
       valor= obj.uq;
+    case 'status'
+      valor= obj.status;
+    case 'message'
+      valor= obj.message;
     otherwise
       error('SINopt:despacho:get:invalidProperty', ...
           '%s is not a valid property', propriedade);
