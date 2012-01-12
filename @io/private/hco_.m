@@ -201,29 +201,33 @@ function obj= hco_(obj)
     ti(j)= fscanf(fid,'%d',1);
   end
   obj.si= set(obj.si,'ti', ti);
-  % clear temporary buffer
-  clear ti;
   % [DPAT]
   %  load levels duration for each stage
-  linha= fgetl(fid);
-  while not(strcmp('[DPAT]',linha))
-    linha= fgetl(fid);
-  end
-  % memory allocation
+  %  memory allocation
   tp= cell(np,1);
   for l= 1:np
     tp{l}= zeros(ni,1);
   end
-  % read
-  for j= 1:ni
-    fscanf(fid,'%s',1); % bogus
-    for l= 1:np
-      fscanf(fid,'%d',1); % bogus
-      tp{l}(j)= fscanf(fid,'%d',1);
+  %  check if number of load levels > 1
+  if np > 1
+    linha= fgetl(fid);
+    while not(strcmp('[DPAT]',linha))
+      linha= fgetl(fid);
     end
+    % read
+    for j= 1:ni
+      fscanf(fid,'%s',1); % bogus
+      for l= 1:np
+        fscanf(fid,'%d',1); % bogus
+        tp{l}(j)= fscanf(fid,'%d',1);
+      end
+    end
+  else
+    tp{l}= ti;
   end
   obj.si= set(obj.si,'tp', tp);
-  % clear temporary buffer
+  % clear temporary buffers
+  clear ti;
   clear tp;
   % fecha arquivo
   fclose(fid);
