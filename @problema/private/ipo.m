@@ -50,6 +50,7 @@ function rs= ipo(obj)
   % set up solver options
   options.ipopt.bound_relax_factor= 1e-06;
   options.ipopt.constr_viol_tol= 1e-02;
+  options.ipopt.expect_infeasible_problem= 'yes';
   options.ipopt.linear_solver= 'ma57';
   options.ipopt.mu_strategy= 'adaptive';
   options.ipopt.print_level= 0;
