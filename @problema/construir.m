@@ -26,18 +26,7 @@
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function obj= construir(obj)
   % swap plants between ROR and regulation reservoir lists
-  % obj= swap(obj);
-  % system data
-  uh= get(obj.si,'uh');
-  % all plants should be regarded as having regulating reservoirs
-  obj.si= set(obj.si,'nr', get(obj.si,'nu'));
-  obj.si= set(obj.si,'nf', 0);
-  obj.si= set(obj.si,'uf', []);
-  obj.si= set(obj.si,'ur', (1:get(obj.si,'nu'))');
-  for i= 1:get(obj.si,'nu')
-    uh{i}= set(uh{i},'ie',0);
-  end
-  obj.si= set(obj.si,'uh',uh);
+  obj= swap(obj);
   % system dimensions
   nc= get(obj.si,'nc');
   ni= get(obj.si,'ni');

@@ -84,6 +84,7 @@ function sinopt(estudo)
     return;
   end
   ioo= set(ioo,'rs',rs);
+  ioo= set(ioo,'si',get(prb,'si'));
   % output optimization results
   escrever(ioo);
 end
