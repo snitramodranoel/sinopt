@@ -158,14 +158,20 @@ function ropt_(obj)
       vn = get(uh{i},'vn');
       if ~ror
         k= k+1;
+        % check for originally ROR plant
+        tv= vm-vn;
+        if ~(tv > 0)
+          tv= vm;
+        end
+        % print 'em out
         if (j > 1)
           if (j < ni+1)
-            fprintf(fid,'\t%8.2f ', 100*((s(k,j-1)-vn)/(vm-vn)));
+            fprintf(fid,'\t%8.2f ', 100*((s(k,j-1)-vn)/tv));
           else
-            fprintf(fid,'\t%8.2f ', 100*((vf(i)-vn)/(vm-vn)));
+            fprintf(fid,'\t%8.2f ', 100*((vf(i)-vn)/tv));
           end
         else
-          fprintf(fid,'\t%8.2f ', 100*((vi(i)-vn)/(vm-vn)));
+          fprintf(fid,'\t%8.2f ', 100*((vi(i)-vn)/tv));
         end
       else
         fprintf(fid,'\t%8.2f ', 100*(vi(i)/vm));
