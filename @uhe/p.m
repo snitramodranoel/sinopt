@@ -29,18 +29,6 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function g= p(obj,zeta,s,q,v)
-  % compute gross water head
-  h= calcular(obj.yc,s) - calcular(obj.yf{1,2},q+v);
-  % compute net water head
-  switch obj.pc{1}
-    case 1
-      h= h * (1 - obj.pc{2});
-    case 2
-      h= h - obj.pc{2};
-    otherwise
-      error('sinopt:uhe:p:invalidData', ...
-          'Penstock loss of type %d is invalid', obj.pc{1});
-  end
   % compute power generation
-  g= zeta*obj.pe*q*h;
+  g= zeta*obj.pe*q*head(obj,s,q,v);
 end
