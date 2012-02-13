@@ -37,8 +37,4 @@ function h= head(obj,s,q,v)
       error('sinopt:uhe:p:invalidData', ...
           'Penstock loss of type %d is invalid', obj.pc{1});
   end
-  % check for negative head
-  if h < 0
-    error('SINopt:uhe:invalidNumber', 'Head is negative');
-  end
 end
