@@ -1,0 +1,32 @@
+Installing IPOPT on Gentoo Linux with MATLAB support
+
+This document will guide you through the configuration and installation of
+IPOPT on computers running Gentoo Linux with MATLAB support.
+
+1) Pre-requisites
+
+This guide assumes that you have installed the software listed below:
+
+- GCC 4.3.4
+- MATLAB R2011a or newer
+
+2) Installing ATLAS
+
+In order to provide more efficient linear algebra computations to IPOPT, it is
+highly recommended that you install optimized BLAS/LAPACK software. To install
+ATLAS, issue the following command as root:
+
+# emerge lapack-atlas
+
+3) Installing IPOPT
+
+./configure \
+ --prefix=/opt/ipopt \
+ --enable-static \
+ --with-matlab-home=/opt/matlab \
+ CC=gcc-4.3.4 \
+ CXX=g++-4.3.4 \
+ F77=gfortran-4.3.4 \
+ ADD_CFLAGS="-fPIC –fexceptions" \
+ ADD_CXXFLAGS="-fPIC" \
+ ADD_FFLAGS="-fPIC –fexceptions"
