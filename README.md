@@ -1,11 +1,9 @@
-SINopt -- otimização do despacho de geradores elétricos em sistemas de potência.
+# SINopt #
+Otimização do Despacho de Geradores Elétricos em Sistemas de Potência.
 
-Copyright (C) 2010, 2011 Leonardo Martins, Universidade Estadual de Campinas
+## Resumo ##
 
-Resumo
-------
-
-SINopt é um programa para a otimização não-linear do despacho de geradores 
+SINopt é um programa para a otimização não-linear do despacho de geradores
 elétricos em sistemas de potência com suporte a:
 
  * representação individualizada de usinas;
@@ -28,20 +26,17 @@ SINopt é distribuído na esperança que será útil, porém SEM QUAISQUER GARAN
 Por favor, leia o arquivo LICENSE para maiores detalhes antes de decidir
 utilizar o SINopt.
 
-Disponibilidade
----------------
+## Disponibilidade ##
 
 Em breve, a versão mais atual do SINopt estará disponível para download no
 endereço eletrônico http://www.cose.fee.unicamp.br/~leonardo/.
 
-Instalação
-----------
+## Instalação ##
 
 Para instalar o SINopt, basta descompactar o arquivo sinopt-x.y.zip para o
 diretório desejado, onde x.y indica a versão do programa.
 
-Utilização
-----------
+## Utilização ##
 
 Para executar o SINopt, É NECESSÁRIO TER O MATLAB VERSÃO 2010 OU SUPERIOR 
 INSTALADO EM SEU COMPUTADOR. Caso você não o tenha, você terá que instalar o 
@@ -50,16 +45,15 @@ instalador do MCR, acesse o endereço eletrônico abaixo:
 
 http://www.cose.fee.unicamp.br/~marcos/MCRInstaller.exe
 
-Documentação
-------------
+## Documentação ##
 
 No momento, não há documentação oficial disponível.
 
-Informações adicionais
-----------------------
+## Informações adicionais ##
 
 Informações adicionais podem ser encontradas nos arquivos distribuídos com o
 programa executável.
 
+Copyright (C) 2010, 2011, 2012 Leonardo Martins, Universidade Estadual de Campinas
 
-Última atualização: Qua, 05 Jan 2011 08:51:14 CST
+Última atualização: Seg, 18 Jan 2011 11:28:14 BRT
