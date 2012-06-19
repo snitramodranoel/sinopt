@@ -1,0 +1,48 @@
+// ARQUIVO DE VAZÕES
+
+// Versão do tipo de dados contido neste arquivo.
+[VERS]
+ 2.0
+
+// Número de usinas hidrelétricas.
+[NUHE]
+   6
+
+// Número de intervalos do horizonte
+[NINT]
+  12
+
+// Dia (1), mês (2) e ano (3) iniciais do conjunto de vazões.
+[DATA]
+   1  5    0
+
+// Identificação dos postos de vazões de cada usina.
+// Código e Nome do posto de vazões.
+[PSTO]
+20920080   Serra da Mesa
+47750080   Sobradinho
+61661000   Furnas
+61941080   Marimbondo
+61998080   Água Vermelha
+72690081   Machadinho
+
+// Configuração do tipo das vazões.
+// (1)Natural, (2)Incremental, (3)Sintética ou (4)Outra.
+[TIPV]
+   1
+
+// Valores de vazão [m^3/s],
+// para cada usina hidrelétrica (colunas) e intervalo do horizonte (linhas).
+[VAZO]
+  01/05/2000    565.54   2302.76    736.88   1556.00   1770.83    655.49
+  01/06/2000    390.43   1570.51    609.99   1287.64   1468.93    778.49
+  01/07/2000    295.13   1313.67    502.11   1056.49   1207.51    954.74
+  01/08/2000    229.68   1136.88    414.76    880.25   1010.76    984.12
+  01/09/2000    220.66   1016.96    435.43    880.68   1003.61   1112.71
+  01/10/2000    317.22   1137.83    508.84   1001.50   1144.63   1075.12
+  01/11/2000    566.62   1872.57    720.28   1346.20   1511.55    676.95
+  01/12/2000   1054.20   3379.42   1223.25   2200.68   2430.84    534.05
+  01/01/2001   1429.38   4747.29   1739.21   3245.71   3618.01    478.71
+  01/02/2001   1650.79   4958.88   1656.29   3380.58   3821.61    598.96
+  01/03/2001   1525.32   4846.71   1478.16   3041.89   3459.83    477.29
+  01/04/2001   1061.25   3737.16    996.84   2151.76   2466.68    501.51

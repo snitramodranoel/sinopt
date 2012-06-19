@@ -1,0 +1,17 @@
+// ARQUIVO DE OTIMIZAÇÃO
+// SINopt 2.0-RELEASE
+
+// Versão do tipo de dados contido neste arquivo.
+[VERS]
+ 2.1
+
+[ALGO]
+ IPO
+
+// Número máximo de iterações
+[MAXI]
+ 64
+
+// Verbosidade {OFF | FINAL | ITER}
+[VERB]
+ ITER
