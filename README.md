@@ -33,8 +33,8 @@ endereço eletrônico http://www.cose.fee.unicamp.br/~leonardo/.
 
 ## Instalação ##
 
-Para instalar o SINopt, basta descompactar o arquivo sinopt-x.y.zip para o
-diretório desejado, onde x.y indica a versão do programa.
+Instruções de instalação do ambiente de desenvolvimento do SINopt podem ser
+encontradas no arquivo INSTALL.md.
 
 ## Utilização ##
 
