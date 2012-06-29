@@ -34,9 +34,24 @@ where `$SINOPT_PATH` points to the base directory where SINopt source code is lo
  ADD_CXXFLAGS="-fPIC" \
  ADD_FFLAGS="-fPIC –fexceptions"``
 
-After the `Makefile` is configured, build and install IPOPT:
+After `Makefile` is configured, build and install IPOPT:
 
 ``# make``
 
 ``# make install``
 
+## 4) Install the MATLAB Interface
+
+To compile and install the MATLAB interface, issues the following commands:
+
+``# cd $SINOPT_PATH/lib/vendor/ipopt-3.10.2/Ipopt/contrib/MatlabInterface/src/``
+
+``# make``
+
+``# make install``
+
+Now, you have to properly configure the interface by adding the path to the `mex` file to the MATLAB path. If you want to make IPOPT available to all MATLAB users, edit the file 
+
+``/opt/matlab/toolbox/local/pathdef.m``
+
+adding `'/opt/ipopt/lib:', …` to the list of path entries.
