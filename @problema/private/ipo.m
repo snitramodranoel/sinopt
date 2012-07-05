@@ -53,7 +53,7 @@ function rs= ipo(obj)
   options.ipopt.expect_infeasible_problem= 'yes';
   options.ipopt.linear_solver= 'ma57';
   options.ipopt.mu_strategy= 'adaptive';
-  options.ipopt.print_level= 0;
+  options.ipopt.print_level= 5;
   options.ipopt.tol= 1e-06;
   %
   % solve problem
