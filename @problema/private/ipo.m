@@ -52,8 +52,9 @@ function rs= ipo(obj)
   options.ipopt.constr_viol_tol= 1e-02;
   options.ipopt.expect_infeasible_problem= 'yes';
   options.ipopt.linear_solver= 'ma57';
+  options.ipopt.max_iter= obj.km;
   options.ipopt.mu_strategy= 'adaptive';
-  options.ipopt.print_level= 5;
+  options.ipopt.print_level= obj.dv;
   options.ipopt.tol= 1e-06;
   %
   % solve problem

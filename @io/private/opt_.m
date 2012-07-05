@@ -69,7 +69,15 @@ function obj= opt_(obj)
     linha= fgetl(fid);
   end
   % read verbosity
-  obj.pb= set(obj.pb,'dv',strtrim(lower(fgetl(fid))));
+  dvn= 0;
+  dvs= strtrim(lower(fgetl(fid)));
+  if (strcmp(dvs,'final'))
+      dvn= 1;
+  elseif (strcmp(dvs,'iter'))
+      dvn= 5;
+  % TODO: check for numerical values
+  end
+  obj.pb= set(obj.pb,'dv',dvn);
   % close file
   fclose(fid);
 end
