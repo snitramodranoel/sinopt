@@ -1,10 +1,10 @@
 &----------------------------------------------------------------------------------------------
-&       BLOCO 1  *** TÕTULO ***
+&       BLOCO 1  *** T√çTULO ***
 &       (REGISTRO TE)
 &---------------------------------------------------------------------------------------------
 &TE
 &&   CENARIOS GERADOS COM HISTORICO DE 1931-2009
-TE  PMO MAR«O/2011-ABRIL/2011 - REV 3 - FCF COM CAR - VALOR ESPERADO                
+TE  PMO MAR√áO/2011-ABRIL/2011 - REV 3 - FCF COM CAR - VALOR ESPERADO                
 &-----------------------------------------------------
 &       BLOCO 2  *** OS SUBSISTEMAS ***
 &       (REGISTRO SB) 
@@ -18,7 +18,7 @@ SB   3   NE
 SB   4   N 
 SB   5   FC
 &------------------------------------------------------------------------------------------
-&      BLOCO 3 *** VOLUME DOS RESERVAT”RIOS ****
+&      BLOCO 3 *** VOLUME DOS RESERVAT√ìRIOS ****
 &      (REGISTRO UH )      
 &------------------------------------------------------------------------------------------
 &   UHE  S        VINI    DEFMIN  GRID EVAP OPER VMORTOINI LIMSUP    FATOR
@@ -38,7 +38,7 @@ UH    1   1        92.80               1
 UH    2   1          0.0               1
 & FUNIL GRANDE
 UH    4   1          0.0               1
-& EMBORCA«√O 
+& EMBORCA√á√ÉO 
 UH   24   1        52.50               1
 &CAPIM BRANCO I
 UH   27   1        30.10               1
@@ -60,11 +60,11 @@ UH  134   1          0.0               1
 UH   26   1        87.30               1
 & IGARAPAVA
 UH   10   1          0.0               1
-& AIMOR…S
+& AIMOR√âS
 UH  143   1          0.0               1
 &QUEIMADO
 UH  162   1        90.30               1
-&IRAP…
+&IRAP√â
 UH  148   1        86.80               1
 &.................................
 &             CGEET - TIETE        
@@ -90,7 +90,7 @@ UH   39   1          0.0               1
 &.................................
 &             DUKE       
 &.................................
-& TAQUARU«U 
+& TAQUARU√áU 
 UH   62   1          0.0               1
 & ROSANA
 UH   63   1          0.0               1
@@ -111,7 +111,7 @@ UH   50   1          0.0               1
 &.................................
 & JUPIA
 UH   45   1          0.0               1
-& I.SOLTEIRA /TR S IRM√OS    (EQUIVALENTE)
+& I.SOLTEIRA /TR√äS IRM√ÉOS    (EQUIVALENTE)
 UH   44   1        91.90               1
 & P.PRIMAVERA
 UH   46   1          0.0               1
@@ -153,11 +153,11 @@ UH  122   1        82.09               1
 UH  124   1        88.88               1
 & ILHA DOS POMBOS                                    
 UH  130   1          0.0               1
-& NILO PE«ANHA                                                    
+& NILO PE√áANHA                                                    
 UH  131   1          0.0               1
 & PEREIRA PASSOS                                        
 UH  133   1          0.0               1
-& SANTA CECÕLIA                                                  
+& SANTA CEC√çLIA                                                  
 UH  125   1          0.0               1
 & TOCOS                                                       
 UH  180   1          0.0               1
@@ -174,7 +174,7 @@ UH  184   1          0.0               1
 &..................................        
 & EDGAR DE SOUZA                                                   
 UH  107   1          0.0               1
-& TRAI«√O                                                         
+& TRAI√á√ÉO                                                         
 UH  108   1          0.0               1
 & PEDREIRA                                                  
 UH  109   1          0.0               1
@@ -235,7 +235,7 @@ UH   76   2        98.90               1
 UH   82   2          0.0               1
 & G.P.SOUZA
 UH  115   2        99.70               1
-& DESVIO DO JORD√O
+& DESVIO DO JORD√ÉO
 UH   73   2        100.0               1
 &St. Clara (PR)
 UH   71   2        93.20               1
@@ -300,14 +300,14 @@ UH  189   3        87.65               1
 &.................................
 &          ELETRONORTE
 &.................................
-& TUCURUÕ
+& TUCURU√ç
 UH  275   4        97.40               1
 & CURUA-UNA
 UH  272   4        86.96               1
 &SAMUEL
 UH  279   1        55.90               1
 &_______________________________________________
-&          PRODUTORES INDEPENDENTES/CONS”RCIOS
+&          PRODUTORES INDEPENDENTES/CONS√ìRCIOS
 &_______________________________________________
 &   UHE  S        VINI    DEFMIN  GRID EVAP OPER VMORTOINI LIMSUP
 &   xxx  X    xxxxxxxxxxXXXXXXXXXXxx   X    xx   XXXXXXXXXXxxxxxxxxxx
@@ -321,7 +321,7 @@ UH  127   1          0.0               1
 UH  135   1        80.00               1
 & SANTA CLARA
 UH  283   1          0.0               1
-& S¡ CARVALHO
+& S√Å CARVALHO
 UH  193   1          0.0               1
 & LAJEADO
 UH  261   1          0.0               1
@@ -343,7 +343,7 @@ UH   95   2        90.00               1
 UH  281   1          0.0               1
 &OURINHOS
 UH  249   1          0.0               1
-&CORUMB¡ III
+&CORUMB√Å III
 UH  203   1        75.00               1
 &CORUMBA IV
 UH   29   1        83.00               1
@@ -465,7 +465,7 @@ CT   74   3   R.ALME_TC  3      0. 111.    188.15   0. 111.    188.15   0. 111. 
 CT   83   3   JS_PEREIRA 1      0.285.1    287.83   0.285.1    287.83   0.285.1    287.83
 CT  112   3   BAHIA_1    1      0. 24.0    455.17   0. 24.0    455.17   0. 24.0    455.17
 CT  112   3   BAHIA_1    2      0. 21.0    455.17   0. 21.0    455.17   0. 21.0    455.17
-& TERMICAS LEILAO - CVU atualizado conforme informaÁıes da CCEE
+& TERMICAS LEILAO - CVU atualizado conforme informa√ß√µes da CCEE
 CT  104   1   COCAL      1      0.  20.    140.71    0  20.    140.71   0.  20.    140.71
 CT  153   1   DAIA       1      0. 44.4    580.44   0. 44.4    580.44   0. 44.4    580.44
 CT  105   1   PIE-RP     1      0. 24.8    152.95   0. 24.8    152.95   0. 24.8    152.95
@@ -509,7 +509,7 @@ CT   57   3   MARACANAU  1      0. 168.    390.30   0. 168.    390.30   0. 168. 
 CT   69   3   TERMOPB    1      0.164.9    401.63   0.164.9    401.63   0.164.9    401.63
 CT   52   3   CAMPINA_GR 1     0.0164.4    403.51  0.0164.4    403.51  0.0164.4    403.51
 &----------------------------------------------------------------------------------------------
-&       BLOCO 5 *** ESTA«’ES DE BOMBEAMENTO ***
+&       BLOCO 5 *** ESTA√á√ïES DE BOMBEAMENTO ***
 &       (REGISTRO UE)
 &----------------------------------------------------------------------------------------------
 &XX UNE  S    NOME       )   USM  USJ  Qmin(m3/s)Qmax(m3/s)Cons MWmed/m3/s )
@@ -520,9 +520,9 @@ UE  002   1   Vigario        182  181          90     190.0      0.44
 UE  003   1   Traicao        109  108         0.0     270.0       0.3
 UE  004   1   Pedreira       118  109         0.0     395.0      0.25
 &------------------------------------------------------------------------------------------------------------
-&============   HORARIO DE VER√O=================
+&============   HORARIO DE VER√ÉO=================
 &______________________________________________________
-&        Fim previsto    - MÍs de Fevereiro 
+&        Fim previsto    - M√™s de Fevereiro 
 &______________________________________________________
 &VR
 &VR  02   4    FIM
@@ -576,7 +576,7 @@ CD   3    4   INTERV 3   1    10.0   5152.46 10.0   5152.46 10.0   5152.46
 CD   4    4   INTERV 4   1    80.0   5845.54 80.0   5845.54 80.0   5845.54
 &
 &-----------------------------------------------------------------------------------------------------------
-&       BLOCO 8  BACIAS ESPECIAIS/PEQUENAS USINAS *** GERA«√O EXTERNA ***
+&       BLOCO 8  BACIAS ESPECIAIS/PEQUENAS USINAS *** GERA√á√ÉO EXTERNA ***
 &       (REGISTRO BE) 
 &-----------------------------------------------------------------------------------------------------------
 &                       PAT1|PAT2|PAT3|
@@ -585,7 +585,7 @@ CD   4    4   INTERV 4   1    80.0   5845.54 80.0   5845.54 80.0   5845.54
 &BE
 &BE  PEQ USI                 0    0    0
 &-----------------------------------------------------------------------------------------------------------
-&       BLOCO 9   GERA«√O EM PEQUENAS USINAS *** GERA«√O EXTERNA ***
+&       BLOCO 9   GERA√á√ÉO EM PEQUENAS USINAS *** GERA√á√ÉO EXTERNA ***
 &       (REGISTRO PQ)
 &-----------------------------------------------------------------------------------------------------------
 &                       PAT1|PAT2|PAT3|
@@ -791,7 +791,7 @@ PQ  CEMAR      4    3     3.7  3.7  3.7
 &----------------------------------------------------------------------------------------------
 &         BLOCO 10 *** RESTRICAO ITAIPU 50 HZ/CARGA DA ANDE  ***
 &         (REGISTRO IT)
-&         OBS. a geraÁ„o de Itaipu - 50 Hz + ANDE + C. INTERNO
+&         OBS. a gera√ß√£o de Itaipu - 50 Hz + ANDE + C. INTERNO
 &----------------------------------------------------------------------------------------------
 &                  |--PAT1--|--PAT 2--|--PAT 3--|
 &  EST   UHE  S     50Hz ANDE 50Hz ANDE 50Hz ANDE
@@ -856,20 +856,20 @@ GP       0.001
 NI  200
 &
 &-----------------------------------------------------------------------------------------------
-&         BLOCO 17 *** ALGORÕTMO DA PL  ***
+&         BLOCO 17 *** ALGOR√çTMO DA PL  ***
 &         (REGISTRO PD)
 &----------------------------------------------------------------------------------------------- 
 &PD
 &
 &-----------------------------------------------------------------------------------------------
-&         BLOCO 18 *** DATA DE REFER NCIA Do ESTUDO  ***
+&         BLOCO 18 *** DATA DE REFER√äNCIA Do ESTUDO  ***
 &         (REGISTRO DT)
 &-----------------------------------------------------------------------------------------------
 &DT
 DT  19   03   2011
 &
 &----------------------------------------------------------------------------------------------
-&         BLOCO 19 *** MANUTEN«’ES PROGRAMADAS ***
+&         BLOCO 19 *** MANUTEN√á√ïES PROGRAMADAS ***
 &         (REGISTROS MP E MT)
 &----------------------------------------------------------------------------------------------
 &..........................................................
@@ -1730,7 +1730,7 @@ VE   14  98.0298.02100.0
 &A. VERMELHA
 &VE   18  90.0992.20100.0
 VE   18  100.0100.0100.0
-&EMBORCA«√O
+&EMBORCA√á√ÉO
 &VE   24  99.90100.0100.0
 VE   24  100.0100.0100.0
 &N. PONTE
@@ -1739,12 +1739,12 @@ VE   25  100.0100.0100.0
 &ITUMBIARA
 &VE   31  96.7097.40100.0
 VE   31  100.0100.0100.0
-&S. SIM√O
+&S. SIM√ÉO
 &VE   33  89.2191.50100.0
 VE   33  100.0100.0100.0
 &B.BONITA
 VE   37  88.7089.8796.49
-&PROMISS√O
+&PROMISS√ÉO
 &VE   40  92.1193.80100.0
 VE   40  100.0100.0100.0
 &I.SOLTEIRA
@@ -1760,7 +1760,7 @@ VE   61  100.0100.0100.0
 VE  122  94.4894.48100.0
 &FUNIL
 VE  123  74.5974.59100.0
-&TR S MARIAS
+&TR√äS MARIAS
 VE  156  97.0598.89100.0
 &SOBRADINHO
 VE  169  78.6280.7882.70
@@ -1768,9 +1768,9 @@ VE  169  78.6280.7882.70
 VE  162  87.1689.73100.0
 &ITAPARICA
 VE  172  56.3160.8299.01
-&BOA ESPERAN«A
+&BOA ESPERAN√áA
 VE  190  64.4464.4471.76
-&IRAP…
+&IRAP√â
 VE  148  95.3995.93100.0
 &PASSO REAL
 VE  111  89.8389.8389.53
@@ -1780,26 +1780,26 @@ VE   77  100.0100.0100.0
 & DADOS DE ENCHIMENTO DE VOLUME MORTO - TAXA DE DEFLUENCIA (REGISTRO DF)
 &
 &        EST1|EST2|EST3| ...
-&   USI  TAXA(m≥/s)
+&   USI  TAXA(m¬≥/s)
 &   xxx  XXXXXxxxxxXXXXXxxxxxXXXXXxxxxxXXXXXxxxxxXXXXXxxxxxXXXXXxxxxxXXXXXxxxxxXXXXXxxxxxXXXXX
 &DF
-&Enchimento do Volume Morto da UHE Corumb· III
+&Enchimento do Volume Morto da UHE Corumb√° III
 &DF  203    27.  27.  27.
 &----------------------------------------------------------------------------------------------
-&         BLOCO 22 *** TAXA DE ENCHIMENTO E TAXA DE DEFLU NCIA ***
+&         BLOCO 22 *** TAXA DE ENCHIMENTO E TAXA DE DEFLU√äNCIA ***
 &         (REGISTROS VM)
 &----------------------------------------------------------------------------------------------
 & DADOS DE ENCHIMENTO DE VOLUME MORTO - TAXA DE ENCHIMENTO (REGISTRO VM)
 &
 &        EST1|EST2|EST3| ...
-&   USI  TAXA(m≥/s)
+&   USI  TAXA(m¬≥/s)
 &   xxx  XXXXXxxxxxXXXXXxxxxxXXXXXxxxxxXXXXXxxxxxXXXXXxxxxxXXXXXxxxxxXXXXXxxxxxXXXXXxxxxxXXXXX
 &VM
-&Enchimento do Volume Morto da UHE Corumb· III
+&Enchimento do Volume Morto da UHE Corumb√° III
 &VM  203     0.   0.   0.
 &VM  102      0    0   40
 &----------------------------------------------------------------------------------------------
-&         BLOCO 23 *** RESTRI«’ES EL…TRICAS**
+&         BLOCO 23 *** RESTRI√á√ïES EL√âTRICAS**
 &         (REGISTROS RE) 
 &----------------------------------------------------------------------------------------------
 &RE
@@ -1807,129 +1807,129 @@ VE   77  100.0100.0100.0
 &             |--- PATAMAR 1 ----||--- PATAMAR 2 ----||--- PATAMAR 3 ----|
 &   RE   EST   GMIN      GMAX       GMIN      GMAX       GMIN      GMAX
 &   xx   XX   xxxxxxxxxxXXXXXXXXXXxxxxxxxxxxXXXXXXXXXXxxxxxxxxxxXXXXXXXXXX
-&-24 - EMBORCA«√O
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&-24 - EMBORCA√á√ÉO
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE    1   1    2
 &LU    1   1            0                   0                 150
 &FU    1   1    24           1
-&-24 - EMBORCA«√O
-&MÌnimo ---> InformaÁ„o do Agente
+&-24 - EMBORCA√á√ÉO
+&M√≠nimo ---> Informa√ß√£o do Agente
 RE    2   1    2
 LU    2   1          150                 150                 150
 FU    2   1    24           1
 &-25- NOVA PONTE
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE    7   1    3
 &LU    7   1            0                   0                 130
 &FU    7   1    25           1
 &-25- NOVA PONTE
-&MÌnimo ---> InformaÁ„o do Agente
+&M√≠nimo ---> Informa√ß√£o do Agente
 RE    8   1    2
 LU    8   1          125                 125                 125
 FU    8   1    25           1
-&-156- TR S MARIAS
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&-156- TR√äS MARIAS
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   10   1    2
 &LU   10   1            0                   0                  70
 &FU   10   1   156           1
-&-33- S√O SIM√O
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&-33- S√ÉO SIM√ÉO
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   11   1    2
 &LU   11   1            0                   0                 370
 &FU   11   1    33           1
-&-33- S√O SIM√O
-&MÌnimo ---> InformaÁ„o do Agente (mÌnimo de 3 unidades geradoras sincronizadas)
+&-33- S√ÉO SIM√ÉO
+&M√≠nimo ---> Informa√ß√£o do Agente (m√≠nimo de 3 unidades geradoras sincronizadas)
 RE   13   1    2
 LU   13   1          555                 555                 555
 FU   13   1    33           1
 &- JAGUARA
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   14   1    2
 &LU   14   1            0                   0                 200
 &FU   14   1     9           1
 &VOLTA GRANDE
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   15   1    2
 &LU   15   1            0                   0                  45
 &FU   15   1    11           1
 &GUILMAN-AMORIM 
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   16   1    2
 &LU   16   1            0                   0                  22
 &FU   16   1   192           1
 &-26- MIRANDA
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   19   1    2
 &LU   19   1            0                   0                  80
 &FU   19   1    26           1
 &-26- MIRANDA
-&MÌnimo ---> InformaÁ„o do Agente
+&M√≠nimo ---> Informa√ß√£o do Agente
 RE   20   1    2
 LU   20   1           80                  80                  80
 FU   20   1    26           1
 &-10- IGARAPAVA
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   22   1    2
 &LU   22   1            0                   0                  28
 &FU   22   1    10           1
-&- 148 - IRAP…
-&MÌnimo ---> InformaÁ„o do Agente
+&- 148 - IRAP√â
+&M√≠nimo ---> Informa√ß√£o do Agente
 RE   23   1    2
 LU   23   1           70                  70                  70
 FU   23   1   148           1
-&***************************** SERRA DO FAC√O ********************
+&***************************** SERRA DO FAC√ÉO ********************
 &             |--- PATAMAR 1 ----||--- PATAMAR 2 ----||--- PATAMAR 3 ----|
 &   RE   EST   GMIN      GMAX       GMIN      GMAX       GMIN      GMAX
 &   xx   XX   xxxxxxxxxxXXXXXXXXXXxxxxxxxxxxXXXXXXXXXXxxxxxxxxxxXXXXXXXXXX
 &
 &-21- SERRA DO FACAO
-&MÌnimo / M·ximo ---> InformaÁ„o do Agente
+&M√≠nimo / M√°ximo ---> Informa√ß√£o do Agente
 RE   24   1    3
 LU   24   1           50       160        50       160        50       160
 FU   24   1    21           1
-&***************************** AES TIET  ********************
+&***************************** AES TIET√ä ********************
 &             |--- PATAMAR 1 ----||--- PATAMAR 2 ----||--- PATAMAR 3 ----|
 &   RE   EST   GMIN      GMAX       GMIN      GMAX       GMIN      GMAX
 &   xx   XX   xxxxxxxxxxXXXXXXXXXXxxxxxxxxxxXXXXXXXXXXxxxxxxxxxxXXXXXXXXXX
 &
-&-18- ¡GUA VERMELHA
-&MÌnimo ---> RestriÁ„o elÈtrica - N˙mero mÌnimo de unidade em operaÁ„o (IO-CG-BR01)
+&-18- √ÅGUA VERMELHA
+&M√≠nimo ---> Restri√ß√£o el√©trica - N√∫mero m√≠nimo de unidade em opera√ß√£o (IO-CG-BR01)
 &RE   25   1    2
 &LU   25   1            0                   0                 250
 &FU   25   1    18           1
-&-18- ¡GUA VERMELHA
-&MÌnimo ---> InformaÁ„o do Agente
-&Controle de Tens„o na regi„o - seguranÁa dos equipamentos caso ocorra perturbaÁ„o com a saÌda da LT 440 kV AGV/RPR
+&-18- √ÅGUA VERMELHA
+&M√≠nimo ---> Informa√ß√£o do Agente
+&Controle de Tens√£o na regi√£o - seguran√ßa dos equipamentos caso ocorra perturba√ß√£o com a sa√≠da da LT 440 kV AGV/RPR
 RE   27   1    3
 LU   27   1          375                 375                 375
 FU   27   1    18           1
 &-38- A.S.LIMA (BARIRI)
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   28   1    2
 &LU   28   1            0                   0                  18
 &FU   28   1    38           1
 &-37- BARRA BONITA
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   29   1    2
 &LU   29   1            0                   0                   7
 &FU   29   1    37           1
 &-39- IBITINGA
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   30   1    2
 &LU   30   1            0                   0                  13
 &FU   30   1    39           1
-&-40- PROMISS√O
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&-40- PROMISS√ÉO
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   31   1    2
 &LU   31   1            0                   0                  36
 &FU   31   1    40           1
 &-15- EUCLIDES DA CUNHA
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   33   1    2
 &LU   33   1            0                   0                  13
 &FU   33   1    15           1
 &-16- A.S. OLIVEIRA (LIMOEIRO)
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   34   1    2
 &LU   34   1            0                   0                   4
 &FU   34   1    16           1
@@ -1939,90 +1939,90 @@ FU   27   1    18           1
 &   xx   XX   xxxxxxxxxxXXXXXXXXXXxxxxxxxxxxXXXXXXXXXXxxxxxxxxxxXXXXXXXXXX
 &
 &-49 CHAVANTES
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   52   1    2
 &LU   52   1            0                   0                 102
 &FU   52   1    49           1
 &-49 CHAVANTES
-&MÌnimo ---> InformaÁ„o do Agente
-&CavitaÁ„o nas p·s das turbinas
+&M√≠nimo ---> Informa√ß√£o do Agente
+&Cavita√ß√£o nas p√°s das turbinas
 RE   53   1    2
 LU   53   1          102                 102                 102
 FU   53   1    49           1
 &-47- JURUMIRIM
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   54   1    2
 &LU   54   1            0                   0                  43
 &FU   54   1    47           1
 &-47- JURUMIRIM
-&MÌnimo ---> InformaÁ„o do Agente
-&CavitaÁ„o nas p·s das turbinas
+&M√≠nimo ---> Informa√ß√£o do Agente
+&Cavita√ß√£o nas p√°s das turbinas
 RE   55   1    2
 LU   55   1           43                  43                  43
 FU   55   1    47           1
 &-50- L. N. GARCEZ (Salto Grande)
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   56   1    2
 &LU   56   1            0                   0                   8
 &FU   56   1    50           1
 &-50- L. N. GARCEZ (Salto Grande)
-&MÌnimo ---> InformaÁ„o do Agente
-&CavitaÁ„o nas p·s das turbinas
+&M√≠nimo ---> Informa√ß√£o do Agente
+&Cavita√ß√£o nas p√°s das turbinas
 RE   57   1    2
 LU   57   1           15                  15                  15
 FU   57   1    50           1
 &-51- CANOAS 2
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   60   1    2
 &LU   60   1            0                   0                  12
 &FU   60   1    51           1
 &-51- CANOAS 2
-&MÌnimo ---> InformaÁ„o do Agente
-&CavitaÁ„o nas p·s das turbinas
+&M√≠nimo ---> Informa√ß√£o do Agente
+&Cavita√ß√£o nas p√°s das turbinas
 RE   61   1    2
 LU   61   1           12                  12                  12
 FU   61   1    51           1
 &-52- CANOAS 1
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   62   1    2
 &LU   62   1            0                   0                  15
 &FU   62   1    52           1
 &-52- CANOAS 1
-&MÌnimo ---> InformaÁ„o do Agente
-&CavitaÁ„o nas p·s das turbinas
+&M√≠nimo ---> Informa√ß√£o do Agente
+&Cavita√ß√£o nas p√°s das turbinas
 RE   63   1    2
 LU   63   1           15                  15                  15
 FU   63   1    52           1
 &-61- CAPIVARA
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   64   1    2
 &LU   64   1            0                   0                 190
 &FU   64   1    61           1
 &61- CAPIVARA
-&MÌnimo ---> InformaÁ„o do Agente
-&CavitaÁ„o nas p·s das turbinas
+&M√≠nimo ---> Informa√ß√£o do Agente
+&Cavita√ß√£o nas p√°s das turbinas
 RE   65   1    2
 LU   65   1          160                 160                 160
 FU   65   1    61           1
-&-62- TAQUARU«U
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&-62- TAQUARU√áU
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   66   1    2
 &LU   66   1            0                   0                 120
 &FU   66   1    62           1
-&-62- TAQUARU«U
-&MÌnimo ---> InformaÁ„o do Agente
-&CavitaÁ„o nas p·s das turbinas
+&-62- TAQUARU√áU
+&M√≠nimo ---> Informa√ß√£o do Agente
+&Cavita√ß√£o nas p√°s das turbinas
 RE   67   1    2
 LU   67   1          120                 120                 120
 FU   67   1    62           1
 &-63- ROSANA
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   68   1    2
 &LU   68   1            0                   0                  80
 &FU   68   1    63           1
 &-63- ROSANA
-&MÌnimo ---> InformaÁ„o do Agente
-&CavitaÁ„o nas p·s das turbinas
+&M√≠nimo ---> Informa√ß√£o do Agente
+&Cavita√ß√£o nas p√°s das turbinas
 RE   69   1    2
 LU   69   1           80                  80                  80
 FU   69   1    63           1
@@ -2032,33 +2032,33 @@ FU   69   1    63           1
 &   xx   XX   xxxxxxxxxxXXXXXXXXXXxxxxxxxxxxXXXXXXXXXXxxxxxxxxxxXXXXXXXXXX
 &
 &-44- CESP - ILS/TRI eq. 
-&MÌnima ---> RestriÁ„o ElÈtrica - mÌnimo de m·quinas sincronizadas - IO-CG-BR01 
+&M√≠nima ---> Restri√ß√£o El√©trica - m√≠nimo de m√°quinas sincronizadas - IO-CG-BR01 
 &RE   70   1    2
 &LU   70   1            0                   0                1210
 &FU   70   1    44           1
-&-45- JUPI¡
-&MÌnimo --->RestriÁ„o ElÈtrica - MÌnimo de unidades sincronizadas 8 UGs + IO-CG-BR01)
+&-45- JUPI√Å
+&M√≠nimo --->Restri√ß√£o El√©trica - M√≠nimo de unidades sincronizadas 8 UGs + IO-CG-BR01)
 &RE   72   1    2
 &LU   72   1            0                   0                 340
 &FU   72   1    45           1
 &P.PRIMAVERA
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas -(IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas -(IO-CG-BR01)
 &RE   73   1    2
 &LU   73   1            0                   0                 240
 &FU   73   1    46           1
 &-120- JAGUARI
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   74   1    2
 &LU   74   1            0                   0                   2
 &FU   74   1   120           1
 &120 - JAGUARI
-&M·ximo ---> InformaÁ„o do Agente
+&M√°ximo ---> Informa√ß√£o do Agente
 &Perda por Deplecionamento (Queda Bruta)
 RE   75   1    2
 LU   75   1                     24                  24                  24
 FU   75   1   120           1
 &-121- PARAIBUNA
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   76   1    2
 &LU   76   1            0                   0                   2
 &FU   76   1   121           1
@@ -2068,47 +2068,47 @@ FU   75   1   120           1
 &   xx   XX   xxxxxxxxxxXXXXXXXXXXxxxxxxxxxxXXXXXXXXXXxxxxxxxxxxXXXXXXXXXX
 &
 &SERRA MESA
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   83   1    2
 &LU   83   1            0                   0                 300
 &FU   83   1   251           1
 &-123- FUNIL
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   87   1    2
 &LU   87   1            0                   0                  40
 &FU   87   1   123           1
 &-31- ITUMBIARA
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   88   1    2
 &LU   88   1            0                   0                 200
 &FU   88   1    31           1
 &-17- MARIMBONDO
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   90   1    2
 &LU   90   1            0                   0                 330
 &FU   90   1    17           1
 &-17- MARIMBONDO
-&MÌnimo ---> Informacao do Agente (Piracema)
+&M√≠nimo ---> Informacao do Agente (Piracema)
 RE   91   1    2
 LU   91   1          500                 500                 500
 FU   91   1    17           1
 &-7- MASCARENHAS DE MORAES
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   92   1    2
 &LU   92   1            0                   0                 120
 &FU   92   1     7           1
 &-12- PORTO COLOMBIA
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   93   1    2
 &LU   93   1            0                   0                  40
 &FU   93   1    12           1
-&-30- CORUMB¡
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&-30- CORUMB√Å
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   94   1    2
 &LU   94   1            0                   0                  30
 &FU   94   1    30           1
-&-30- CORUMB¡
-&MÌnimo ---> Informacao do Agente (Vaz min corresponde a 1 MAQ operando com 80 MW)
+&-30- CORUMB√Å
+&M√≠nimo ---> Informacao do Agente (Vaz min corresponde a 1 MAQ operando com 80 MW)
 RE   95   1    2
 LU   95   1           80                  80                  80
 FU   95   1    30           1
@@ -2118,27 +2118,27 @@ FU   95   1    30           1
 &   xx   XX   xxxxxxxxxxXXXXXXXXXXxxxxxxxxxxXXXXXXXXXXxxxxxxxxxxXXXXXXXXXX
 &
 &-131- NILO PECANHA
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE   99   1    2
 &LU   99   1            0                   0                  70
 &FU   99   1   131           1
 &FONTES A
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE  100   1    2
 &LU  100   1            0                   0                  10
 &FU  100   1   183           1
 &FONTES BC
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE  101   1    2
 &LU  101   1            0                   0                  20
 &FU  101   1   184           1
 &PEREIRA PASSOS
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE  102   1    2
 &LU  102   1            0                   0                  15
 &FU  102   1   133           1
 &I. POMBOS
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE  103   1    2
 &LU  103   1            0                   0                  15
 &FU  103   1   130           1
@@ -2157,8 +2157,8 @@ FU  109   1   119           1
 &   RE   EST   GMIN      GMAX       GMIN      GMAX       GMIN      GMAX
 &   xx   XX   xxxxxxxxxxXXXXXXXXXXxxxxxxxxxxXXXXXXXXXXxxxxxxxxxxXXXXXXXXXX
 & ITAIPU
-&MÌnimo ---> RestriÁ„o Operativa: (Carga ANDE + Consumo Interno + Gmin50 (1900) + Gmin60 (3200))
-&M·ximo ---> PotÍncia Total - 
+&M√≠nimo ---> Restri√ß√£o Operativa: (Carga ANDE + Consumo Interno + Gmin50 (1900) + Gmin60 (3200))
+&M√°ximo ---> Pot√™ncia Total - 
 RE  110   1    3
 LU  110   1         4858     10800      4571     10486      4405     10486
 LU  110   2         4858     11800      4571     11800      4405     11800
@@ -2173,7 +2173,7 @@ FU  111   1    66           1
 &*********************************** C.DOURADA ***************************
 &
 &-32- CACHOEIRA DOURADA
-&MÌnimo ---> RestriÁ„o elÈtrica - N∫ mÌnimo de unidades sincronizadas (IO-CG-BR01)
+&M√≠nimo ---> Restri√ß√£o el√©trica - N¬∫ m√≠nimo de unidades sincronizadas (IO-CG-BR01)
 &RE  112   1    2
 &LU  112   1            0                   0                  70
 &FU  112   1    32           1
@@ -2184,7 +2184,7 @@ FU  111   1    66           1
 &
 &175 - PAULO AFONSO IV
 &INFORMACAO DO AGENTE
-&GeraÁ„o MÌnima de 2 Unidades para ManutenÁ„o da Confiabilidade e SeguranÁa do Sistema (RE3/154/2002)
+&Gera√ß√£o M√≠nima de 2 Unidades para Manuten√ß√£o da Confiabilidade e Seguran√ßa do Sistema (RE3/154/2002)
 &RE  123   1    2
 &LU  123   1          480                 480                 480
 &FU  123   1   175           1
@@ -2205,26 +2205,26 @@ FU  125   1   172           1
 &   RE   EST   GMIN      GMAX       GMIN      GMAX       GMIN      GMAX
 &   xx   XX   xxxxxxxxxxXXXXXXXXXXxxxxxxxxxxXXXXXXXXXXxxxxxxxxxxXXXXXXXXXX
 & 111- PASSO REAL
-&MÌnimo/M·ximo ---> InformaÁ„o do Agente
-&Controle de Tens„o
+&M√≠nimo/M√°ximo ---> Informa√ß√£o do Agente
+&Controle de Tens√£o
 RE  129   1    3
 LU  129   1           40       158         0       158         0       158
 FU  129   1   111           1
 & 112- JACUI
-&MÌnimo/M·ximo ---> InformaÁ„o do Agente
-&Controle de Tens„o
+&M√≠nimo/M√°ximo ---> Informa√ß√£o do Agente
+&Controle de Tens√£o
 RE  133   1    3
 LU  133   1           90       180        10       180        10       180
 FU  133   1   112           1
 & 113- ITAUBA
-&MÌnimo/M·ximo ---> InformaÁ„o do Agente
-&Controle de Tens„o
+&M√≠nimo/M√°ximo ---> Informa√ß√£o do Agente
+&Controle de Tens√£o
 RE  134   1    3
 LU  134   1          100       500         5       500         5       500
 FU  134   1   113           1
 &114- D. FRANCISCA
-&MÌnimo/M·ximo ---> InformaÁ„o do Agente
-&Controle de Tens„o
+&M√≠nimo/M√°ximo ---> Informa√ß√£o do Agente
+&Controle de Tens√£o
 RE  135   1    3
 LU  135   1           35       125        35       125        35       125
 FU  135   1   114           1
@@ -2252,25 +2252,25 @@ FU  137   1   279           1
 RE  138   1    3
 LU  138   1          180                 180                 180
 FU  138   1    86           1
-&&******************* RESTRI«’ES DE INTERC¬MBIO *****************************
+&&******************* RESTRI√á√ïES DE INTERC√ÇMBIO *****************************
 &             |--- PATAMAR 1 ----||--- PATAMAR 2 ----||--- PATAMAR 3 ----|
 &   RE   EST   GMIN      GMAX       GMIN      GMAX       GMIN      GMAX
 &   xx   XX   xxxxxxxxxxXXXXXXXXXXxxxxxxxxxxXXXXXXXXXXxxxxxxxxxxXXXXXXXXXX
-&  MÕNIMO/M¡XIMO RECEBIMENTO NE FNE + FSENE (SE_NE + FC_NE)  - RestriÁ„o entre Subsistemas
-&  NT 161/2010 - Limites de TransferÍncia de Energia entre Regiıes...
-&  BCS-4 500 kV MARAB¡
+&  M√çNIMO/M√ÅXIMO RECEBIMENTO NE FNE + FSENE (SE_NE + FC_NE)  - Restri√ß√£o entre Subsistemas
+&  NT 161/2010 - Limites de Transfer√™ncia de Energia entre Regi√µes...
+&  BCS-4 500 kV MARAB√Å
 &  DJ 500 kV US. L. GONZAGA C4 e D2
-&  DJ 500 kV B. ESPERAN«A T1 e C7
+&  DJ 500 kV B. ESPERAN√áA T1 e C7
 RE  144   1    3
 LU  144   1                   4200                4063                3964
 LU  144   2                   4200                4200                4200
 FI  144   1   FC   NE            1
 FI  144   1   SE   NE            1
 & RE: FNS = GH LAJEADO GH P.ANGICAL + FC_SE
-& M·ximo --->  Limites de SeguranÁa de Transmiss„o - RestriÁ„o Interna ao Subsistema SE
+& M√°ximo --->  Limites de Seguran√ßa de Transmiss√£o - Restri√ß√£o Interna ao Subsistema SE
 &  IO-ON.NSE - Rev.28 --> Leve
-&  MOP CNOS 011/2011 --> Pesada / MÈdia
-&  CLP ITABER¡ + LT 765 kV IVAIPOR√ - ITABER¡ C1 + RELOCA«√O DE TORRES PARA ENTRADA   DA UHE MAU¡
+&  MOP CNOS 011/2011 --> Pesada / M√©dia
+&  CLP ITABER√Å + LT 765 kV IVAIPOR√É - ITABER√Å C1 + RELOCA√á√ÉO DE TORRES PARA ENTRADA   DA UHE MAU√Å
 &RE  151   1    3
 &LU  151   1                   3567                3507                3234
 &LU  151   2                   4100                4100                4100
@@ -2278,46 +2278,46 @@ FI  144   1   SE   NE            1
 &FU  151   1   261           1
 &FI  151   1   FC   SE            1
 & FSENE + FMCCO = Fornecimento do SE para N/NE)
-& M·ximo ---> Limites de SeguranÁa de Transmiss„o - RestriÁ„o Entre Subsistemas
-& NT 161/2010 - Limites de TransferÍncia de Energia entre Regiıes...
+& M√°ximo ---> Limites de Seguran√ßa de Transmiss√£o - Restri√ß√£o Entre Subsistemas
+& NT 161/2010 - Limites de Transfer√™ncia de Energia entre Regi√µes...
 RE  154   1    3
 LU  154   1                   4200                4200                4200
 FI  154   1   SE   NE            1
 FI  154   1   SE   FC            1
 & FNE = Fluxo Nordeste
-& M·ximo ---> Limites de SeguranÁa de Transmiss„o - RestriÁ„o Entre Subsistemas
-&  NT 161/2010 - Limites de TransferÍncia de Energia entre Regiıes...
+& M√°ximo ---> Limites de Seguran√ßa de Transmiss√£o - Restri√ß√£o Entre Subsistemas
+&  NT 161/2010 - Limites de Transfer√™ncia de Energia entre Regi√µes...
 RE  155   1    3
 LU  155   1                   3300                3300                3300
 FI  155   1   FC   NE            1
-& EXPORTA«√O NE (NE_FC+ NE_SE) - RestriÁ„o Entre Subsistemas
-& RE 3-134/2010 - 2∫ Quadrimestral ElÈtrico 2010
-&  NT 161/2010 - Limites de TransferÍncia de Energia entre Regiıes...
+& EXPORTA√á√ÉO NE (NE_FC+ NE_SE) - Restri√ß√£o Entre Subsistemas
+& RE 3-134/2010 - 2¬∫ Quadrimestral El√©trico 2010
+&  NT 161/2010 - Limites de Transfer√™ncia de Energia entre Regi√µes...
 RE  157   1    3
 LU  157   1                   3000                3113                3107
 FI  157   1   NE   FC            1
 FI  157   1   NE   SE            1
-& FMCCO - Fluxo Miracema Colinas - RestriÁ„o entre Subsistemas
-&  NT 161/2010 - Limites de TransferÍncia de Energia entre Regiıes...
+& FMCCO - Fluxo Miracema Colinas - Restri√ß√£o entre Subsistemas
+&  NT 161/2010 - Limites de Transfer√™ncia de Energia entre Regi√µes...
 RE  158   1    3
 LU  158   1                   4000                4000                4000
 FI  158   1   SE   FC            1
-& FCOMC - Fluxo Colinas Miracema - RestriÁ„o entre Subsistemas
-&  NT 161/2010 - Limites de TransferÍncia de Energia entre Regiıes...
+& FCOMC - Fluxo Colinas Miracema - Restri√ß√£o entre Subsistemas
+&  NT 161/2010 - Limites de Transfer√™ncia de Energia entre Regi√µes...
 RE  159   1    3
 LU  159   1                   2235                2175                1902
 LU  159   1                   2746                2746                2831
 LU  159   1                   2758                2758                2797
 FI  159   1   FC   SE            1
-& FSENE - Fluxo SE para NE - RestriÁ„o entre Subsistema
-&  NT 107/2010 - Limites de TransferÍncia de Energia entre Regiıes...
+& FSENE - Fluxo SE para NE - Restri√ß√£o entre Subsistema
+&  NT 107/2010 - Limites de Transfer√™ncia de Energia entre Regi√µes...
 RE  161   1    3
 LU  161   1                   1000                1000                1000
 FI  161   1   SE   NE            1
-&FSM - Fluxo Serra da Mesa - M·ximo  - RestriÁ„o Interna ao Subsistema SE
+&FSM - Fluxo Serra da Mesa - M√°ximo  - Restri√ß√£o Interna ao Subsistema SE
 &  IO-ON.CO.5GB - Rev.29 --> Leve
-&  MOP CNOS 011/2011 --> Pesada / MÈdia
-&  CLP ITABER¡ + LT 765 kV IVAIPOR√ - ITABER¡ C1 + RELOCA«√O DE TORRES PARA ENTRADA   DA UHE MAU¡
+&  MOP CNOS 011/2011 --> Pesada / M√©dia
+&  CLP ITABER√Å + LT 765 kV IVAIPOR√É - ITABER√Å C1 + RELOCA√á√ÉO DE TORRES PARA ENTRADA   DA UHE MAU√Å
 &RE  163   1    3
 &LU  163   1                   4267                4146                3511
 &LU  163   2                   5100                4985                4579
@@ -2328,68 +2328,68 @@ FI  161   1   SE   NE            1
 &FU  163   1   257           1
 &FI  163   1   FC   SE            1
 &FI  163   1   SE   NE           -1
-& Recebimento Sul - RestriÁ„o entre Subsistemas
+& Recebimento Sul - Restri√ß√£o entre Subsistemas
 &  IO.ON-SSE Rev.42
-&&  Considera An·lise N-2 no 765kV
+&&  Considera An√°lise N-2 no 765kV
 &  
 RE  164   1    3
 LU  164   1                   6600                6400                6100
 FI  164   1   IV   S             1
-& Fornecimento Sul - RestriÁ„o entre Subsistemas
+& Fornecimento Sul - Restri√ß√£o entre Subsistemas
 &  MOP CNOS 013/2011
 &  
 RE  165   1    3
 LU  165   1                   5650                5291                5200
 LU  165   2                   5650                5650                5200
 FI  165   1   S    IV            1
-&SomatÛrio de GeraÁ„o de Porto Primavera + TaquaruÁu + Jupi· + Ilha Solteira + Tres Irmaos (IO-ON.SE.4SP Rev.39)
+&Somat√≥rio de Gera√ß√£o de Porto Primavera + Taquaru√ßu + Jupi√° + Ilha Solteira + Tres Irmaos (IO-ON.SE.4SP Rev.39)
 &Periodo Safra ---> Abril/Novembro ---> 6700/6700/5200
-&Periodo Entressafra ---> Dezembro/MarÁo ---> 7200/7200/5700
-& SeguranÁa do Sistema - RestriÁ„o Interna ao Subsistema SE
+&Periodo Entressafra ---> Dezembro/Mar√ßo ---> 7200/7200/5700
+& Seguran√ßa do Sistema - Restri√ß√£o Interna ao Subsistema SE
 &RE  166   1    3
 &LU  166   1            0      6700         0      6700         0      5200
 &FU  166   1    46           1
 &FU  166   1    62           1
 &FU  166   1    45           1
 &FU  166   1    44           1
-&******************* DESPACHO T…RMICO POR RAZ’ES EL…TRICAS *********************
+&******************* DESPACHO T√âRMICO POR RAZ√ïES EL√âTRICAS *********************
 &             |--- PATAMAR 1 ----||--- PATAMAR 2 ----||--- PATAMAR 3 ----|
 &   RE   EST   GMIN      GMAX       GMIN      GMAX       GMIN      GMAX
 &   xx   XX   xxxxxxxxxxXXXXXXXXXXxxxxxxxxxxXXXXXXXXXXxxxxxxxxxxXXXXXXXXXX
-&-27- J. LACERDA A2 (Despacho Raz„o ElÈtrica - RestriÁ„o Intrassubsistema)
+&-27- J. LACERDA A2 (Despacho Raz√£o El√©trica - Restri√ß√£o Intrassubsistema)
 RE  179   1    3
 LU  179   1           33                  33                   0
 FT  179   1    27  2             1
-&-27- J. LACERDA A2 (AdequaÁ„o do Despacho - RestriÁ„o Intrassubsistema)
+&-27- J. LACERDA A2 (Adequa√ß√£o do Despacho - Restri√ß√£o Intrassubsistema)
 RE  180   1    3
 LU  180   1           33                  33                  33
 FT  180   1    27  2             1
-&-25- J. LACERDA B (Despacho Raz„o ElÈtrica - RestriÁ„o Intrassubsistema)
+&-25- J. LACERDA B (Despacho Raz√£o El√©trica - Restri√ß√£o Intrassubsistema)
 RE  181   1    3
 LU  181   1          160                 160                   0
 FT  181   1    25  2             1
-&-25- J. LACERDA B (AdequaÁ„o do Despacho - RestriÁ„o Intrassubsistema)
+&-25- J. LACERDA B (Adequa√ß√£o do Despacho - Restri√ß√£o Intrassubsistema)
 RE  182   1    3
 LU  182   1          160                 160                 160
 FT  182   1    25  2             1
-&-22- P. MEDICI A (Despacho Raz„o ElÈtrica - RestriÁ„o Intrassubsistema)
+&-22- P. MEDICI A (Despacho Raz√£o El√©trica - Restri√ß√£o Intrassubsistema)
 RE  185   1    3
 LU  185   1           25                  25                  25
 FT  185   1    22  2             1
-&-156- CANDIOTA (Despacho Raz„o ElÈtrica - RestriÁ„o Intrassubsistema)
+&-156- CANDIOTA (Despacho Raz√£o El√©trica - Restri√ß√£o Intrassubsistema)
 &RE  189   1    3
 &LU  189   1          200                 200                   0
 &FT  189   1   156  2             1
-&-156- CANDIOTA (AdequaÁ„o do Despacho - RestriÁ„o Intrassubsistema)
+&-156- CANDIOTA (Adequa√ß√£o do Despacho - Restri√ß√£o Intrassubsistema)
 &RE  190   1    3
 &LU  190   1          200                 200                 200
 &FT  190   1   156  2             1
-&-194- TERMONORTE 2 (Despacho Raz„o ElÈtrica - RestriÁ„o Intrassubsistema)
-&Fechamento do BalanÁo do Sistema AC-RO
+&-194- TERMONORTE 2 (Despacho Raz√£o El√©trica - Restri√ß√£o Intrassubsistema)
+&Fechamento do Balan√ßo do Sistema AC-RO
 &RE  193   1    3
 &LU  193   1          180                 180                 180
 &FT  193   1   194  1             1
-&-187/189- B. L. SOBRINHO (Despacho Raz„o ElÈtrica - RestriÁ„o Intrassubsistema)
+&-187/189- B. L. SOBRINHO (Despacho Raz√£o El√©trica - Restri√ß√£o Intrassubsistema)
 &RE  195   1    2
 &LU  195   1        334.3               334.3                   0
 &LU  195   2        348.6               348.6                   0
@@ -2399,12 +2399,12 @@ FT  185   1    22  2             1
 &   USI  DUR  QDEF1QDEF2QDEF3QDEF4QDEF5...
 &   xxx  XXX  XXXXXxxxxxXXXXXxxxxxXXXXXxxxxxXXXXXxxxxxXXXXX
 &VI
-&TR SMARIAS/SOBRADINHO
+&TR√äSMARIAS/SOBRADINHO
 VI  156  360    438  450  583  535  475
 &Queimado/Sobradinho
 VI  162  360     45   43   45   45   48
 &------------------------------------------------------------------------------------------
-&         BLOCO 25 *** TEMPO DE VIAGEM C¡LCULO ENA
+&         BLOCO 25 *** TEMPO DE VIAGEM C√ÅLCULO ENA
 &         (REGISTROS QI)
 &------------------------------------------------------------------------------------------
 &   USI  QDEF1QDEF2QDEF3QDEF4QDEF5...
@@ -2415,7 +2415,7 @@ QI  156   2522 2565  850  451  424
 &Queimado/Sobradinho
 QI  162     86   88   59   52   50
 &----------------------------------------------------------------------------------------------
-&         BLOCO 26 *** MODIFICA«√O DO CADASTRO ***
+&         BLOCO 26 *** MODIFICA√á√ÉO DO CADASTRO ***
 &         (REGISTROS AC)
 &----------------------------------------------------------------------------------------------
 &
@@ -2427,7 +2427,7 @@ AC   95  COFEVA       10    0
 &********* P. Primavera ************                                
 AC   46  VOLMAX    14400.0000                         
 AC   46  VOLMIN        14400.                         
-&****** REPOTENCIA«AO UHE MASCARENHAS ********
+&****** REPOTENCIA√áAO UHE MASCARENHAS ********
 AC  144  NUMCON        2                                             MAR  1
 AC  144  NUMMAQ        1    2                                        MAR  1
 AC  144  NUMMAQ        2    2                                        MAR  1
@@ -2444,7 +2444,7 @@ AC  275  JUSMED          12.2                                        ABR
 &********* Lajeado ****************
 AC  261  NUMJUS      275                              
 &- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-&                                EXPANSAO 2∫ MES
+&                                EXPANSAO 2¬∫ MES
 &- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 &-101- SAO JOSE
 AC  101  NUMCON        0                                             MAR  1
@@ -2452,7 +2452,7 @@ AC  101  NUMCON        1                                             ABR
 AC  101  NUMMAQ        1    1                                        ABR   
 AC  101  POTEFE        1      25.5                                   ABR   
 &---------------------------------------------------------
-& DEFINI«√O DOS POSTOS DE VAZAO NATURAL 
+& DEFINI√á√ÉO DOS POSTOS DE VAZAO NATURAL 
 &---------------------------------------------------------
 & BARRA BONITA
 AC   37  NUMPOS      237                              
@@ -2508,7 +2508,7 @@ AC  175  NUMPOS      300
 AC  169  NUMPOS      168                              
 & Correcao do volume de operacao do vertedor de  Lajes
 AC  124  VSVERT          200.                         
-& Descarga do reservatÛrio de Lajes p/ Fontes B-C
+& Descarga do reservat√≥rio de Lajes p/ Fontes B-C
 AC  124  VMDESV          102.                         
 & Para calculo da EARM no Paraiba considera-se Nilo a jusante de S.Cecilia
 AC  125  JUSENA      131                              
@@ -2520,15 +2520,15 @@ AC  117  VSVERT        144.14
 & Correcao de jusante de Traicao
 AC  108  NUMJUS      107                              
 &PEDREIRA
-& CorreÁ„o de jusante de Pedreira
+& Corre√ß√£o de jusante de Pedreira
 AC  109  NUMJUS      108                              
 & Correcao de jusante de Guarapiranga
 AC  117  NUMJUS      108                              
-&CompatibilizaÁ„o c·lculo de energia NEWAVE
+&Compatibiliza√ß√£o c√°lculo de energia NEWAVE
 AC  117  JUSENA      118                              
 &Correcao de jusante de Billings
 AC  118  NUMJUS      109                              
-&CompatibilizaÁ„o c·lculo de energia NEWAVE
+&Compatibiliza√ß√£o c√°lculo de energia NEWAVE
 AC  118  JUSENA      119                              
 &Correcao: INCLUIR  desvio  de Billings para H.Borden
 AC  118  DESVIO      119    100.00                    
@@ -2537,7 +2537,7 @@ AC  156  NUMJUS      169
 & ITAPARICA - CONTABILIZAR A PRODUTIVIDADE DO CMP. MOXOTO P/ NEWAVE
 AC  172  JUSENA      176                              
 &-------------------------------------------------                 
-& LIBERA«√O DA VAZ√O MÕNIMA HIST”RICA:
+& LIBERA√á√ÉO DA VAZ√ÉO M√çNIMA HIST√ìRICA:
 &-------------------------------------------------
 &
 & S.CLARA (PR)
@@ -2564,7 +2564,7 @@ AC  125  VAZMIN        0
 AC  181  VAZMIN        0                              
 & I. POMBOS
 AC  130  VAZMIN        0                              
-& TRAI«√O
+& TRAI√á√ÉO
 AC  108  VAZMIN        0                              
 & PEDREIRA
 AC  109  VAZMIN        0                              
@@ -2596,7 +2596,7 @@ AC  195  VAZMIN        0
 AC   86  VAZMIN        0                              
 &JORDAO
 AC   73  VSVERT         109.0                         
-&JORD√O
+&JORD√ÉO
 AC   73  VAZMIN        0                              
 &P.PEDRA
 AC  281  VAZMIN
@@ -2604,17 +2604,17 @@ AC  281  VAZMIN
 AC   21  VAZMIN        0                              
 &
 &(-----------------------------------------------------------------------)
-&( Arquivos com Dados RestriÁıes Engolimento - PERDA DE POTENCIA         )
+&( Arquivos com Dados Restri√ß√µes Engolimento - PERDA DE POTENCIA         )
 &(-----------------------------------------------------------------------)
 & ===============================================================================================================
-&1 - CAMARGOS -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&1 - CAMARGOS -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC    1  NUMCON        1                                             MAR  1
 AC    1  NUMMAQ        1    2                                        MAR  1
 AC    1  ALTEFE        1      24.6                                   MAR  1
 AC    1  VAZEFE        1  104                                        MAR  1
 AC    1  POTEFE        1        23                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC    1  NUMCON        1                                             MAR  2
 AC    1  NUMMAQ        1    2                                        MAR  2
 AC    1  ALTEFE        1      24.6                                   MAR  2
@@ -2622,7 +2622,7 @@ AC    1  VAZEFE        1  110                                        MAR  2
 AC    1  POTEFE        1        23                                   MAR  2
 & ===============================================================================================================
 & ===============================================================================================================
-&7 - M. DE MORAES -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&7 - M. DE MORAES -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC    7  NUMCON        4                                             MAR  1
 AC    7  NUMMAQ        1    2                                        MAR  1
@@ -2641,7 +2641,7 @@ AC    7  NUMMAQ        4    2                                        MAR  1
 AC    7  ALTEFE        4      43.8                                   MAR  1
 AC    7  VAZEFE        4  138                                        MAR  1
 AC    7  POTEFE        4        54                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC    7  NUMCON        4                                             MAR  2
 AC    7  NUMMAQ        1    2                                        MAR  2
 AC    7  ALTEFE        1      41.8                                   MAR  2
@@ -2660,7 +2660,7 @@ AC    7  ALTEFE        4      43.8                                   MAR  2
 AC    7  VAZEFE        4  148                                        MAR  2
 AC    7  POTEFE        4        54                                   MAR  2
 & ===============================================================================================================
-&14 - CACONDE -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&14 - CACONDE -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC   14  NUMCON        2                                             MAR  1
 AC   14  NUMMAQ        1    1                                        MAR  1
@@ -2671,7 +2671,7 @@ AC   14  NUMMAQ        2    1                                        MAR  1
 AC   14  ALTEFE        2       101                                   MAR  1
 AC   14  VAZEFE        2   20                                        MAR  1
 AC   14  POTEFE        2      39.2                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC   14  NUMCON        2                                             MAR  2
 AC   14  NUMMAQ        1    1                                        MAR  2
 AC   14  ALTEFE        1       101                                   MAR  2
@@ -2682,28 +2682,28 @@ AC   14  ALTEFE        2       101                                   MAR  2
 AC   14  VAZEFE        2   47                                        MAR  2
 AC   14  POTEFE        2      39.2                                   MAR  2
 & ===============================================================================================================
-&17 - MARIMBONDO -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&17 - MARIMBONDO -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC   17  NUMCON        1                                             MAR  1
 AC   17  NUMMAQ        1    8                                        MAR  1
 AC   17  ALTEFE        1      59.2                                   MAR  1
 AC   17  VAZEFE        1  331                                        MAR  1
 AC   17  POTEFE        1       186                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC   17  NUMCON        1                                             MAR  2
 AC   17  NUMMAQ        1    8                                        MAR  2
 AC   17  ALTEFE        1      59.2                                   MAR  2
 AC   17  VAZEFE        1  368                                        MAR  2
 AC   17  POTEFE        1       186                                   MAR  2
 & ===============================================================================================================
-&18 - A. VERMELHA -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&18 - A. VERMELHA -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC   18  NUMCON        1                                             MAR  1
 AC   18  NUMMAQ        1    6                                        MAR  1
 AC   18  ALTEFE        1      53.5                                   MAR  1
 AC   18  VAZEFE        1  424                                        MAR  1
 AC   18  POTEFE        1     232.7                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC   18  NUMCON        1                                             MAR  2
 AC   18  NUMMAQ        1    6                                        MAR  2
 AC   18  ALTEFE        1      53.5                                   MAR  2
@@ -2711,56 +2711,56 @@ AC   18  VAZEFE        1  493                                        MAR  2
 AC   18  POTEFE        1     232.7                                   MAR  2
 & ===============================================================================================================
 & ===============================================================================================================
-&24 - EMBORCACAO -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&24 - EMBORCACAO -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC   24  NUMCON        1                                             MAR  1
 AC   24  NUMMAQ        1    4                                        MAR  1
 AC   24  ALTEFE        1     130.3                                   MAR  1
 AC   24  VAZEFE        1  241                                        MAR  1
 AC   24  POTEFE        1       298                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC   24  NUMCON        1                                             MAR  2
 AC   24  NUMMAQ        1    4                                        MAR  2
 AC   24  ALTEFE        1     130.3                                   MAR  2
 AC   24  VAZEFE        1  262                                        MAR  2
 AC   24  POTEFE        1       298                                   MAR  2
 & ===============================================================================================================
-&25 - NOVA PONTE -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&25 - NOVA PONTE -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC   25  NUMCON        1                                             MAR  1
 AC   25  NUMMAQ        1    3                                        MAR  1
 AC   25  ALTEFE        1        96                                   MAR  1
 AC   25  VAZEFE        1  167                                        MAR  1
 AC   25  POTEFE        1       170                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC   25  NUMCON        1                                             MAR  2
 AC   25  NUMMAQ        1    3                                        MAR  2
 AC   25  ALTEFE        1        96                                   MAR  2
 AC   25  VAZEFE        1  199                                        MAR  2
 AC   25  POTEFE        1       170                                   MAR  2
 & ===============================================================================================================
-&26 - MIRANDA -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&26 - MIRANDA -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC   26  NUMCON        1                                             MAR  1
 AC   26  NUMMAQ        1    3                                        MAR  1
 AC   26  ALTEFE        1      66.4                                   MAR  1
 AC   26  VAZEFE        1  218                                        MAR  1
 AC   26  POTEFE        1       136                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC   26  NUMCON        1                                             MAR  2
 AC   26  NUMMAQ        1    3                                        MAR  2
 AC   26  ALTEFE        1      66.4                                   MAR  2
 AC   26  VAZEFE        1  225                                        MAR  2
 AC   26  POTEFE        1       136                                   MAR  2
 & ===============================================================================================================
-&27 - CAPIM BRANC1 -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&27 - CAPIM BRANC1 -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC   27  NUMCON        1                                             MAR  1
 AC   27  NUMMAQ        1    3                                        MAR  1
 AC   27  ALTEFE        1        55                                   MAR  1
 AC   27  VAZEFE        1  160                                        MAR  1
 AC   27  POTEFE        1        80                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC   27  NUMCON        1                                             MAR  2
 AC   27  NUMMAQ        1    3                                        MAR  2
 AC   27  ALTEFE        1        55                                   MAR  2
@@ -2768,14 +2768,14 @@ AC   27  VAZEFE        1  165                                        MAR  2
 AC   27  POTEFE        1        80                                   MAR  2
 & ===============================================================================================================
 & ===============================================================================================================
-&31 - ITUMBIARA -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&31 - ITUMBIARA -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC   31  NUMCON        1                                             MAR  1
 AC   31  NUMMAQ        1    6                                        MAR  1
 AC   31  ALTEFE        1      80.2                                   MAR  1
 AC   31  VAZEFE        1  499                                        MAR  1
 AC   31  POTEFE        1       380                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC   31  NUMCON        1                                             MAR  2
 AC   31  NUMMAQ        1    6                                        MAR  2
 AC   31  ALTEFE        1      80.2                                   MAR  2
@@ -2783,28 +2783,28 @@ AC   31  VAZEFE        1  537                                        MAR  2
 AC   31  POTEFE        1       380                                   MAR  2
 & ===============================================================================================================
 & ===============================================================================================================
-&37 - BARRA BONITA -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&37 - BARRA BONITA -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC   37  NUMCON        1                                             MAR  1
 AC   37  NUMMAQ        1    4                                        MAR  1
 AC   37  ALTEFE        1      21.4                                   MAR  1
 AC   37  VAZEFE        1  161                                        MAR  1
 AC   37  POTEFE        1        35                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC   37  NUMCON        1                                             MAR  2
 AC   37  NUMMAQ        1    4                                        MAR  2
 AC   37  ALTEFE        1      21.4                                   MAR  2
 AC   37  VAZEFE        1  189                                        MAR  2
 AC   37  POTEFE        1        35                                   MAR  2
 & ===============================================================================================================
-&40 - PROMISSAO -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&40 - PROMISSAO -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC   40  NUMCON        1                                             MAR  1
 AC   40  NUMMAQ        1    3                                        MAR  1
 AC   40  ALTEFE        1      23.1                                   MAR  1
 AC   40  VAZEFE        1  388                                        MAR  1
 AC   40  POTEFE        1        88                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC   40  NUMCON        1                                             MAR  2
 AC   40  NUMMAQ        1    3                                        MAR  2
 AC   40  ALTEFE        1      23.1                                   MAR  2
@@ -2812,7 +2812,7 @@ AC   40  VAZEFE        1  431                                        MAR  2
 AC   40  POTEFE        1        88                                   MAR  2
 & ===============================================================================================================
 & ===============================================================================================================
-&44 - I. SOLT. EQV -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&44 - I. SOLT. EQV -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC   44  NUMCON        4                                             MAR  1
 AC   44  NUMMAQ        1    4                                        MAR  1
@@ -2831,7 +2831,7 @@ AC   44  NUMMAQ        4    5                                        MAR  1
 AC   44  ALTEFE        4      41.5                                   MAR  1
 AC   44  VAZEFE        4  295                                        MAR  1
 AC   44  POTEFE        4     161.5                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC   44  NUMCON        4                                             MAR  2
 AC   44  NUMMAQ        1    4                                        MAR  2
 AC   44  ALTEFE        1      41.5                                   MAR  2
@@ -2851,14 +2851,14 @@ AC   44  VAZEFE        4  441                                        MAR  2
 AC   44  POTEFE        4     161.5                                   MAR  2
 & ===============================================================================================================
 & ===============================================================================================================
-&47 - A.A. LAYDNER -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&47 - A.A. LAYDNER -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC   47  NUMCON        1                                             MAR  1
 AC   47  NUMMAQ        1    2                                        MAR  1
 AC   47  ALTEFE        1      30.9                                   MAR  1
 AC   47  VAZEFE        1  171                                        MAR  1
 AC   47  POTEFE        1      48.9                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC   47  NUMCON        1                                             MAR  2
 AC   47  NUMMAQ        1    2                                        MAR  2
 AC   47  ALTEFE        1      30.9                                   MAR  2
@@ -2866,28 +2866,28 @@ AC   47  VAZEFE        1  178                                        MAR  2
 AC   47  POTEFE        1      48.9                                   MAR  2
 & ===============================================================================================================
 & ===============================================================================================================
-&61 - CAPIVARA -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&61 - CAPIVARA -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC   61  NUMCON        1                                             MAR  1
 AC   61  NUMMAQ        1    4                                        MAR  1
 AC   61  ALTEFE        1        44                                   MAR  1
 AC   61  VAZEFE        1  375                                        MAR  1
 AC   61  POTEFE        1       160                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC   61  NUMCON        1                                             MAR  2
 AC   61  NUMMAQ        1    4                                        MAR  2
 AC   61  ALTEFE        1        44                                   MAR  2
 AC   61  VAZEFE        1  436                                        MAR  2
 AC   61  POTEFE        1       160                                   MAR  2
 & ===============================================================================================================
-&71 - STA CLARA PR -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&71 - STA CLARA PR -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC   71  NUMCON        1                                             MAR  1
 AC   71  NUMMAQ        1    2                                        MAR  1
 AC   71  ALTEFE        1     84.35                                   MAR  1
 AC   71  VAZEFE        1   71                                        MAR  1
 AC   71  POTEFE        1        60                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC   71  NUMCON        1                                             MAR  2
 AC   71  NUMMAQ        1    2                                        MAR  2
 AC   71  ALTEFE        1     84.35                                   MAR  2
@@ -2895,42 +2895,42 @@ AC   71  VAZEFE        1   78                                        MAR  2
 AC   71  POTEFE        1        60                                   MAR  2
 & ===============================================================================================================
 & ===============================================================================================================
-&74 - G.B. MUNHOZ -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&74 - G.B. MUNHOZ -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC   74  NUMCON        1                                             MAR  1
 AC   74  NUMMAQ        1    4                                        MAR  1
 AC   74  ALTEFE        1       135                                   MAR  1
 AC   74  VAZEFE        1  261                                        MAR  1
 AC   74  POTEFE        1       419                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC   74  NUMCON        1                                             MAR  2
 AC   74  NUMMAQ        1    4                                        MAR  2
 AC   74  ALTEFE        1       135                                   MAR  2
 AC   74  VAZEFE        1  344                                        MAR  2
 AC   74  POTEFE        1       419                                   MAR  2
 & ===============================================================================================================
-&76 - SEGREDO -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&76 - SEGREDO -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC   76  NUMCON        1                                             MAR  1
 AC   76  NUMMAQ        1    4                                        MAR  1
 AC   76  ALTEFE        1       110                                   MAR  1
 AC   76  VAZEFE        1  304                                        MAR  1
 AC   76  POTEFE        1       315                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC   76  NUMCON        1                                             MAR  2
 AC   76  NUMMAQ        1    4                                        MAR  2
 AC   76  ALTEFE        1       110                                   MAR  2
 AC   76  VAZEFE        1  317                                        MAR  2
 AC   76  POTEFE        1       315                                   MAR  2
 & ===============================================================================================================
-&77 - SLT.SANTIAGO -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&77 - SLT.SANTIAGO -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC   77  NUMCON        1                                             MAR  1
 AC   77  NUMMAQ        1    4                                        MAR  1
 AC   77  ALTEFE        1       102                                   MAR  1
 AC   77  VAZEFE        1  366                                        MAR  1
 AC   77  POTEFE        1       355                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC   77  NUMCON        1                                             MAR  2
 AC   77  NUMMAQ        1    4                                        MAR  2
 AC   77  ALTEFE        1       102                                   MAR  2
@@ -2938,42 +2938,42 @@ AC   77  VAZEFE        1  394                                        MAR  2
 AC   77  POTEFE        1       355                                   MAR  2
 & ===============================================================================================================
 & ===============================================================================================================
-&86 - BARRA GRANDE -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&86 - BARRA GRANDE -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC   86  NUMCON        1                                             MAR  1
 AC   86  NUMMAQ        1    3                                        MAR  1
 AC   86  ALTEFE        1    148.37                                   MAR  1
 AC   86  VAZEFE        1  155                                        MAR  1
 AC   86  POTEFE        1     232.8                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC   86  NUMCON        1                                             MAR  2
 AC   86  NUMMAQ        1    3                                        MAR  2
 AC   86  ALTEFE        1    148.37                                   MAR  2
 AC   86  VAZEFE        1  172                                        MAR  2
 AC   86  POTEFE        1     232.8                                   MAR  2
 & ===============================================================================================================
-&90 - CAMPOS NOVOS -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&90 - CAMPOS NOVOS -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC   90  NUMCON        1                                             MAR  1
 AC   90  NUMMAQ        1    3                                        MAR  1
 AC   90  ALTEFE        1       177                                   MAR  1
 AC   90  VAZEFE        1  177                                        MAR  1
 AC   90  POTEFE        1     293.3                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC   90  NUMCON        1                                             MAR  2
 AC   90  NUMMAQ        1    3                                        MAR  2
 AC   90  ALTEFE        1       177                                   MAR  2
 AC   90  VAZEFE        1  186                                        MAR  2
 AC   90  POTEFE        1     293.3                                   MAR  2
 & ===============================================================================================================
-&91 - MACHADINHO -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&91 - MACHADINHO -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC   91  NUMCON        1                                             MAR  1
 AC   91  NUMMAQ        1    3                                        MAR  1
 AC   91  ALTEFE        1      97.3                                   MAR  1
 AC   91  VAZEFE        1  433                                        MAR  1
 AC   91  POTEFE        1       380                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC   91  NUMCON        1                                             MAR  2
 AC   91  NUMMAQ        1    3                                        MAR  2
 AC   91  ALTEFE        1      97.3                                   MAR  2
@@ -2981,90 +2981,90 @@ AC   91  VAZEFE        1  437                                        MAR  2
 AC   91  POTEFE        1       380                                   MAR  2
 & ===============================================================================================================
 & ===============================================================================================================
-&120 - JAGUARI -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&120 - JAGUARI -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC  120  NUMCON        1                                             MAR  1
 AC  120  NUMMAQ        1    2                                        MAR  1
 AC  120  ALTEFE        1      49.9                                   MAR  1
 AC  120  VAZEFE        1   11                                        MAR  1
 AC  120  POTEFE        1      13.8                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC  120  NUMCON        1                                             MAR  2
 AC  120  NUMMAQ        1    2                                        MAR  2
 AC  120  ALTEFE        1      49.9                                   MAR  2
 AC  120  VAZEFE        1   33                                        MAR  2
 AC  120  POTEFE        1      13.8                                   MAR  2
 & ===============================================================================================================
-&121 - PARAIBUNA -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&121 - PARAIBUNA -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC  121  NUMCON        1                                             MAR  1
 AC  121  NUMMAQ        1    2                                        MAR  1
 AC  121  ALTEFE        1      78.3                                   MAR  1
 AC  121  VAZEFE        1   36                                        MAR  1
 AC  121  POTEFE        1      42.5                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC  121  NUMCON        1                                             MAR  2
 AC  121  NUMMAQ        1    2                                        MAR  2
 AC  121  ALTEFE        1      78.3                                   MAR  2
 AC  121  VAZEFE        1   63                                        MAR  2
 AC  121  POTEFE        1      42.5                                   MAR  2
 & ===============================================================================================================
-&122 - SANTA BRANCA -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&122 - SANTA BRANCA -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC  122  NUMCON        1                                             MAR  1
 AC  122  NUMMAQ        1    2                                        MAR  1
 AC  122  ALTEFE        1        44                                   MAR  1
 AC  122  VAZEFE        1   70                                        MAR  1
 AC  122  POTEFE        1        28                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC  122  NUMCON        1                                             MAR  2
 AC  122  NUMMAQ        1    2                                        MAR  2
 AC  122  ALTEFE        1        44                                   MAR  2
 AC  122  VAZEFE        1   72                                        MAR  2
 AC  122  POTEFE        1        28                                   MAR  2
 & ===============================================================================================================
-&123 - FUNIL -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&123 - FUNIL -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC  123  NUMCON        1                                             MAR  1
 AC  123  NUMMAQ        1    3                                        MAR  1
 AC  123  ALTEFE        1      69.6                                   MAR  1
 AC  123  VAZEFE        1  125                                        MAR  1
 AC  123  POTEFE        1        74                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC  123  NUMCON        1                                             MAR  2
 AC  123  NUMMAQ        1    3                                        MAR  2
 AC  123  ALTEFE        1      69.6                                   MAR  2
 AC  123  VAZEFE        1  126                                        MAR  2
 AC  123  POTEFE        1        74                                   MAR  2
 & ===============================================================================================================
-&124 - LAJES -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&124 - LAJES -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC  124  NUMCON        0                                             MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC  124  NUMCON        0                                             MAR  2
 & ===============================================================================================================
-&135 - P. ESTRELA -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&135 - P. ESTRELA -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC  135  NUMCON        1                                             MAR  1
 AC  135  NUMMAQ        1    2                                        MAR  1
 AC  135  ALTEFE        1      49.8                                   MAR  1
 AC  135  VAZEFE        1  120                                        MAR  1
 AC  135  POTEFE        1        56                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC  135  NUMCON        1                                             MAR  2
 AC  135  NUMMAQ        1    2                                        MAR  2
 AC  135  ALTEFE        1      49.8                                   MAR  2
 AC  135  VAZEFE        1  124                                        MAR  2
 AC  135  POTEFE        1        56                                   MAR  2
 & ===============================================================================================================
-&148 - IRAPE -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&148 - IRAPE -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC  148  NUMCON        1                                             MAR  1
 AC  148  NUMMAQ        1    3                                        MAR  1
 AC  148  ALTEFE        1     138.2                                   MAR  1
 AC  148  VAZEFE        1   78                                        MAR  1
 AC  148  POTEFE        1       120                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC  148  NUMCON        1                                             MAR  2
 AC  148  NUMMAQ        1    3                                        MAR  2
 AC  148  ALTEFE        1     138.2                                   MAR  2
@@ -3072,56 +3072,56 @@ AC  148  VAZEFE        1   97                                        MAR  2
 AC  148  POTEFE        1       120                                   MAR  2
 & ===============================================================================================================
 & ===============================================================================================================
-&156 - TRES MARIAS -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&156 - TRES MARIAS -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC  156  NUMCON        1                                             MAR  1
 AC  156  NUMMAQ        1    6                                        MAR  1
 AC  156  ALTEFE        1      50.2                                   MAR  1
 AC  156  VAZEFE        1  137                                        MAR  1
 AC  156  POTEFE        1        66                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC  156  NUMCON        1                                             MAR  2
 AC  156  NUMMAQ        1    6                                        MAR  2
 AC  156  ALTEFE        1      50.2                                   MAR  2
 AC  156  VAZEFE        1  154                                        MAR  2
 AC  156  POTEFE        1        66                                   MAR  2
 & ===============================================================================================================
-&162 - QUEIMADO -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&162 - QUEIMADO -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC  162  NUMCON        1                                             MAR  1
 AC  162  NUMMAQ        1    3                                        MAR  1
 AC  162  ALTEFE        1     168.1                                   MAR  1
 AC  162  VAZEFE        1   21                                        MAR  1
 AC  162  POTEFE        1        35                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC  162  NUMCON        1                                             MAR  2
 AC  162  NUMMAQ        1    3                                        MAR  2
 AC  162  ALTEFE        1     168.1                                   MAR  2
 AC  162  VAZEFE        1   24                                        MAR  2
 AC  162  POTEFE        1        35                                   MAR  2
 & ===============================================================================================================
-&169 - SOBRADINHO -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&169 - SOBRADINHO -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC  169  NUMCON        1                                             MAR  1
 AC  169  NUMMAQ        1    6                                        MAR  1
 AC  169  ALTEFE        1      27.2                                   MAR  1
 AC  169  VAZEFE        1  570                                        MAR  1
 AC  169  POTEFE        1       175                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC  169  NUMCON        1                                             MAR  2
 AC  169  NUMMAQ        1    6                                        MAR  2
 AC  169  ALTEFE        1      27.2                                   MAR  2
 AC  169  VAZEFE        1  713                                        MAR  2
 AC  169  POTEFE        1       175                                   MAR  2
 & ===============================================================================================================
-&172 - ITAPARICA -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&172 - ITAPARICA -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC  172  NUMCON        1                                             MAR  1
 AC  172  NUMMAQ        1    6                                        MAR  1
 AC  172  ALTEFE        1      50.8                                   MAR  1
 AC  172  VAZEFE        1  501                                        MAR  1
 AC  172  POTEFE        1       250                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC  172  NUMCON        1                                             MAR  2
 AC  172  NUMMAQ        1    6                                        MAR  2
 AC  172  ALTEFE        1      50.8                                   MAR  2
@@ -3129,28 +3129,28 @@ AC  172  VAZEFE        1  551                                        MAR  2
 AC  172  POTEFE        1       250                                   MAR  2
 & ===============================================================================================================
 & ===============================================================================================================
-&251 - SERRA MESA -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&251 - SERRA MESA -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC  251  NUMCON        1                                             MAR  1
 AC  251  NUMMAQ        1    3                                        MAR  1
 AC  251  ALTEFE        1     117.2                                   MAR  1
 AC  251  VAZEFE        1  361                                        MAR  1
 AC  251  POTEFE        1       425                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC  251  NUMCON        1                                             MAR  2
 AC  251  NUMMAQ        1    3                                        MAR  2
 AC  251  ALTEFE        1     117.2                                   MAR  2
 AC  251  VAZEFE        1  397                                        MAR  2
 AC  251  POTEFE        1       425                                   MAR  2
 & ===============================================================================================================
-&257 - PEIXE ANGIC -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&257 - PEIXE ANGIC -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC  257  NUMCON        1                                             MAR  1
 AC  257  NUMMAQ        1    3                                        MAR  1
 AC  257  ALTEFE        1      24.2                                   MAR  1
 AC  257  VAZEFE        1  679                                        MAR  1
 AC  257  POTEFE        1     150.7                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC  257  NUMCON        1                                             MAR  2
 AC  257  NUMMAQ        1    3                                        MAR  2
 AC  257  ALTEFE        1      24.2                                   MAR  2
@@ -3158,7 +3158,7 @@ AC  257  VAZEFE        1  686                                        MAR  2
 AC  257  POTEFE        1     150.7                                   MAR  2
 & ===============================================================================================================
 & ===============================================================================================================
-&275 - TUCURUI -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&275 - TUCURUI -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC  275  NUMCON        3                                             MAR  1
 AC  275  NUMMAQ        1    2                                        MAR  1
@@ -3173,7 +3173,7 @@ AC  275  NUMMAQ        3   11                                        MAR  1
 AC  275  ALTEFE        3      61.7                                   MAR  1
 AC  275  VAZEFE        3  622                                        MAR  1
 AC  275  POTEFE        3       375                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC  275  NUMCON        3                                             MAR  2
 AC  275  NUMMAQ        1    2                                        MAR  2
 AC  275  ALTEFE        1      65.5                                   MAR  2
@@ -3189,28 +3189,28 @@ AC  275  VAZEFE        3  662                                        MAR  2
 AC  275  POTEFE        3       375                                   MAR  2
 & ===============================================================================================================
 & ===============================================================================================================
-&278 - MANSO -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&278 - MANSO -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC  278  NUMCON        1                                             MAR  1
 AC  278  NUMMAQ        1    4                                        MAR  1
 AC  278  ALTEFE        1      59.4                                   MAR  1
 AC  278  VAZEFE        1   96                                        MAR  1
 AC  278  POTEFE        1      52.5                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC  278  NUMCON        1                                             MAR  2
 AC  278  NUMMAQ        1    4                                        MAR  2
 AC  278  ALTEFE        1      59.4                                   MAR  2
 AC  278  VAZEFE        1  100                                        MAR  2
 AC  278  POTEFE        1      52.5                                   MAR  2
 & ===============================================================================================================
-&279 - SAMUEL -------RestriÁıes Operativas Hidr·ulicas - Perda por deplecionamento
+&279 - SAMUEL -------Restri√ß√µes Operativas Hidr√°ulicas - Perda por deplecionamento
 &
 AC  279  NUMCON        1                                             MAR  1
 AC  279  NUMMAQ        1    5                                        MAR  1
 AC  279  ALTEFE        1      28.5                                   MAR  1
 AC  279  VAZEFE        1  163                                        MAR  1
 AC  279  POTEFE        1      43.3                                   MAR  1
-& ----------------DADOS REFERENTES AO 2 EST¡GIO-------------- 
+& ----------------DADOS REFERENTES AO 2 EST√ÅGIO-------------- 
 AC  279  NUMCON        1                                             MAR  2
 AC  279  NUMMAQ        1    5                                        MAR  2
 AC  279  ALTEFE        1      28.5                                   MAR  2
@@ -3219,14 +3219,14 @@ AC  279  POTEFE        1      43.3                                   MAR  2
 & ===============================================================================================================
 &
 &----------------------------------------------------------------------------------------------
-&         BLOCO 27 *** REVIS√O DA OPERA«√O  ***
+&         BLOCO 27 *** REVIS√ÉO DA OPERA√á√ÉO  ***
 &         (REGISTRO RV)
 &----------------------------------------------------------------------------------------------
 & MNEMONICO ESTI  ESTF
 &   xxxxxxx   X    x
 &RV
 &----------------------------------------------------------------------------------------------
-&         BLOCO 28 *** FUN«’ES DE PRODU«√O DAS UHEs  ***
+&         BLOCO 28 *** FUN√á√ïES DE PRODU√á√ÉO DAS UHEs  ***
 &         (REGISTROS PS  PM  PI)
 &----------------------------------------------------------------------------------------------
 & LIMITES DA REGIAO DE AJUSTE PARA OS ESTAGIOS DO MES INICIAL (SEMANAS) (REGISTRO PS)
@@ -3265,7 +3265,7 @@ IR  AVALIA
 IR  NORMAL    17   61
 IR  ACOPLA    01
 &----------------------------------------------------------------------------------------------
-&         BLOCO 30 ***  CONTRATOS DE IMPORTA«√O E EXPORTA«√O  ***
+&         BLOCO 30 ***  CONTRATOS DE IMPORTA√á√ÉO E EXPORTA√á√ÉO  ***
 &         (REGISTROS CI E CE)
 &----------------------------------------------------------------------------------------------
 & CONTRATOS DE IMPORTACAO: ARGENTINA 1018 MW com fdisp = 0.99
@@ -3287,7 +3287,7 @@ CI  059  2 ArgGara2D     1      0.   0.    205.99   0.   0.    205.99   0.   0. 
 & COPEL-ANDE
 CI  007  2 Copel Ande    1     0.0  0.0            0.0  0.0            0.0  0.0
 &----------------------------------------------------------------------------------------------
-&         BLOCO 31 ***  CONTINUA«√O DO PROCESSAMENTO DO ESTUDO  ***
+&         BLOCO 31 ***  CONTINUA√á√ÉO DO PROCESSAMENTO DO ESTUDO  ***
 &         (REGISTRO RS)
 &         0BS. define os arquivos corte, viagem e mapcut
 &----------------------------------------------------------------------------------------------
@@ -3299,7 +3299,7 @@ CI  007  2 Copel Ande    1     0.0  0.0            0.0  0.0            0.0  0.0
 &RS  VIAGEM
 &
 &----------------------------------------------------------------------------------------------
-&         BLOCO 32 ***  DEFINI«√O DA FUN«√O CUSTO FUTURO  ***
+&         BLOCO 32 ***  DEFINI√á√ÉO DA FUN√á√ÉO CUSTO FUTURO  ***
 &  REGISTROS QA QV FC EA ES)
 &         0BS. define os arquivos corte, viagem e mapcut
 &----------------------------------------------------------------------------------------------
@@ -3426,7 +3426,7 @@ TI  141    2.5  2.5  3.6
 &   S    QMIN
 &   x    XXXXXxxxxxXXXXXxxxxxXXXXXxxxxxXXXXXxxxxxXXXXXxxxxxXXXXXxxxxxXXXXXxxxxxXXXXXxxxxxXXXXX
 &RQ
-&CONSIDERA 100% DA VAZMIN DO HIST”RICO
+&CONSIDERA 100% DA VAZMIN DO HIST√ìRICO
 RQ   1    100. 100.   0.
 RQ   2    100. 100.   0.
 RQ   3    100. 100.   0.
@@ -3434,7 +3434,7 @@ RQ   4    100. 100.   0.
 RQ   5      0.   0.   0.
 &
 &----------------------------------------------------------------------------------------------
-&         BLOCO 35 ***  FUN«√O DE ENERGIA ARMAZENADA   ***
+&         BLOCO 35 ***  FUN√á√ÉO DE ENERGIA ARMAZENADA   ***
 &         (REGISTRO EZ)
 &----------------------------------------------------------------------------------------------
 &   UHE  VUTIL
@@ -3452,13 +3452,13 @@ EZ  257  100.0
 EZ  261    0.0
 &QUEIMADO
 EZ  162  100.0
-&TR S MARIAS
+&TR√äS MARIAS
 EZ  156  100.0
-&IRAP…
+&IRAP√â
 EZ  148  100.0
 &RETIRO BAIXO
 EZ  155  100.0
-&AfluÍncia MÌnima Sta CecÌlia
+&Aflu√™ncia M√≠nima Sta Cec√≠lia
 &HA
 &-125- STA. CECILIA
 HA    1   1    2
@@ -3469,7 +3469,7 @@ HA    2   1    2
 LA    2   1                   3600
 CA    2   1    26
 &----------------------------------------------------------------------------------------------
-&         BLOCO 37 ***  RESTRI«’ES DE VOLUME ARMAZENADO/VAZ√O DEFLUENTE   ***
+&         BLOCO 37 ***  RESTRI√á√ïES DE VOLUME ARMAZENADO/VAZ√ÉO DEFLUENTE   ***
 &         (REGISTROS HV LV CV)
 &----------------------------------------------------------------------------------------------
 &....... CEMIG .................................
@@ -3481,26 +3481,26 @@ CA    2   1    26
 &HV
 &******************* CEMIG*****************************
 &-25- NOVA PONTE
-&limites mÌnimos p/a reserv. Nova Ponte- ANEEL - 6% VU
+&limites m√≠nimos p/a reserv. Nova Ponte- ANEEL - 6% VU
 HV    3   1    2
 LV    3   1         623.    10380.
 CV    3   1    25         1.0     VARM
-&24 - EmborcaÁ„o -   mÌnimo  FAX ANEEL - 6% VU
+&24 - Emborca√ß√£o -   m√≠nimo  FAX ANEEL - 6% VU
 HV    4   1    2
 LV    4   1        783.4
 CV    4   1    24           1     VARM
-&-1- Camargos --------------InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
-&                                   ONS RE 3/258/2009 - REVISAO 1 -  NÌvel MÌnimo =901,88 m
+&-1- Camargos --------------Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
+&                                   ONS RE 3/258/2009 - REVISAO 1 -  N√≠vel M√≠nimo =901,88 m
 HV    5   1    2
 LV    5   1        82.16
 CV    5   1     1           1     VARM
-&-33- S. SIM√O
-&limites mÌnimos p/a reserv. S.Sim„o - ANEEL - 10% VU
+&-33- S. SIM√ÉO
+&limites m√≠nimos p/a reserv. S.Sim√£o - ANEEL - 10% VU
 HV    6   1    2
 LV    6   1         554.     5540.
 CV    6   1    33         1.0     VARM
-&-156- TR S MARIAS
-&limites mÌnimos p/a reservat¢rio de T.Marias - ANEEL - 10% VU
+&-156- TR√äS MARIAS
+&limites m√≠nimos p/a reservat¬¢rio de T.Marias - ANEEL - 10% VU
 HV    7   1    2
 LV    7   1         1528
 CV    7   1   156         1.0     VARM
@@ -3510,17 +3510,17 @@ CV    7   1   156         1.0     VARM
 &   ir   ei       inf.     sup.
 &   ++   ++   +--------++--------+
 &-18- AGUA VERMELHA
-&limites mÌnimos p/a reserv. A.Vermelha (10%VU) - ANEEL
+&limites m√≠nimos p/a reserv. A.Vermelha (10%VU) - ANEEL
 HV   13   1    2
 LV   13   1         517.
 CV   13   1    18         1.0     VARM
-&37 - Barra Bonita  --------------InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
-&                                   ONS RE 3/258/2009 - REVISAO 1 -  NÌvel MÌnimo = 446,50 m
+&37 - Barra Bonita  --------------Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
+&                                   ONS RE 3/258/2009 - REVISAO 1 -  N√≠vel M√≠nimo = 446,50 m
 HV   15   1    2
 LV   15   1      1226.50
 CV   15   1    37           1     VARM
-&-40- Promiss„o  ------- -------InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
-&                                   ONS RE 3/258/2009 - REVISAO 1 -  NÌvel MÌnimo = 381,00 m
+&-40- Promiss√£o  ------- -------Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
+&                                   ONS RE 3/258/2009 - REVISAO 1 -  N√≠vel M√≠nimo = 381,00 m
 HV   17   1    2
 LV   17   1        611.2
 CV   17   1    40           1     VARM
@@ -3529,14 +3529,14 @@ CV   17   1    40           1     VARM
 &   ++   ++   +--------++--------+
 &   ir   ei       inf.     sup.
 &   ++   ++   +--------++--------+
-&44- ILHA SOLTEIRA/TR S IRM√OS -
-& MÌn - NT Hidrovia TietÍ-Paran·/2010
+&44- ILHA SOLTEIRA/TR√äS IRM√ÉOS -
+& M√≠n - NT Hidrovia Tiet√™-Paran√°/2010
 &
 HV   18   1    3
 LV   18   1         4088
 CV   18   1    44           1     VARM
-&44 - Ils/TrÍs Irm„os ------- -------InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
-&                                   ONS RE 3/258/2009 - REVISAO 1  -  NÌvel MÌnimo = 325,40 m
+&44 - Ils/Tr√™s Irm√£os ------- -------Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
+&                                   ONS RE 3/258/2009 - REVISAO 1  -  N√≠vel M√≠nimo = 325,40 m
 HV   19   1    2
 LV   19   1         4088
 CV   19   1    44           1     VARM
@@ -3552,17 +3552,17 @@ CV   21   1   120           1     VARM
 &   ++   ++   +--------++--------+
 &
 &-47- A. A. LAYDNER (Jurumirim)
-&limites mÌnimos p/a reserv. A.A.Layder (Jurumirim) - FAX ANEEL - 15% VU
+&limites m√≠nimos p/a reserv. A.A.Layder (Jurumirim) - FAX ANEEL - 15% VU
 HV   25   1    2
 LV   25   1         475.     3165.
 CV   25   1    47         1.0     VARM
 &-49- CHAVANTES
-&limites mÌnimo p/a reserv. Chavantes - FAX ANEEL - 15% VU
+&limites m√≠nimo p/a reserv. Chavantes - FAX ANEEL - 15% VU
 HV   26   1    2
 LV   26   1         457.     3041.
 CV   26   1    49         1.0     VARM
 &-61- CAPIVARA
-&limites mÌnimos p/a reservat¢rio de Capivara (FAX ANEEL) - 6% VU
+&limites m√≠nimos p/a reservat¬¢rio de Capivara (FAX ANEEL) - 6% VU
 HV   27   1    2
 LV   27   1         344.    5724.0
 CV   27   1    61         1.0     VARM
@@ -3571,27 +3571,27 @@ CV   27   1    61         1.0     VARM
 &   ++   ++   +--------++--------+
 &   ir   ei       inf.     sup.
 &   ++   ++   +--------++--------+
-&-6 - Furnas -  mÌnimo  FAX ANEEL - 9% VU
+&-6 - Furnas -  m√≠nimo  FAX ANEEL - 9% VU
 HV   41   1    2
 LV   41   1       1549.5
 CV   41   1     6           1     VARM
-&-7- MASCARENHA DE MORAES (InformaÁ„o do Agente)
-&limites mÌnimos p/a reserv. Mascarenhas de Moraes
-&MÌnimo ---> RestriÁ„o operativa - NavegaÁ„o                   
+&-7- MASCARENHA DE MORAES (Informa√ß√£o do Agente)
+&limites m√≠nimos p/a reserv. Mascarenhas de Moraes
+&M√≠nimo ---> Restri√ß√£o operativa - Navega√ß√£o                   
 &  
 HV   47   1    2
 LV   47   1         1880
 CV   47   1     7         1.0     VARM
-&- 7 - M. Moraes --------------InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
-&                                   ONS RE 3/258/2009 - REVISAO 1 -  NÌvel MÌnimo = 663,50 m
+&- 7 - M. Moraes --------------Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
+&                                   ONS RE 3/258/2009 - REVISAO 1 -  N√≠vel M√≠nimo = 663,50 m
 HV   48   1    3
 LV   48   1       1882.5
 CV   48   1     7           1     VARM
-&17 - Marimbondo  mÌnimo  FAX ANEEL - 10% VU
+&17 - Marimbondo  m√≠nimo  FAX ANEEL - 10% VU
 HV   50   1    2
 LV   50   1          526
 CV   50   1    17           1     VARM
-&-17- MARIMBONDO -  InformaÁ„o do Agente
+&-17- MARIMBONDO -  Informa√ß√£o do Agente
 HV   52   1    2
 LV   52   1            0   4996.96
 CV   52   1    17         1.0     VARM
@@ -3599,48 +3599,48 @@ CV   52   1    17         1.0     VARM
 HV   53   1    3
 LV   53   1                 315.86
 CV   53   1   312           1     VARM
-&- 17 - Marimbondo  ------- -------InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
-&                                   ONS RE 3/258/2009 - REVISAO 1 - NÌvel M·ximo  = 445,73m
+&- 17 - Marimbondo  ------- -------Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
+&                                   ONS RE 3/258/2009 - REVISAO 1 - N√≠vel M√°ximo  = 445,73m
 HV   54   1    3
 LV   54   1            0      4997
 CV   54   1    17           1     VARM
-&-31- ITUMBIARA - mÌnimo  FAX ANEEL - 8% VU
+&-31- ITUMBIARA - m√≠nimo  FAX ANEEL - 8% VU
 &
 HV   55   1    2
 LV   55   1         996.     12454
 CV   55   1    31         1.0     VARM
-&....... OPERA«√O ESPECIAL - PARAÕBA DO SUL ..........................
+&....... OPERA√á√ÉO ESPECIAL - PARA√çBA DO SUL ..........................
 & Limites:       
 &   ++   ++   +--------++--------+
 &   ir   ei       inf.     sup.
 &   ++   ++   +--------++--------+
-&ManutenÁ„o do nÌvel mÌnimo dos reservatÛrios do ParaÌba do Sul - ANA 
+&Manuten√ß√£o do n√≠vel m√≠nimo dos reservat√≥rios do Para√≠ba do Sul - ANA 
 & PARAIBUNA - 10 % VU
-&------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/144/2007 - REVISAO 2 - 10% VU
 HV   65   1    2
 LV   65   1        263.6
 CV   65   1   121           1     VARM
-& JAGUARI ------- -------InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+& JAGUARI ------- -------Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1 -  10% VU
 HV   66   1    2
 LV   66   1          79.
 CV   66   1   120           1     VARM
-&SANTA BRANCA ------- -------InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&SANTA BRANCA ------- -------Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HV   67   1    2
 LV   67   1         30.8
 CV   67   1   122           1     VARM
-&FUNIL - MÌnimo de 10 % - ResoluÁ„o ANA
+&FUNIL - M√≠nimo de 10 % - Resolu√ß√£o ANA
 HV   69   1    2
 LV   69   1         60.5
 CV   69   1   123           1     VARM
-&123 - FUNIL -------------InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&123 - FUNIL -------------Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1 - 15%
 HV   71   1    2
 LV   71   1        90.75
 CV   71   1   123           1     VARM
-&124 - LAJES --------------InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&124 - LAJES --------------Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1 -  18,8% VU
 HV   73   1    2
 LV   73   1        83.73
@@ -3650,12 +3650,12 @@ CV   73   1   124           1     VARM
 &   ++   ++   +--------++--------+
 &   ir   ei       inf.     sup.
 &   ++   ++   +--------++--------+
-&-117- GUARAPIRANGA - InformaÁ„o do Agente
-&MÌnimo e M·ximo ---> RestriÁıes operativas - Curva de Controle de Cheias
+&-117- GUARAPIRANGA - Informa√ß√£o do Agente
+&M√≠nimo e M√°ximo ---> Restri√ß√µes operativas - Curva de Controle de Cheias
 HV   75   1    3
 LV   75   1            0    183.66
 CV   75   1   117           1     VARM
-&- 118 - Billings - InformaÁ„o do Agente
+&- 118 - Billings - Informa√ß√£o do Agente
 HV   77   1    3
 LV   77   1        585.5   1035.80
 LV   77   3        585.5   1052.93
@@ -3665,12 +3665,12 @@ CV   77   1   118           1     VARM
 &   ++   ++   +--------++--------+
 &   ir   ei       inf.     sup.
 &   ++   ++   +--------++--------+
-&172- ITAPARICA - InformaÁ„o do Agente - Evitar OcupaÁ„o Borda
+&172- ITAPARICA - Informa√ß√£o do Agente - Evitar Ocupa√ß√£o Borda
 HV   80   1    2
 LV   80   1      1916.00   1997.88
 LV   80   2      1997.88   2157.90
 CV   80   1   172           1     VARM
-&190- BOA ESPERAN«A - InformaÁ„o do Agente - Evitar OcupaÁ„o Borda
+&190- BOA ESPERAN√áA - Informa√ß√£o do Agente - Evitar Ocupa√ß√£o Borda
 HV   81   1    2
 LV   81   1      1230.00   1235.00
 LV   81   2      1230.00   1235.00
@@ -3680,32 +3680,32 @@ CV   81   1   190           1     VARM
 &   ++   ++   +--------++--------+
 &   ir   ei       inf.     sup.
 &   ++   ++   +--------++--------+
-&DESVIO JORD√O  - ManutenÁ„o  V.U 100% PARA OPERA«√O DO VERTEDOR
+&DESVIO JORD√ÉO  - Manuten√ß√£o  V.U 100% PARA OPERA√á√ÉO DO VERTEDOR
 HV   92   1    2
 LV   92   1           25        25
 CV   92   1    73           1     VARM
-&74 - GBM (Foz Areia)  --------------InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
-&                                   ONS RE 3/258/2009 - REVISAO 1 - NÌvel M·ximo = 742 m
+&74 - GBM (Foz Areia)  --------------Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
+&                                   ONS RE 3/258/2009 - REVISAO 1 - N√≠vel M√°ximo = 742 m
 HV   99   1    2
 LV   99   1                   3805
 CV   99   1    74           1     VARM
 &----------------------------------------------------------------------------------------------
-&         BLOCO 38 ***  RESTRI«’ES DE VAZ√O DEFLUENTE   ***
+&         BLOCO 38 ***  RESTRI√á√ïES DE VAZ√ÉO DEFLUENTE   ***
 &         (REGISTROS HQ - 3.3.38.1; LQ - 3.3.38.2; CQ - 3.3.38.3)
 &----------------------------------------------------------------------------------------------
 &HQ
 &.......CEMIG.....................................................
-& Limites:        pesada                 mÈdia                leve
+& Limites:        pesada                 m√©dia                leve
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &   ir   ei       inf.     sup.        inf.     sup.       inf.     sup.
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &
-&-1- Camargos ------- -------InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&-1- Camargos ------- -------Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   12   1    3
 LQ   12   1           34      1000        34      1000        34      1000
 CQ   12   1     1           1     QDEF
-&- 2 - Itutinga -------InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&- 2 - Itutinga -------Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   13   1    3
 LQ   13   1           34      1170        34      1170        34      1170
@@ -3714,351 +3714,351 @@ CQ   13   1     2           1     QDEF
 HQ   15   1    3
 LQ   15   1           68      1250        68      1250        68      1250
 CQ   15   1     4           1     QDEF
-&09 - JAGUARA ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&09 - JAGUARA ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   28   1    3
 LQ   28   1          235      4300       235      4300       235      4300
 CQ   28   1     9           1     QDEF
-& - 10 - Igarapava -------InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+& - 10 - Igarapava -------Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   30   1    2
 LQ   30   1          239      4500       239      4500       239      4500
 CQ   30   1    10           1     QDEF
-& - 11 - Volta Grande ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+& - 11 - Volta Grande ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   32   1    3
 LQ   32   1          253      5000       253      5000       253      5000
 CQ   32   1    11           1     QDEF
-&- 24 - EmborcaÁ„o -------InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&- 24 - Emborca√ß√£o -------Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   33   1    3
 LQ   33   1          100      5000       100      5000       100      5000
 CQ   33   1    24           1     QDEF
-&25 - Nova Ponte ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&25 - Nova Ponte ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   35   1    3
 LQ   35   1           55      2000        55      2000        55      2000
 CQ   35   1    25           1     QDEF
-&- 26 - Miranda -------InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&- 26 - Miranda -------Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   36   1    3
 LQ   36   1           64      3000        64      3000        64      3000
 CQ   36   1    26           1     QDEF
-&- 33 - S„o Sim„o ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&- 33 - S√£o Sim√£o ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   37   1    3
 LQ   37   1          450     16000       450     16000       450     16000
 CQ   37   1    33           1     QDEF
-&- 134 - Salto Grande------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&- 134 - Salto Grande------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   39   1    3
 LQ   39   1           18      1800        18      1800        18      1800
 CQ   39   1   134           1     QDEF
-&- 156 - TrÍs Marias ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&- 156 - Tr√™s Marias ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   41   1    3
 LQ   41   1          500      4000       500      4000       500      4000
 CQ   41   1   156           1     QDEF
-&162 - QUEIMADO -------InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&162 - QUEIMADO -------Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   45   1    3
 LQ   45   1          8.8       204       8.8       204       8.8       204
 CQ   45   1   162           1     QDEF
-&162 - Queimado - InformaÁ„o do Agente - RestriÁ„o ambiental
+&162 - Queimado - Informa√ß√£o do Agente - Restri√ß√£o ambiental
 HQ   46   1    2
 LQ   46   1           11                  11                  11
 CQ   46   1   162           1     QDEF
-&- 192 - Guilman Amorim ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&- 192 - Guilman Amorim ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   47   1    3
 LQ   47   1           20       550        20       550        20       550
 CQ   47   1   192           1     QDEF
-& - 193 - S· Carvalho ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+& - 193 - S√° Carvalho ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   48   1    3
 LQ   48   1           20       550        20       550        20       550
 CQ   48   1   193           1     QDEF
-&-143- AIMORES --------InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&-143- AIMORES --------Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   49   1    3
 LQ   49   1           16      7000        16      7000        16      7000
 CQ   49   1   143           1     QDEF
-&127 -  SOBRAGI -------InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&127 -  SOBRAGI -------Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   52   1    3
 LQ   52   1            2                   2                   2
 CQ   52   1   127           1     QDEF
-&217 - ROSAL  ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&217 - ROSAL  ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   54   1    3
 LQ   54   1          2.1                 2.1                 2.1
 CQ   54   1   217           1     QDEF
-&148 - IRAPE - InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&148 - IRAPE - Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   55   1    3
 LQ   55   1                   2100                2100                2100
 CQ   55   1   148           1     QDEF
 &.......AES TIETE.......................................................
-& Limites:        pesada                 mÈdia                leve
+& Limites:        pesada                 m√©dia                leve
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &   ir   ei       inf.     sup.        inf.     sup.       inf.     sup.
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 & 
-&-14- CACONDE --------- InformaÁ„o do Agente
-&MÌnimo: atendimento ‡ PCH Itaiguara
-&M·ximo: Evitar inundaÁ„o de residÍncia entre a usina e o canal de fuga
+&-14- CACONDE --------- Informa√ß√£o do Agente
+&M√≠nimo: atendimento √† PCH Itaiguara
+&M√°ximo: Evitar inunda√ß√£o de resid√™ncia entre a usina e o canal de fuga
 HQ   56   1    3
 LQ   56   1           32       250        32       250        32       250
 CQ   56   1    14           1     QDEF
-&-14- CACONDE ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&-14- CACONDE ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   57   1    3
 LQ   57   1           32       600        32       600        32       600
 CQ   57   1    14           1     QDEF
-&16 - A.S.Oliveira (Limoeiro) -------  InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&16 - A.S.Oliveira (Limoeiro) -------  Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   58   1    3
 LQ   58   1           19       550        19       550        19       550
 CQ   58   1    16           1     QDEF
-&-37- BARRA BONITA ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&-37- BARRA BONITA ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 &
 HQ   60   1    3
 LQ   60   1            0      2000         0      2000         0      2000
 CQ   60   1    37           1     QDEF
-&40 - PROMISS√O ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&40 - PROMISS√ÉO ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   62   1    3
 LQ   62   1          160                 160                 160
 CQ   62   1    40           1     QDEF
 &........DUKE GP ......................................................
-& Limites:        pesada                 mÈdia                leve
+& Limites:        pesada                 m√©dia                leve
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &   ir   ei       inf.     sup.        inf.     sup.       inf.     sup.
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 & 
-&-47- JURUMIRIM ( A. A. LAYDNER) - InformaÁ„o do Agente
-&Inferior    ---> Ambiental (peixes) e CaptaÁ„o em Piraju (50 m≥/s)
+&-47- JURUMIRIM ( A. A. LAYDNER) - Informa√ß√£o do Agente
+&Inferior    ---> Ambiental (peixes) e Capta√ß√£o em Piraju (50 m¬≥/s)
 &Superior  ---> Evitar problemas na UHE Santa Cruz (CLFSC)
 HQ   65   1    3
 LQ   65   1          147      1200       147      1200       147      1200
 LQ   65   3           55      9999        55      9999        55      9999
 CQ   65   1    47           1     QDEF
-&-47- JURUMIRIM ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&-47- JURUMIRIM ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   67   1    3
 LQ   67   1           55      1200        55      1200        55      1200
 CQ   67   1    47           1     QDEF
-&-49- CHAVANTES -------  InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&-49- CHAVANTES -------  Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   68   1    2
 LQ   68   1           73      2000        73      2000        73      2000
 CQ   68   1    49           1     QDEF
-&-50- L.N. GARCEZ -------  InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&-50- L.N. GARCEZ -------  Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   70   1    2
 LQ   70   1           96                  96                  96
 CQ   70   1    50           1     QDEF
-&51 - CANOAS 2 -------  InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&51 - CANOAS 2 -------  Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   72   1    2
 LQ   72   1           96                  96                  96
 CQ   72   1    51           1     QDEF
-&-52- CANOAS I ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&-52- CANOAS I ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   74   1    2
 LQ   74   1           98                  98                  98
 CQ   74   1    52           1     QDEF
-&-61- CAPIVARA ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&-61- CAPIVARA ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   76   1    2
 LQ   76   1          192                 192                 192
 CQ   76   1    61           1     QDEF
-&- 62- TAQUARU«U ----- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&- 62- TAQUARU√áU ----- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   78   1    1
 LQ   78   1          200                 200                 200
 CQ   78   1    62           1     QDEF
-&-63- ROSANA ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&-63- ROSANA ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   80   1    2
 LQ   80   1          227                 227                 227
 CQ   80   1    63           1     QDEF
 &.......GERDAU .......................................................
-& Limites:        pesada                 mÈdia                leve
+& Limites:        pesada                 m√©dia                leve
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &   ir   ei       inf.     sup.        inf.     sup.       inf.     sup.
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
-&-311- CA«U ( INFORMA«√O DO AGENTE) - VAZ√O SANIT¡RIA
+&-311- CA√áU ( INFORMA√á√ÉO DO AGENTE) - VAZ√ÉO SANIT√ÅRIA
 HQ   82   1    3
 LQ   82   1           30                  30                  30
 CQ   82   1   311           1     QDEF
-&-312- B. COQUEIROS ( INFORMA«√O DO AGENTE) - VAZ√O SANIT¡RIA
+&-312- B. COQUEIROS ( INFORMA√á√ÉO DO AGENTE) - VAZ√ÉO SANIT√ÅRIA
 HQ   83   1    3
 LQ   83   1           30                  30                  30
 CQ   83   1   312           1     QDEF
 &.......CESP .......................................................
-& Limites:        pesada                 mÈdia                leve
+& Limites:        pesada                 m√©dia                leve
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &   ir   ei       inf.     sup.        inf.     sup.       inf.     sup.
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &
-&-46- P. PRIMAVERA - InformaÁ„o do Agente
-&MÌnima --> NavegaÁ„o (P/M- 5500 m≥/s) e PreservaÁ„o da Ictiofauna (L- 5000 m≥/s)
+&-46- P. PRIMAVERA - Informa√ß√£o do Agente
+&M√≠nima --> Navega√ß√£o (P/M- 5500 m¬≥/s) e Preserva√ß√£o da Ictiofauna (L- 5000 m¬≥/s)
 HQ   84   1    2
 LQ   84   1         5500                5500                5000
 CQ   84   1    46           1     QDEF
-&-46- P. PRIMAVERA -------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&-46- P. PRIMAVERA -------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   85   1    3
 LQ   85   1         4600                4600                4600
 CQ   85   1    46           1     QDEF
-&- 120- JAGUARI ------ InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&- 120- JAGUARI ------ Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   87   1    2
 LQ   87   1           10                  10                  10
 CQ   87   1   120           1     QDEF
-&-121 Paraibuna -------  InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&-121 Paraibuna -------  Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   89   1    2
 LQ   89   1           30                  30                  30
 CQ   89   1   121           1     QDEF
-&-45- JUPIA -------  InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&-45- JUPIA -------  Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   91   1    2
 LQ   91   1         4000     16000      4000     16000      4000     16000
 CQ   91   1    45           1     QDEF
 &....... FURNAS .............................................................
-& Limites:        pesada                 mÈdia                leve
+& Limites:        pesada                 m√©dia                leve
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &   ir   ei       inf.     sup.        inf.     sup.       inf.     sup.
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &
-&6- FURNAS -------  InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&6- FURNAS -------  Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   93   1    3
 LQ   93   1            0      4000         0      4000         0      4000
 CQ   93   1     6           1     QDEF
-&7- M. Moraes ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&7- M. Moraes ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   94   1    3
 LQ   94   1            0      4400         0      4400         0      4400
 CQ   94   1     7           1     QDEF
-&8 - L. C. Barreto (Estreito) -------  InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&8 - L. C. Barreto (Estreito) -------  Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   96   1    3
 LQ   96   1            0      4500         0      4500         0      4500
 CQ   96   1     8           1     QDEF
-&12- Porto ColÙmbia ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&12- Porto Col√¥mbia ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ   98   1    3
 LQ   98   1            0      7000         0      7000         0      7000
 CQ   98   1    12           1     QDEF
-&17 - Marimbondo ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&17 - Marimbondo ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
-&Minimo = 950 m≥/s valido somente de 01/11 a 28/02
+&Minimo = 950 m¬≥/s valido somente de 01/11 a 28/02
 HQ   99   1    3
 LQ   99   1                   8000                8000                8000
 CQ   99   1    17           1     QDEF
-&31 - Itumbiara ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&31 - Itumbiara ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  100   1    3
 LQ  100   1            0      7000         0      7000         0      7000
 CQ  100   1    31           1     QDEF
-&123 - Funil -------  InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&123 - Funil -------  Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  102   1    3
 LQ  102   1           80       700        80       700        80       700
 CQ  102   1   123           1     QDEF
-&251 - S.MESA ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&251 - S.MESA ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
-& MÌnimo --> TambÈm declarado pelo Agente
+& M√≠nimo --> Tamb√©m declarado pelo Agente
 HQ  105   1    3
 LQ  105   1          300                 300                 300
 CQ  105   1   251           1     QDEF
-&- 278 - Manso -------  InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&- 278 - Manso -------  Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 & Minimo --> Tambem declarado pelo Agente
 HQ  110   1    3
 LQ  110   1           95      1550        95      1550        95      1550
 CQ  110   1   278           1     QDEF
-&-257- PEIXE ANGICAL -------  InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&-257- PEIXE ANGICAL -------  Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  112   1    3
 LQ  112   1          360                 360                 360
 CQ  112   1   257           1     QDEF
-&-30- CORUMB¡ I -------  InformaÁ„o FSAR-H 29/12/2010
+&-30- CORUMB√Å I -------  Informa√ß√£o FSAR-H 29/12/2010
 &
 HQ  113   1    3
 LQ  113   1          120                 120                 120
 CQ  113   1    30           1     QDEF
-&....... PARAÕBA DO SUL - OPERA«√O ESPECIAL ..............................
-& Limites:        pesada                 mÈdia                leve
+&....... PARA√çBA DO SUL - OPERA√á√ÉO ESPECIAL ..............................
+& Limites:        pesada                 m√©dia                leve
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &   ir   ei       inf.     sup.        inf.     sup.       inf.     sup.
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &123 - FUNIL
-&MÌnimo ---> InformaÁ„o do Agente
-&CaptaÁ„o de ·gua da cidade de B. Mansa
+&M√≠nimo ---> Informa√ß√£o do Agente
+&Capta√ß√£o de √°gua da cidade de B. Mansa
 HQ  119   1    2
 LQ  119   1          110                 110                 110
 CQ  119   1   123           1     QDEF
-&-1- SANTA CECÕLIA
-&OperaÁ„o Especial ParaÌba do Sul 
+&-1- SANTA CEC√çLIA
+&Opera√ß√£o Especial Para√≠ba do Sul 
 &Manutencao Bomba - Declaracao da Light
 HQ  123   1    3
 LQ  123   1          160       160       160       160       160       160
 CQ  123   1     1         1.0     QBOM
-&- 125 - Santa CecÌlia ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&- 125 - Santa Cec√≠lia ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  125   1    3
 LQ  125   1           71                  71                  71
 CQ  125   1   125         1.0     QDEF
-&- 125 - Santa CecÌlia - OPERA«√O NORMALIZADA - PARAIBA DO SUL
+&- 125 - Santa Cec√≠lia - OPERA√á√ÉO NORMALIZADA - PARAIBA DO SUL
 HQ  126   1    3
 LQ  126   1           90                  90                  90
 CQ  126   1   125           1     QDEF
 & ........................... LIGHT ...............................
-& Limites:        pesada                 mÈdia                leve
+& Limites:        pesada                 m√©dia                leve
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &   ir   ei       inf.     sup.        inf.     sup.       inf.     sup.
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 & 
-&122 - Santa Branca -------  InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&122 - Santa Branca -------  Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  149   1    3
 LQ  149   1           40       300        40       300        40       300
 CQ  149   1   122           1     QDEF
-&-124- LAJES-------  InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&-124- LAJES-------  Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  151   1    3
 LQ  151   1          5.5                 5.5                 5.5
 CQ  151   1   124           1     QDEF
-&-124- LAJES -- OperaÁ„o Especial do ReservatÛrio de Lajes
+&-124- LAJES -- Opera√ß√£o Especial do Reservat√≥rio de Lajes
 HQ  152   1    3
 LQ  152   1          5.5        20       5.5        20       5.5        20
 CQ  152   1   124           1     QDEF
-&-124- LAJES - InformaÁ„o do Agente
+&-124- LAJES - Informa√ß√£o do Agente
 HQ  154   1    3
 LQ  154   1          5.5      20.0       5.5      20.0       5.5      20.0
 CQ  154   1   124         1.0     QDES
 CQ  154   1   124         1.0     QDEF
-&-125- SANTA CECÕLIA
+&-125- SANTA CEC√çLIA
 HQ  157   1    3
 LQ  157   1          0.0       0.0       0.0       0.0       0.0       0.0
 CQ  157   1   125         1.0     QDES
-&133 - Pereira Passos ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&133 - Pereira Passos ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  159   1    3
 LQ  159   1          120                 120                 120
 CQ  159   1   133           1     QDEF
 &-180- TOCOS
-&RestriÁ„o (RHQ) no. 82: Desvio de ZERO  =<  (TOCOS) <= 25m3/s
+&Restri√ß√£o (RHQ) no. 82: Desvio de ZERO  =<  (TOCOS) <= 25m3/s
 HQ  161   1    3
 LQ  161   1            0        25         0        25         0        25
 CQ  161   1   180         1.0     QDES
 &-180- TOCOS
-&RestriÁ„o (RHQ) no. 83: DefluÍncia de  (TOCOS) = 0 m3/s
+&Restri√ß√£o (RHQ) no. 83: Deflu√™ncia de  (TOCOS) = 0 m3/s
 HQ  162   1    3
 LQ  162   1            0                   0                   0
 CQ  162   1   180         1.0     QDEF
@@ -4066,12 +4066,12 @@ CQ  162   1   180         1.0     QDEF
 HQ  163   1    3
 LQ  163   1          0.0       0.0       0.0       0.0       0.0       0.0
 CQ  163   1   181         1.0     QDES
-&-182- VIG¡RIO
+&-182- VIG√ÅRIO
 HQ  164   1    3
 LQ  164   1          0.0       196       0.0       196       0.0       196
 CQ  164   1   182         1.0     QDES
 CQ  164   1   182         1.0     QDEF
-&-182- VIG¡RIO
+&-182- VIG√ÅRIO
 HQ  165   1    3
 LQ  165   1          0.0        34       0.0        34       0.0        34
 CQ  165   1   182         1.0     QDES
@@ -4080,37 +4080,37 @@ HQ  166   1    3
 LQ  166   1          5.5                 5.5                 5.5
 CQ  166   1   183         1.0     QDEF
 &....... CDSA .......................................................
-& Limites:        pesada                 mÈdia                leve
+& Limites:        pesada                 m√©dia                leve
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &   ir   ei       inf.     sup.        inf.     sup.       inf.     sup.
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &
-&-32- Cachoeira Dourada ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&-32- Cachoeira Dourada ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  168   1    3
 LQ  168   1           20     10000        20     10000        20     10000
 CQ  168   1    32           1     QDEF
 &....... ESCELSA ....................................................
-& Limites:        pesada                 mÈdia                leve
+& Limites:        pesada                 m√©dia                leve
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &   ir   ei       inf.     sup.        inf.     sup.       inf.     sup.
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
-&-144 -Mascarenhas -------  InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&-144 -Mascarenhas -------  Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  171   1    3
 LQ  171   1          210                 210                 210
 CQ  171   1   144           1     QDEF
 &....... EMAE .........................................................
-& Limites:        pesada                 mÈdia                leve
+& Limites:        pesada                 m√©dia                leve
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &   ir   ei       inf.     sup.        inf.     sup.       inf.     sup.
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &-107- EDGARD DE SOUZA (Desvio)
-&  DESVIO DE TRAICAO  = 0 m3/s Edgar de Sousa n„o desvia para TraiÁ„o
+&  DESVIO DE TRAICAO  = 0 m3/s Edgar de Sousa n√£o desvia para Trai√ß√£o
 HQ  174   1    3
 LQ  174   1          0.0         0       0.0         0       0.0         0
 CQ  174   1   107         1.0     QDES
-&-108- TRAI«√O (Desvio)
+&-108- TRAI√á√ÉO (Desvio)
 &  DESVIO DE TRAICAO  = 0 m3/s 
 HQ  175   1    3
 LQ  175   1            0         0         0         0         0         0
@@ -4120,8 +4120,8 @@ CQ  175   1   108           1     QDES
 HQ  176   1    3
 LQ  176   1            0         0         0         0         0         0
 CQ  176   1   109           1     QDES
-&-3- TRAI«√O (Bombeamento)
-&  BOMBEAMENTO DE TRAI«√O  = 6 m3/s 
+&-3- TRAI√á√ÉO (Bombeamento)
+&  BOMBEAMENTO DE TRAI√á√ÉO  = 6 m3/s 
 HQ  177   1    3
 LQ  177   1            6         6         6         6         6         6
 CQ  177   1     3           1     QBOM
@@ -4129,266 +4129,266 @@ CQ  177   1     3           1     QBOM
 HQ  178   1    3
 LQ  178   1            0         0         0         0         0         0
 CQ  178   1   118           1     QDEF
-&119 - Henry Borden -------  InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&119 - Henry Borden -------  Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  180   1    3
 LQ  180   1            6                   6                   6
 CQ  180   1   119           1     QDEF
 &.......COPEL .........................................................
-& Limites:        pesada                 mÈdia                leve
+& Limites:        pesada                 m√©dia                leve
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &   ir   ei       inf.     sup.        inf.     sup.       inf.     sup.
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &
-&73 - Desvio Jord„o ------ InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&73 - Desvio Jord√£o ------ Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  182   1    3
 LQ  182   1           10                  10                  10
 CQ  182   1    73           1     QDEF
-&- 82 - SALTO CAXIAS -------  InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&- 82 - SALTO CAXIAS -------  Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  185   1    3
 LQ  185   1          200     30000       200     30000       200     30000
 CQ  185   1    82           1     QDEF
-&115 - G.P.Souza (Capivari) -------  InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&115 - G.P.Souza (Capivari) -------  Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  187   1    3
 LQ  187   1            0       140         0       140         0       140
 CQ  187   1   115           1     QDEF
 &....... TRACTEBEL ..............................................
-& Limites:        pesada                 mÈdia                leve
+& Limites:        pesada                 m√©dia                leve
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &   ir   ei       inf.     sup.        inf.     sup.       inf.     sup.
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &
-& - 77- Salto Santiago ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+& - 77- Salto Santiago ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  188   1    3
 LQ  188   1            0     19000         0     19000         0     19000
 CQ  188   1    77           1     QDEF
-&78 - SALTO OS”RIO - RESTRI«√O AMBIENTAL INFORMADA PELO AGENTE 
+&78 - SALTO OS√ìRIO - RESTRI√á√ÉO AMBIENTAL INFORMADA PELO AGENTE 
 HQ  190   1    3
 LQ  190   1          190                 190                 190
 CQ  190   1    78           1     QDEF
-&- 91 -Machadinho ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&- 91 -Machadinho ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  191   1    3
 LQ  191   1          100                 100                 100
 CQ  191   1    91           1     QDEF
-&91- Machadinho - InformaÁ„o do Agente
+&91- Machadinho - Informa√ß√£o do Agente
 HQ  196   1    3
 LQ  196   1          260                 260                 260
 CQ  196   1    91           1     QDEF
-&-92- IT¡
-&MÌnimo ---> InformaÁ„o do Agente
-&Atendimento ‡s restriÁıes ambienteais de jusante e nÌvel mÌnimo do canal de fuga - 
+&-92- IT√Å
+&M√≠nimo ---> Informa√ß√£o do Agente
+&Atendimento √†s restri√ß√µes ambienteais de jusante e n√≠vel m√≠nimo do canal de fuga - 
 HQ  198   1    3
 LQ  198   1          180                 180                 180
 CQ  198   1    92           1     QDEF
-&- 92 - It· -------  InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&- 92 - It√° -------  Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  199   1    3
 LQ  199   1          150                 150                 150
 CQ  199   1    92           1     QDEF
-&252- Cana Brava ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&252- Cana Brava ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  200   1    3
 LQ  200   1          150                 150                 150
 CQ  200   1   252           1     QDEF
-&281 - Ponte de Pedra ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&281 - Ponte de Pedra ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  201   1    3
 LQ  201   1           45                  45                  45
 CQ  201   1   281           1     QDEF
 &.......CEEE ........................................................
-& Limites:        pesada                 mÈdia                leve
+& Limites:        pesada                 m√©dia                leve
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &   ir   ei       inf.     sup.        inf.     sup.       inf.     sup.
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &
-&- 110 - Ernestina  -------InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&- 110 - Ernestina  -------Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  203   1    3
 LQ  203   1            0       750         0       750         0       750
 CQ  203   1   110           1     QDEF
-&- 110 - Ernestina  -------InformaÁ„o do Agente
+&- 110 - Ernestina  -------Informa√ß√£o do Agente
 &
-& Flexibilizada no 2∫ estagio para convergencia Caso VE
+& Flexibilizada no 2¬∫ estagio para convergencia Caso VE
 HQ  204   1    2
 LQ  204   1           16                  16                  16
 LQ  204   2           10                  10                  10
 CQ  204   1   110           1     QDEF
-&- 112 - JacuÌ ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&- 112 - Jacu√≠ ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  205   1    3
 LQ  205   1            0      2400         0      2400         0      2400
 CQ  205   1   112           1     QDEF
-&114 - D. Francisca ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&114 - D. Francisca ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  207   1    3
 LQ  207   1          100      1450       100      1450       100      1450
 CQ  207   1   114           1     QDEF
 &.......CPFL ...........................................................
-& Limites:        pesada                 mÈdia                leve
+& Limites:        pesada                 m√©dia                leve
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &   ir   ei       inf.     sup.        inf.     sup.       inf.     sup.
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
-&- 86 - Barra Grande ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&- 86 - Barra Grande ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  209   1    3
 LQ  209   1           16                  16                  16
 CQ  209   1    86           1     QDEF
-&-98- Monte Claro ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&-98- Monte Claro ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
-&(PROVISORIA: AtÈ 12/02/2012 depois 5.5)
-& Flexibilizada no 2 mÍs para convergencia - Caso VE
+&(PROVISORIA: At√© 12/02/2012 depois 5.5)
+& Flexibilizada no 2 m√™s para convergencia - Caso VE
 HQ  210   1    2
 LQ  210   1         18.6                18.6                18.6
 CQ  210   1    98           1     QDEF
-&-97- Castro Alves ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&-97- Castro Alves ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
-&(PROVISORIA: AtÈ 14/01/2012)
-& Flexibilizada no 2 mÍs para convergencia - Caso VE
+&(PROVISORIA: At√© 14/01/2012)
+& Flexibilizada no 2 m√™s para convergencia - Caso VE
 HQ  211   1    2
 LQ  211   1           17                  17                  17
 CQ  211   1    97           1     QDEF
-&-99- 14 de Julho ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&-99- 14 de Julho ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
-&(PROVISORIA: AtÈ 10/10/2012)
-& Flexibilizada no 2 mÍs para convergencia - Caso VE
+&(PROVISORIA: At√© 10/10/2012)
+& Flexibilizada no 2 m√™s para convergencia - Caso VE
 HQ  212   1    2
 LQ  212   1         28.2                28.2                28.2
 CQ  212   1    99           1     QDEF
 &.......CHESF ...........................................................
-& Limites:        pesada                 mÈdia                leve
+& Limites:        pesada                 m√©dia                leve
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &   ir   ei       inf.     sup.        inf.     sup.       inf.     sup.
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
-&- 169 - Sobradinho ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&- 169 - Sobradinho ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  213   1    2
 LQ  213   1         1300      8000      1300      8000      1300      8000
 CQ  213   1   169           1     QDEF
-&- 178 - Xingo -------InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&- 178 - Xingo -------Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  216   1    2
 LQ  216   1         1300      8000      1300      8000      1300      8000
 CQ  216   1   178           1     QDEF
-&- 190 - Boa EsperanÁa -------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&- 190 - Boa Esperan√ßa -------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  218   1    2
 LQ  218   1          240      1600       240      1600       240      1600
 CQ  218   1   190           1     QDEF
 &......VOTORANTIM...........................................................
-& Limites:        pesada                 mÈdia                leve
+& Limites:        pesada                 m√©dia                leve
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &   ir   ei       inf.     sup.        inf.     sup.       inf.     sup.
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
-&189 - Pedra do Cavalo -------InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&189 - Pedra do Cavalo -------Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  220   1    3
 LQ  220   1           10      1500        10      1500        10      1500
 CQ  220   1   189           1     QDEF
-&189 - Pedra do Cavalo - InformaÁ„o do Agente
+&189 - Pedra do Cavalo - Informa√ß√£o do Agente
 HQ  221   1    3
 LQ  221   1           10      1500        10      1500        10      1500
 CQ  221   1   189           1     QDEF
 &.......ELETRONORTE ........................................................
-& Limites:        pesada                 mÈdia                leve
+& Limites:        pesada                 m√©dia                leve
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &   ir   ei       inf.     sup.        inf.     sup.       inf.     sup.
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &
-&- 275 - Tucurui ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&- 275 - Tucurui ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  222   1    3
 LQ  222   1         2000     54000      2000     54000      2000     54000
 CQ  222   1   275           1     QDEF
 &............... PROMEL .....................................................
-& Limites:        pesada                 mÈdia                leve
+& Limites:        pesada                 m√©dia                leve
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &   ir   ei       inf.     sup.        inf.     sup.       inf.     sup.
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
-&-139 - CANDONGA -------  InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&-139 - CANDONGA -------  Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  223   1    3
 LQ  223   1           58                  58                  58
 CQ  223   1   139           1     QDEF
-&- 135 - Porto Estrela -------InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&- 135 - Porto Estrela -------Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  225   1    3
 LQ  225   1           10      2000        10      2000        10      2000
 CQ  225   1   135           1     QDEF
-&- 262 - SALTO - INFORMA«AO DA AGENTE
-&Vaz„o Ecologica
+&- 262 - SALTO - INFORMA√áAO DA AGENTE
+&Vaz√£o Ecologica
 HQ  227   1    3
 LQ  227   1           60                  60                  60
 CQ  227   1   262           1     QDEF
 &.......AUTO PRODUTORES .....................................................
-& Limites:        pesada                 mÈdia                leve
+& Limites:        pesada                 m√©dia                leve
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
 &   ir   ei       inf.     sup.        inf.     sup.       inf.     sup.
 &   ++   ++   +--------++--------++--------++--------++--------++--------+
-&154 - Itapebi -------InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&154 - Itapebi -------Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  229   1    3
 LQ  229   1           38                  38                  38
 CQ  229   1   154           1     QDEF
-&95 - QUEBRA QUEIXO -------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&95 - QUEBRA QUEIXO -------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  230   1    3
 LQ  230   1          0.5                 0.5                 0.5
 CQ  230   1    95           1     QDEF
-&- 261 - Lajeado ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&- 261 - Lajeado ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  231   1    3
 LQ  231   1          255                 255                 255
 CQ  231   1   261           1     QDEF
-&- 283 - Santa Clara ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&- 283 - Santa Clara ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
-& Retirada no 2∫ para convergencia Caso VE
+& Retirada no 2¬∫ para convergencia Caso VE
 HQ  233   1    2
 LQ  233   1           15                  15                  15
 CQ  233   1   283           1     QDEF
-&195 - JAURU ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&195 - JAURU ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  234   1    3
 LQ  234   1            3                   3                   3
 CQ  234   1   195           1     QDEF
-&305 - ITIQUIRA II - ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&305 - ITIQUIRA II - ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 &
 HQ  235   1    3
 LQ  235   1           40                  40                  40
 CQ  235   1   305           1     QDEF
-&196 - GUAPOR… ------- InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&196 - GUAPOR√â ------- Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  236   1    3
 LQ  236   1            3                   3                   3
 CQ  236   1   196           1     QDEF
-&126 - PICADA  - INFORMA«AO DA AGENTE
-&ExigÍncia de Ûrg„os ambientais
+&126 - PICADA  - INFORMA√áAO DA AGENTE
+&Exig√™ncia de √≥rg√£os ambientais
 HQ  238   1    3
 LQ  238   1          6.9                 6.9                 6.9
 CQ  238   1   126           1     QDEF
-&215 - SALTO PILAO ------ InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&215 - SALTO PILAO ------ Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  240   1    3
 LQ  240   1          7.2                 7.2                 7.2
 CQ  240   1   215           1     QDEF
-&27 - CAPIM BRANCO I ------ InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&27 - CAPIM BRANCO I ------ Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  242   1    3
 LQ  242   1           68                  68                  68
 CQ  242   1    27           1     QDEF
-&28 - CAPIM BRANCO II ------ InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&28 - CAPIM BRANCO II ------ Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
 HQ  243   1    3
 LQ  243   1                   1300                1300                1300
 CQ  243   1    28           1     QDEF
-&PORTO SAO JOSE -------  InformaÁ„o do Invent·rio de RestriÁıes Operativas Hidr·ulicas -
+&PORTO SAO JOSE -------  Informa√ß√£o do Invent√°rio de Restri√ß√µes Operativas Hidr√°ulicas -
 &                                   ONS RE 3/258/2009 - REVISAO 1
-& SOMATORIO DAS DEFLUENCIAS DE ROSANA E P. PRIMAVERA < 24.000 m≥/s
+& SOMATORIO DAS DEFLUENCIAS DE ROSANA E P. PRIMAVERA < 24.000 m¬≥/s
 HQ  247   1    3
 LQ  247   1                  24000               24000               24000
 CQ  247   1    63           1     QDEF

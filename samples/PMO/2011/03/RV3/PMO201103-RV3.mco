@@ -1,37 +1,37 @@
 // ARQUIVO DE MERCADO
 
-// Versão do tipo de dados contido neste arquivo.
+// VersÃ£o do tipo de dados contido neste arquivo.
 [VERS]
 2.1
 
-// Número de subsistemas.
+// NÃºmero de subsistemas.
 [NSUB]
    7
 
-// Número de Intervalos.
+// NÃºmero de Intervalos.
 [NINT]
   27
 
-// Número de patamares por intervalo do horizonte 
+// NÃºmero de patamares por intervalo do horizonte 
 [NPAT]
    3
 
-// Identificação dos subsistemas.
+// IdentificaÃ§Ã£o dos subsistemas.
 [SUBS]
    1   Sudeste/Centro-Oeste
    2   Sul
    3   Nordeste
    4   Norte
    5   Itaipu
-   6   Sul Fictício
-   7   Norte Fictício
+   6   Sul FictÃ­cio
+   7   Norte FictÃ­cio
 
-// Valor Médio de Mercado considerado para cada subsistema.
+// Valor MÃ©dio de Mercado considerado para cada subsistema.
 // Sudeste/Centro-Oeste, Sul, Nordeste, Norte.
 [MMSS]
 37097.55	10270.46	8616.04	3974.68	0.00	0.00	0.00	
 
-// Curvas de Aversão ao Risco por subsistema (% EAR).
+// Curvas de AversÃ£o ao Risco por subsistema (% EAR).
 // Sudeste/Centro-Oeste, Sul, Nordeste, Norte
 [CARS]
 19/03/2011     0.00	  0.00	  0.00	  0.00	
@@ -148,7 +148,7 @@
              2  42947.10  11652.70  10088.56   5962.63    642.71      0.00      0.00
              3  33557.70   8411.77   8487.72   5514.98    502.20      0.00      0.00
 
-// Geração total de pequenas usinas [MW],
+// GeraÃ§Ã£o total de pequenas usinas [MW],
 // para cada subsistema e patamar (colunas) e intervalo do horizonte (linhas),
 // a ser descontada de seus respectivos mercados.
 [GPUH]
@@ -234,7 +234,7 @@
              2   4753.48   1190.15   1119.67     51.02      0.00      0.00      0.00
              3   3714.24    859.13    942.00     47.19      0.00      0.00      0.00
 
-// Fator percentual do mercado no primeiro mês a ser adicionado em todos os 
+// Fator percentual do mercado no primeiro mÃªs a ser adicionado em todos os 
 // meses para majoramento do mercado global.
 [FMAJ]
 0.20

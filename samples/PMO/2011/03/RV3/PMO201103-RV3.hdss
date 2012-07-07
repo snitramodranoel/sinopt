@@ -1,12 +1,12 @@
-// ARQUIVO DE CEN¡RIO
+// ARQUIVO DE CEN√ÅRIO
 // HydroDesagSemana 1.0 - Desagregador por Semana
 
-// Vers„o do tipo de dados contido neste arquivo.
+// Vers√£o do tipo de dados contido neste arquivo.
 [VERS]
 1.0
 
-// Dados de identificaÁ„o do Estudo.
-// Nome do estudo, nome do propriet·rio, data criaÁ„o, status e bloqueado.
+// Dados de identifica√ß√£o do Estudo.
+// Nome do estudo, nome do propriet√°rio, data cria√ß√£o, status e bloqueado.
 [ESTU]
 PMO201103-RV3
 Administrador
@@ -14,16 +14,16 @@ Administrador
 1
 1
 
-// Dados de configuraÁ„o do HydroDesag - {Otimizador}.
+// Dados de configura√ß√£o do HydroDesag - {Otimizador}.
 // Otimizador utilizado (0 - Sinopt, 1 - Hydromax)
 [OTMZ]
 0
 
-// Nome do estudo que contÈm o modelo de previs„o para o posto selecionado.
+// Nome do estudo que cont√©m o modelo de previs√£o para o posto selecionado.
 [ESHS]
 NW201103 ODIN MLT
 
 
-// AnotaÁıes do estudo.
+// Anota√ß√µes do estudo.
 [MEMO]
-Escreva aqui anotaÁıes sobre o estudo
+Escreva aqui anota√ß√µes sobre o estudo

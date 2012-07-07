@@ -1,23 +1,23 @@
-// ARQUIVO DE VAZ’ES
+// ARQUIVO DE VAZ√ïES
 
-// Vers„o do tipo de dados contido neste arquivo.
+// Vers√£o do tipo de dados contido neste arquivo.
 [VERS]
 2.00
 
-// N˙mero de usinas hidrelÈtricas.
+// N√∫mero de usinas hidrel√©tricas.
 [NUHE]
  127
 
-// N˙mero de intervalos do horizonte
+// N√∫mero de intervalos do horizonte
 [NINT]
   27
 
-// Dia (1), mÍs (2) e ano (3) iniciais do conjunto de vazıes.
+// Dia (1), m√™s (2) e ano (3) iniciais do conjunto de vaz√µes.
 [DATA]
 19 3 2011
 
-// IdentificaÁ„o dos postos de vazıes de cada usina.
-// CÛdigo e Nome do posto de vazıes.
+// Identifica√ß√£o dos postos de vaz√µes de cada usina.
+// C√≥digo e Nome do posto de vaz√µes.
 [PSTO]
   15072000 GUAPORE
   15459080 SAMUEL
@@ -28,7 +28,7 @@
   22041080 PEIXE ANGIC
   22490070 LAJEADO
   29680080 TUCURUI
-  34450000 Boa EsperanÁa
+  34450000 Boa Esperan√ßa
   40865185 RETIRO BAIXO
   40990080 TRES MARIAS
   42459080 QUEIMADO
@@ -46,7 +46,7 @@
   56819085 SALTO GRANDE
   56820075 P. ESTRELA
   56846075 BAGUARI
-  56990777 AimorÈs
+  56990777 Aimor√©s
   56992280 MASCARENHAS
   57760080 ROSAL
   58087780 PARAIBUNA
@@ -60,7 +60,7 @@
   59308200 LAJES
   59309080 Ponte Coberta
   60035000 SERRA FACAO
-  60160080 EmborcaÁ„o
+  60160080 Emborca√ß√£o
   60330080 NOVA PONTE
   60351080 MIRANDA
   60360080 CAPIM BRANC1
@@ -91,16 +91,16 @@
   61818080 E. DA CUNHA
   61819080 Limoeiro
   61941080 MARIMBONDO
-  61998080 ¡gua Vermelha
+  61998080 √Ågua Vermelha
   62285000 BILLINGS
   62290000 GUARAPIRANGA
   62729080 BARRA BONITA
   62744080 Bariri
   62790080 IBITINGA
-  62820080 Promiss„o
+  62820080 Promiss√£o
   62829580 Nova Avanhandava
   63007079 I. SOLT. EQV
-  63007080 Jupi·
+  63007080 Jupi√°
   63995080 Porto Primavera
   64215080 Jurumirim
   64219080 PIRAJU
@@ -110,7 +110,7 @@
   64345075 CANOAS II
   64345080 CANOAS I
   64516080 Capivara
-  64535080 TaquaruÁu
+  64535080 Taquaru√ßu
   64571080 ROSANA
   64918980 ITAIPU
   65774403 Foz do Areia
@@ -135,7 +135,7 @@
   73600580 QUEBRA QUEIX
   73900080 FOZ CHAPECO
   75310100 SAO JOSE
-  80310080 Cubat„o
+  80310080 Cubat√£o
   81301990 Capivari/Cachoeira
   83304000 SALTO PILAO
   85050001 ERNESTINA
@@ -146,12 +146,12 @@
   86290000 CASTRO ALVES
   86440000 MONTE CLARO
   86450000 14 DE JULHO
-// ConfiguraÁ„o do tipo das vazıes.
-// (1)Natural, (2)Incremental, (3)SintÈtica, (4)Outra ou (5)Agregada.
+// Configura√ß√£o do tipo das vaz√µes.
+// (1)Natural, (2)Incremental, (3)Sint√©tica, (4)Outra ou (5)Agregada.
 [TIPV]
    1
 
-// Dados de vazıes para cada usina.
+// Dados de vaz√µes para cada usina.
 [VAZO]
 19/03/2011          38.00        1093.00         540.00        1957.00        2175.00        2409.00        4229.00        6408.00       29899.00         976.00         229.00        2476.00          80.00        6569.00        6569.00        6569.00        6569.00         179.00         413.00         786.00         132.00         212.00         189.00         207.00         265.00         266.00        1197.00        1798.00        2133.00         139.00         171.00         202.00          53.00         407.00          64.00         131.00         579.00         407.00          17.00         424.00         560.00        1505.00         551.00         661.00         673.00         702.00         225.00         279.00        1068.00        4638.00        4824.00        7461.00         503.00         522.00         557.00         399.00         435.00         126.00         211.00         211.00         482.00        1852.00        2311.00        2417.00        2460.00        2586.00        2866.00        3330.00          70.00         114.00         116.00        5790.00        7131.00          55.00          24.00         852.00         919.00         976.00        1014.00        1092.00       17059.00       17680.00       27006.00         468.00         473.00         576.00         583.00         771.00         786.00         817.00        1394.00        1445.00        1564.00       31389.00         723.00          -1.00         102.00         107.00         107.00         197.00         234.00         502.00          87.00         183.00         183.00          80.00         410.00         193.00         260.00         759.00        1060.00          19.00          33.00         109.00        1271.00         118.00          55.00          57.00         140.00          11.00          84.00          85.00         107.00         140.00         126.00         199.00         209.00
 26/03/2011          39.00         966.00         522.00        1842.00        2049.00        2272.00        3391.00        5197.00       30933.00         920.00         247.00        2085.00          74.00        6340.00        6340.00        6340.00        6340.00         129.00         299.00         602.00         142.00         199.00         185.00         202.00         206.00         207.00        1174.00        1760.00        2088.00         114.00         118.00         138.00          43.00         557.00          60.00         124.00         301.00         557.00          13.00         570.00         619.00        1665.00         555.00         771.00         784.00         816.00         216.00         268.00         946.00        3627.00        4452.00        6502.00         455.00         473.00         505.00         382.00         416.00         115.00         195.00         195.00         446.00        1782.00        2003.00        2055.00        2079.00        2143.00        2281.00        2611.00          65.00         105.00         107.00        5088.00        5940.00          41.00          17.00        1133.00        1267.00        1308.00        1333.00        1444.00       15571.00       16132.00       22274.00         303.00         310.00         440.00         447.00         592.00         604.00         628.00        1185.00        1250.00        1300.00       27847.00         670.00           0.00         105.00         110.00         110.00         136.00         163.00         318.00          90.00         161.00         161.00          86.00         314.00         225.00         235.00         820.00        1149.00          23.00          29.00          99.00        1378.00         118.00          41.00          35.00         132.00          13.00          92.00          93.00         117.00         152.00         171.00         266.00         280.00

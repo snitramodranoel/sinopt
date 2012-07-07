@@ -1,30 +1,30 @@
-// ARQUIVO DE DADOS DOS INTERCÂMBIOS
+// ARQUIVO DE DADOS DOS INTERCÃ‚MBIOS
 
-// Versão do tipo de dados contido neste arquivo.
+// VersÃ£o do tipo de dados contido neste arquivo.
 [VERS]
 3.0
 
-// Número de Sub-Sistemas.
+// NÃºmero de Sub-Sistemas.
 [NSUB]
    7
 
-// Número de ciclos na rede de transmissão.
+// NÃºmero de ciclos na rede de transmissÃ£o.
 [NCYC]
    1
 
-// Número de intervalos do horizonte.
+// NÃºmero de intervalos do horizonte.
 [NINT]
   28
 
-// Número de Patamares.
+// NÃºmero de Patamares.
 [NPAT]
    3
 
-// Número de linhas de transmissão
+// NÃºmero de linhas de transmissÃ£o
 [NLIN]
    8
 
-// Linhas de transmissão,
+// Linhas de transmissÃ£o,
 // com subsistema de origem (1) e destino (2)
 [TOPO]
    1    6
@@ -36,7 +36,7 @@
    5    1
    5    6
 
-// Limites superiores de transmissão [MW],
+// Limites superiores de transmissÃ£o [MW],
 // para cada linha e patamar (colunas) e intervalo do horizonte (linhas).
 [LIMA]
 12/03/2011   1   4920.00   1000.00   2746.00  99999.00   3300.00   5100.00  99999.00   3178.00
@@ -124,7 +124,7 @@
              2   7699.37   1000.00   3154.00   4762.89   3960.09   7699.37  14000.00      0.00
              3   6859.87   1000.00   3154.00   4315.20   3960.09   6859.87  14000.00      0.00
 
-// Limites inferiores de transmissão [MW],
+// Limites inferiores de transmissÃ£o [MW],
 // para cada linha (colunas) e intervalo do horizonte (linhas).
 [LIMI]
 12/03/2011   1 -11622.00     -0.00  -4000.00 -99999.00 -99999.00  -5650.00     -0.00     -0.00
@@ -215,7 +215,7 @@
 
 [REAT]
   0.000000  0.027360  0.002676  0.000000 -0.028928  0.000000  0.000000  0.000000
-// Restrição por agrupamentos de linhas entre os Sub-Sistemas.
+// RestriÃ§Ã£o por agrupamentos de linhas entre os Sub-Sistemas.
 // Definido por ID do grupo e linhas envolvidas (Origem/Destino)
 // Valor limite de fluxo no grupo por intervalo de tempo.
 [AGRI]
@@ -310,7 +310,7 @@
 01/02/2013 	4200.000000
 01/03/2013 	4200.000000
 01/04/2013 	4200.000000
-//Opções de Intercâmbio/Subsistema. 1: SIM; 0: Não.
-//Habilitar correções de limites de intercambios; Incluir UHEs da ANDE na Energia Armazenada.
+//OpÃ§Ãµes de IntercÃ¢mbio/Subsistema. 1: SIM; 0: NÃ£o.
+//Habilitar correÃ§Ãµes de limites de intercambios; Incluir UHEs da ANDE na Energia Armazenada.
 [OPTS]
  0 1

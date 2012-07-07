@@ -1,17 +1,17 @@
 // ARQUIVO DE USINAS
 
-// Vers„o do tipo de dados contido neste arquivo.
+// Vers√£o do tipo de dados contido neste arquivo.
 [VERS]
 3.00
 
-// N˙mero de usinas deste arquivo.
+// N√∫mero de usinas deste arquivo.
 [NUHE]
 127
 
-// IdentificaÁ„o de cada aproveitamento.
-// Õndice do aproveitamento no estudo (Id).
-// Catogoria: (1)HidrelÈtrica, (2)ReservatÛrio, (3)Ponto de controle e
-// (4)Aproveitamento fictÌcio. CÛdigo no arquivo Hidr.dat, cÛdigo ONS,
+// Identifica√ß√£o de cada aproveitamento.
+// √çndice do aproveitamento no estudo (Id).
+// Catogoria: (1)Hidrel√©trica, (2)Reservat√≥rio, (3)Ponto de controle e
+// (4)Aproveitamento fict√≠cio. C√≥digo no arquivo Hidr.dat, c√≥digo ONS,
 // sigla ONS, sigla do agente e nome abreviado do aproveitamento.
 [UHID]
    0    1  196 mtguap guap   (null) GUAPORE
@@ -23,7 +23,7 @@
    6    1  257 topang pang   (null) PEIXE ANGIC
    7    1  261 TOLAJ  LAJ    (null) LAJEADO
    8    1  275 PATU   TUCU   (null) TUCURUI
-   9    1  190 PIUBE  BESP   (null) Boa EsperanÁa
+   9    1  190 PIUBE  BESP   (null) Boa Esperan√ßa
   10    1  155 (null) (null) (null) RETIRO BAIXO
   11    1  156 MGTMAR TMAR   (null) TRES MARIAS
   12    1  162 MGQMDO QMDO   (null) QUEIMADO
@@ -41,7 +41,7 @@
   24    1  134 MGSGRA SGCM   (null) SALTO GRANDE
   25    1  135 MGPORT PORT   (null) P. ESTRELA
   26    1  141 (null) (null) (null) BAGUARI
-  27    1  143 mgaimo aimo   (null) AimorÈs
+  27    1  143 mgaimo aimo   (null) Aimor√©s
   28    1  144 ESMASC MASC   (null) MASCARENHAS
   29    1  217 ESRSL  RSL    (null) ROSAL
   30    1  121 SPPAR  PARA   PAR    PARAIBUNA
@@ -55,7 +55,7 @@
   38    1  124 (null) (null) (null) LAJES
   39    1  133 RJPPS  PPAS   (null) Ponte Coberta
   40    1   21 GOUHSF UHSF   (null) SERRA FACAO
-  41    1   24 MGEMBO EMBO   (null) EmborcaÁ„o
+  41    1   24 MGEMBO EMBO   (null) Emborca√ß√£o
   42    1   25 MGNPON NPON   (null) NOVA PONTE
   43    1   26 MGMIRA MIRA   (null) MIRANDA
   44    1   27 MGCPB1 CPB1   (null) CAPIM BRANC1
@@ -66,7 +66,7 @@
   49    1   31 MGUSIM ITUM   (null) ITUMBIARA
   50    1   32 GOUCD  CDOU   (null) CACH.DOURADA
   51    1   33 MGSSUS SSIM   (null) SAO SIMAO
-  52    1  311 gocaÁu caÁu   (null) CACU
+  52    1  311 goca√ßu ca√ßu   (null) CACU
   53    1  312 gobarc barc   (null) B. COQUEIROS
   54    1  315 gofrcl frcl   (null) FOZ R. CLARO
   55    1  262 gosalt salt   (null) SALTO
@@ -86,16 +86,16 @@
   69    1   15 SPEUC  ECUN   EUC    E. DA CUNHA
   70    1   16 SPLMO  LIMO   LMO    Limoeiro
   71    1   17 MGUSMR MARI   (null) MARIMBONDO
-  72    1   18 SPAGV  AGVL   AGV    ¡gua Vermelha
+  72    1   18 SPAGV  AGVL   AGV    √Ågua Vermelha
   73    1  118 (null) (null) (null) BILLINGS
   74    1  117 (null) (null) (null) GUARAPIRANGA
   75    1   37 SPBAB  BONI   BAB    BARRA BONITA
   76    1   38 SPBAR  BARI   BAR    Bariri
   77    1   39 SPIBI  IBIT   IBI    IBITINGA
-  78    1   40 SPPRO  PROM   PRO    Promiss„o
+  78    1   40 SPPRO  PROM   PRO    Promiss√£o
   79    1   42 SPNAV  NAVA   NAV    Nova Avanhandava
   80    4   44 spiseq iseq   (null) I. SOLT. EQV
-  81    1   45 SPJUP  JUPI   JUP    Jupi·
+  81    1   45 SPJUP  JUPI   JUP    Jupi√°
   82    1   46 SPPPR  PPRI   PPR    Porto Primavera
   83    1   47 SPJUR  JURU   JUR    Jurumirim
   84    1   48 SPPJU  PJU    PJU    PIRAJU
@@ -105,7 +105,7 @@
   88    1   51 SPCNO2 CNO2   CN2    CANOAS II
   89    1   52 SPCNO1 CNO1   CN1    CANOAS I
   90    1   61 SPCPV  CAPI   CPV    Capivara
-  91    1   62 SPTAQ  TAQU   TAQ    TaquaruÁu
+  91    1   62 SPTAQ  TAQU   TAQ    Taquaru√ßu
   92    1   63 SPROS  ROSA   ROS    ROSANA
   93    1   66 PYIT50 ITAI   (null) ITAIPU
   94    1   74 PRGBM  GBMU   (null) Foz do Areia
@@ -124,13 +124,13 @@
  107    1   86 scbarg barg   (null) BARRA GRANDE
  108    1   90 sccamp camp   (null) CAMPOS NOVOS
  109    1   91 rsmach mach   (null) MACHADINHO
- 110    1   92 SCUHIT IT¡    (null) ITA
+ 110    1   92 SCUHIT IT√Å    (null) ITA
  111    1   93 RSUHPF PFUN   (null) PASSO FUNDO
  112    1   94 rsmonj monj   (null) MONJOLINHO
  113    1   95 SCUQQX UQQX   (null) QUEBRA QUEIX
  114    1  103 scfcha fcha   (null) FOZ CHAPECO
  115    1  101 rssaje saje   (null) SAO JOSE
- 116    1  119 SPHBS  HBS    (null) Cubat„o
+ 116    1  119 SPHBS  HBS    (null) Cubat√£o
  117    1  115 PRGPSU SPSO   (null) Capivari/Cachoeira
  118    1  215 scspil spil   (null) SALTO PILAO
  119    1  110 (null) (null) (null) ERNESTINA
@@ -142,9 +142,9 @@
  125    1   98 rsmont mont   (null) MONTE CLARO
  126    1   99 rs14ju 14ju   (null) 14 DE JULHO
 
-// Õndice do aproveitamento no estudo (Id), cÛdigo do subsistema
+// √çndice do aproveitamento no estudo (Id), c√≥digo do subsistema
 // (1)Sudeste/Centro-Oeste, (2)Sul, (3)Nordeste e (4)Norte.
-// CÛdigo Eletrobr·s, cÛdigo de jusante e est·gio de operaÁ„o do aproveitamento.
+// C√≥digo Eletrobr√°s, c√≥digo de jusante e est√°gio de opera√ß√£o do aproveitamento.
 [NUMS]
    0    1   15072000   15400004    8
    1    1   15459080          0    8
@@ -275,7 +275,7 @@
  126    2   86450000          0    8
 
 // Dados sobre a topologia da cascata.
-// Id e Ìndice do aproveitamento ‡ jusante de cada aprov.
+// Id e √≠ndice do aproveitamento √† jusante de cada aprov.
 [TOPO]
    0  127
    1  127
@@ -536,11 +536,11 @@
  125   0.00
  126   0.00
 
-// Dados prim·rios de cada usina hidrelÈtrica.
-// Id, produtibilidade especÌfica [MW/m≥/s/m], cota mÈdia do canal de fuga [m],
-// tipo da perda de carga: (1)%, (2)Const, (3)q≤; coef. da perda de carga hidr·ulica,
-// n˙mero mÌnimo de m·quinas sincronizadas e o tipo de representaÁ„o Engolimento M·ximo x.
-// Altura de Queda: (1)Vari·vel, (2)Constante.
+// Dados prim√°rios de cada usina hidrel√©trica.
+// Id, produtibilidade espec√≠fica [MW/m¬≥/s/m], cota m√©dia do canal de fuga [m],
+// tipo da perda de carga: (1)%, (2)Const, (3)q¬≤; coef. da perda de carga hidr√°ulica,
+// n√∫mero m√≠nimo de m√°quinas sincronizadas e o tipo de representa√ß√£o Engolimento M√°ximo x.
+// Altura de Queda: (1)Vari√°vel, (2)Constante.
 [PRIM]
    0   0.008437   304.80    2 7.180E+00    2    1
    1   0.009025    55.30    2 4.000E-01    1    1
@@ -671,177 +671,177 @@
  126   0.009083    70.50    2 9.500E-01    2    1
 
 // Dados sobre os conjuntos turbina/gerador (de cada usina).
-// DescriÁ„o de cada conjunto: Id,  n˙mero de conjuntos,
+// Descri√ß√£o de cada conjunto: Id,  n√∫mero de conjuntos,
 // tipo da turbina: (1)Francis, (2)Kaplan, (3)Pelton,
-// n˙mero de turbinas, altura efetiva [m], engolimento efetivo [m≥/s],
-// potÍncia efetiva [MW] de cada turbina, rendimento de cada gerador e
-// restriÁ„o de potÍncia mÌnima (imposiÁ„o elÈtrica).
-// Disponibilidade e Nome do arquivo com as Faixas Operativas (Queda x PotÎncia).
+// n√∫mero de turbinas, altura efetiva [m], engolimento efetivo [m¬≥/s],
+// pot√™ncia efetiva [MW] de cada turbina, rendimento de cada gerador e
+// restri√ß√£o de pot√™ncia m√≠nima (imposi√ß√£o el√©trica).
+// Disponibilidade e Nome do arquivo com as Faixas Operativas (Queda x Pot√´ncia).
 [TUGE]
-   0    1   1    3   166.80      28.00      40.00      0.960       0.00    0 Faixas n„o disponÌveis
-   1    1   2    5    28.50     168.00      43.35      0.960       0.00    0 Faixas n„o disponÌveis
-   2    1   2    3    18.70      62.00      10.00      0.000       0.00    0 Faixas n„o disponÌveis
-   3    1   1    3   117.20     397.00     425.00      0.960     135.00    0 Faixas n„o disponÌveis
-   4    1   1    3    43.60     385.00     150.00      0.960       0.00    0 Faixas n„o disponÌveis
-   5    1   2    2    22.84     603.00     121.60      0.960       0.00    0 Faixas n„o disponÌveis
-   6    1   2    3    24.20     686.00     150.70      0.960       0.00    0 Faixas n„o disponÌveis
-   7    1   2    5    29.00     680.00     180.50      0.960       0.00    0 Faixas n„o disponÌveis
-   8    3   1    2    65.50      37.00      22.50      0.960       0.00    0 Faixas n„o disponÌveis
-            1   12    65.50     582.00     350.00      0.960       0.00    0 Faixas n„o disponÌveis
-            1   11    61.70     662.00     375.00      0.960       0.00    0 Faixas n„o disponÌveis
-   9    2   1    2    42.10     129.00      55.00      0.960       0.00    0 Faixas n„o disponÌveis
-            1    2    42.10     167.00      63.65      0.960       0.00    0 Faixas n„o disponÌveis
-  10    1   2    2    36.54     128.00      41.00      0.000       0.00    0 Faixas n„o disponÌveis
-  11    1   2    6    50.20     154.00      66.00      0.960       0.00    0 Faixas n„o disponÌveis
-  12    1   1    3   168.10      24.00      35.00      0.960       0.00    0 Faixas n„o disponÌveis
-  13    1   2    6    27.20     713.00     175.00      0.900       0.00    0 Faixas n„o disponÌveis
-  14    1   1    6    50.80     551.00     250.00      0.900       0.00    0 Faixas n„o disponÌveis
-  15    1   1    1   112.80    4201.00    4281.60      0.960       0.00    0 Faixas n„o disponÌveis
-  16    1   1    6   116.40     496.00     527.00      0.960       0.00    0 Faixas n„o disponÌveis
-  17    1   1    2   100.15      90.00      80.00      0.960       0.00    0 Faixas n„o disponÌveis
-  18    1   1    3   138.20      97.00     120.00      0.960       0.00    0 Faixas n„o disponÌveis
-  19    1   1    3    76.70     214.00     150.00      0.000       0.00    0 Faixas n„o disponÌveis
-  20    1   1    3    52.60      44.00      20.00      0.960       0.00    0 Faixas n„o disponÌveis
-  21    1   2    3    48.60     106.00      46.70      0.960       0.00    0 Faixas n„o disponÌveis
-  22    1   1    4   116.80      34.00      35.00      0.960       0.00    0 Faixas n„o disponÌveis
-  23    3   1    2   108.60      16.00      15.00      0.960       0.00    0 Faixas n„o disponÌveis
-            1    1   108.60      19.00      18.00      0.960       0.00    0 Faixas n„o disponÌveis
-            1    1   108.60      32.00      30.00      0.960       0.00    0 Faixas n„o disponÌveis
-  24    2   1    2    93.00      35.00      27.00      0.960       0.00    0 Faixas n„o disponÌveis
-            1    2    93.00      31.00      24.00      0.960       0.00    0 Faixas n„o disponÌveis
-  25    1   2    2    49.80     124.00      56.00      0.960       0.00    0 Faixas n„o disponÌveis
-  26    1   2    4    17.40     223.00      35.00      0.000       0.00    0 Faixas n„o disponÌveis
-  27    1   2    3    27.90     443.00     110.00      0.960       0.00    0 Faixas n„o disponÌveis
-  28    1   2    4    21.00     260.00      49.50      0.000       0.00    0 Faixas n„o disponÌveis
-  29    1   1    2   186.00      16.00      27.50      0.960       0.00    0 Faixas n„o disponÌveis
+   0    1   1    3   166.80      28.00      40.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+   1    1   2    5    28.50     168.00      43.35      0.960       0.00    0 Faixas n√£o dispon√≠veis
+   2    1   2    3    18.70      62.00      10.00      0.000       0.00    0 Faixas n√£o dispon√≠veis
+   3    1   1    3   117.20     397.00     425.00      0.960     135.00    0 Faixas n√£o dispon√≠veis
+   4    1   1    3    43.60     385.00     150.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+   5    1   2    2    22.84     603.00     121.60      0.960       0.00    0 Faixas n√£o dispon√≠veis
+   6    1   2    3    24.20     686.00     150.70      0.960       0.00    0 Faixas n√£o dispon√≠veis
+   7    1   2    5    29.00     680.00     180.50      0.960       0.00    0 Faixas n√£o dispon√≠veis
+   8    3   1    2    65.50      37.00      22.50      0.960       0.00    0 Faixas n√£o dispon√≠veis
+            1   12    65.50     582.00     350.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+            1   11    61.70     662.00     375.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+   9    2   1    2    42.10     129.00      55.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+            1    2    42.10     167.00      63.65      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  10    1   2    2    36.54     128.00      41.00      0.000       0.00    0 Faixas n√£o dispon√≠veis
+  11    1   2    6    50.20     154.00      66.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  12    1   1    3   168.10      24.00      35.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  13    1   2    6    27.20     713.00     175.00      0.900       0.00    0 Faixas n√£o dispon√≠veis
+  14    1   1    6    50.80     551.00     250.00      0.900       0.00    0 Faixas n√£o dispon√≠veis
+  15    1   1    1   112.80    4201.00    4281.60      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  16    1   1    6   116.40     496.00     527.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  17    1   1    2   100.15      90.00      80.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  18    1   1    3   138.20      97.00     120.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  19    1   1    3    76.70     214.00     150.00      0.000       0.00    0 Faixas n√£o dispon√≠veis
+  20    1   1    3    52.60      44.00      20.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  21    1   2    3    48.60     106.00      46.70      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  22    1   1    4   116.80      34.00      35.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  23    3   1    2   108.60      16.00      15.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+            1    1   108.60      19.00      18.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+            1    1   108.60      32.00      30.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  24    2   1    2    93.00      35.00      27.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+            1    2    93.00      31.00      24.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  25    1   2    2    49.80     124.00      56.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  26    1   2    4    17.40     223.00      35.00      0.000       0.00    0 Faixas n√£o dispon√≠veis
+  27    1   2    3    27.90     443.00     110.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  28    1   2    4    21.00     260.00      49.50      0.000       0.00    0 Faixas n√£o dispon√≠veis
+  29    1   1    2   186.00      16.00      27.50      0.960       0.00    0 Faixas n√£o dispon√≠veis
   30    1   1    2    78.30      63.00      42.50      0.960      20.00    1 58087780.lop
-  31    1   1    2    44.00      72.00      28.02      0.960       0.00    0 Faixas n„o disponÌveis
+  31    1   1    2    44.00      72.00      28.02      0.960       0.00    0 Faixas n√£o dispon√≠veis
   32    1   1    2    49.90      33.00      13.80      0.960       5.00    1 58128180.lop
-  33    1   1    3    69.60     126.00      74.00      0.960       0.00    0 Faixas n„o disponÌveis
-  34    1   1    2   130.40      22.00      25.00      0.000       0.00    0 Faixas n„o disponÌveis
-  35    1   1    3    78.00      30.00      20.00      0.960       0.00    0 Faixas n„o disponÌveis
-  36    5   1    1    33.34     104.00      27.41      0.000       0.00    0 Faixas n„o disponÌveis
-            1    1    33.34     104.00      27.30      0.000       0.00    0 Faixas n„o disponÌveis
-            1    1    33.34     122.00      32.01      0.000       0.00    0 Faixas n„o disponÌveis
-            1    1    33.34     185.00      49.05      0.000       0.00    0 Faixas n„o disponÌveis
-            1    1    33.34     189.00      51.40      0.000       0.00    0 Faixas n„o disponÌveis
-  37    2   1    2   309.20      18.00      47.62      0.960      25.00    0 Faixas n„o disponÌveis
-            1    4   309.20      27.00      71.20      0.960      25.00    0 Faixas n„o disponÌveis
+  33    1   1    3    69.60     126.00      74.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  34    1   1    2   130.40      22.00      25.00      0.000       0.00    0 Faixas n√£o dispon√≠veis
+  35    1   1    3    78.00      30.00      20.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  36    5   1    1    33.34     104.00      27.41      0.000       0.00    0 Faixas n√£o dispon√≠veis
+            1    1    33.34     104.00      27.30      0.000       0.00    0 Faixas n√£o dispon√≠veis
+            1    1    33.34     122.00      32.01      0.000       0.00    0 Faixas n√£o dispon√≠veis
+            1    1    33.34     185.00      49.05      0.000       0.00    0 Faixas n√£o dispon√≠veis
+            1    1    33.34     189.00      51.40      0.000       0.00    0 Faixas n√£o dispon√≠veis
+  37    2   1    2   309.20      18.00      47.62      0.960      25.00    0 Faixas n√£o dispon√≠veis
+            1    4   309.20      27.00      71.20      0.960      25.00    0 Faixas n√£o dispon√≠veis
   38    0
-  39    1   1    2    37.60     160.00      49.95      0.960       0.00    0 Faixas n„o disponÌveis
-  40    1   1    2    73.66     162.00     106.30      0.960       0.00    0 Faixas n„o disponÌveis
-  41    1   1    4   130.30     262.00     298.00      0.960       0.00    0 Faixas n„o disponÌveis
-  42    1   1    3    96.00     199.00     170.00      0.960      61.00    0 Faixas n„o disponÌveis
-  43    1   1    3    66.40     225.00     136.00      0.960       0.00    0 Faixas n„o disponÌveis
-  44    1   1    3    55.00     165.00      80.00      0.960       0.00    0 Faixas n„o disponÌveis
-  45    1   1    3    44.40     180.00      70.00      0.960       0.00    0 Faixas n„o disponÌveis
-  46    1   1    2    66.76     104.00      63.50      0.960       0.00    0 Faixas n„o disponÌveis
-  47    1   1    2    38.20     135.00      47.76      0.960       0.00    0 Faixas n„o disponÌveis
-  48    1   1    3    73.50     190.00     125.00      0.960       0.00    0 Faixas n„o disponÌveis
-  49    1   1    6    80.20     537.00     380.00      0.960       0.00    0 Faixas n„o disponÌveis
-  50    4   2    2    30.00      67.00      17.00      0.960       0.00    0 Faixas n„o disponÌveis
-            2    3    30.00     213.00      54.00      0.960       0.00    0 Faixas n„o disponÌveis
-            2    3    30.00     331.00      84.00      0.960       0.00    0 Faixas n„o disponÌveis
-            2    2    30.00     402.00     105.00      0.960       0.00    0 Faixas n„o disponÌveis
-  51    1   1    6    70.90     445.00     285.00      0.960       0.00    0 Faixas n„o disponÌveis
-  52    1   2    2    25.80     140.00      32.50      0.960       0.00    0 Faixas n„o disponÌveis
-  53    1   2    2    34.78     143.00      45.00      0.960       0.00    0 Faixas n„o disponÌveis
-  54    1   2    2    25.48     149.00      34.20      0.960       0.00    0 Faixas n„o disponÌveis
-  55    1   1    2    45.50     141.00      58.00      0.960       0.00    0 Faixas n„o disponÌveis
-  56    1   1    2    40.50     127.00      46.50      0.960       0.00    0 Faixas n„o disponÌveis
-  57    1   2    3    50.70      24.00      10.67      0.960       0.00    0 Faixas n„o disponÌveis
-  58    1   2    2    24.60     110.00      23.00      0.960       0.00    0 Faixas n„o disponÌveis
-  59    3   2    2    25.00      57.00      12.50      0.960       0.00    0 Faixas n„o disponÌveis
-            2    1    25.00      63.00      14.00      0.960       0.00    0 Faixas n„o disponÌveis
-            2    1    25.00      59.00      13.00      0.960       0.00    0 Faixas n„o disponÌveis
-  60    1   2    3    34.90     195.00      60.00      0.960       0.00    0 Faixas n„o disponÌveis
-  61    2   1    6    90.00     211.00     164.00      0.960       0.00    0 Faixas n„o disponÌveis
-            1    2    89.30     213.00     164.00      0.960       0.00    0 Faixas n„o disponÌveis
-  62    4   1    2    41.80     109.00      38.00      0.960       0.00    0 Faixas n„o disponÌveis
-            1    2    43.90     123.00      45.00      0.960       0.00    0 Faixas n„o disponÌveis
-            1    4    43.20     142.00      51.00      0.960       0.00    0 Faixas n„o disponÌveis
-            1    2    43.80     148.00      54.00      0.960       0.00    0 Faixas n„o disponÌveis
-  63    1   1    6    61.70     338.00     184.00      0.960       0.00    0 Faixas n„o disponÌveis
-  64    1   1    4    44.10     269.00     106.00      0.960       0.00    0 Faixas n„o disponÌveis
-  65    1   2    5    15.70     296.00      42.00      0.960      15.00    0 Faixas n„o disponÌveis
-  66    1   2    4    26.60     396.00      95.00      0.960       0.00    0 Faixas n„o disponÌveis
-  67    1   2    4    18.90     497.00      82.00      0.960      30.00    0 Faixas n„o disponÌveis
-  68    2   1    1   101.00      47.00      41.20      0.960       0.00    0 Faixas n„o disponÌveis
-            1    1   101.00      47.00      39.20      0.960       0.00    0 Faixas n„o disponÌveis
-  69    1   1    4    88.00      37.00      27.20      0.960       7.00    0 Faixas n„o disponÌveis
-  70    1   2    2    21.70      89.00      16.00      0.960       0.00    0 Faixas n„o disponÌveis
-  71    1   1    8    59.20     368.00     186.00      0.960       0.00    0 Faixas n„o disponÌveis
-  72    1   1    6    53.50     493.00     232.70      0.960      55.00    0 Faixas n„o disponÌveis
+  39    1   1    2    37.60     160.00      49.95      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  40    1   1    2    73.66     162.00     106.30      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  41    1   1    4   130.30     262.00     298.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  42    1   1    3    96.00     199.00     170.00      0.960      61.00    0 Faixas n√£o dispon√≠veis
+  43    1   1    3    66.40     225.00     136.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  44    1   1    3    55.00     165.00      80.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  45    1   1    3    44.40     180.00      70.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  46    1   1    2    66.76     104.00      63.50      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  47    1   1    2    38.20     135.00      47.76      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  48    1   1    3    73.50     190.00     125.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  49    1   1    6    80.20     537.00     380.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  50    4   2    2    30.00      67.00      17.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+            2    3    30.00     213.00      54.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+            2    3    30.00     331.00      84.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+            2    2    30.00     402.00     105.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  51    1   1    6    70.90     445.00     285.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  52    1   2    2    25.80     140.00      32.50      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  53    1   2    2    34.78     143.00      45.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  54    1   2    2    25.48     149.00      34.20      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  55    1   1    2    45.50     141.00      58.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  56    1   1    2    40.50     127.00      46.50      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  57    1   2    3    50.70      24.00      10.67      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  58    1   2    2    24.60     110.00      23.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  59    3   2    2    25.00      57.00      12.50      0.960       0.00    0 Faixas n√£o dispon√≠veis
+            2    1    25.00      63.00      14.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+            2    1    25.00      59.00      13.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  60    1   2    3    34.90     195.00      60.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  61    2   1    6    90.00     211.00     164.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+            1    2    89.30     213.00     164.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  62    4   1    2    41.80     109.00      38.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+            1    2    43.90     123.00      45.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+            1    4    43.20     142.00      51.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+            1    2    43.80     148.00      54.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  63    1   1    6    61.70     338.00     184.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  64    1   1    4    44.10     269.00     106.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  65    1   2    5    15.70     296.00      42.00      0.960      15.00    0 Faixas n√£o dispon√≠veis
+  66    1   2    4    26.60     396.00      95.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  67    1   2    4    18.90     497.00      82.00      0.960      30.00    0 Faixas n√£o dispon√≠veis
+  68    2   1    1   101.00      47.00      41.20      0.960       0.00    0 Faixas n√£o dispon√≠veis
+            1    1   101.00      47.00      39.20      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  69    1   1    4    88.00      37.00      27.20      0.960       7.00    0 Faixas n√£o dispon√≠veis
+  70    1   2    2    21.70      89.00      16.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  71    1   1    8    59.20     368.00     186.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  72    1   1    6    53.50     493.00     232.70      0.960      55.00    0 Faixas n√£o dispon√≠veis
   73    0
   74    0
-  75    1   2    4    21.40     189.00      35.00      0.960       0.00    0 Faixas n„o disponÌveis
-  76    1   2    3    22.10     257.00      48.00      0.960      10.00    0 Faixas n„o disponÌveis
-  77    1   2    3    21.20     235.00      43.80      0.960       5.00    0 Faixas n„o disponÌveis
-  78    1   2    3    23.10     431.00      88.00      0.960      20.00    0 Faixas n„o disponÌveis
-  79    1   2    3    27.50     477.00     115.80      0.960      25.00    0 Faixas n„o disponÌveis
-  80    4   1    4    41.50     480.00     176.00      0.960      50.00    0 Faixas n„o disponÌveis
-            1   11    41.50     464.00     170.00      0.960      50.00    0 Faixas n„o disponÌveis
-            1    5    41.50     475.00     174.00      0.960      50.00    0 Faixas n„o disponÌveis
-            1    5    41.50     441.00     161.50      0.960      50.00    0 Faixas n„o disponÌveis
+  75    1   2    4    21.40     189.00      35.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  76    1   2    3    22.10     257.00      48.00      0.960      10.00    0 Faixas n√£o dispon√≠veis
+  77    1   2    3    21.20     235.00      43.80      0.960       5.00    0 Faixas n√£o dispon√≠veis
+  78    1   2    3    23.10     431.00      88.00      0.960      20.00    0 Faixas n√£o dispon√≠veis
+  79    1   2    3    27.50     477.00     115.80      0.960      25.00    0 Faixas n√£o dispon√≠veis
+  80    4   1    4    41.50     480.00     176.00      0.960      50.00    0 Faixas n√£o dispon√≠veis
+            1   11    41.50     464.00     170.00      0.960      50.00    0 Faixas n√£o dispon√≠veis
+            1    5    41.50     475.00     174.00      0.960      50.00    0 Faixas n√£o dispon√≠veis
+            1    5    41.50     441.00     161.50      0.960      50.00    0 Faixas n√£o dispon√≠veis
   81    1   2   14    21.30     596.00     110.80      0.960      25.00    1 63007080.lop
   82    1   2   14    18.95     636.00     110.00      0.960      30.00    1 63995080.lop
-  83    1   2    2    30.90     178.00      48.88      0.950       0.00    0 Faixas n„o disponÌveis
-  84    1   2    2    25.00     181.00      40.00      0.960       0.00    0 Faixas n„o disponÌveis
-  85    1   1    4    73.60     162.00     103.50      0.950       0.00    0 Faixas n„o disponÌveis
-  86    1   2    3    10.40     162.00      14.70      0.980       0.00    0 Faixas n„o disponÌveis
-  87    1   2    4    15.30     141.00      18.44      0.950       0.00    0 Faixas n„o disponÌveis
-  88    1   2    3    14.50     182.00      24.00      0.970       0.00    0 Faixas n„o disponÌveis
-  89    1   2    3    16.30     189.00      27.50      0.970       0.00    0 Faixas n„o disponÌveis
-  90    1   1    4    44.00     436.00     160.00      0.950       0.00    0 Faixas n„o disponÌveis
-  91    1   2    5    21.90     574.00     110.80      0.962       0.00    0 Faixas n„o disponÌveis
-  92    1   2    4    14.90     707.00      93.00      0.960       0.00    0 Faixas n„o disponÌveis
-  93    2   1   10   117.00     663.00     700.00      0.960     170.00    0 Faixas n„o disponÌveis
-            1   10   117.00     663.00     700.00      0.960     170.00    0 Faixas n„o disponÌveis
-  94    1   1    4   135.00     344.00     419.00      0.960       0.00    0 Faixas n„o disponÌveis
-  95    1   1    4   110.00     317.00     315.00      0.960       0.00    0 Faixas n„o disponÌveis
-  96    1   1    2    84.35      78.00      60.00      0.960       0.00    0 Faixas n„o disponÌveis
-  97    1   1    2    89.45      74.00      60.00      0.960       0.00    0 Faixas n„o disponÌveis
+  83    1   2    2    30.90     178.00      48.88      0.950       0.00    0 Faixas n√£o dispon√≠veis
+  84    1   2    2    25.00     181.00      40.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  85    1   1    4    73.60     162.00     103.50      0.950       0.00    0 Faixas n√£o dispon√≠veis
+  86    1   2    3    10.40     162.00      14.70      0.980       0.00    0 Faixas n√£o dispon√≠veis
+  87    1   2    4    15.30     141.00      18.44      0.950       0.00    0 Faixas n√£o dispon√≠veis
+  88    1   2    3    14.50     182.00      24.00      0.970       0.00    0 Faixas n√£o dispon√≠veis
+  89    1   2    3    16.30     189.00      27.50      0.970       0.00    0 Faixas n√£o dispon√≠veis
+  90    1   1    4    44.00     436.00     160.00      0.950       0.00    0 Faixas n√£o dispon√≠veis
+  91    1   2    5    21.90     574.00     110.80      0.962       0.00    0 Faixas n√£o dispon√≠veis
+  92    1   2    4    14.90     707.00      93.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  93    2   1   10   117.00     663.00     700.00      0.960     170.00    0 Faixas n√£o dispon√≠veis
+            1   10   117.00     663.00     700.00      0.960     170.00    0 Faixas n√£o dispon√≠veis
+  94    1   1    4   135.00     344.00     419.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  95    1   1    4   110.00     317.00     315.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  96    1   1    2    84.35      78.00      60.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+  97    1   1    2    89.45      74.00      60.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
   98    0
-  99    1   1    4   102.00     394.00     355.00      0.960       0.00    0 Faixas n„o disponÌveis
- 100    2   1    4    68.40     301.00     182.00      0.960       0.00    0 Faixas n„o disponÌveis
-            1    2    68.40     290.00     175.00      0.960       0.00    0 Faixas n„o disponÌveis
- 101    1   1    4    65.40     525.00     310.00      0.960       0.00    0 Faixas n„o disponÌveis
- 102    2   1    2   102.86      42.00      39.30      0.960       0.00    0 Faixas n„o disponÌveis
-            1    1   102.86      43.00      39.40      0.960       0.00    0 Faixas n„o disponÌveis
- 103    1   1    2    86.10      40.00      30.40      0.960       0.00    0 Faixas n„o disponÌveis
- 104    1   1    2   129.36      41.00      47.60      0.960       0.00    0 Faixas n„o disponÌveis
- 105    1   1    3   243.45      27.00      58.70      0.960       0.00    0 Faixas n„o disponÌveis
- 106    1   1    4    59.40     100.00      52.50      0.960       0.00    0 Faixas n„o disponÌveis
- 107    1   1    3   148.37     172.00     232.75      0.960       0.00    0 Faixas n„o disponÌveis
- 108    1   1    3   177.00     186.00     293.33      0.960       0.00    0 Faixas n„o disponÌveis
- 109    1   1    3    97.30     437.00     380.00      0.960       0.00    0 Faixas n„o disponÌveis
- 110    1   1    5   102.00     318.00     290.00      0.983       0.00    0 Faixas n„o disponÌveis
- 111    1   1    2   247.00      52.00     113.00      0.975       0.00    0 Faixas n„o disponÌveis
- 112    1   1    2    61.00      67.00      37.00      0.960       0.00    0 Faixas n„o disponÌveis
- 113    1   1    3   117.70      38.00      40.00      0.960       0.00    0 Faixas n„o disponÌveis
- 114    1   1    4    50.40     465.00     213.80      0.960       0.00    0 Faixas n„o disponÌveis
- 115    1   2    2    20.26     144.00      25.50      0.960       0.00    0 Faixas n„o disponÌveis
- 116    5   3    1   711.50       7.00      40.00      0.960       0.00    0 Faixas n„o disponÌveis
-            3    1   711.50       6.00      35.00      0.960       0.00    0 Faixas n„o disponÌveis
-            3    5   711.50      11.00      65.00      0.960       0.00    0 Faixas n„o disponÌveis
-            3    1   711.50      11.00      68.00      0.960       0.00    0 Faixas n„o disponÌveis
-            3    6   711.50      12.00      70.00      0.960       0.00    0 Faixas n„o disponÌveis
- 117    1   3    4   714.30      10.00      65.00      0.960       0.00    0 Faixas n„o disponÌveis
- 118    1   1    2   194.00      52.00      91.17      0.960       0.00    0 Faixas n„o disponÌveis
+  99    1   1    4   102.00     394.00     355.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+ 100    2   1    4    68.40     301.00     182.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+            1    2    68.40     290.00     175.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+ 101    1   1    4    65.40     525.00     310.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+ 102    2   1    2   102.86      42.00      39.30      0.960       0.00    0 Faixas n√£o dispon√≠veis
+            1    1   102.86      43.00      39.40      0.960       0.00    0 Faixas n√£o dispon√≠veis
+ 103    1   1    2    86.10      40.00      30.40      0.960       0.00    0 Faixas n√£o dispon√≠veis
+ 104    1   1    2   129.36      41.00      47.60      0.960       0.00    0 Faixas n√£o dispon√≠veis
+ 105    1   1    3   243.45      27.00      58.70      0.960       0.00    0 Faixas n√£o dispon√≠veis
+ 106    1   1    4    59.40     100.00      52.50      0.960       0.00    0 Faixas n√£o dispon√≠veis
+ 107    1   1    3   148.37     172.00     232.75      0.960       0.00    0 Faixas n√£o dispon√≠veis
+ 108    1   1    3   177.00     186.00     293.33      0.960       0.00    0 Faixas n√£o dispon√≠veis
+ 109    1   1    3    97.30     437.00     380.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+ 110    1   1    5   102.00     318.00     290.00      0.983       0.00    0 Faixas n√£o dispon√≠veis
+ 111    1   1    2   247.00      52.00     113.00      0.975       0.00    0 Faixas n√£o dispon√≠veis
+ 112    1   1    2    61.00      67.00      37.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+ 113    1   1    3   117.70      38.00      40.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+ 114    1   1    4    50.40     465.00     213.80      0.960       0.00    0 Faixas n√£o dispon√≠veis
+ 115    1   2    2    20.26     144.00      25.50      0.960       0.00    0 Faixas n√£o dispon√≠veis
+ 116    5   3    1   711.50       7.00      40.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+            3    1   711.50       6.00      35.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+            3    5   711.50      11.00      65.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+            3    1   711.50      11.00      68.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+            3    6   711.50      12.00      70.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+ 117    1   3    4   714.30      10.00      65.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+ 118    1   1    2   194.00      52.00      91.17      0.960       0.00    0 Faixas n√£o dispon√≠veis
  119    0
- 120    2   2    1    36.80     242.00      82.00      0.960       0.00    0 Faixas n„o disponÌveis
-            2    1    36.80     224.00      76.00      0.960       0.00    0 Faixas n„o disponÌveis
- 121    1   1    6    89.00      39.00      30.00      0.965      10.00    0 Faixas n„o disponÌveis
- 122    1   1    4    87.50     155.00     125.00      0.960       0.00    0 Faixas n„o disponÌveis
- 123    1   1    2    38.50     188.00      62.50      0.960       0.00    0 Faixas n„o disponÌveis
- 124    1   2    3    91.00      53.00      43.30      0.960       0.00    0 Faixas n„o disponÌveis
- 125    1   2    2    38.80     186.00      65.00      0.960       0.00    0 Faixas n„o disponÌveis
- 126    1   2    2    32.40     170.00      50.00      0.960       0.00    0 Faixas n„o disponÌveis
+ 120    2   2    1    36.80     242.00      82.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+            2    1    36.80     224.00      76.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+ 121    1   1    6    89.00      39.00      30.00      0.965      10.00    0 Faixas n√£o dispon√≠veis
+ 122    1   1    4    87.50     155.00     125.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+ 123    1   1    2    38.50     188.00      62.50      0.960       0.00    0 Faixas n√£o dispon√≠veis
+ 124    1   2    3    91.00      53.00      43.30      0.960       0.00    0 Faixas n√£o dispon√≠veis
+ 125    1   2    2    38.80     186.00      65.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
+ 126    1   2    2    32.40     170.00      50.00      0.960       0.00    0 Faixas n√£o dispon√≠veis
 
-// Dados sobre os limites de operaÁ„o das m·quinas.
-// Id, polinÙmios que representam a relaÁ„o entre Engolimento m·ximo e queda.
-// N˙mero de conjuntos, Tipo de altura de queda: (1)Bruta, (2)LÌquida.
-// Primeiro polinÙmio limitaÁ„o turbina, segundo polinÙmio limitaÁ„o gerador.
+// Dados sobre os limites de opera√ß√£o das m√°quinas.
+// Id, polin√¥mios que representam a rela√ß√£o entre Engolimento m√°ximo e queda.
+// N√∫mero de conjuntos, Tipo de altura de queda: (1)Bruta, (2)L√≠quida.
+// Primeiro polin√¥mio limita√ß√£o turbina, segundo polin√¥mio limita√ß√£o gerador.
 [MLIM]
    0    1   0   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00  
                 0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00  
@@ -1279,68 +1279,68 @@
                 0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00  
 
 
-// Dados sobre o rendimento das turbinas (Curva Colina de cada m·quina).
-// Id, flag que indica se o uso das curvas colina est· (0)inativo ou (1)ativo.
-// DiretÛrio e nome do arquivo que contÈm os dados de rendimento.
+// Dados sobre o rendimento das turbinas (Curva Colina de cada m√°quina).
+// Id, flag que indica se o uso das curvas colina est√° (0)inativo ou (1)ativo.
+// Diret√≥rio e nome do arquivo que cont√©m os dados de rendimento.
 [RENT]
-   0   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
+   0   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
    1   0 15459080.col
-   2   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
+   2   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
    3   0 20920080.col
    4   0 21050080.col
-   5   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
-   6   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
+   5   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
+   6   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
    7   0 22490070.col
    8   0 29680080.col
    9   0 34450000.col
-  10   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
+  10   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
   11   0 40990080.col
   12   0 42459080.col
   13   0 47750080.col
   14   0 49042580.col
-  15   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
+  15   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
   16   0 49340080.col
   17   0 51490080.col
-  18   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
-  19   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
+  18   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
+  19   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
   20   0 55530000.col
   21   0 56338075.col
   22   0 56675085.col
   23   0 56688085.col
   24   0 56819085.col
   25   0 56820075.col
-  26   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
+  26   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
   27   0 56990777.col
-  28   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
+  28   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
   29   0 57760080.col
   30   0 58087780.col
   31   0 58093080.col
   32   0 58128180.col
   33   0 58240080.col
-  34   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
+  34   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
   35   0 58521080.col
-  36   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
+  36   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
   37   0 59307080.col
-  38   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
+  38   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
   39   0 59309080.col
-  40   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
+  40   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
   41   0 60160080.col
   42   0 60330080.col
   43   0 60351080.col
-  44   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
-  45   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
-  46   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
-  47   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
+  44   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
+  45   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
+  46   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
+  47   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
   48   0 60460000.col
   49   0 60610080.col
   50   0 60625080.col
   51   0 60877080.col
-  52   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
-  53   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
-  54   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
-  55   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
-  56   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
-  57   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
+  52   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
+  53   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
+  54   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
+  55   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
+  56   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
+  57   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
   58   0 61061080.col
   59   0 61065080.col
   60   0 61146080.col
@@ -1356,14 +1356,14 @@
   70   0 61819080.col
   71   0 61941080.col
   72   0 61998080.col
-  73   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
-  74   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
+  73   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
+  74   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
   75   0 62729080.col
   76   0 62744080.col
   77   0 62790080.col
   78   0 62820080.col
   79   0 62829580.col
-  80   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
+  80   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
   81   0 63007080.col
   82   0 63995080.col
   83   0 64215080.col
@@ -1380,8 +1380,8 @@
   94   0 65774403.col
   95   0 65805010.col
   96   0 65824950.col
-  97   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
-  98   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
+  97   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
+  98   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
   99   0 65883051.col
  100   0 65894991.col
  101   0 65973500.col
@@ -1390,36 +1390,36 @@
  104   0 66099001.col
  105   0 66114500.col
  106   0 66240080.col
- 107   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
+ 107   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
  108   0 71960080.col
  109   0 72690081.col
  110   0 73200080.col
  111   0 73420080.col
- 112   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
+ 112   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
  113   0 73600580.col
- 114   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
- 115   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
+ 114   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
+ 115   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
  116   0 80310080.col
  117   0 81301990.col
- 118   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
- 119   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
+ 118   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
+ 119   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
  120   0 85260001.col
  121   0 85300000.col
  122   0 85365000.col
  123   0 85398000.col
- 124   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
+ 124   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
  125   0 86440000.col
- 126   0 Dados n„o disponÌveis em F:\HydroLab-Sinopt\Database\CurvaCol\
+ 126   0 Dados n√£o dispon√≠veis em F:\HydroLab-Sinopt\Database\CurvaCol\
 
-// Dados dos Ûrg„os de descarga (vertedouros de cada usina).
-// Id do aproveitamento. DescriÁ„o de cada vertedouro: n˙mero de vertedouros,
-// tipo do vertedouro: (1)SuperfÌcie, (2)Fundo,
-// n˙mero, largura [m] e altura [m] das comportas,
+// Dados dos √≥rg√£os de descarga (vertedouros de cada usina).
+// Id do aproveitamento. Descri√ß√£o de cada vertedouro: n√∫mero de vertedouros,
+// tipo do vertedouro: (1)Superf√≠cie, (2)Fundo,
+// n√∫mero, largura [m] e altura [m] das comportas,
 // cota da soleira [m] cota de coroamento [m] e
-// vaz„o m·xima vertida para a cota de coroamento [m≥/s].
-// FunÁıes de vaz„o vertida m·xima funÁ„o da cota de montante.
-// N˙mero de funÁıes, cotas mÌnima e m·xima de validade da funÁ„o,
-// coeficientes a e b da equaÁ„o Qmax = a * hp^b.
+// vaz√£o m√°xima vertida para a cota de coroamento [m¬≥/s].
+// Fun√ß√µes de vaz√£o vertida m√°xima fun√ß√£o da cota de montante.
+// N√∫mero de fun√ß√µes, cotas m√≠nima e m√°xima de validade da fun√ß√£o,
+// coeficientes a e b da equa√ß√£o Qmax = a * hp^b.
 [VERT]
    0    1    0    0       0.00       0.00       0.00       0.00  1.000000E+20
         0
@@ -1690,8 +1690,8 @@
  126    1    0    0       0.00       0.00       0.00       0.00  1.000000E+20
         0
 
-// Õndice de disponibilidade.
-// Id e Ìndice de disponibilidade das m·quinas de cada usina hidrelÈtrica.
+// √çndice de disponibilidade.
+// Id e √≠ndice de disponibilidade das m√°quinas de cada usina hidrel√©trica.
 [TXID]
    0   0.9314
    1   0.9335
@@ -1821,8 +1821,8 @@
  125   0.9266
  126   0.9292
 
-// Volumes mÌnimo, m·ximo e maximorum [hm≥], defluÍncias mÌnima e m·xima [m≥/s] e
-// indicaÁ„o energÈtica de reservatÛrio (0)acumulaÁ„o ou (1)fio d'·gua
+// Volumes m√≠nimo, m√°ximo e maximorum [hm¬≥], deflu√™ncias m√≠nima e m√°xima [m¬≥/s] e
+// indica√ß√£o energ√©tica de reservat√≥rio (0)acumula√ß√£o ou (1)fio d'√°gua
 // no banco de dados e neste arquivo.
 [VMDM]
    0      21.00      21.00      21.00      19.00  1.000E+20    1    1
@@ -1953,7 +1953,7 @@
  125      11.28      11.28      11.28       8.00  1.000E+20    1    1
  126      55.00      55.00      55.00       8.00  1.000E+20    1    1
 
-// PolinÙmios cota NA [m] x volume [hm≥] (de cada usina).
+// Polin√¥mios cota NA [m] x volume [hm¬≥] (de cada usina).
 // Coeficientes 0..GRAU=4.
 [POCV]
    0   4.792000E+02   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
@@ -2084,7 +2084,7 @@
  125   1.357746E+02   1.499699E+00  -4.863175E-02   1.086762E-03  -1.037533E-05
  126   7.966700E+01   9.847667E-01  -1.495106E-02   1.189643E-04  -3.549706E-07
 
-// PolinÙmios ·rea [km≤] x cota NA [m] (de cada usina).
+// Polin√¥mios √°rea [km¬≤] x cota NA [m] (de cada usina).
 // Coeficientes 0..GRAU=4.
 [POAC]
    0   4.099999E+00   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
@@ -2215,9 +2215,9 @@
  125  -7.277609E+03   1.934048E+02  -1.923850E+00   8.486667E-03  -1.400000E-05
  126  -1.347126E+03   5.614984E+01  -8.735205E-01   6.000571E-03  -1.529524E-05
 
-// PolinÙmios cota canal de fuga [m] x defluÍncia [m≥/s] (de cada usina).
-// N˙mero de polinÙmios, Coeficientes 0..GRAU=4, cota de referÍncia [m] e Limite [m].
-// Os polinÙmios devem ser ordenados em ordem crescente (cota de referÍcia).
+// Polin√¥mios cota canal de fuga [m] x deflu√™ncia [m¬≥/s] (de cada usina).
+// N√∫mero de polin√¥mios, Coeficientes 0..GRAU=4, cota de refer√™ncia [m] e Limite [m].
+// Os polin√¥mios devem ser ordenados em ordem crescente (cota de refer√™cia).
 [POCF]
    0    1   3.021528E+02   7.490116E-02  -4.657609E-04   1.477600E-06  -1.757860E-09
                     0.00                     0.00
@@ -2486,16 +2486,16 @@
  126    1   6.744150E+01   5.020536E-03  -1.124509E-06   1.439860E-10  -6.933198E-15
                     0.00                     0.00
 // Dados de usinas especiais com desvio/bombeamento.
-// IndicaÁ„o de presenÁa ou ausÍncia de desvio/bombeamento (0-ausÍncia;1-presenÁa).
+// Indica√ß√£o de presen√ßa ou aus√™ncia de desvio/bombeamento (0-aus√™ncia;1-presen√ßa).
 // Codigo da usina de origem e destino do desvio,
-// Defluendia minima e m·xima [m≥/s] e Consumo especÌfico [MW/m≥/s].
+// Defluendia minima e m√°xima [m¬≥/s] e Consumo espec√≠fico [MW/m¬≥/s].
 [DESV]
  59308200 593081812       0.00    9999.00   0.000000
  62285000  80310080       0.00     100.00   0.000000
  65826600  65805010       0.00     173.50   0.000000
 0
-// OpÁıes gerais para UHEs. 1: considerar; 0: Ignorar.
-// Varios polinÙmios de canal ed fuga, InformaÁ„o detalhada para vertedouros,
-// Bacias Especiais(UHEs com Desvios), UHEs fictÌcias(localizan-se em um subsistema mas geram energia para outro).
+// Op√ß√µes gerais para UHEs. 1: considerar; 0: Ignorar.
+// Varios polin√¥mios de canal ed fuga, Informa√ß√£o detalhada para vertedouros,
+// Bacias Especiais(UHEs com Desvios), UHEs fict√≠cias(localizan-se em um subsistema mas geram energia para outro).
 [GOPT]
    1   1   1   1
