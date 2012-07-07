@@ -30,7 +30,7 @@
 // Valor Médio de Mercado considerado para cada subsistema.
 // Sudeste/Centro-Oeste, Sul, Nordeste, Norte.
 [MMSS]
-35741.25	9777.91	8132.77	3823.02	0.00	0.00	0.00	
+35741.25	9777.91	8132.77	3823.02	0.00	0.00	0.00	0.00
 
 // Curvas de Aversão ao Risco por subsistema (% EAR).
 // Sudeste/Centro-Oeste, Sul, Nordeste, Norte
