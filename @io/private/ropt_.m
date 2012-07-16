@@ -79,7 +79,7 @@ function ropt_(obj)
   % [VERS]
   % file version
   fprintf(fid,'\n[VERS]\n');
-  fprintf(fid,' 2.1\n');
+  fprintf(fid,' 2.2\n');
   % [STAT]
   % status
   fprintf(fid,'\n[STAT]\n');
