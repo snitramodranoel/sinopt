@@ -76,8 +76,13 @@ function rs= ipo(obj)
       rs= set(rs,'status',0);
       rs= set(rs,'message','Optimal solution found');
     otherwise
-      rs= set(rs,'status',1);
-      rs= set(rs,'message','Infeasible problem detected');
+      if (norm(calcular_Ax(obj,x),Inf) < 1)
+        rs= set(rs,'status',2);
+        rs= set(rs,'message','Problem is hydro feasible');
+      else
+        rs= set(rs,'status',3);
+        rs= set(rs,'message','Problem is infeasible');
+      end
   end
   %
   % subfunctions
