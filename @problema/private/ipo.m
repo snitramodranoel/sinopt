@@ -25,6 +25,8 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function rs= ipo(obj)
+  % system dimensions
+  nr= get(obj.si,'nr');
   % memory allocation for object @resultado
   rs= resultado();
   % set up callbacks
@@ -76,7 +78,8 @@ function rs= ipo(obj)
       rs= set(rs,'status',0);
       rs= set(rs,'message','Optimal solution found');
     otherwise
-      if (norm(calcular_Ax(obj,x)-obj.b,Inf) < 1)
+      Axb= calcular_Ax(obj,x) - obj.b;
+      if (norm(Axb(1:nr),Inf) < 1)
         rs= set(rs,'status',2);
         rs= set(rs,'message','Problem is hydro feasible');
       else
