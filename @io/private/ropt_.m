@@ -39,7 +39,7 @@ function ropt_(obj)
   ns= get(obj.si,'ns');
   nt= get(obj.si,'nt');
   nu= get(obj.si,'nu');
-  % problem data
+  % system data
   af= get(obj.si,'af'); % incremental inflows
   ai= get(obj.si,'ai'); % start year
   di= get(obj.si,'di'); % start day
@@ -49,6 +49,8 @@ function ropt_(obj)
   tp= get(obj.si,'tp'); % duration of load levels
   vi= get(obj.si,'vi'); % initial reservoir storage states
   vf= get(obj.si,'vf'); % final reservoir storage requirements
+  % problem data
+  lz= get(obj.pb,'lz'); % minimum thermal generation
   % optimal solution
   s= get(obj.rs,'s');   % reservoir storage
   q= get(obj.rs,'q');   % water discharge
@@ -355,6 +357,27 @@ function ropt_(obj)
       end
       for t= 1:nt
         fprintf(fid,'\t%8.2f ', z{l}(t,j));
+      end
+      fprintf(fid,'\n');
+    end
+  end
+  % clear temporary buffers
+  clear j;
+  clear l;
+  clear t;
+  % [GDET]
+  % net power generation at thermal plants
+  fprintf(fid,'\n[GDET]\n');
+  for j= 1:ni
+    fprintf(fid,'  %s ',data{j+1});
+    for l= 1:np
+      if l > 1
+        fprintf(fid,'            \t%2d ',l);
+      else
+        fprintf(fid,'\t%2d ',l);
+      end
+      for t= 1:nt
+        fprintf(fid,'\t%8.2f ', z{l}(t,j) - lz{l}(t,j));
       end
       fprintf(fid,'\n');
     end
