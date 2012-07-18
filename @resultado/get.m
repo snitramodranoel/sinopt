@@ -44,6 +44,8 @@ function valor = get(obj, propriedade)
       valor= obj.P;
     case 'Q'
       valor= obj.Q;
+    case 'lQ'
+      valor= obj.lQ;
     case 'la'
       valor= obj.la;
     case 'lb'

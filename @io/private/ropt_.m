@@ -59,6 +59,7 @@ function ropt_(obj)
   z= get(obj.rs,'z');   % power generation at thermal plants
   P= get(obj.rs,'P');   % total hydro power generation
   Q= get(obj.rs,'Q');   % total thermal power generation
+  lQ= get(obj.rs,'lQ'); % total minimum thermal power generation
   la= get(obj.rs,'la'); % water value
   lb= get(obj.rs,'lb'); % marginal costs
   uq= get(obj.rs,'uq'); % maximum water discharge
@@ -420,6 +421,27 @@ function ropt_(obj)
       end
       for k= 1:ns
         fprintf(fid,'\t%8.2f ',Q{l}(k,j));
+      end
+      fprintf(fid,'\n');
+    end
+  end
+  % clear temporary buffers
+  clear j;
+  clear l;
+  clear k;
+  % [DETS]
+  % total net thermal power generation grouped by bus
+  fprintf(fid,'\n[DETS]\n');
+  for j= 1:ni
+    fprintf(fid,'  %s ',data{j+1});
+    for l= 1:np
+      if l > 1
+        fprintf(fid,'            \t%2d ',l);
+      else
+        fprintf(fid,'\t%2d ',l);
+      end
+      for k= 1:ns
+        fprintf(fid, '\t%8.2f ', Q{l}(k,j) - lQ{l}(k,j));
       end
       fprintf(fid,'\n');
     end

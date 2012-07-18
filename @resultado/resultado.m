@@ -29,16 +29,17 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function obj = resultado(varargin)
-  obj.s = []; % water storage                      [hm^3]
-  obj.q = {}; % water discharge                    [m^3/s]
-  obj.v = []; % water spill                        [m^3/s]
-  obj.y = {}; % power transmission                 [MW]
-  obj.z = {}; % power generation at thermal plants [MW]
-  obj.P = {}; % total hydro power generation       [MW]
-  obj.Q = {}; % total thermal power generation     [MW]
-  obj.la= []; % water value                        [R$/m^3/s]
-  obj.lb= {}; % marginal operation cost            [R$/MWh]
-  obj.uq= {}; % maximum water discharge            [m^3/s]
+  obj.s = []; % water storage                          [hm^3]
+  obj.q = {}; % water discharge                        [m^3/s]
+  obj.v = []; % water spill                            [m^3/s]
+  obj.y = {}; % power transmission                     [MW]
+  obj.z = {}; % power generation at thermal plants     [MW]
+  obj.P = {}; % total hydro power generation           [MW]
+  obj.Q = {}; % total thermal power generation         [MW]
+  obj.lQ= {}; % total minimum thermal power generation [MW]
+  obj.la= []; % water value                            [R$/m^3/s]
+  obj.lb= {}; % marginal operation cost                [R$/MWh]
+  obj.uq= {}; % maximum water discharge                [m^3/s]
   % status identification
   obj.status= 0;
   obj.message= '';

@@ -50,6 +50,8 @@ function obj= set(obj, varargin)
         obj.P= valor;
       case 'Q'
         obj.Q= valor;
+      case 'lQ'
+        obj.lQ= valor;
       case 'la'
         obj.la= valor;
       case 'lb'

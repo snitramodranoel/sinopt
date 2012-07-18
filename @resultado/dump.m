@@ -36,6 +36,7 @@ function dump(obj)
   fprintf(1,'resultado.z:  %dx%d\n',size(obj.z,1),size(obj.z,2));
   fprintf(1,'resultado.P:  %dx%d\n',size(obj.P,1),size(obj.P,2));
   fprintf(1,'resultado.Q:  %dx%d\n',size(obj.Q,1),size(obj.Q,2));
+  fprintf(1,'resultado.lQ: %dx%d\n',size(obj.lQ,1),size(obj.lQ,2));
   fprintf(1,'resultado.la: %dx%d\n',size(obj.la,1),size(obj.la,2));
   fprintf(1,'resultado.lb: %dx%d\n',size(obj.lb,1),size(obj.lb,2));
   fprintf(1,'resultado.uq: %dx%d\n',size(obj.uq,1),size(obj.uq,2));
