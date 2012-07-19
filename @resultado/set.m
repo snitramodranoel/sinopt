@@ -46,6 +46,8 @@ function obj= set(obj, varargin)
         obj.y= valor;
       case 'z'
         obj.z= valor;
+      case 'lz'
+        obj.lz= valor;
       case 'P'
         obj.P= valor;
       case 'Q'

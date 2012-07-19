@@ -40,6 +40,8 @@ function valor = get(obj, propriedade)
       valor= obj.y;
     case 'z'
       valor= obj.z;
+    case 'lz'
+      valor= obj.lz;
     case 'P'
       valor= obj.P;
     case 'Q'

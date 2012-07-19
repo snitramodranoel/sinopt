@@ -68,6 +68,7 @@ function rs= ipo(obj)
   rs= set(rs,  'v', desempacotar_v(obj,extrair_v(obj,x)));
   rs= set(rs,  'y', desempacotar_y(obj,extrair_y(obj,x)));
   rs= set(rs,  'z', desempacotar_z(obj,extrair_z(obj,x)));
+  rs= set(rs, 'lz', desempacotar_z(obj,obj.lz));
   rs= set(rs,  'P', desempacotar_lambdab(obj,calcular_P(obj,x)));
   rs= set(rs,  'Q', desempacotar_lambdab(obj,calcular_Q(obj,x)));
   rs= set(rs, 'lQ', desempacotar_lambdab(obj,calcular_Q(obj,options.lb)));

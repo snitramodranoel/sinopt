@@ -49,14 +49,13 @@ function ropt_(obj)
   tp= get(obj.si,'tp'); % duration of load levels
   vi= get(obj.si,'vi'); % initial reservoir storage states
   vf= get(obj.si,'vf'); % final reservoir storage requirements
-  % problem data
-  lz= get(obj.pb,'lz'); % minimum thermal generation
   % optimal solution
   s= get(obj.rs,'s');   % reservoir storage
   q= get(obj.rs,'q');   % water discharge
   v= get(obj.rs,'v');   % water spill
   y= get(obj.rs,'y');   % power flow
   z= get(obj.rs,'z');   % power generation at thermal plants
+  lz= get(obj.rs,'lz'); % minimum power generation at thermal plants
   P= get(obj.rs,'P');   % total hydro power generation
   Q= get(obj.rs,'Q');   % total thermal power generation
   lQ= get(obj.rs,'lQ'); % total minimum thermal power generation
