@@ -46,16 +46,9 @@ function rs= ipo(obj)
   % set up initial primal solution
   x= mean([options.lb'; options.ub'])';
   % set up initial dual solution
-  ymax= 1e+5;
   options.zl= max(abs(x),10);
   options.zu= max(abs(x),10);
   options.lambda= ones(obj.m,1);
-  gf= calcular_df(obj,x);
-  Jg= calcular_J(obj,x);
-  options.lambda= (Jg*Jg')\(Jg*(-gf + options.zl - options.zu));
-  if (norm(options.lambda,inf) > ymax) % check for linear dependence
-    options.lambda= zeros(obj.m,1);
-  end
   % set up solver options
   options.ipopt.bound_relax_factor= 1e-06;
   options.ipopt.constr_viol_tol= 1e-02;
