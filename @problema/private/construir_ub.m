@@ -80,7 +80,7 @@ function obj = construir_ub(obj)
         uq{l}(i,j)= qm;
       end
       % compute maximum water spill
-      uv(i,j)= max([maf; b*qm]);
+      uv(i,j)= min(max([maf; b*qm]), dm-qm);
     end
   end
   % store data
