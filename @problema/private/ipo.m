@@ -51,9 +51,12 @@ function rs= ipo(obj)
   options.lambda= ones(obj.m,1);
   % set up solver options
   options.ipopt.bound_relax_factor= 1e-06;
-  options.ipopt.constr_viol_tol= 1e-02;
-  options.ipopt.expect_infeasible_problem= 'yes';
-  options.ipopt.linear_solver= 'ma57';
+  options.ipopt.constr_viol_tol= 1e-06;
+  if get(obj, 'n') > 2048
+    options.ipopt.linear_solver= 'mumps';
+  else
+    options.ipopt.linear_solver= 'ma57';
+  end
   options.ipopt.max_iter= obj.km;
   options.ipopt.mu_strategy= 'adaptive';
   options.ipopt.print_level= obj.dv;
