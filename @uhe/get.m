@@ -1,10 +1,6 @@
 % @uhe/get.m returns object property values.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -30,6 +26,8 @@
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function valor = get(obj, propriedade)
   switch propriedade
+    case 'bc'
+      valor= obj.bc;
     case 'cd'
       valor= obj.cd;
     case 'cf'
@@ -38,6 +36,8 @@ function valor = get(obj, propriedade)
       valor= obj.cg;
     case 'cj'
       valor= obj.cj;
+    case 'df'
+      valor= obj.df;
     case 'dm'
       valor= obj.dm;
     case 'dn'

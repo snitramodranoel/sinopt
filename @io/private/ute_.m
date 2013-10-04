@@ -1,6 +1,6 @@
 % @io/private/ute_.m reads UTE files.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -37,7 +37,7 @@ function obj= ute_(obj)
   % read data
   v= fscanf(fid,'%f',1);
   % check for file version
-  if v ~= 3.2
+  if v ~= 3.3
     fclose(fid);
     error('SINopt:io:fileNotSupported', ...
           'HydroLab UTE file version %1.1f is not supported', v);
@@ -109,9 +109,20 @@ function obj= ute_(obj)
   % read and store data
   for j= 1:nt
     fscanf(fid,'%d',1); % bogus
-    ut{j}= set(ut{j},'ss',fscanf(fid,'%d',1));
-    ut{j}= set(ut{j},'cd',fscanf(fid,'%d',1));
-    ut{j}= set(ut{j},'eo',fscanf(fid,'%d',1));
+    ut{j}= set(ut{j},'ss',fscanf(fid,'%d',1)); % area number
+    ut{j}= set(ut{j},'cd',fscanf(fid,'%d',1)); % Eletrobras code
+    ut{j}= set(ut{j},'eo',fscanf(fid,'%d',1)); % operation status
+    % number of connected buses
+    nb= fscanf(fid,'%i',1);
+    bc= zeros(nb,1);
+    df= zeros(nb,1);
+    for k= 1:nb
+      bc(k)= fscanf(fid,'%i',1); % bus number
+      df(k)= fscanf(fid,'%f',1); % distribution factor
+      fgetl(fid); % bogus
+    end
+    ut{j}= set(ut{j},'bc',bc);
+    ut{j}= set(ut{j},'df',df);
   end
   % [PUTE]
   %  installed capacity

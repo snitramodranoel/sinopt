@@ -1,3 +1,24 @@
+2013-10-04  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+    * @uhe/uhe.m:
+    (obj.bc): Adição da lista de barras conectadas ao gerador
+    (obj.df): Adição da lista de fatores de distribuição da geração por barra
+
+    * @ute/ute.m:
+    (obj.bc): Adição da lista de barras conectadas ao gerador
+    (obj.df): Adição da lista de fatores de distribuição da geração por barra
+
+    * @io/private/uhe_.m:
+    ([VERS]): Atualização da versão do arquivo de dados para 3.1
+    ([NUMS]): Removido
+    ([PRIM]): Adicionadas informações da seção [NUMS]
+              Adicionadas listas de barras conectadas e fatores de distribuição
+
+    * @io/private/ute_.m:
+    ([VERS]): Atualização da versão do arquivo de dados para 3.3
+    ([PRIM]): Adicionadas informações da seção [NUMS]
+              Adicionadas listas de barras conectadas e fatores de distribuição
+
 2011-05-06  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @uhe/uhe.m (obj.yf): Adição da dimensão referente ao ponto de inflexão.
@@ -12,7 +33,7 @@
 
 2011-04-20  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
-	* @problema/private/calcular_JP.m: 
+	* @problema/private/calcular_JP.m:
 	Eliminadas variáveis de volume de usinas fio-d'água.
 
 	* @problema/private/calcular_HP.m:
@@ -24,7 +45,7 @@
 
 2011-01-09  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
-	* @problema/private/calcular_P.m: 
+	* @problema/private/calcular_P.m:
 	Eliminadas variáveis de volume de usinas fio-d'água.
 
 2011-01-08  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
@@ -37,36 +58,36 @@
 
 2011-01-07  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
-	* @io/private/ropt_.m: 
+	* @io/private/ropt_.m:
 	([VOLA],[VOLU]) Considerada eliminação das variáveis de volume final.
 	([VOLU]) Corrigido cálculo do volume útil em usinas fio-d'água.
 
 	* @sistema/{sistema,get,set,dump}.m:
 	(obj.nf, obj.nr, obj.uf, obj.ur): Propriedades adicionadas.
-	
+
 	* @io/private/uhe_.m: Adicionado cálculo do número de usinas fio-d'água.
-	
+
 2011-01-06  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @problema/{problema,get,dump}.m:
 	(obj.na, obj.nq, obj.nv): Propriedades adicionadas.
 	(obj.Xj): Propriedade removida.
-	
+
 	* @problema/private/construir_bb.m: Volume final subtraído do vetor b.
-	
+
 	* @problema/private/construir_X.m: Eliminadas variáveis de volume final.
-	
-	* @problema/private/construir_{lb,ub}.m: 
+
+	* @problema/private/construir_{lb,ub}.m:
 	(obj.ls, obj.us) Eliminadas variáveis de volume final.
-	
+
 	* @problema/private/extrair_{s,q,v}.m: Eliminadas variáveis de volume final.
-	
+
 	* @problema/private/empacotar_s.m: Eliminadas variáveis de volume final.
-	
+
 	* @problema/private/desempacotar_s.m: Eliminadas variáveis de volume final.
-	
+
 	* @problema/verificar.m: Eliminada correção de volume mínimo igual a máximo.
-	
+
 	* @problema/private/calcular_{P,JP,HP}.m:
 	Considerada eliminação das variáveis de volume final.
 
@@ -75,18 +96,18 @@
 	* Versão 2.0-RELEASE anunciada.
 
 	* @io/private/hco_.m: Adicionados seções de estatísticas da otimização.
-	
+
 2011-01-04  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @despacho: Classe removida.
-	
+
 	* @resultado: Classe adicionada.
-	
+
 	* @ute/{ute,get,set,dump}.m (obj.cg): Propriedade renomeada para obj.co
-	
+
 	* @problema/{problema,get,set,dump} (obj.rs): Propriedade adicionada.
 	(obj.dp): Propriedade removida.
-	
+
 	* @problema/private/calcular_{f,df,Hf}.m:
 	Adicionado fator de ponderação por patamar ao cálculo dos custos.
 
@@ -94,11 +115,11 @@
 
 	* @io/private/hco_.m ([DPAT]): Alteração do formato dos dados.
 	(obj.tp): Alteração das dimensões.
-	
+
 	* @sistema/sistema.m (obj.tp): Alteração das dimensões.
 
 	* @problema/verificar.m: Adicionada verificação da duração dos patamares.
-	
+
 2010-12-29  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @problema/private/calcular_JP.m: Corrigido cálculo da Jacobiana.
@@ -109,19 +130,19 @@
 	da matriz Hessiana das restrições.
 
 	* @problema/private/extrair_Dx.m: Função adicionada.
-	
+
 	* @problema/private/extrair_Dy.m: Função adicionada.
-	
+
 	* @problema/private/extrair_Dz.m: Função adicionada.
-	
+
 	* @problema/private/obter_Dx.m: Função removida.
 
 	* @problema/private/obter_Dy.m: Função removida.
 
 	* @problema/private/obter_Dz.m: Função removida.
-	
+
 	* @problema/private/calcular_D.m: Construção da matriz otimizada.
-	
+
 	* @problema/private/calcular_Dy.m: Otimização da construção da matriz.
 
 2010-12-28  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
@@ -131,11 +152,11 @@
 	* @problema/private/desempacotar_lambdab.m: Função adicionada.
 
 	* @problema/private/desempacotar_lambdac.m: Função adicionada.
-	
+
 	* @problema/private/extrair_lambdaa.m: Função adicionada.
-	
+
 	* @problema/private/extrair_lambdab.m: Função adicionada.
-	
+
 	* @problema/private/extrair_lambdac.m: Função adicionada.
 
 	* @problema/private/obter_mlambda_a.m: Função removida.
@@ -143,29 +164,29 @@
 	* @problema/private/obter_mlambda_b.m: Função removida.
 
 	* @problema/private/obter_mlambda_c.m: Função removida.
-	
+
 	* @problema/private/obter_vlambda_a.m: Função removida.
-	
+
 	* @problema/private/obter_vlambda_b.m: Função removida.
-	
+
 	* @problema/private/obter_vlambda_c.m: Função removida.
-	
+
 	* @uhe/dpdv.m: Ordem dos argumentos de vazão alterada.
 
 2010-12-27  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @uhe/Hp.m: Função removida.
-	
+
 	* @uhe/dpdss.m: Função adicionada.
-	
+
 	* @uhe/dpdsq.m: Função adicionada.
-	
+
 	* @uhe/dpdqq.m: Função adicionada.
-	
+
 	* @uhe/dpdqv.m: Função adicionada.
-	
+
 	* @uhe/dpdvv.m: Função adicionada.
-	
+
 2010-12-22  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @problema/private/calcular_JPj.m: Função removida.
@@ -173,13 +194,13 @@
 	* @problema/private/calcular_JP.m: Modificação do algoritmo de construção
 	da matriz Jacobiana de P(.) com uso de vetores de índices de elementos
 	não-nulos.
-	
+
 	* @uhe/dpds.m: Função adicionada.
-	
+
 	* @uhe/dpdq.m: Função adicionada.
-	
+
 	* @uhe/dpdv.m: Função adicionada.
-	
+
 2010-12-21  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @problema/private/calcular_JQj.m: Função removida.
@@ -189,34 +210,34 @@
 	por ser constante, é calculado na uma única vez na função construir().
 	(w): Argumento para vetor de variáveis primais a ser passado à função
 	calcular_JP().
-	
+
 	* @problema/construir.m: Adicionada chamada à função calcular_JQ().
-	
+
 	* @problema/private/calcular_JQ.m: Modificação do algoritmo de construção
 	da matriz Jacobiana de Q(.) com uso de vetores de índices de elementos
 	não-nulos.
-	
+
 	* @io/private/ute_.m: Correção da leitura da tag [PRIM].
-	
+
 	* @io/private/{hco,mco,net,opt,uhe,ute,vaz}_.m: Modificação da leitura
 	de linhas descartáveis.
-	
+
 2010-12-20  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @problema/private/calcular_Ax.m: Adicionado suporte a patamares de carga.
-	
+
 	* @problema/private/calcular_By.m: Adicionado suporte a patamares de carga.
-	
+
 	* @problema/private/calcular_Cy.m: Adicionado suporte a patamares de carga.
-	
+
 	* @problema/private/calcular_P.m: Adicionado suporte a patamares de carga.
-	
+
 	* @problema/private/calcular_Q.m: Adicionado suporte a patamares de carga.
 
 	* @problema/private/calcular_Pj.m: Função removida.
-	
+
 	* @problema/private/calcular_Qj.m: Função removida.
-	
+
 	* @problema/private/calcular_f.m:
 	Adicionado suporte a patamares de carga e removido fator multiplicador.
 
@@ -225,57 +246,57 @@
 
 	* @problema/private/calcular_Hf.m:
 	Adicionado suporte a patamares de carga e removido fator multiplicador.
-	
+
 	* @problema/private/extrair_s.m: Função adicionada.
 
 	* @problema/private/extrair_q.m: Função adicionada.
-	
+
 	* @problema/private/extrair_v.m: Função adicionada.
-	
+
 	* @problema/private/extrair_y.m: Função adicionada.
-	
+
 	* @problema/private/extrair_z.m: Função adicionada.
-	
+
 	* @problema/private/empacotar_s.m: Função adicionada.
-	
+
 	* @problema/private/empacotar_q.m: Função adicionada.
-	
+
 	* @problema/private/empacotar_v.m: Função adicionada.
-	
+
 	* @problema/private/empacotar_y.m: Função adicionada.
-	
+
 	* @problema/private/empacotar_z.m: Função adicionada.
-	
+
 	* @problema/private/desempacotar_s.m: Função adicionada.
-	
+
 	* @problema/private/desempacotar_q.m: Função adicionada.
-	
+
 	* @problema/private/desempacotar_v.m: Função adicionada.
-	
+
 	* @problema/private/desempacotar_y.m: Função adicionada.
-	
+
 	* @problema/private/desempacotar_z.m: Função adicionada.
 
 2010-12-17  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @problema/verificar.m: Função adicionada para verificação de restrições.
-	
+
 	* @problema/private/construir_{lb,ub}.m: Verificações de limites removidas.
 
 2010-12-16  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @problema/private/construir_lb.m: Suporte a patamares de carga adicionado.
-	
+
 	* @problema/private/construir_ub.m: Suporte a patamares de carga adicionado.
-	
+
 2010-12-15  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
-	* @problema/private/construir_d.m: 
+	* @problema/private/construir_d.m:
 	Adaptação ao esquema de empacotamento [patamar[intervalos[subsistemas]]].
 
 	* @problema/private/construir_bb.m:
 	Função adicionada em substituição a construir_bring.
-	
+
 	* @io/private/mco_.m ([MSUB], [GPUH]):
 	Adaptação ao esquema de empacotamento [patamar[intervalos[subsistemas]]].
 
@@ -287,37 +308,37 @@
 	* @problema/{problema,set,get,dump}.m
 	(obj.R, obj.S, obj.sj): Propriedades removidas.
 	(obj.Q, obj.Ql, obj.V, obj.X, obj.Xj): Propriedades adicionadas.
-	
+
 	* @problema/private/construir_R.m: Função removida.
-	
+
 	* @problema/private/construir_X.m:
 	Função adicionada em substituição a construir_S.
-	
+
 	* @problema/private/construir_Q.m:
 	Função adicionada para suporte a patamares.
-	
+
 	* @problema/private/construir_V.m: Função adicionada.
 
 2010-12-13  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @sistema/sistema.m (obj.np, obj.tp):
 	Removido suporte a número variável de patamares de carga por intervalo.
-	
+
 	* @io/private/hco_.m ([NPAT], [DPAT]):
 	Removido suporte a número variável de patamares de carga por intervalo.
 
 	* @io/private/mco_.m ([NPAT], [MSUB], [GPUH]):
 	Removido suporte a número variável de patamares de carga por intervalo.
-	
+
 	* @io/private/net_.m ([NPAT], [LIMA], [LIMI]):
 	Removido suporte a número variável de patamares de carga por intervalo.
-	
+
 	* @io/private/ute_.m ([NPAT], [PUGT], [TXID], [GMIN], [FCMX]):
 	Removido suporte a número variável de patamares de carga por intervalo.
-	
+
 	* @ute/ute.m (obj.fc, obj.id, obj.gn, obj.pe):
 	Removido suporte a número variável de patamares de carga por intervalo.
-	
+
 	* @problema/construir.m:
 	Removido suporte a número variável de patamares de carga por intervalo.
 
@@ -331,35 +352,35 @@
 
 	* @problema/private/construir_S.m:
 	Corrigido cálculo do número de elementos não-nulos da matriz S.
-	
+
 	* @problema/private/construir_R.m:
 	Corrigido cálculo do número de elementos não-nulos da matriz R.
-	
+
 	* @problema/private/construir_M.m:
 	Corrigido cálculo do número de elementos não-nulos da matriz M.
 
 2010-12-10  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @io/private/ropt_.m ([INTC]): Registro adicionado.
-	
+
 	* @sistema/{sistema,get,set,dump}.m (obj.nj): Propriedade adicionada.
 
-	* @io/private/uhe_.m ([TOPO]): 
+	* @io/private/uhe_.m ([TOPO]):
 	Adicionado cálculo do número de usinas com reservatório a jusante.
 
 	* @problema/construir.m (obj.nx, obj.ny, obj.nz):
 	Corrigido cálculo do número de variáveis com suporte a patamares de carga.
-	
+
 	* @problema/construir.m (obj.mb, obj.mc):
 	Corrigido cálculo do número de restrições elétricas.
-	
+
 	* @problema/construir.m (obj.Jg):
 	Corrigido cálculo do número máximo de elementos não-nulos da matriz.
-		
+
 2010-12-09  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @io/private/ropt_.m: Suporte a intervalos de tamanhos variados.
-	
+
 	* @io/private/ropt_.m ([DFLU],[TURB],[VMOT],[QMAX]):
 	Adicionado suporte a patamares de carga aos registros.
 
@@ -370,14 +391,14 @@
 	* @despacho/{despacho,get,set,dump}.m (obj.la, obj.lb):
 	Propriedades adicionadas.
 	(obj.p): Propriedade removida.
-	
+
 2010-11-30  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @io/private/ropt_.m: Recodificação para suporte a registros da versão 2.0.
 
 	* @despacho/despacho.m (obj.q, obj.y, obj.z, obj.p):
 	Suporte a patamares de carga.
-	
+
 2010-11-29  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
 	* @io/private/usi.m: Recodificação para suporte a registros da versão 2.0.

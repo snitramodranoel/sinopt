@@ -1,10 +1,6 @@
 % @ute/dump.m dumps object property values.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -29,13 +25,15 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function dump(obj)
-  fprintf(1,'ute.cd: %d\n', obj.cd);
-  fprintf(1,'ute.co: is a polynomial\n');
-  fprintf(1,'ute.eo: %d\n', obj.eo);
-  fprintf(1,'ute.fc: %dx%d\n', size(obj.fc,1), size(obj.fc,2));
-  fprintf(1,'ute.gn: %dx%d\n', size(obj.gn,1), size(obj.gn,2));
-  fprintf(1,'ute.id: %dx%d\n', size(obj.id,1), size(obj.id,2));
-  fprintf(1,'ute.nm: %s\n', obj.nm);
-  fprintf(1,'ute.pe: %dx%d\n', size(obj.pe,1), size(obj.pe,2));
-  fprintf(1,'ute.ss: %d\n', obj.ss);
+  fprintf(1, 'ute.bc: %dx%d\n', size(obj.bc,1), size(obj.bc,2));
+  fprintf(1, 'ute.cd: %d\n', obj.cd);
+  fprintf(1, 'ute.co: is a polynomial\n');
+  fprintf(1, 'ute.df: %dx%d\n', size(obj.df,1), size(obj.df,2));
+  fprintf(1, 'ute.eo: %d\n', obj.eo);
+  fprintf(1, 'ute.fc: %dx%d\n', size(obj.fc,1), size(obj.fc,2));
+  fprintf(1, 'ute.gn: %dx%d\n', size(obj.gn,1), size(obj.gn,2));
+  fprintf(1, 'ute.id: %dx%d\n', size(obj.id,1), size(obj.id,2));
+  fprintf(1, 'ute.nm: %s\n', obj.nm);
+  fprintf(1, 'ute.pe: %dx%d\n', size(obj.pe,1), size(obj.pe,2));
+  fprintf(1, 'ute.ss: %d\n', obj.ss);
 end

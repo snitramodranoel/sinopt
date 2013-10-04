@@ -1,10 +1,6 @@
 % @ute/ute.m stores thermal plant data.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -29,14 +25,16 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function obj = ute(varargin)
+  obj.bc=          []; % list of connected buses
   obj.cd=           0; % code
-  obj.co= polinomio(); % operation cost function  [R$/MWh]
+  obj.co= polinomio(); % operation cost function               [$/MWh]
+  obj.df=          []; % distribution factor per connected bus (0,1]
   obj.eo=           0; % operation status
-  obj.fc=          []; % capacity factor (p,j)    [0,1]
-  obj.gn=          []; % minimum generation (p,j) [MW]
-  obj.id=          []; % availability rate (p,j)  [0,1]
+  obj.fc=          []; % capacity factor (p,j)                 [0,1]
+  obj.gn=          []; % minimum generation (p,j)              [MW]
+  obj.id=          []; % availability rate (p,j)               [0,1]
   obj.nm=          ''; % name
-  obj.pe=          []; % effective power (p,j)    [MW]
+  obj.pe=          []; % effective power (p,j)                 [MW]
   obj.ss=           0; % subsystem
   
   switch nargin

@@ -1,10 +1,6 @@
 % @uhe/set.m sets object property values.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -36,6 +32,8 @@ function obj= set(obj, varargin)
     % atualiza vetor de argumentos
     pargin= pargin(3:end);
     switch propriedade
+      case 'bc'
+        obj.bc= valor;
       case 'cd'
         obj.cd= valor;
       case 'cf'
@@ -44,6 +42,8 @@ function obj= set(obj, varargin)
         obj.cg= valor;
       case 'cj'
         obj.cj= valor;
+      case 'df'
+        obj.df= valor;
       case 'dm'
         obj.dm= valor;
       case 'dn'

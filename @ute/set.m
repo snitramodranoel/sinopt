@@ -1,10 +1,6 @@
 % @ute/set.m sets object property values.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -36,28 +32,32 @@ function obj= set(obj, varargin)
       % atualiza vetor de argumentos
       propargin= propargin(3:end);
       switch propriedade
-          case 'cd'
-              obj.cd= valor;
-          case 'co'
-              obj.co= valor;
-          case 'eo'
-              obj.eo= valor;
-          case 'fc'
-              obj.fc= valor;
-          case 'gm'
-              obj.gm= valor;
-          case 'gn'
-              obj.gn= valor;
-          case 'id'
-              obj.id= valor;
-          case 'nm'
-              obj.nm= valor;
-          case 'pe'
-              obj.pe= valor;
-          case 'ss'
-              obj.ss= valor;
-          otherwise
-              error('SINopt:ute:invalidProperty', ...
+        case 'bc'
+          obj.bc= valor;
+        case 'cd'
+          obj.cd= valor;
+        case 'co'
+          obj.co= valor;
+        case 'df'
+          obj.df= valor;
+        case 'eo'
+          obj.eo= valor;
+        case 'fc'
+          obj.fc= valor;
+        case 'gm'
+          obj.gm= valor;
+        case 'gn'
+          obj.gn= valor;
+        case 'id'
+          obj.id= valor;
+        case 'nm'
+          obj.nm= valor;
+        case 'pe'
+          obj.pe= valor;
+        case 'ss'
+          obj.ss= valor;
+        otherwise
+          error('SINopt:ute:invalidProperty', ...
                   '%s is not a valid property', propriedade);
       end
   end

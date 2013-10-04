@@ -30,28 +30,30 @@
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function valor = get(obj, propriedade)
   switch propriedade
-      case 'cd'
-          valor= obj.cd;
-      case 'co'
-          valor= obj.co;
-      case 'eo'
-          valor= obj.eo;
-      case 'fc'
-          valor= obj.fc;
-      case 'gm'
-          valor= obj.pe .* obj.id .* obj.fc;
-      case 'gn'
-          valor= obj.gn;
-      case 'id'
-          valor= obj.id;
-      case 'nm'
-          valor= obj.nm;
-      case 'pe'
-          valor= obj.pe;
-      case 'ss'
-          valor= obj.ss;
-      otherwise
-          error('sinopt:ute:get:invalidProperty', ...
+    case 'bc'
+      valor= obj.bc;
+    case 'cd'
+      valor= obj.cd;
+    case 'co'
+      valor= obj.co;
+    case 'eo'
+      valor= obj.eo;
+    case 'fc'
+      valor= obj.fc;
+    case 'gm'
+      valor= obj.pe .* obj.id .* obj.fc;
+    case 'gn'
+      valor= obj.gn;
+    case 'id'
+      valor= obj.id;
+    case 'nm'
+      valor= obj.nm;
+    case 'pe'
+      valor= obj.pe;
+    case 'ss'
+      valor= obj.ss;
+    otherwise
+      error('sinopt:ute:get:invalidProperty', ...
               '%s is not a valid property', propriedade);
   end
 end

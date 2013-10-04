@@ -41,7 +41,7 @@ function obj= uhe_(obj)
   % read data
   v= fscanf(fid,'%f',1);
   % check for file version
-  if v ~= 3.0
+  if v ~= 3.1
     fclose(fid);
     error('SINopt:io:fileNotSupported', ...
         'HydroLab UHE file version %1.1f is not supported', v);
@@ -80,20 +80,6 @@ function obj= uhe_(obj)
     fscanf(fid,'%s',1);
     % hydro plant identification
     uh{j}= set(uh{j}, 'nm', strtrim(fgetl(fid)));
-  end
-  % [NUMS]
-  %  codes
-  linha= fgetl(fid);
-  while not(strcmp('[NUMS]',linha))
-    linha= fgetl(fid);
-  end
-  % read data
-  for j= 1:nu
-    fscanf(fid,'%s',1); % bogus
-    uh{j}= set(uh{j},'ss',fscanf(fid,'%i',1)); % subsystem
-    uh{j}= set(uh{j},'cd',fscanf(fid,'%i',1)); % code
-    uh{j}= set(uh{j},'cj',fscanf(fid,'%i',1)); % downstream reservoir code
-    fgetl(fid); % bogus
   end
   % [TOPO]
   %  network topology
@@ -145,9 +131,13 @@ function obj= uhe_(obj)
   % read data
   for j= 1:nu
     fscanf(fid,'%s',1); % bogus
+    uh{j}= set(uh{j},'ss',fscanf(fid,'%i',1)); % subsystem
+    uh{j}= set(uh{j},'cd',fscanf(fid,'%i',1)); % code
+    uh{j}= set(uh{j},'cj',fscanf(fid,'%i',1)); % downstream reservoir code
+    fscanf(fid,'%s',1); % bogus
     uh{j}= set(uh{j},'pe',fscanf(fid,'%f',1)); % productivity
     uh{j}= set(uh{j},'cf',fscanf(fid,'%f',1)); % mean tailrace elevation
-    % perda de carga hidr??ulica
+    % penstock loss
     pc= {0; 0.0};
     pc{1}= fscanf(fid,'%i',1);
     pc{2}= fscanf(fid,'%f',1);
@@ -160,8 +150,22 @@ function obj= uhe_(obj)
     uh{j}= set(uh{j},'ms',fscanf(fid,'%i',1));
     % type of maximum discharge computation
     uh{j}= set(uh{j},'tm',fscanf(fid,'%i',1));
+    % number of connected buses
+    nb= fscanf(fid,'%i',1);
+    bc= zeros(nb,1);
+    df= zeros(nb,1);
+    for k= 1:nb
+      bc(k)= fscanf(fid,'%i',1); % bus number
+      df(k)= fscanf(fid,'%f',1); % distribution factor
+      fgetl(fid); % bogus
+    end
+    uh{j}= set(uh{j},'bc',bc);
+    uh{j}= set(uh{j},'df',df);
   end
   % clean temporary buffers
+  clear bc;
+  clear df;
+  clear nb;
   clear pc;
   % [TUGE]
   %  power generation

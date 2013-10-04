@@ -1,10 +1,6 @@
 % @uhe/dump.m dumps object property values.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -29,29 +25,31 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function dump(obj)
-  fprintf(1,'uhe.cd: %d\n',obj.cd);
-  fprintf(1,'uhe.ce: %dx%d\n',size(obj.ce,1),size(obj.ce,2));
-  fprintf(1,'uhe.cf: %f\n',obj.cf);
-  fprintf(1,'uhe.cg: %dx%d\n',size(obj.cg,1),size(obj.cg,2));
-  fprintf(1,'uhe.cj: %d\n',obj.cj);
-  fprintf(1,'uhe.dm: %f\n',obj.dm);
-  fprintf(1,'uhe.dn: %f\n',obj.dn);
-  fprintf(1,'uhe.id: %f\n',obj.id);
-  fprintf(1,'uhe.ie: %d\n',obj.ie);
-  fprintf(1,'uhe.ij: %d\n',obj.ij);
-  fprintf(1,'uhe.ms: %d\n',obj.ms);
-  fprintf(1,'uhe.ng: %d\n',obj.ng);
-  fprintf(1,'uhe.nm: %s\n',obj.nm);
-  fprintf(1,'uhe.nt: %s\n',obj.nt);
-  fprintf(1,'uhe.pc: (%d, %f)\n',obj.pc{1},obj.pc{2});
-  fprintf(1,'uhe.pe: %f\n',obj.pe);
-  fprintf(1,'uhe.qb: %f\n',obj.qb);
-  fprintf(1,'uhe.ss: %d\n',obj.ss);
-  fprintf(1,'uhe.tm: %d\n',obj.tm);
-  fprintf(1,'uhe.ve: %dx%d\n',size(obj.ve,1),size(obj.ve,2));
-  fprintf(1,'uhe.vm: %f\n',obj.vm);
-  fprintf(1,'uhe.vn: %f\n',obj.vn);
-  fprintf(1,'uhe.yc: is a polynomial\n');
-  fprintf(1,'uhe.ya: is a polynomial\n');
-  fprintf(1,'uhe.yf: %dx%d\n',size(obj.yf,1),size(obj.yf,2));
+  fprintf(1, 'uhe.bc: %dx%d\n', size(obj.bc,1), size(obj.bc,2));
+  fprintf(1, 'uhe.cd: %d\n', obj.cd);
+  fprintf(1, 'uhe.ce: %dx%d\n', size(obj.ce,1), size(obj.ce,2));
+  fprintf(1, 'uhe.cf: %f\n', obj.cf);
+  fprintf(1, 'uhe.cg: %dx%d\n', size(obj.cg,1), size(obj.cg,2));
+  fprintf(1, 'uhe.cj: %d\n', obj.cj);
+  fprintf(1, 'uhe.df: %dx%d\n', size(obj.df,1), size(obj.ve,2));
+  fprintf(1, 'uhe.dm: %f\n', obj.dm);
+  fprintf(1, 'uhe.dn: %f\n', obj.dn);
+  fprintf(1, 'uhe.id: %f\n', obj.id);
+  fprintf(1, 'uhe.ie: %d\n', obj.ie);
+  fprintf(1, 'uhe.ij: %d\n', obj.ij);
+  fprintf(1, 'uhe.ms: %d\n', obj.ms);
+  fprintf(1, 'uhe.ng: %d\n', obj.ng);
+  fprintf(1, 'uhe.nm: %s\n', obj.nm);
+  fprintf(1, 'uhe.nt: %s\n', obj.nt);
+  fprintf(1, 'uhe.pc: (%d, %f)\n', obj.pc{1}, obj.pc{2});
+  fprintf(1, 'uhe.pe: %f\n', obj.pe);
+  fprintf(1, 'uhe.qb: %f\n', obj.qb);
+  fprintf(1, 'uhe.ss: %d\n', obj.ss);
+  fprintf(1, 'uhe.tm: %d\n', obj.tm);
+  fprintf(1, 'uhe.ve: %dx%d\n', size(obj.ve,1), size(obj.ve,2));
+  fprintf(1, 'uhe.vm: %f\n', obj.vm);
+  fprintf(1, 'uhe.vn: %f\n', obj.vn);
+  fprintf(1, 'uhe.yc: is a polynomial\n');
+  fprintf(1, 'uhe.ya: is a polynomial\n');
+  fprintf(1, 'uhe.yf: %dx%d\n', size(obj.yf,1), size(obj.yf,2));
 end
