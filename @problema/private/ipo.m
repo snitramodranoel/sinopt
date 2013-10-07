@@ -83,14 +83,8 @@ function rs= ipo(obj)
       rs= set(rs,'status',0);
       rs= set(rs,'message','Optimal solution found');
     otherwise
-      Axb= calcular_Ax(obj,x) - obj.b;
-      if (norm(Axb(1:nr),Inf) < 1)
-        rs= set(rs,'status',2);
-        rs= set(rs,'message','Problem is hydro feasible');
-      else
-        rs= set(rs,'status',3);
-        rs= set(rs,'message','Problem is infeasible');
-      end
+      rs= set(rs,'status',1);
+      rs= set(rs,'message','No primal-dual optimal solution found');
   end
   %
   % subfunctions
