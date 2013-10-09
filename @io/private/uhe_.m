@@ -1,10 +1,6 @@
 % @io/private/uhe_.m reads UHE files.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -41,7 +37,7 @@ function obj= uhe_(obj)
   % read data
   v= fscanf(fid,'%f',1);
   % check for file version
-  if v ~= 3.1
+  if v ~= 3.2
     fclose(fid);
     error('SINopt:io:fileNotSupported', ...
         'HydroLab UHE file version %1.1f is not supported', v);
@@ -131,7 +127,6 @@ function obj= uhe_(obj)
   % read data
   for j= 1:nu
     fscanf(fid,'%s',1); % bogus
-    uh{j}= set(uh{j},'ss',fscanf(fid,'%i',1)); % subsystem
     uh{j}= set(uh{j},'cd',fscanf(fid,'%i',1)); % code
     uh{j}= set(uh{j},'cj',fscanf(fid,'%i',1)); % downstream reservoir code
     fscanf(fid,'%s',1); % bogus

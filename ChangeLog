@@ -1,5 +1,35 @@
 2013-10-09  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
+    * @uhe/uhe.m:
+    (obj.ss): Propriedade removida
+
+    * @uhe/dump.m:
+    (obj.ss): Propriedade removida
+
+    * @uhe/get.m:
+    (obj.ss): Propriedade removida
+
+    * @uhe/set.m:
+    (obj.ss): Propriedade removida
+
+    * @ute/ute.m:
+    (obj.ss): Propriedade removida
+
+    * @ute/dump.m:
+    (obj.ss): Propriedade removida
+
+    * @ute/get.m:
+    (obj.ss): Propriedade removida
+
+    * @ute/set.m:
+    (obj.ss): Propriedade removida
+
+    * @io/private/uhe_.m:
+    ([PRIM]): Propriedade 'ss' removida
+
+    * @io/private/ute_.m:
+    ([PRIM]): Propriedade 'ss' removida
+
     * @problema/private/construir_G.m: Adiciona construção da matriz G
 
     * @problema/private/construir_I.m: Adiciona construção da matriz I

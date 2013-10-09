@@ -52,8 +52,6 @@ function valor = get(obj, propriedade)
       valor= obj.nm;
     case 'pe'
       valor= obj.pe;
-    case 'ss'
-      valor= obj.ss;
     otherwise
       error('sinopt:ute:get:invalidProperty', ...
               '%s is not a valid property', propriedade);

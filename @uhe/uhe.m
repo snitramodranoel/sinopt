@@ -45,7 +45,6 @@ function obj = uhe(varargin)
   obj.pe=         0.0; % productivity                          [MW/m^3/s/m]
   obj.qb=         0.0; % average maximum water discharge
                        % per turbine
-  obj.ss=           0; % subsystem
   obj.tm=           2; % type of maximum discharge function
   obj.vm=         0.0; % maximum reservoir storage             [hm^3]
   obj.vn=         0.0; % minimum reservoir storage             [hm^3]

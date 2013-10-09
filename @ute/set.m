@@ -54,8 +54,6 @@ function obj= set(obj, varargin)
           obj.nm= valor;
         case 'pe'
           obj.pe= valor;
-        case 'ss'
-          obj.ss= valor;
         otherwise
           error('SINopt:ute:invalidProperty', ...
                   '%s is not a valid property', propriedade);

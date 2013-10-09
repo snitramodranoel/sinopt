@@ -62,8 +62,6 @@ function valor = get(obj, propriedade)
       valor= obj.pe;
     case 'qb'
       valor= obj.qb;
-    case 'ss'
-      valor= obj.ss;
     case 'tm'
       valor= obj.tm;
     case 'vm'

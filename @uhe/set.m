@@ -70,8 +70,6 @@ function obj= set(obj, varargin)
         obj.pe= valor;
       case 'qb'
         obj.qb= valor;
-      case 'ss'
-        obj.ss= valor;
       case 'tm'
         obj.tm= valor;
       case 'vm'

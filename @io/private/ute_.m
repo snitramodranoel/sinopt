@@ -37,7 +37,7 @@ function obj= ute_(obj)
   % read data
   v= fscanf(fid,'%f',1);
   % check for file version
-  if v ~= 3.3
+  if v ~= 3.4
     fclose(fid);
     error('SINopt:io:fileNotSupported', ...
           'HydroLab UTE file version %1.1f is not supported', v);
@@ -109,7 +109,6 @@ function obj= ute_(obj)
   % read and store data
   for j= 1:nt
     fscanf(fid,'%d',1); % bogus
-    ut{j}= set(ut{j},'ss',fscanf(fid,'%d',1)); % area number
     ut{j}= set(ut{j},'cd',fscanf(fid,'%d',1)); % Eletrobras code
     ut{j}= set(ut{j},'eo',fscanf(fid,'%d',1)); % operation status
     % number of connected buses

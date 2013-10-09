@@ -35,5 +35,4 @@ function dump(obj)
   fprintf(1, 'ute.id: %dx%d\n', size(obj.id,1), size(obj.id,2));
   fprintf(1, 'ute.nm: %s\n', obj.nm);
   fprintf(1, 'ute.pe: %dx%d\n', size(obj.pe,1), size(obj.pe,2));
-  fprintf(1, 'ute.ss: %d\n', obj.ss);
 end

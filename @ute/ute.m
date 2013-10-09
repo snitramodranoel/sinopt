@@ -35,7 +35,6 @@ function obj = ute(varargin)
   obj.id=          []; % availability rate (p,j)               [0,1]
   obj.nm=          ''; % name
   obj.pe=          []; % effective power (p,j)                 [MW]
-  obj.ss=           0; % subsystem
   
   switch nargin
     % default

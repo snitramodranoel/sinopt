@@ -44,7 +44,6 @@ function dump(obj)
   fprintf(1, 'uhe.pc: (%d, %f)\n', obj.pc{1}, obj.pc{2});
   fprintf(1, 'uhe.pe: %f\n', obj.pe);
   fprintf(1, 'uhe.qb: %f\n', obj.qb);
-  fprintf(1, 'uhe.ss: %d\n', obj.ss);
   fprintf(1, 'uhe.tm: %d\n', obj.tm);
   fprintf(1, 'uhe.ve: %dx%d\n', size(obj.ve,1), size(obj.ve,2));
   fprintf(1, 'uhe.vm: %f\n', obj.vm);
