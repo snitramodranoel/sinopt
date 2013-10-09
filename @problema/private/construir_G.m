@@ -1,10 +1,6 @@
-% @problema/private/calcular_Q.m computes Q(.) function.
+% @problema/private/construir_G.m builds bus-plant membership matrix G.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -28,7 +24,8 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function Q= calcular_Q(obj,w)
+
+function obj= construir_G(obj)
   % system data
   ut= get(obj.si,'ut');
   % system dimensions
@@ -36,23 +33,33 @@ function Q= calcular_Q(obj,w)
   np= get(obj.si,'np');
   ns= get(obj.si,'ns');
   nt= get(obj.si,'nt');
-  % unpack z variables
-  z=  desempacotar_z(obj, extrair_z(obj,w));
+  % sum up number of bus-plant assignments
+  nbc= 0;
+  for t= 1:nt
+    nbc= nbc + length(get(ut{t}, 'bc'));
+  end
+  % compute number of nonzero elements in the matrix
+  nze= nbc * ni * np;
   % memory allocation
-  Q = zeros(obj.mb,1);
-  Ql= cell(np,1);
-  % compute Q()
-  n= ns*ni;
+  Gi= zeros(nze,1);
+  Gj= zeros(nze,1);
+  Gs= zeros(nze,1);
+  % assign distribution factors to membership matrix elements
+  k= 0;
   for l= 1:np
-    Ql{l}= zeros(ns,ni);
-    % compute P(j), j=1,2,...
     for j= 1:ni
       for t= 1:nt
-        k= get(ut{t},'ss');
-        Ql{l}(k,j)= Ql{l}(k,j) + z{l}(t,j);
+        bc= get(ut{t}, 'bc');
+        df= get(ut{t}, 'df');
+        for b= 1:length(bc)
+          k= k+1;
+          Gs(k)= df(b);                         % distribution factor
+          Gi(k)= ns*(ni*(l-1) + (j-1)) + bc(b); % row
+          Gj(k)= nt*(ni*(l-1) + (j-1)) + t;     % column
+        end
       end
     end
-    % pack
-    Q(n*(l-1)+1:n*l)= reshape(Ql{l}, n, 1);
   end
+  % build sparse matrix
+  obj.G= sparse(Gi, Gj, Gs, obj.mb, obj.nz);
 end

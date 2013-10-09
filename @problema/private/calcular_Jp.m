@@ -1,10 +1,6 @@
-% @problema/private/calcular_JP.m computes Jacobian of P(x).
+% @problema/private/calcular_Jp.m computes Jacobian of p(x).
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -28,7 +24,7 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function JP= calcular_JP(obj,w)
+function Jp= calcular_Jp(obj,w)
   % system data
   uh= get(obj.si,'uh');
   uf= get(obj.si,'uf');
@@ -42,15 +38,27 @@ function JP= calcular_JP(obj,w)
   nq= get(obj.si,'nq');
   nr= get(obj.si,'nr');
   nu= get(obj.si,'nu');
-  n = nu*ni;
+
   % unpack x variables
   ss= desempacotar_s(obj, extrair_s(obj,w));
   qq= desempacotar_q(obj, extrair_q(obj,w));
   vv= desempacotar_v(obj, extrair_v(obj,w));
-  % allocate memory for partial derivatives
-  ds= zeros(obj.na*np,1);
-  dq= zeros(n*np,1);
-  dv= zeros(n*np,1);
+
+  % compute number of connected buses
+  nbr= 0;
+  for i= 1:nr
+    nbr= nbr + length(get(uh{ur(i)}, 'bc'));
+  end
+  nbf= 0;
+  for i= 1:nf
+    nbf= nbf + length(get(uh{uf(i)}, 'bc'));
+  end
+  
+  % memory allocation for partial derivatives
+  ds= zeros(nbr*(ni-1)*np, 1);
+  dq= zeros((nbr+nbf)*ni*np, 1);
+  dv= zeros((nbr+nbf)*ni*np, 1);
+  
   % compute Jacobian
   k= 0;
   u= 0;
@@ -76,16 +84,21 @@ function JP= calcular_JP(obj,w)
         else
           zeta= 0;
         end
-        % check for final stage
-        if j < ni
-          u = u+1;
-          ds(u) = dpds(uh{ur(i)},zeta,s,q);
+        % for each connected bus...
+        df= get(uh{ur(i)}, 'df');
+        nbc= length(get(uh{ur(i)}, 'bc'));
+        for b= 1:nbc
+          % check for final stage
+          if j < ni
+            u = u+1;
+            ds(u) = df(b) * dpds(uh{ur(i)},zeta,s,q);
+          end
+          k = k+1;
+          % discharge variables
+          dq(k) = df(b) * dpdq(uh{ur(i)},zeta,s,q,v);
+          % spill variables
+          dv(k) = df(b) * dpdv(uh{ur(i)},zeta,q,v);
         end
-        k = k+1;
-        % discharge variables
-        dq(k) = dpdq(uh{ur(i)},zeta,s,q,v);
-        % spill variables
-        dv(k) = dpdv(uh{ur(i)},zeta,q,v);
       end
       % compute indexes and partial derivatives for run-off-river plants
       for i= 1:nf
@@ -100,13 +113,18 @@ function JP= calcular_JP(obj,w)
         else
           zeta= 0;
         end
-        % discharge variables
-        dq(k) = dpdq(uh{uf(i)},zeta,s,q,v);
-        % spill variables
-        dv(k) = dpdv(uh{uf(i)},zeta,q,v);
+        % for each connected bus...
+        df= get(uh{uf(i)}, 'df');
+        nbc= length(get(uh{uf(i)}, 'bc'));
+        for b= 1:nbc
+          % discharge variables
+          dq(k) = df(b) * dpdq(uh{uf(i)},zeta,s,q,v);
+          % spill variables
+          dv(k) = df(b) * dpdv(uh{uf(i)},zeta,q,v);
+        end
       end
     end
   end
   % build Jacobian matrix
-  JP= [ds;dq;dv];
+  Jp= [ds;dq;dv];
 end

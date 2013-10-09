@@ -1,10 +1,6 @@
 % @problema/private/calcular_Jg.m computes Jacobian of g(u).
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -29,10 +25,10 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function J= calcular_J(obj,w)
-  J= sparse([obj.J(:,1); obj.JP(:,1)], ...
-      [obj.J(:,2); obj.JP(:,2)], ...
-      [obj.J(:,3); -calcular_JP(obj,w)], ...
+  J= sparse([obj.J(:,1); obj.Jp(:,1)], ...
+      [obj.J(:,2); obj.Jp(:,2)], ...
+      [obj.J(:,3); -calcular_Jp(obj,w)], ...
       obj.m, ...
       obj.n, ...
-      length(obj.J(:,1)) + length(obj.JP(:,1)));
+      length(obj.J(:,1)) + length(obj.Jp(:,1)));
 end

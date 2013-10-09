@@ -1,10 +1,6 @@
 % @problema/private/construir_J.m builds structure of Jacobian of g(w).
 %
-% Copyright (c) 2011 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -36,7 +32,7 @@ function obj= construir_J(obj)
   J(1:obj.ma, 1:obj.nx)= obj.A;
   J(obj.ma+obj.mc+1:obj.m, obj.nx+1:obj.nx+obj.ny)= obj.B;
   J(obj.ma+1:obj.ma+obj.mc, obj.nx+1:obj.nx+obj.ny)= obj.C;
-  J(obj.ma+obj.mc+1:obj.m, obj.nx+obj.ny+1:obj.n)= -calcular_JQ(obj);
+  J(obj.ma+obj.mc+1:obj.m, obj.nx+obj.ny+1:obj.n)= -obj.G;
   %
   [rows,cols,vlus]= find(J);
   % memory allocation
@@ -45,5 +41,5 @@ function obj= construir_J(obj)
   obj.J(:,2)= cols;
   obj.J(:,3)= vlus;
   %
-  obj= construir_JP(obj);
+  obj= construir_Jp(obj);
 end

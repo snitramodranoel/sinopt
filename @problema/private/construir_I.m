@@ -1,4 +1,4 @@
-% @problema/private/calcular_Hg.m computes Hessian of g(u).
+% @problema/private/construir_I.m builds bus-plant membership matrix I.
 %
 % Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
@@ -24,6 +24,42 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function Hg= calcular_Hg(obj,w,lambda)
-  Hg= -calcular_Hp(obj,w,lambda);
+
+function obj= construir_I(obj)
+  % system data
+  uh= get(obj.si,'uh');
+  % system dimensions
+  ni= get(obj.si,'ni');
+  np= get(obj.si,'np');
+  ns= get(obj.si,'ns');
+  nu= get(obj.si,'nu');
+  % sum up number of bus-plant assignments
+  nbc= 0;
+  for i= 1:nu
+    nbc= nbc + length(get(uh{i}, 'bc'));
+  end
+  % compute number of nonzero elements in the matrix
+  nze= nbc * ni * np;
+  % memory allocation
+  Ii= zeros(nze,1);
+  Ij= zeros(nze,1);
+  Is= zeros(nze,1);
+  % assign distribution factors to membership matrix elements
+  k= 0;
+  for l= 1:np
+    for j= 1:ni
+      for i= 1:nu
+        bc= get(uh{i}, 'bc');
+        df= get(uh{i}, 'df');
+        for b= 1:length(bc)
+          k= k+1;
+          Is(k)= df(b);                         % distribution factor
+          Ii(k)= ns*(ni*(l-1) + (j-1)) + bc(b); % row
+          Ij(k)= nu*(ni*(l-1) + (j-1)) + i;     % column
+        end
+      end
+    end
+  end
+  % build sparse matrix
+  obj.I= sparse(Ii, Ij, Is, obj.mb, nu*ni*np);
 end

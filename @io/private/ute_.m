@@ -124,6 +124,10 @@ function obj= ute_(obj)
     ut{j}= set(ut{j},'bc',bc);
     ut{j}= set(ut{j},'df',df);
   end
+  % clear temporary buffers
+  clear nb;
+  clear bc;
+  clear df;
   % [PUTE]
   %  installed capacity
   linha= fgetl(fid);

@@ -1,10 +1,6 @@
-% @problema/private/calcular_g.m evaluates g(u) function.
+% @problema/private/calcular_g.m evaluates g(w) function.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -29,7 +25,10 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function g= calcular_g(obj,w)
+  % unpack z
+  z= extrair_z(obj,w);
+  
   g= [calcular_Ax(obj,w); ...
       calcular_Cy(obj,w); ...
-      calcular_By(obj,w) - calcular_P(obj,w) - calcular_Q(obj,w)];
+      calcular_By(obj,w) - (obj.I * calcular_p(obj,w)) - (obj.G * z)];
 end

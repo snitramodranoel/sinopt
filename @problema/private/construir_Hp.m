@@ -1,10 +1,6 @@
-% @problema/private/construir_HP.m builds structure of Hessian of P(x).
+% @problema/private/construir_Hp.m builds structure of Hessian of p(x).
 %
-% Copyright (c) 2011 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -28,7 +24,7 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function obj= construir_HP(obj)
+function obj= construir_Hp(obj)
   % system data
   uh= get(obj.si,'uh');
   % system dimensions
@@ -109,7 +105,7 @@ function obj= construir_HP(obj)
   li= [liss; lisq; cosq; liqq; liqv; livq; livv];
   co= [coss; cosq; coqs; coqq; coqv; covq; covv];
   % memory allocation
-  obj.HP= zeros(length(li),2);
-  obj.HP(:,1)= li;
-  obj.HP(:,2)= co;
+  obj.Hp= zeros(length(li),2);
+  obj.Hp(:,1)= li;
+  obj.Hp(:,2)= co;
 end

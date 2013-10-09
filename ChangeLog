@@ -1,3 +1,29 @@
+2013-10-09  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+    * @problema/private/construir_G.m: Adiciona construção da matriz G
+
+    * @problema/private/construir_I.m: Adiciona construção da matriz I
+
+    * @problema/private/calcular_P.m: Renomeado para calcular_p(.)
+
+    * @problema/private/calcular_JP.m: Removido
+
+    * @problema/private/calcular_Jp.m: Considera múltiplas barras conectadas
+
+    * @problema/private/calcular_HP.m: Removido
+
+    * @problema/private/calcular_Hp.m: Considera múltiplas barras conectadas
+
+    * @problema/private/calcular_p.m: Não acumula geração por subsistema
+
+    * @problema/private/calcular_Q.m: Removido
+
+    * @problema/private/calcular_JQ.m: Removido
+
+    * @problema/private/calcular_g.m: Inclui produtos de matrizes de admissão
+
+    * @problema/private/ipo.m: Inclui produtos de matrizes de admissão
+
 2013-10-04  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
     * @uhe/uhe.m:
@@ -459,6 +485,6 @@
 
 	* @io/private/mco.m: Recodificação para suporte a registros da versão 2.0.
 
-Copyright 2010 Leonardo Martins, Universidade Estadual de Campinas.
+Copyright 2010-2013 Leonardo Martins, Universidade Estadual de Campinas.
 Copying and distribution of this file, with or without modification, are
 permitted provided the copyright notice and this notice are preserved.

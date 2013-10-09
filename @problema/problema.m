@@ -1,10 +1,6 @@
 % @problema/problema.m defines optimization problem.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -33,6 +29,8 @@ function obj= problema(varargin)
   obj.A = []; % matrix A
   obj.B = []; % matrix B
   obj.C = []; % matrix C
+  obj.G = []; % bus-plant membership matrix for thermal units
+  obj.I = []; % bus-plant membership matrix for hydro units
   obj.L = []; % submatrix L of C
   obj.M = []; % submatrix M of R
   obj.N = []; % submatrix N of B
@@ -69,12 +67,12 @@ function obj= problema(varargin)
   obj.n = 0; % total number of variables
   % Jacobian
   obj.J = [];
-  obj.JP= [];
+  obj.Jp= [];
   % Hessian
   obj.H = [];
   obj.Hf= [];
   obj.Hg= [];
-  obj.HP= [];
+  obj.Hp= [];
   % objects
   obj.pf= profiler();  % statistics
   obj.si= sistema();   % power system

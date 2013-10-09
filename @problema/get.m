@@ -1,10 +1,6 @@
 % @problema/get.m returns object property values.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -37,6 +33,10 @@ function valor= get(obj, propriedade)
       valor= obj.B;
     case 'C'
       valor= obj.C;
+    case 'G'
+      valor= obj.G;
+    case 'I'
+      valor= obj.I;
     case 'L'
       valor= obj.L;
     case 'M'

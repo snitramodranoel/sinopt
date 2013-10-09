@@ -1,6 +1,6 @@
 % @problema/construir.m builds optimization problem.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -59,8 +59,11 @@ function obj= construir(obj)
   obj= construir_d(obj);
   obj= construir_B(obj);
   obj= construir_C(obj);
-  % check constraints for sanity
+  % check for data sanity
   obj= verificar(obj);
+  % build membership matrices
+  obj= construir_G(obj);
+  obj= construir_I(obj);
   % compute matrix structures
   obj= construir_J(obj);
   obj= construir_H(obj);

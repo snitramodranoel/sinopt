@@ -36,6 +36,8 @@ function valor = get(obj, propriedade)
       valor= obj.cd;
     case 'co'
       valor= obj.co;
+    case 'df'
+      valor= obj.df;
     case 'eo'
       valor= obj.eo;
     case 'fc'

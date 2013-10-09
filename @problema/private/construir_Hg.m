@@ -1,10 +1,6 @@
 % @problema/private/construir_Hg.m builds structure of Hessian of g(u).
 %
-% Copyright (c) 2011 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -29,6 +25,6 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function obj= construir_Hg(obj)
-  obj= construir_HP(obj);
-  obj.Hg= obj.HP;
+  obj= construir_Hp(obj);
+  obj.Hg= obj.Hp;
 end

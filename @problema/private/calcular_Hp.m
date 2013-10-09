@@ -1,10 +1,6 @@
-% @problema/private/calcular_HP.m computes Hessian of P(x).
+% @problema/private/calcular_Hp.m computes Hessian of p(x).
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -28,7 +24,7 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function HP= calcular_HP(obj,w,lambda)
+function Hp= calcular_Hp(obj,w,lambda)
   % system data
   uh= get(obj.si,'uh');
   ur= get(obj.si,'ur');
@@ -70,6 +66,9 @@ function HP= calcular_HP(obj,w,lambda)
     z = 0;
     % perform computations
     for i= 1:nu
+      % vector buffers
+      bc= get(uh{i}, 'bc');
+      df= get(uh{i}, 'df');
       % scalar buffers
       v= vv(i,j);
       ror= get(uh{i},'ie');
@@ -95,7 +94,11 @@ function HP= calcular_HP(obj,w,lambda)
         k= k+1;
         % scalar buffers
         q= qq{l}(i,j);
-        y= yb{l}(get(uh{i},'ss'),j);
+        % 
+        y= 0.0;
+        for b= 1:length(bc)
+          y= y + yb{l}(bc(b),j) * df(b);
+        end
         % check for plants with a reservoir
         if ~ror
           % check for final stage
@@ -114,5 +117,5 @@ function HP= calcular_HP(obj,w,lambda)
     end
   end
   % concatenate derivative value arrays
-  HP= [dss; dsq; dsq; dqq; dqv; dqv; dvv];
+  Hp= [dss; dsq; dsq; dqq; dqv; dqv; dvv];
 end
