@@ -26,9 +26,11 @@
 
     * @io/private/uhe_.m:
     ([PRIM]): Propriedade 'ss' removida
+    ([VERS]): Atualização da versão do arquivo de dados para 3.2
 
     * @io/private/ute_.m:
     ([PRIM]): Propriedade 'ss' removida
+    ([VERS]): Atualização da versão do arquivo de dados para 3.4
 
     * @problema/private/construir_G.m: Adiciona construção da matriz G
 
