@@ -1,3 +1,19 @@
+2013-10-15  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+    * @io/private/hco_.m:
+    ([VERS]): Atualização da versão do arquivo de dados para 2.2
+    ([DINT]): Inclusão da coluna de identificação do patamar de carga
+    ([DPAT]): Seção removida
+    ([DATE]): Substitui [DATA]
+
+    * @io/private/mco_.m: Removido
+
+    * @io/private/bus_.m: Arquivo de barras substitui arquivo de subsistemas
+    ([VERS]): Atualização da versão do arquivo de dados para 1.0
+    ([NBUS]): Número de barras substitui [NSUB]
+    ([LOAD]): Demanda substitui [MSUB]
+    ([GENR]): Geração despachada substitui [GPUH]
+
 2013-10-09  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
     * @uhe/uhe.m:

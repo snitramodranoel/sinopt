@@ -1,10 +1,6 @@
-% @io/private/mco_.m reads MCO files.
+% @io/private/bus_.m reads BUS files.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -28,9 +24,9 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function obj= mco_(obj)
+function obj= bus_(obj)
   % open file
-  fid= fopen(strcat(obj.fi,'.mco'),'r');
+  fid= fopen(strcat(obj.fi,'.bus'),'r');
   frewind(fid);
   % [VERS]
   %  file version
@@ -41,15 +37,15 @@ function obj= mco_(obj)
   % read
   v= fscanf(fid,'%f',1);
   % check for file version
-  if v ~= 2.1
+  if v ~= 1.0
     fclose(fid);
     error('SINopt:io:fileNotSupported', ...
           'HydroLab MCO file version %1.1f is not supported', v);
   end
-  % [NSUB]
-  %  number of subsystems
+  % [NBUS]
+  %  number of buses
   linha= fgetl(fid);
-  while not(strcmp('[NSUB]',linha))
+  while not(strcmp('[NBUS]',linha))
     linha= fgetl(fid);
   end
   % read
@@ -79,10 +75,10 @@ function obj= mco_(obj)
   if np ~= get(obj.si,'np');
     error('SINopt:io:numberMismatch','Wrong number of load levels');
   end
-  % [MSUB]
-  %  load per subsystem, load level, and stage
+  % [LOAD]
+  %  load per bus, load level, and stage
   linha= fgetl(fid);
-  while not(strcmp('[MSUB]',linha))
+  while not(strcmp('[LOAD]',linha))
     linha= fgetl(fid);
   end
   % memory allocation
@@ -104,10 +100,10 @@ function obj= mco_(obj)
   obj.si= set(obj.si,'dc',dc);
   % clear temporary buffer
   clear dc;
-  % [GPUH]
-  %  fixed generation at small hydro plants
+  % [GENR]
+  %  generation given per bus, load level, and stage
   linha= fgetl(fid);
-  while not(strcmp('[GPUH]',linha))
+  while not(strcmp('[GENR]',linha))
     linha= fgetl(fid);
   end
   % memory allocation

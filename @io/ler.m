@@ -1,10 +1,6 @@
 % @io/ler.m reads problem data.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -32,7 +28,7 @@ function obj= ler(obj)
   % read problem data
   obj= opt_(obj);
   obj= hco_(obj);
-  obj= mco_(obj);
+  obj= bus_(obj);
   obj= uhe_(obj);
   obj= ute_(obj);
   obj= vaz_(obj);
