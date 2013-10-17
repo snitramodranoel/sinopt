@@ -1,10 +1,6 @@
 % @io/private/hco_.m reads HCO files.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -41,7 +37,7 @@ function obj= hco_(obj)
   % read
   v= fscanf(fid,'%f',1);
   % check for file version
-  if v ~= 2.1
+  if v ~= 2.2
     fclose(fid);
     error('SINopt:io:fileNotSupported', ...
       'HydroLab HCO file version %1.1f is not supported', v);
@@ -55,10 +51,10 @@ function obj= hco_(obj)
   % read
   ni= fscanf(fid,'%d',1);
   obj.si= set(obj.si,'ni',ni);
-  % [DATA]
+  % [DATE]
   %  start date
   linha= fgetl(fid);
-  while ~(strcmp('[DATA]',linha))
+  while ~(strcmp('[DATE]',linha))
     linha= fgetl(fid);
   end
   % read
@@ -189,42 +185,27 @@ function obj= hco_(obj)
   % clear temporary buffer
   clear nq;
   % [DINT]
-  %  duration of stages
+  %  load levels duration for each stage
+  %  memory allocation
+  ti= zeros(ni,1);
+  tp= cell(np,1);
+  for l= 1:np
+    tp{l}= zeros(ni,1);
+  end
   linha= fgetl(fid);
   while not(strcmp('[DINT]',linha))
     linha= fgetl(fid);
   end
   % read
-  ti= zeros(ni,1);
   for j= 1:ni
     fscanf(fid,'%s',1); % bogus
-    ti(j)= fscanf(fid,'%d',1);
+    for l= 1:np
+      fscanf(fid,'%d',1);           % bogus
+      tp{l}(j)= fscanf(fid,'%d',1); % load level duration
+      ti(j)= ti(j) + tp{l}(j);      % stage duration
+    end
   end
   obj.si= set(obj.si,'ti', ti);
-  % [DPAT]
-  %  load levels duration for each stage
-  %  memory allocation
-  tp= cell(np,1);
-  for l= 1:np
-    tp{l}= zeros(ni,1);
-  end
-  %  check if number of load levels > 1
-  if np > 1
-    linha= fgetl(fid);
-    while not(strcmp('[DPAT]',linha))
-      linha= fgetl(fid);
-    end
-    % read
-    for j= 1:ni
-      fscanf(fid,'%s',1); % bogus
-      for l= 1:np
-        fscanf(fid,'%d',1); % bogus
-        tp{l}(j)= fscanf(fid,'%d',1);
-      end
-    end
-  else
-    tp{l}= ti;
-  end
   obj.si= set(obj.si,'tp', tp);
   % clear temporary buffers
   clear ti;
