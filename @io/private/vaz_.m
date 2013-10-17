@@ -1,10 +1,6 @@
 % @io/private/vaz_.m reads VAZ files.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -41,7 +37,7 @@ function obj= vaz_(obj)
   % read data
   v= fscanf(fid,'%f',1);
   % check for file version
-  if v ~= 2.0
+  if v ~= 2.1
     fclose(fid);
     error('SINopt:io:fileNotSupported', ...
           'HydroLab VAZ file version %1.1f is not supported', v);
