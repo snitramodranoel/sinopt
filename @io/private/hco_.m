@@ -37,7 +37,7 @@ function obj= hco_(obj)
   % read
   v= fscanf(fid,'%f',1);
   % check for file version
-  if v ~= 2.2
+  if v ~= 2.3
     fclose(fid);
     error('SINopt:io:fileNotSupported', ...
       'HydroLab HCO file version %1.1f is not supported', v);
@@ -71,15 +71,6 @@ function obj= hco_(obj)
   % read
   nu= fscanf(fid,'%d',1);
   obj.si= set(obj.si,'nu',nu);
-  % [NPAT]
-  %  number of load levels
-  linha= fgetl(fid);
-  while not(strcmp('[NPAT]',linha))
-    linha= fgetl(fid);
-  end
-  % read
-  np= fscanf(fid,'%d',1);
-  obj.si= set(obj.si,'np',np);
   % [VOIF]
   %  initial and final reservoir storage requirements
   linha= fgetl(fid);
@@ -184,7 +175,16 @@ function obj= hco_(obj)
   obj.si= set(obj.si,'nq', nq);
   % clear temporary buffer
   clear nq;
-  % [DINT]
+  % [NPAT]
+  %  number of load levels
+  linha= fgetl(fid);
+  while not(strcmp('[NPAT]',linha))
+    linha= fgetl(fid);
+  end
+  % read
+  np= fscanf(fid,'%d',1);
+  obj.si= set(obj.si,'np',np);
+  % [DPAT]
   %  load levels duration for each stage
   %  memory allocation
   ti= zeros(ni,1);
@@ -193,7 +193,7 @@ function obj= hco_(obj)
     tp{l}= zeros(ni,1);
   end
   linha= fgetl(fid);
-  while not(strcmp('[DINT]',linha))
+  while not(strcmp('[DPAT]',linha))
     linha= fgetl(fid);
   end
   % read

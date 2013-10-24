@@ -1,3 +1,11 @@
+2013-10-24  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+    * @io/private/hco_.m:
+    ([VERS]): Atualiza versão do arquivo de dados para 2.3
+    ([NPAT]): Move seção para após [NMAQ]
+    ([PATC]): Adiciona seção de identificação dos patamares de carga
+    ([DPAT]): Substitui a seção [DINT]
+
 2013-10-15  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
     * @io/private/hco_.m:
