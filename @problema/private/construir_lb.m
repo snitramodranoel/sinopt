@@ -58,10 +58,9 @@ function obj = construir_lb(obj)
   % water spill
   lv= zeros(nu,ni);
   % water discharge
-  warning('SINopt:problema:xBounds','Lower bounds for water discharge relaxed');
   lq= cell(np,1);
   for l= 1:np
-    lq{l}= zeros(nu,ni);
+    lq{l}= dn;
   end
   % pack data
   obj.lq= empacotar_q(obj,lq);

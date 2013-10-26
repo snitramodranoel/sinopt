@@ -1,3 +1,7 @@
+2013-10-26  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
+
+    * @problema/private/construir_lb.m: Reabilita defluência mínima
+
 2013-10-24  Leonardo Martins  <leonardo@cose.fee.unicamp.br>
 
     * @io/private/hco_.m:
