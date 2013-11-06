@@ -1,10 +1,6 @@
 % @problema/private/calcular_df.m computes the gradient of f(.).
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -35,7 +31,7 @@ function df= calcular_df(obj,w)
   ni= get(obj.si,'ni');
   np= get(obj.si,'np');
   nt= get(obj.si,'nt');
-  tp= get(obj.si,'tp');
+  th= get(obj.si,'th');
   % unpack z variables
   z= desempacotar_z(obj, extrair_z(obj,w));
   % memory allocation
@@ -48,7 +44,7 @@ function df= calcular_df(obj,w)
     co= get(ut{k},'co');
     for j= 1:ni
       for l= 1:np
-        dz{l}(k,j)= derivar(co, 1, z{l}(k,j), tp{l}(j)/3.6e+3);
+        dz{l}(k,j)= derivar(co, 1, z{l}(k,j), th{l}(j));
       end
     end
   end

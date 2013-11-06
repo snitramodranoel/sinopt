@@ -189,8 +189,10 @@ function obj= hco_(obj)
   %  memory allocation
   ti= zeros(ni,1);
   tp= cell(np,1);
+  th= cell(np,1);
   for l= 1:np
     tp{l}= zeros(ni,1);
+    th{l}= zeros(ni,1);
   end
   linha= fgetl(fid);
   while not(strcmp('[DPAT]',linha))
@@ -201,12 +203,14 @@ function obj= hco_(obj)
     fscanf(fid,'%s',1); % bogus
     for l= 1:np
       fscanf(fid,'%d',1);           % bogus
-      tp{l}(j)= fscanf(fid,'%d',1); % load level duration
+      tp{l}(j)= fscanf(fid,'%d',1); % load level duration [s]
+      th{l}(j)= tp{l}(j)/3.6e+3;    % load level duration [h]
       ti(j)= ti(j) + tp{l}(j);      % stage duration
     end
   end
   obj.si= set(obj.si,'ti', ti);
   obj.si= set(obj.si,'tp', tp);
+  obj.si= set(obj.si,'th', th);
   % clear temporary buffers
   clear ti;
   clear tp;

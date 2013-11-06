@@ -32,14 +32,12 @@ function obj = construir_lb(obj)
   % system data
   dn= get(obj.si,'dn');
   in= get(obj.si,'in');
-  uh= get(obj.si,'uh');
   ur= get(obj.si,'ur');
   ut= get(obj.si,'ut');
   vn= get(obj.si,'vn');
   % system dimensions
   ni= get(obj.si,'ni');
   np= get(obj.si,'np');
-  nq= get(obj.si,'nq');
   nr= get(obj.si,'nr');
   nt= get(obj.si,'nt');
   nu= get(obj.si,'nu');  

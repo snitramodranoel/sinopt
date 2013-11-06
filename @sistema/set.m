@@ -1,10 +1,6 @@
 % @sistema/set.m sets object property values.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -84,6 +80,8 @@ function obj= set(obj, varargin)
         obj.nu= valor;
       case 'rt'
         obj.rt= valor;
+      case 'th'
+        obj.th= valor;
       case 'ti'
         obj.ti= valor;
       case 'tm'

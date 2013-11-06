@@ -1,10 +1,6 @@
 % @sistema/dump.m dumps object property values.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -52,6 +48,7 @@ function dump(obj)
   fprintf(1,'sistema.nt: %d\n', obj.nt);
   fprintf(1,'sistema.nu: %d\n', obj.nu);
   fprintf(1,'sistema.rt: %dx%d\n', size(obj.rt,1), size(obj.rt,2));
+  fprintf(1,'sistema.th: %dx%d\n', size(obj.th,1), size(obj.th,2));
   fprintf(1,'sistema.ti: %dx%d\n', size(obj.ti,1), size(obj.ti,2));
   fprintf(1,'sistema.tm: %dx%d\n', size(obj.tm,1), size(obj.tm,2));
   fprintf(1,'sistema.tn: %dx%d\n', size(obj.tn,1), size(obj.tn,2));
