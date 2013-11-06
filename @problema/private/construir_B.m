@@ -1,10 +1,6 @@
 % @problema/private/construir_B.m builds matrix B.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -29,6 +25,8 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function obj = construir_B(obj)
+  % system data
+  th= get(obj.si,'th');
   % system dimensions
   ni= get(obj.si,'ni');
   nl= get(obj.si,'nl');
@@ -38,10 +36,14 @@ function obj = construir_B(obj)
   obj= construir_N(obj);
   % memory allocation
   obj.B= spalloc(obj.mb, obj.ny, 2*obj.ny);
-  % fill in elements
+  % build matrix
+  i= 1;
   k= 1;
-  for j= 1:nl:nl*np*ni
-    obj.B(k:k+ns-1,j:j+nl-1)= obj.N;
-    k= k+ns;
+  for l= 1:np
+    for j= 1:ni
+      obj.B(k:k+ns-1, i:i+nl-1)= th{l}(j) * obj.N;
+      i= i+nl;
+      k= k+ns;
+    end
   end
 end

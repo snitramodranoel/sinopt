@@ -26,6 +26,7 @@
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function Jp= calcular_Jp(obj,w)
   % system data
+  th= get(obj.si,'th');
   uh= get(obj.si,'uh');
   uf= get(obj.si,'uf');
   ur= get(obj.si,'ur');
@@ -37,7 +38,6 @@ function Jp= calcular_Jp(obj,w)
   np= get(obj.si,'np');
   nq= get(obj.si,'nq');
   nr= get(obj.si,'nr');
-  nu= get(obj.si,'nu');
 
   % unpack x variables
   ss= desempacotar_s(obj, extrair_s(obj,w));
@@ -91,13 +91,13 @@ function Jp= calcular_Jp(obj,w)
           % check for final stage
           if j < ni
             u = u+1;
-            ds(u) = df(b) * dpds(uh{ur(i)},zeta,s,q);
+            ds(u) = th{l}(j) * df(b) * dpds(uh{ur(i)},zeta,s,q);
           end
           k = k+1;
           % discharge variables
-          dq(k) = df(b) * dpdq(uh{ur(i)},zeta,s,q,v);
+          dq(k) = th{l}(j) * df(b) * dpdq(uh{ur(i)},zeta,s,q,v);
           % spill variables
-          dv(k) = df(b) * dpdv(uh{ur(i)},zeta,q,v);
+          dv(k) = th{l}(j) * df(b) * dpdv(uh{ur(i)},zeta,q,v);
         end
       end
       % compute indexes and partial derivatives for run-off-river plants
@@ -118,9 +118,9 @@ function Jp= calcular_Jp(obj,w)
         nbc= length(get(uh{uf(i)}, 'bc'));
         for b= 1:nbc
           % discharge variables
-          dq(k) = df(b) * dpdq(uh{uf(i)},zeta,s,q,v);
+          dq(k) = th{l}(j) * df(b) * dpdq(uh{uf(i)},zeta,s,q,v);
           % spill variables
-          dv(k) = df(b) * dpdv(uh{uf(i)},zeta,q,v);
+          dv(k) = th{l}(j) * df(b) * dpdv(uh{uf(i)},zeta,q,v);
         end
       end
     end

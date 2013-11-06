@@ -1,10 +1,6 @@
 % @io/private/ropt_.m writes ROPT files.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -482,7 +478,7 @@ function ropt_(obj)
         fprintf(fid,'\t%2d ',l);
       end
       for k= 1:ns
-        fprintf(fid,'\t%8.2f ',lb{l}(k,j)/(tp{l}(j)/3.6e+3));
+        fprintf(fid,'\t%8.2f ',lb{l}(k,j));
       end
       fprintf(fid,'\n');
     end

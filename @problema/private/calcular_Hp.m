@@ -26,6 +26,7 @@
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function Hp= calcular_Hp(obj,w,lambda)
   % system data
+  th= get(obj.si,'th');
   uh= get(obj.si,'uh');
   ur= get(obj.si,'ur');
   vf= get(obj.si,'vf');
@@ -97,7 +98,7 @@ function Hp= calcular_Hp(obj,w,lambda)
         % 
         y= 0.0;
         for b= 1:length(bc)
-          y= y + yb{l}(bc(b),j) * df(b);
+          y= y + yb{l}(bc(b),j) * df(b) * th{l}(j);
         end
         % check for plants with a reservoir
         if ~ror

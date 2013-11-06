@@ -28,6 +28,7 @@
 function obj= construir_I(obj)
   % system data
   uh= get(obj.si,'uh');
+  th= get(obj.si,'th');
   % system dimensions
   ni= get(obj.si,'ni');
   np= get(obj.si,'np');
@@ -53,7 +54,7 @@ function obj= construir_I(obj)
         df= get(uh{i}, 'df');
         for b= 1:length(bc)
           k= k+1;
-          Is(k)= df(b);                         % distribution factor
+          Is(k)= th{l}(j) * df(b);              % distribution factor
           Ii(k)= ns*(ni*(l-1) + (j-1)) + bc(b); % row
           Ij(k)= nu*(ni*(l-1) + (j-1)) + i;     % column
         end

@@ -36,12 +36,18 @@ function obj = construir_d(obj)
   % load data
   dc= get(obj.si,'dc');
   gp= get(obj.si,'gp');
+  th= get(obj.si,'th');
   % memory allocation
-  obj.d= zeros(obj.mb,1);
-  % compute load
-  n= ns*ni;
+  obj.d= zeros(obj.mb,1);  
+  % compute load (in MWh)
+  i= 0;
   for l= 1:np
-    % load equals gross load minus fixed generation at small plants
-    obj.d(n*(l-1)+1 : n*l)= reshape(dc{l} - gp{l}, n, 1);
+    for j= 1:ni
+      for k= 1:ns
+        i= i+1;
+        % load equals gross load minus fixed generation
+        obj.d(i)= th{l}(j) * (dc{l}(k,j) - gp{l}(k,j));
+      end
+    end
   end
 end

@@ -1,10 +1,6 @@
 % @problema/private/construir_C.m builds matrix C.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -29,6 +25,8 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function obj = construir_C(obj)
+  % system data
+  th= get(obj.si,'th');
   % system dimensions
   nc= get(obj.si,'nc');
   ni= get(obj.si,'ni');
@@ -38,10 +36,14 @@ function obj = construir_C(obj)
   obj= construir_L(obj);
   % memory allocation
   obj.C= spalloc(obj.mc, obj.ny, nnz(obj.L)*np*ni);
-  % fill in elements
+  % build matrix
+  i= 1;
   k= 1;
-  for j= 1:nl:nl*np*ni
-      obj.C(k:k+nc-1, j:j+nl-1)= obj.L;
+  for l= 1:np
+    for j= 1:ni
+      obj.C(k:k+nc-1, i:i+nl-1)= th{l}(j) * obj.L;
+      i= i+nl;
       k= k+nc;
+    end
   end
 end
