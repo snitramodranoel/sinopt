@@ -40,7 +40,7 @@ function f= calcular_f(obj,w)
     co= get(ut{k},'co');
     for j= 1:ni
       for l= 1:np
-        f= f + calcular(co, z{l}(k,j), th{l}(j));
+        f= f + calcular(co, z{l}(k,j), th{l}(j) * 1e-3);
       end
     end
   end

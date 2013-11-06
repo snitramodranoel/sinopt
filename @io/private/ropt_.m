@@ -42,7 +42,6 @@ function ropt_(obj)
   mi= get(obj.si,'mi'); % start month
   uh= get(obj.si,'uh'); % list of hydro plants
   ti= get(obj.si,'ti'); % duration of stages
-  tp= get(obj.si,'tp'); % duration of load levels
   vi= get(obj.si,'vi'); % initial reservoir storage states
   vf= get(obj.si,'vf'); % final reservoir storage requirements
   % optimal solution

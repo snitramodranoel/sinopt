@@ -41,7 +41,7 @@ function obj = construir_B(obj)
   k= 1;
   for l= 1:np
     for j= 1:ni
-      obj.B(k:k+ns-1, i:i+nl-1)= th{l}(j) * obj.N;
+      obj.B(k:k+ns-1, i:i+nl-1)= 1e-3 * th{l}(j) * obj.N;
       i= i+nl;
       k= k+ns;
     end

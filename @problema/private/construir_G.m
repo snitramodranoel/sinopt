@@ -54,7 +54,7 @@ function obj= construir_G(obj)
         df= get(ut{t}, 'df');
         for b= 1:length(bc)
           k= k+1;
-          Gs(k)= th{l}(j) * df(b);              % distribution factor
+          Gs(k)= 1e-3 * th{l}(j) * df(b);       % distribution factor
           Gi(k)= ns*(ni*(l-1) + (j-1)) + bc(b); % row
           Gj(k)= nt*(ni*(l-1) + (j-1)) + t;     % column
         end

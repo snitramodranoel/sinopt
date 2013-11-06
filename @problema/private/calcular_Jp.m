@@ -91,13 +91,13 @@ function Jp= calcular_Jp(obj,w)
           % check for final stage
           if j < ni
             u = u+1;
-            ds(u) = th{l}(j) * df(b) * dpds(uh{ur(i)},zeta,s,q);
+            ds(u) = 1e-3 * th{l}(j) * df(b) * dpds(uh{ur(i)},zeta,s,q);
           end
           k = k+1;
           % discharge variables
-          dq(k) = th{l}(j) * df(b) * dpdq(uh{ur(i)},zeta,s,q,v);
+          dq(k) = 1e-3 * th{l}(j) * df(b) * dpdq(uh{ur(i)},zeta,s,q,v);
           % spill variables
-          dv(k) = th{l}(j) * df(b) * dpdv(uh{ur(i)},zeta,q,v);
+          dv(k) = 1e-3 * th{l}(j) * df(b) * dpdv(uh{ur(i)},zeta,q,v);
         end
       end
       % compute indexes and partial derivatives for run-off-river plants
@@ -118,9 +118,9 @@ function Jp= calcular_Jp(obj,w)
         nbc= length(get(uh{uf(i)}, 'bc'));
         for b= 1:nbc
           % discharge variables
-          dq(k) = th{l}(j) * df(b) * dpdq(uh{uf(i)},zeta,s,q,v);
+          dq(k) = 1e-3 * th{l}(j) * df(b) * dpdq(uh{uf(i)},zeta,s,q,v);
           % spill variables
-          dv(k) = th{l}(j) * df(b) * dpdv(uh{uf(i)},zeta,q,v);
+          dv(k) = 1e-3 * th{l}(j) * df(b) * dpdv(uh{uf(i)},zeta,q,v);
         end
       end
     end

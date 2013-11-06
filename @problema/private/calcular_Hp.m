@@ -98,7 +98,7 @@ function Hp= calcular_Hp(obj,w,lambda)
         % 
         y= 0.0;
         for b= 1:length(bc)
-          y= y + yb{l}(bc(b),j) * df(b) * th{l}(j);
+          y= y + yb{l}(bc(b),j) * df(b) * th{l}(j) * 1e-3;
         end
         % check for plants with a reservoir
         if ~ror

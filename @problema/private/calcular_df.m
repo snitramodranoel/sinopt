@@ -44,7 +44,7 @@ function df= calcular_df(obj,w)
     co= get(ut{k},'co');
     for j= 1:ni
       for l= 1:np
-        dz{l}(k,j)= derivar(co, 1, z{l}(k,j), th{l}(j));
+        dz{l}(k,j)= derivar(co, 1, z{l}(k,j), th{l}(j) * 1e-3);
       end
     end
   end

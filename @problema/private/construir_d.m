@@ -46,7 +46,7 @@ function obj = construir_d(obj)
       for k= 1:ns
         i= i+1;
         % load equals gross load minus fixed generation
-        obj.d(i)= th{l}(j) * (dc{l}(k,j) - gp{l}(k,j));
+        obj.d(i)= 1e-3 * th{l}(j) * (dc{l}(k,j) - gp{l}(k,j));
       end
     end
   end

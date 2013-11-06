@@ -42,7 +42,7 @@ function Hf= calcular_Hf(obj,w)
     for j= 1:ni
       for k= 1:nt
         i= i+1;
-        Hf(i)= derivar(get(ut{k},'co'),2,z{l}(k,j),th{l}(j));
+        Hf(i)= derivar(get(ut{k},'co'), 2, z{l}(k,j), th{l}(j) * 1e-3);
       end
     end
   end

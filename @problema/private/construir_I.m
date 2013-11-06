@@ -54,7 +54,7 @@ function obj= construir_I(obj)
         df= get(uh{i}, 'df');
         for b= 1:length(bc)
           k= k+1;
-          Is(k)= th{l}(j) * df(b);              % distribution factor
+          Is(k)= 1e-3 * th{l}(j) * df(b);       % distribution factor
           Ii(k)= ns*(ni*(l-1) + (j-1)) + bc(b); % row
           Ij(k)= nu*(ni*(l-1) + (j-1)) + i;     % column
         end
