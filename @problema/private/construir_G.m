@@ -45,6 +45,7 @@ function obj= construir_G(obj)
   Gi= zeros(nze,1);
   Gj= zeros(nze,1);
   Gs= zeros(nze,1);
+  Gu= zeros(nze,1);
   % assign distribution factors to membership matrix elements
   k= 0;
   for l= 1:np
@@ -54,7 +55,8 @@ function obj= construir_G(obj)
         df= get(ut{t}, 'df');
         for b= 1:length(bc)
           k= k+1;
-          Gs(k)= 1e-3 * th{l}(j) * df(b);       % distribution factor
+          Gu(k)= df(b);                         % distribution factor
+          Gs(k)= 1e-3 * th{l}(j) * df(b);       % distribution factor (scaled)
           Gi(k)= ns*(ni*(l-1) + (j-1)) + bc(b); % row
           Gj(k)= nt*(ni*(l-1) + (j-1)) + t;     % column
         end
@@ -62,5 +64,6 @@ function obj= construir_G(obj)
     end
   end
   % build sparse matrix
-  obj.G= sparse(Gi, Gj, Gs, obj.mb, obj.nz);
+  obj.G = sparse(Gi, Gj, Gs, obj.mb, obj.nz);
+  obj.Gu= sparse(Gi, Gj, Gu, obj.mb, obj.nz);
 end

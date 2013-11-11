@@ -64,18 +64,18 @@ function rs= ipo(obj)
   [x,info]= ipopt(x,funcs,options);
   % compute solution
   y= info.lambda;
-  rs= set(rs,  's', desempacotar_s(obj, extrair_s(obj,x)));
-  rs= set(rs,  'q', desempacotar_q(obj, extrair_q(obj,x)));
-  rs= set(rs,  'v', desempacotar_v(obj, extrair_v(obj,x)));
-  rs= set(rs,  'y', desempacotar_y(obj, extrair_y(obj,x)));
-  rs= set(rs,  'z', desempacotar_z(obj, extrair_z(obj,x)));
-  rs= set(rs, 'lz', desempacotar_z(obj, obj.lz));
-  rs= set(rs,  'P', desempacotar_lambdab(obj, obj.I*calcular_p(obj,x)));
-  rs= set(rs,  'Q', desempacotar_lambdab(obj, obj.G*extrair_z(obj,x)));
-  rs= set(rs, 'lQ', desempacotar_lambdab(obj, obj.G*extrair_z(obj,options.lb)));
-  rs= set(rs, 'la', desempacotar_lambdaa(obj, extrair_lambdaa(obj,y)));
-  rs= set(rs, 'lb', desempacotar_lambdab(obj, extrair_lambdab(obj,y)));
-  rs= set(rs, 'uq', desempacotar_q(obj, extrair_q(obj,options.ub)));
+  rs= set(rs,  's', desempacotar_s(obj,extrair_s(obj,x)));
+  rs= set(rs,  'q', desempacotar_q(obj,extrair_q(obj,x)));
+  rs= set(rs,  'v', desempacotar_v(obj,extrair_v(obj,x)));
+  rs= set(rs,  'y', desempacotar_y(obj,extrair_y(obj,x)));
+  rs= set(rs,  'z', desempacotar_z(obj,extrair_z(obj,x)));
+  rs= set(rs, 'lz', desempacotar_z(obj,obj.lz));
+  rs= set(rs,  'P', desempacotar_lambdab(obj,obj.Iu*calcular_p(obj,x)));
+  rs= set(rs,  'Q', desempacotar_lambdab(obj,obj.Gu*extrair_z(obj,x)));
+  rs= set(rs, 'lQ', desempacotar_lambdab(obj,obj.Gu*extrair_z(obj,options.lb)));
+  rs= set(rs, 'la', desempacotar_lambdaa(obj,extrair_lambdaa(obj,y)));
+  rs= set(rs, 'lb', desempacotar_lambdab(obj,extrair_lambdab(obj,y)));
+  rs= set(rs, 'uq', desempacotar_q(obj,extrair_q(obj,options.ub)));
   switch info.status
     case {0,1}
       rs= set(rs,'status',0);

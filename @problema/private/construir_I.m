@@ -45,6 +45,7 @@ function obj= construir_I(obj)
   Ii= zeros(nze,1);
   Ij= zeros(nze,1);
   Is= zeros(nze,1);
+  Iu= zeros(nze,1);
   % assign distribution factors to membership matrix elements
   k= 0;
   for l= 1:np
@@ -54,7 +55,8 @@ function obj= construir_I(obj)
         df= get(uh{i}, 'df');
         for b= 1:length(bc)
           k= k+1;
-          Is(k)= 1e-3 * th{l}(j) * df(b);       % distribution factor
+          Iu(k)= df(b);                         % distribution factor
+          Is(k)= 1e-3 * th{l}(j) * df(b);       % distribution factor (scaled)
           Ii(k)= ns*(ni*(l-1) + (j-1)) + bc(b); % row
           Ij(k)= nu*(ni*(l-1) + (j-1)) + i;     % column
         end
@@ -62,5 +64,6 @@ function obj= construir_I(obj)
     end
   end
   % build sparse matrix
-  obj.I= sparse(Ii, Ij, Is, obj.mb, nu*ni*np);
+  obj.I = sparse(Ii, Ij, Is, obj.mb, nu*ni*np);
+  obj.Iu= sparse(Ii, Ij, Iu, obj.mb, nu*ni*np);
 end

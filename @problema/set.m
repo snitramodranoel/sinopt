@@ -41,8 +41,12 @@ function obj= set(obj, varargin)
         obj.C= valor;
       case 'G'
         obj.G= valor;
+      case 'Gu'
+        obj.Gu= valor;
       case 'I'
         obj.I= valor;
+      case 'Iu'
+        obj.Iu= valor;
       case 'L'
         obj.L= valor;
       case 'M'

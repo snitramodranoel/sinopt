@@ -35,8 +35,12 @@ function valor= get(obj, propriedade)
       valor= obj.C;
     case 'G'
       valor= obj.G;
+    case 'Gu'
+      valor= obj.Gu;
     case 'I'
       valor= obj.I;
+    case 'Iu'
+      valor= obj.Iu;
     case 'L'
       valor= obj.L;
     case 'M'
