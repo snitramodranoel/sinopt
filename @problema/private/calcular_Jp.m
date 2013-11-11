@@ -102,7 +102,6 @@ function Jp= calcular_Jp(obj,w)
       end
       % compute indexes and partial derivatives for run-off-river plants
       for i= 1:nf
-        k= k+1;
         % scalar buffers
         s= vi(uf(i));
         q= qq{l}(uf(i),j);
@@ -117,6 +116,7 @@ function Jp= calcular_Jp(obj,w)
         df= get(uh{uf(i)}, 'df');
         nbc= length(get(uh{uf(i)}, 'bc'));
         for b= 1:nbc
+          k= k+1;
           % discharge variables
           dq(k) = 1e-3 * th{l}(j) * df(b) * dpdq(uh{uf(i)},zeta,s,q,v);
           % spill variables

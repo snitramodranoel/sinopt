@@ -1,6 +1,6 @@
 % @problema/private/ipo.m wrapper for IPOPT solver.
 %
-% Copyright (c) 2011 Leonardo Martins, Universidade Estadual de Campinas
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -25,8 +25,6 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function rs= ipo(obj)
-  % system dimensions
-  nr= get(obj.si,'nr');
   % memory allocation for object @resultado
   rs= resultado();
   % set up callbacks

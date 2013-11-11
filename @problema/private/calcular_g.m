@@ -27,7 +27,7 @@
 function g= calcular_g(obj,w)
   % unpack z
   z= extrair_z(obj,w);
-  
+  % solve constraints
   g= [calcular_Ax(obj,w); ...
       calcular_Cy(obj,w); ...
       calcular_By(obj,w) - (obj.I * calcular_p(obj,w)) - (obj.G * z)];
