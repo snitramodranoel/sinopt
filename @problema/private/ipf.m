@@ -1,11 +1,7 @@
 % @problema/private/ipf.m defines a primal-dual filter line search
 % interior-point algorithm.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
-%
-% @package sinopt
-% @author  Leonardo Martins
-% @version SVN: $Id$
+% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -84,7 +80,7 @@ function rs= ipf(obj)
     y= zeros(obj.m,1);
   end
   %% verbosity
-  if (strcmp(obj.dv,'iter'))
+  if obj.dv == 5 % check if iteration verbosity is active
     printc();
   end
   %% algorithm
@@ -346,7 +342,7 @@ function rs= ipf(obj)
       F= adicionar(F, (1-gamma_theta)*theta, phi-gamma_phi*theta);
     end
     % verbosity
-    if (strcmp(obj.dv,'iter'))
+    if obj.dv == 5 % check if iteration verbosity is active
       printi();
     end
     % evaluate objective function and constraints
@@ -360,20 +356,24 @@ function rs= ipf(obj)
   end
   timing= toc;
   %% verbosity
-  if (strcmp(obj.dv,'iter') || strcmp(obj.dv,'final'))
+  if obj.dv == 5 % check if iteration verbosity is active
+    printr();
+  elseif obj.dv == 1 % check if final verbosity is active
     printr();
   end
   %% save optimal solution
-  rs= set(rs, 's', desempacotar_s(obj, extrair_s(obj,x)));
-  rs= set(rs, 'q', desempacotar_q(obj, extrair_q(obj,x)));
-  rs= set(rs, 'v', desempacotar_v(obj, extrair_v(obj,x)));
-  rs= set(rs, 'y', desempacotar_y(obj, extrair_y(obj,x)));
-  rs= set(rs, 'z', desempacotar_z(obj, extrair_z(obj,x)));
-  rs= set(rs, 'P', desempacotar_lambdab(obj, calcular_P(obj,x)));
-  rs= set(rs, 'Q', desempacotar_lambdab(obj, calcular_Q(obj,x)));
-  rs= set(rs, 'la', desempacotar_lambdaa(obj, extrair_lambdaa(obj,y)));
-  rs= set(rs, 'lb', desempacotar_lambdab(obj, extrair_lambdab(obj,y)));
-  rs= set(rs, 'uq', desempacotar_q(obj, extrair_q(obj,u)));
+  rs= set(rs,  's', desempacotar_s(obj,extrair_s(obj,x)));
+  rs= set(rs,  'q', desempacotar_q(obj,extrair_q(obj,x)));
+  rs= set(rs,  'v', desempacotar_v(obj,extrair_v(obj,x)));
+  rs= set(rs,  'y', desempacotar_y(obj,extrair_y(obj,x)));
+  rs= set(rs,  'z', desempacotar_z(obj,extrair_z(obj,x)));
+  rs= set(rs, 'lz', desempacotar_z(obj,obj.lz));
+  rs= set(rs,  'P', desempacotar_lambdab(obj,obj.Iu*calcular_p(obj,x)));
+  rs= set(rs,  'Q', desempacotar_lambdab(obj,obj.Gu*extrair_z(obj,x)));
+  rs= set(rs, 'lQ', desempacotar_lambdab(obj,obj.Gu*extrair_z(obj,l)));
+  rs= set(rs, 'la', desempacotar_lambdaa(obj,extrair_lambdaa(obj,y)));
+  rs= set(rs, 'lb', desempacotar_lambdab(obj,extrair_lambdab(obj,y)));
+  rs= set(rs, 'uq', desempacotar_q(obj,extrair_q(obj,u)));
   %% verbosity subfunctions
   %  header
   function printc()
