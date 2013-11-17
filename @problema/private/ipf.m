@@ -75,10 +75,7 @@ function rs= ipf(obj)
   %    compute first-order derivatives of f(.) and g(.)
   gf= calcular_df(obj,x);
   Jg= calcular_J(obj,x);
-  y= (Jg*Jg')\(Jg*(-gf + z - w));
-  if (norm(y,inf) > ymax) % check for degree of linear independence
-    y= zeros(obj.m,1);
-  end
+  y= ones(obj.m,1);
   %% verbosity
   if obj.dv == 5 % check if iteration verbosity is active
     printc();
