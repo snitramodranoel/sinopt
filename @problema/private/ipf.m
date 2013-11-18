@@ -34,6 +34,10 @@ function rs= ipf(obj)
   %  lower and upper bounds
   l= [obj.ls; obj.lq; obj.lv; obj.ly; obj.lz];
   u= [obj.us; obj.uq; obj.uv; obj.uy; obj.uz];
+  %% scaling
+  sf= 1.0;
+  l= l*sf;
+  u= u*sf;
   %% algorithm parameters
   %  barrier
   mu= 0.0;                   % barrier parameters
@@ -56,10 +60,9 @@ function rs= ipf(obj)
   alfa= 0.00;                % primal step
   alfad= 0.00;               % dual step
   %  convergence
-  epstolp= 1e-5;             % tol. converg?ncia primal
-  epstold= 1e-5;             % tol. converg?ncia dual
+  epstolp= 1e-5;             % primal convergence tolerance
+  epstold= 1e-5;             % dual convergence tolerance
   %% initial solution
-  ymax= 1e+5;
   %  primal variables
   x= mean([l'; u'])';
   %  slack variables
@@ -70,11 +73,11 @@ function rs= ipf(obj)
   z= max(abs(x),10);
   %  equality constraints dual variables
   %    evaluate f(.) and g(.) on the initial solution
-  f= calcular_f(obj,x);
-  g= calcular_g(obj,x);
+  f= calcular_f(obj,x/sf);
+  g= calcular_g(obj,x/sf);
   %    compute first-order derivatives of f(.) and g(.)
-  gf= calcular_df(obj,x);
-  Jg= calcular_J(obj,x);
+  gf= calcular_df(obj,x/sf);
+  Jg= calcular_J(obj,x/sf);
   y= ones(obj.m,1);
   %% verbosity
   if obj.dv == 5 % check if iteration verbosity is active
@@ -82,9 +85,9 @@ function rs= ipf(obj)
   end
   %% algorithm
   %  set up filter parameters
-  theta= norm([g - b; x + s - u; x - t - l]);
-  thetamax= 1e+04*max(1,norm(theta));
-  thetamin= 1e-04*max(1,norm(theta));
+  theta= norm([g-b; x+s-u; x-t-l]);
+  thetamax= 1e+04 * max(1,norm(theta));
+  thetamin= 1e-04 * max(1,norm(theta));
   %  initialize filter
   F= limpar(F,thetamax);
   tic;
@@ -93,11 +96,11 @@ function rs= ipf(obj)
     for i= 1:obj.n
       % lower bounds
       if (t(i) < eps*mu)
-        l(i)= l(i) - (eps^(3/4))*max(1,abs(l(i)));
+        l(i)= l(i) - (eps^(3/4)) * max(1,abs(l(i)));
       end
       % upper bounds
       if (s(i) < eps*mu)
-        u(i)= u(i) + (eps^(3/4))*max(1,abs(u(i)));
+        u(i)= u(i) + (eps^(3/4)) * max(1,abs(u(i)));
       end
     end
     % complementarities
@@ -134,7 +137,7 @@ function rs= ipf(obj)
       end
     end
     % compute Hessian of Lagrangian
-    H= calcular_D(obj,x,y,SiW,TiZ);
+    H= calcular_D(obj, x/sf, y, SiW, TiZ);
     % compute coefficient matrix
     ctrlic= 0;
     deltac= 0;
@@ -221,8 +224,8 @@ function rs= ipf(obj)
       switchc= false;
       armijoc= false;
       % evaluate original solution
-      gt= calcular_g(obj, xt);
-      phit= calcular_f(obj,xt) - mu*(sum(log(t)) + sum(log(s)));
+      gt= calcular_g(obj, xt/sf);
+      phit= calcular_f(obj,xt/sf) - mu*(sum(log(t)) + sum(log(s)));
       thetat= norm([gt - b; xt + st - u; xt - tt - l]);
       % check for filter acceptability
       if ~filtrar(F,thetat,phit)
@@ -343,11 +346,11 @@ function rs= ipf(obj)
       printi();
     end
     % evaluate objective function and constraints
-    f= calcular_f(obj,x);
-    g= calcular_g(obj,x);
+    f= calcular_f(obj,x/sf);
+    g= calcular_g(obj,x/sf);
     % compute first-order derivatives of new solution
-    gf= calcular_df(obj,x);
-    Jg= calcular_J(obj,x);
+    gf= calcular_df(obj,x/sf);
+    Jg= calcular_J(obj,x/sf);
     % update infeasibility measurement
     theta= norm([g-b; x+s-u; x-t-l]);
   end
@@ -358,7 +361,11 @@ function rs= ipf(obj)
   elseif obj.dv == 1 % check if final verbosity is active
     printr();
   end
-  %% save optimal solution
+  %% scale back
+  x= x/sf;
+  l= l/sf;
+  u= u/sf;
+  %% save optimal solution 
   rs= set(rs,  's', desempacotar_s(obj,extrair_s(obj,x)));
   rs= set(rs,  'q', desempacotar_q(obj,extrair_q(obj,x)));
   rs= set(rs,  'v', desempacotar_v(obj,extrair_v(obj,x)));
