@@ -31,6 +31,7 @@
 function obj = construir_bb(obj)
   % system data
   af= get(obj.si,'af');
+  tv= get(obj.si,'tv');
   uc= get(obj.si,'uc');
   ur= get(obj.si,'ur');
   vi= get(obj.si,'vi');
@@ -46,8 +47,10 @@ function obj = construir_bb(obj)
     up= upstream(obj.si, k);
     for j= 1:ni
       b(k,j)= af(k,j);
-      for i= 1:length(up)
-        b(k,j)= b(k,j) - af(up(i),j);
+      if (tv == 1)
+        for i= 1:length(up)
+          b(k,j)= b(k,j) - af(up(i),j);
+        end
       end
     end
   end

@@ -35,13 +35,13 @@ function rs= ipf(obj)
   l= [obj.ls; obj.lq; obj.lv; obj.ly; obj.lz];
   u= [obj.us; obj.uq; obj.uv; obj.uy; obj.uz];
   %% scaling
-  sf= 1.0;
+  sf= 1.0; 
   l= l*sf;
   u= u*sf;
   %% algorithm parameters
   %  barrier
-  mu= 0.0;                   % barrier parameters
-  e= ones(obj.n,1);          % unit vector
+  mu= 0.0;           % barrier parameters
+  e= ones(obj.n,1);  % unit vector
   %  filter
   F= filtro();
   %  :inertia correction
@@ -56,12 +56,12 @@ function rs= ipf(obj)
   %  :second-order correction
   kappasoc= 0.99;
   %  step size
-  tau= 0.95;                 % border ratio
-  alfa= 0.00;                % primal step
-  alfad= 0.00;               % dual step
+  tau= 0.95;   % border ratio
+  alfa= 0.00;  % primal step
+  alfad= 0.00; % dual step
   %  convergence
-  epstolp= 1e-5;             % primal convergence tolerance
-  epstold= 1e-5;             % dual convergence tolerance
+  epstolp= 1e-5; % primal convergence tolerance
+  epstold= 1e-5; % dual convergence tolerance
   %% initial solution
   %  primal variables
   x= mean([l'; u'])';
@@ -425,9 +425,9 @@ function rs= ipf(obj)
   %  iteration
   function printi()
     fprintf(1,' %3d  ', k);
-    fprintf(1,'%5.2e  ', f);
+    fprintf(1,'%9.6e  ', f);
     %  (gap)
-    fprintf(1,'%5.2e  ', Eg);
+    fprintf(1,'%9.6e  ', Eg);
     %  (barrier)
     fprintf(1,'%5.2e  ', mu);
     fprintf(1,'%5.2e  ', gamma);
@@ -468,9 +468,9 @@ function rs= ipf(obj)
   end
   %  footer
   function printr()
-    fprintf(1,'\n Objective f-value: %.2e\n', f);
-    fprintf(1,' Duality gap:       %.2e\n', Eg);
-    fprintf(1,' Maximum violation: %.2e\n', norm([rho;rho_w;rho_z], inf));
+    fprintf(1,'\n Objective f-value: %.6e\n', f);
+    fprintf(1,' Duality gap:       %.6e\n', Eg);
+    fprintf(1,' Maximum violation: %.6e\n', norm([rho;rho_w;rho_z], inf));
     fprintf(1,'\n Elapsed time is %.1f seconds\n\n', timing);
   end
 end

@@ -66,6 +66,13 @@ function obj= vaz_(obj)
   if ni ~= get(obj.si,'ni')
     error('SINopt:io:numberMismatch','Wrong number of stages');
   end
+  % [TIPV]
+  linha= fgetl(fid);
+  while not(strcmp('[TIPV]',linha))
+    linha= fgetl(fid);
+  end
+  % type of inflows
+  obj.si= set(obj.si,'tv',fscanf(fid,'%d',1));
   % [VAZO]
   %  inflows
   linha= fgetl(fid);

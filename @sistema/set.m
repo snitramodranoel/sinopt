@@ -90,6 +90,8 @@ function obj= set(obj, varargin)
         obj.tn= valor;
       case 'tp'
         obj.tp= valor;
+      case 'tv'
+        obj.tv= valor;
       case 'uc'
         obj.uc= valor;
       case 'uh'

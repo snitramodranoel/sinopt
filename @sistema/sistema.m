@@ -1,6 +1,6 @@
 % @sistema/sistema.m stores power system data.
 %
-% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
+% Copyright (c) 2014 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -53,6 +53,7 @@ function obj= sistema(varargin)
   obj.tm= []; % maximum thermal power generation (t,j)          [MW]
   obj.tn= []; % minimum thermal power generation (t,j)          [MW]
   obj.tp= {}; % duration of load levels for each stage          [s]
+  obj.tv=  1; % type of input inflows (natural, incremental)
   obj.uc= []; % consumptive water usage (i,j)                   [m^3/s]
   obj.uh= {}; % list of hydro plants
   obj.uf= []; % list of indexes of run-off-river hydro plants

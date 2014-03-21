@@ -82,6 +82,8 @@ function valor= get(obj, propriedade)
       valor= obj.tn;
     case 'tp'
       valor= obj.tp;
+    case 'tv'
+      valor= obj.tv;
     case 'uc'
       valor= obj.uc;
     case 'uh'
