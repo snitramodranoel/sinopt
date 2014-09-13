@@ -27,6 +27,8 @@
 function obj= sistema(varargin)
   obj.af= []; % inflows (i,j)                                   [m^3/s]
   obj.ai=  0; % start year
+  obj.br= []; % branches reactances                             [PU]
+  obj.bx= []; % branches resistances                            [PU]
   obj.dc= {}; % load [p(k,j)]                                   [MW]
   obj.di=  0; % start day
   obj.dn= []; % lower bound on release (i,j)                    [m^3/s]

@@ -108,8 +108,25 @@ function obj= net_(obj)
   while not(strcmp('[TOPO]',linha))
     linha= fgetl(fid);
   end
-  % read and store data
-  obj.si= set(obj.si,'li',fscanf(fid,'%d',[2, nl])');
+  % read and store data        
+
+  % trying to read r and x, and store it
+  % and keeping studies without r and x still readable
+  tli= fscanf(fid,'%d %d %f %f',[4 , nl])';
+  if size(tli,1) ~= nl
+    % prepare to read again
+    frewind(fid);
+    linha= fgetl(fid);
+    while not(strcmp('[TOPO]',linha))
+        linha= fgetl(fid);
+    end
+    tli= fscanf(fid,'%d',[2, nl])';
+  else
+    obj.si= set(obj.si,'br',tli(:,3));
+    obj.si= set(obj.si,'bx',tli(:,4));
+  end
+  obj.si= set(obj.si,'li',tli(:,1:2));
+  
   % [LIMA]
   %  upper bounds on power transmission
   linha= fgetl(fid);

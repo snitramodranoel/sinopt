@@ -36,6 +36,10 @@ function obj= set(obj, varargin)
         obj.af= valor;
       case 'ai'
         obj.ai= valor;
+      case 'br'
+        obj.br= valor;
+      case 'bx'
+        obj.bx= valor;
       case 'dc'
         obj.dc= valor;
       case 'di'

@@ -30,6 +30,10 @@ function valor= get(obj, propriedade)
       valor= obj.af;
     case 'ai'
       valor= obj.ai;
+    case 'br'
+      valor= obj.br;
+    case 'bx'
+      valor= obj.bx;     
     case 'dc'
       valor= obj.dc;
     case 'di'
