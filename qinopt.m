@@ -1,8 +1,8 @@
-% sinopt.m solves long-term hydrothermal scheduling problems.
+% qinopt.m solves long-term hydrothermal scheduling problems.
 %
 % Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
 %
-% @package sinopt
+% @package qinopt
 % @author  Leonardo Martins
 % @version SVN: $Id$
 %
@@ -28,7 +28,7 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function sinopt(estudo)
+function qinopt(estudo)
   % load data
   ioo= io();
   ioo= set(ioo, 'fi', estudo);
@@ -53,7 +53,9 @@ function sinopt(estudo)
   prb= get(ioo,'pb');
   prb= set(prb,'si',get(ioo,'si'));
   try
-    prb= construir(prb);
+    prb= qlower(prb);  
+    
+    %prb= construir(prb);
   catch err
     msg= err.message;
     eid= err.identifier;
