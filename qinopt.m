@@ -52,42 +52,5 @@ function qinopt(estudo)
   % problem setup
   prb= get(ioo,'pb');
   prb= set(prb,'si',get(ioo,'si'));
-  try
-    prb= qlower(prb);  
-    
-    %prb= construir(prb);
-  catch err
-    msg= err.message;
-    eid= err.identifier;
-    % setup error identification
-    rs= get(ioo,'rs');
-    rs= set(rs,'status',-1);
-    rs= set(rs, 'message', strcat(eid,',',msg));
-    ioo= set(ioo, 'rs', rs);
-    escrever(ioo);
-    return;
-  end
-  % solve problem
-  try
-    rs= resolver(prb);
-  catch err
-    if strcmp(err.identifier, 'MATLAB:UndefinedFunction')
-      msg= sprintf('Solver %s is not available', upper(get(prb,'so')));
-    else
-      msg= err.message;
-    end
-    eid= err.identifier;
-    % setup error identification
-    rs= get(ioo,'rs');
-    rs= set(rs,'status',-1);
-    rs= set(rs, 'message', strcat(eid,',',msg));
-    ioo= set(ioo, 'rs', rs);
-    escrever(ioo);
-    return;
-  end
-  ioo= set(ioo,'rs',rs);
-  ioo= set(ioo,'si',get(prb,'si'));
-  ioo= set(ioo,'pb',prb);
-  % output optimization results
-  escrever(ioo);
+  [v0, q0, s0] = qlower(prb)  
 end
