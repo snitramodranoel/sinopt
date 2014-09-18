@@ -52,5 +52,6 @@ function qinopt(estudo)
   % problem setup
   prb= get(ioo,'pb');
   prb= set(prb,'si',get(ioo,'si'));
-  [v0, q0, s0] = qlower(prb)  
+  [v0, q0, s0] = qlower(prb);
+  sccp(prb);
 end
