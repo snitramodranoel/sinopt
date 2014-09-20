@@ -60,7 +60,11 @@ function sccp(obj)
   build_ub;
   % hydro constraints
   obj= construir_bb(obj);
-  obj= construir_A(obj);
+  %obj= construir_A(obj);
+  build_A;
+  P = cell(nu);
+  pl = cell(nu);
+  build_P;
   % power constraints
   obj= construir_d(obj);
   obj= construir_B(obj);
@@ -259,7 +263,80 @@ function sccp(obj)
          end
          obj.ux = ux;
     end
-
-  % Pack and unpack functions
+    function build_A()
+        % system dimensions
+        ni= get(obj.si,'ni');
+        nj= get(obj.si,'nj');
+        np= get(obj.si,'np');
+        nr= get(obj.si,'nr');
+        nu= get(obj.si,'nu');
+        ti= get(obj.si,'ti');
+        ur= get(obj.si,'ur');
+        % build matrix A
+        A = spalloc(obj.ma, obj.nx, 2*obj.na + ni*((nu+nj)*(np+1)));
+        k = 1; % collumn control
+        for j=1:ni
+            for i=1:nu
+                ror= get(uh{i},'ie');
+                if ~ror
+                    if j < ni
+                      % v
+                      lip = find(ur==i,1) + nu*(j-1);
+                      A(lip,k) = 1/(ti(j)/10^6);
+                      lin = find(ur==i,1) + nu*j;
+                      A(lin,k) = -1/(ti(j+1)/10^6);
+                      k = k + 1;
+                    end
+                end
+                % q
+                lip = nu*(j-1) + i;
+                A(lip,k) = 1;
+                if (get(uh{i},'ij') > 0)
+                    lin = nu*(j-1) + get(uh{j},'ij'); 
+                    A(lin,k) = -1;
+                end
+                k = k + 1;
+                % s 
+                lip = nu*(j-1) + i;
+                A(lip,k) = 1;
+                if (get(uh{i},'ij') > 0)
+                    lin = nu*(j-1) + get(uh{j},'ij'); 
+                    A(lin,k) = -1;
+                end
+                k = k + 1;
+            end
+        end
+        obj.A = A;
+        b = obj.b;
+    end
+    function build_P()
+        % compute matrix P
+        for i = 1:nu
+            % forebay coefficients
+            cm = get(get(uh{i},'yc'), 'cf');
+            % tailrace coefficients
+            yf = get(uh{i},'yf');
+            cj = get(yf{1,2},'cf');
+            % penstock loss coefficients
+            pc = get(uh{i},'pc');
+            cp = zeros(2,1);
+            if pc{1} == 1
+                cp(1) = 0;
+                cp(2) = pc{2};
+            elseif pc{1} == 2
+                cp(1) = pc{2};
+                cp(2) = 0;
+            end
+            pe= get(uh{i},'pe');
+            vm= get(uh{1},'vm');
+            dn= get(uh{1},'dn');
+            li = [1 ; 2 ; 2 ; 2 ; 3];
+            co = [2 ; 1 ; 2 ; 3 ; 2];
+            vlu = pe*[cm(2)/2 ; cm(2)/2 ; -(cj(2)+cp(2)) ; -cj(2)/2 ; -cj(2)/2 ]; 
+            P{i} = sparse(li,co,vlu,3,3,5);
+            pl{i} = pe*[0 ; cm(1)-cj(1)-cp(1) ; 0 ];
+        end
+    end
+% Pack and unpack functions
   
 end
