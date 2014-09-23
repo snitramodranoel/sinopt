@@ -1,6 +1,6 @@
 % @uhe/dump.m dumps object property values.
 %
-% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
+% Copyright (c) 2014 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -50,5 +50,6 @@ function dump(obj)
   fprintf(1, 'uhe.vn: %f\n', obj.vn);
   fprintf(1, 'uhe.yc: is a polynomial\n');
   fprintf(1, 'uhe.ya: is a polynomial\n');
+  fprintf(1, 'uhe.yp: is a polynomial\n');
   fprintf(1, 'uhe.yf: %dx%d\n', size(obj.yf,1), size(obj.yf,2));
 end

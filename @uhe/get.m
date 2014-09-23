@@ -1,6 +1,6 @@
 % @uhe/get.m returns object property values.
 %
-% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
+% Copyright (c) 2014 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -72,6 +72,8 @@ function valor = get(obj, propriedade)
       valor= obj.yc;
     case 'ya'
       valor= obj.ya;
+    case 'yp'
+      valor= obj.yp;
     case 'yf'
       valor= obj.yf;
     otherwise

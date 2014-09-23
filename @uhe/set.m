@@ -1,6 +1,6 @@
 % @uhe/set.m sets object property values.
 %
-% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
+% Copyright (c) 2014 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -80,6 +80,8 @@ function obj= set(obj, varargin)
         obj.yc= valor;
       case 'ya'
         obj.ya= valor;
+      case 'yp'
+        obj.yp= valor;
       case 'yf'
         obj.yf= valor;
       otherwise

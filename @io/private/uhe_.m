@@ -1,6 +1,6 @@
 % @io/private/uhe_.m reads UHE files.
 %
-% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
+% Copyright (c) 2014 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -37,7 +37,7 @@ function obj= uhe_(obj)
   % read data
   v= fscanf(fid,'%f',1);
   % check for file version
-  if v ~= 3.2
+  if v ~= 3.3
     fclose(fid);
     error('SINopt:io:fileNotSupported', ...
         'HydroLab UHE file version %1.1f is not supported', v);
@@ -345,6 +345,25 @@ function obj= uhe_(obj)
     uh{j}= set(uh{j},'yf',yf);
     % clear temporary buffer
     clear yf;
+  end
+  % [POPC]
+  %  penstock head loss coefficients
+  linha= fgetl(fid);
+  while not(strcmp('[POPC]',linha))
+    linha= fgetl(fid);
+  end
+  % read data
+  for j= 1:nu
+    % bogus
+    fscanf(fid,'%s',1);
+    % polynomial
+    coef= fscanf(fid,'%f',[5 1]);
+    poly= get(uh{j},'yp');
+    poly= set(poly,'cf',coef);
+    uh{j}= set(uh{j},'yp',poly);
+    % clear temporary buffers
+    clear coef;
+    clear poly;
   end
   % update list of hydro plants
   obj.si= set(obj.si,'uh',uh);
