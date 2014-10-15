@@ -1,6 +1,6 @@
 % @uhe/dpdvv.m computes power generation partial second-order derivatives.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
+% Copyright (c) 2014 Leonardo Martins, Universidade Estadual de Campinas
 %
 % @package sinopt
 % @author  Leonardo Martins
@@ -29,15 +29,6 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function dvv= dpdvv(obj,zeta,q,v)
-  % compute second-order partial derivatives in terms of water head
-  d2hv= derivar(obj.yf{1,2}, 2, q+v);
-  % compute second-order partial derivatives in terms of penstock loss
-  switch obj.pc{1}
-    case 1
-      d2pv= obj.pc{2}*d2hv;
-    otherwise
-      d2pv= 0.0;
-  end
-  %  combined derivatives
-  dvv= -zeta*obj.pe*q*(d2hv - d2pv);
+  % compute derivative
+  dvv= -zeta * obj.pe * q * derivar(obj.yf{1,2}, 2, q+v);
 end

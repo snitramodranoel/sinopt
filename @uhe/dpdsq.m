@@ -1,6 +1,6 @@
 % @uhe/dpdsq.m computes power generation partial second-order derivatives.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
+% Copyright (c) 2014 Leonardo Martins, Universidade Estadual de Campinas
 %
 % @package sinopt
 % @author  Leonardo Martins
@@ -29,15 +29,6 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function dsq= dpdsq(obj,zeta,s)
-  % compute second-order partial derivatives in terms of water head
-  dhs= derivar(obj.yc, 1, s);
-  %  in terms of penstock loss
-  switch obj.pc{1}
-    case 1
-      dps= obj.pc{2}*dhs;
-    otherwise
-      dps= 0.0;
-  end
-  % combine derivatives
-  dsq= zeta*obj.pe*(dhs - dps);
+  % compute derivative
+  dsq= zeta * obj.pe * derivar(obj.yc,1,s);
 end

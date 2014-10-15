@@ -1,6 +1,6 @@
 % @uhe/head.m computes water head.
 %
-% Copyright (c) 2012 Leonardo Martins, Universidade Estadual de Campinas
+% Copyright (c) 2014 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -25,16 +25,6 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function h= head(obj,s,q,v)
-  % compute gross water head
-  h= calcular(obj.yc,s) - calcular(obj.yf{1,2},q+v);
-  % compute net water head
-  switch obj.pc{1}
-    case 1
-      h= h * (1 - obj.pc{2});
-    case 2
-      h= h - obj.pc{2};
-    otherwise
-      error('sinopt:uhe:p:invalidData', ...
-          'Penstock loss of type %d is invalid', obj.pc{1});
-  end
+  % compute effective head
+  h= calcular(obj.yc,s) - calcular(obj.yf{1,2},q+v) - calcular(obj.yp,q);
 end

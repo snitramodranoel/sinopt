@@ -1,6 +1,6 @@
 % @uhe/dpdss.m computes power generation partial second-order derivatives.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
+% Copyright (c) 2014 Leonardo Martins, Universidade Estadual de Campinas
 %
 % @package sinopt
 % @author  Leonardo Martins
@@ -29,15 +29,6 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function dss= dpdss(obj,zeta,s,q)
-  % compute second-order partial derivatives in terms of water head
-  d2hs= derivar(obj.yc, 2, s);
-  % compute second-order partial derivatives in terms of penstock loss
-  switch obj.pc{1}
-    case 1
-      d2ps= obj.pc{2}*d2hs;
-    otherwise
-      d2ps= 0.0;
-  end
-  % combine derivatives
-  dss= zeta*obj.pe*q*(d2hs - d2ps);
+  % compute derivative
+  dss= zeta * obj.pe * q * derivar(obj.yc,2,s);
 end

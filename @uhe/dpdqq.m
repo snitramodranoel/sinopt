@@ -1,6 +1,6 @@
 % @uhe/dpdqq.m computes power generation partial second-order derivatives.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
+% Copyright (c) 2014 Leonardo Martins, Universidade Estadual de Campinas
 %
 % @package sinopt
 % @author  Leonardo Martins
@@ -29,18 +29,12 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function dqq= dpdqq(obj,zeta,q,v)
-  % compute second-order partial derivatives in terms of water head
-  dhq=  derivar(obj.yf{1,2}, 1, q+v);
+  % first-order partial derivatives
+  dhq= derivar(obj.yf{1,2}, 1, q+v);
+  dpq= derivar(obj.yp, 1, q);
+  % second-order partial derivatives
   d2hq= derivar(obj.yf{1,2}, 2, q+v);
-  % compute second-order partial derivatives in terms of penstock loss
-  switch obj.pc{1}
-    case 1
-      dpq=  obj.pc{2}*dhq;
-      d2pq= obj.pc{2}*d2hq;
-    otherwise
-      dpq=  0.0;
-      d2pq= 0.0;
-  end
+  d2pq= derivar(obj.yp, 2, q);
   % combine derivatives
-  dqq= -zeta*obj.pe*(2*(dhq - dpq) + (d2hq - d2pq)*q);
+  dqq= -zeta*obj.pe*(2*(dhq + dpq) + q*(d2hq + d2pq));
 end

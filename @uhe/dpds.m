@@ -1,6 +1,6 @@
 % @uhe/dpds.m computes power generation first-order dp/ds partial derivative.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
+% Copyright (c) 2014 Leonardo Martins, Universidade Estadual de Campinas
 %
 % @package sinopt
 % @author  Leonardo Martins
@@ -29,15 +29,6 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function ds= dpds(obj,zeta,s,q)
-  % compute partial derivatives in terms of water head 
-  dhs= derivar(obj.yc,1,s);
-  % compute partial derivatives in terms of penstock loss
-  switch obj.pc{1}
-    case 1
-      ds= obj.pc{2}*dhs;
-    otherwise
-      ds= 0.0;
-  end
-  % compute dp/ds
-  ds= zeta*obj.pe*q*(dhs - ds);
+  % compute derivative
+  ds= zeta*obj.pe*q*derivar(obj.yc,1,s);
 end

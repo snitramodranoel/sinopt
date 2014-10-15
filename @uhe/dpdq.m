@@ -1,6 +1,6 @@
 % @uhe/dpdq.m computes power generation first-order dp/dq partial derivative.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
+% Copyright (c) 2014 Leonardo Martins, Universidade Estadual de Campinas
 %
 % @package sinopt
 % @author  Leonardo Martins
@@ -29,15 +29,8 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function dq= dpdq(obj,zeta,s,q,v)
-  % compute partial derivatives in terms of water head
-  dhq= derivar(obj.yf{1,2},1,q+v);
-  % compute partial derivatives in terms of penstock loss
-  switch obj.pc{1}
-    case 1
-      dq= obj.pc{2}*dhq;
-    otherwise
-      dq= 0.0;
-  end
-  % compute dp/dq
-  dq= zeta*obj.pe*(head(obj,s,q,v) - (dhq-dq)*q);
+  % first-order derivative of water head with respect to discharge
+  dhq= derivar(obj.yf{1,2}, 1, q+v);
+  % compute derivative
+  dq= zeta*obj.pe*(head(obj,s,q,v) - q*(dhq + derivar(obj.yp,1,q)));
 end

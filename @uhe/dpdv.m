@@ -1,6 +1,6 @@
 % @uhe/dpdv.m computes power generation first-order dp/dv partial derivatives.
 %
-% Copyright (c) 2010 Leonardo Martins, Universidade Estadual de Campinas
+% Copyright (c) 2014 Leonardo Martins, Universidade Estadual de Campinas
 %
 % @package sinopt
 % @author  Leonardo Martins
@@ -29,15 +29,6 @@
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 function dv= dpdv(obj,zeta,q,v)
-  % compute partial derivative in terms of water head
-  dhv= derivar(obj.yf{1,2}, 1, q+v);
-  % compute partial derivative in terms of penstock loss
-  switch obj.pc{1}
-    case 1
-      dv= obj.pc{2}*dhv;
-    otherwise
-      dv= 0.0;
-  end
-  % compute dp/dv
-  dv= -zeta*obj.pe*q*(dhv - dv);
+  % compute derivative
+  dv= -zeta * obj.pe * q * derivar(obj.yf{1,2}, 1, q+v);
 end
