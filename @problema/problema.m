@@ -54,9 +54,6 @@ function obj= problema(varargin)
   obj.uv= []; % v
   obj.uy= []; % y
   obj.uz= []; % z
-  % l/u bounds sccp
-  obj.lx= [];
-  obj.ux= [];
   %  constraint-space dimensions
   obj.ma= 0; % number of Ax constraints
   obj.mb= 0; % number of By constraints

@@ -85,10 +85,6 @@ function obj= set(obj, varargin)
         obj.uy= valor;
       case 'uz'
         obj.uz= valor;
-      case 'lx'
-        obj.lx= valor;
-      case 'ux'
-        obj.ux= valor;
       % objects
       case 'pf'
         obj.pf= valor;

@@ -79,11 +79,6 @@ function valor= get(obj, propriedade)
       valor= obj.uy;
     case 'uz'
       valor= obj.uz;
-    case 'lx'
-      valor= obj.lx
-    case 'ux'
-      valor= obj.ux
-          
     % problem dimensions
     case 'ma'
       valor= obj.ma;
