@@ -1,6 +1,6 @@
 % @problema/qlower.m builds lower bounds for the qinopt problem.
 %
-% Copyright (c) 2013 Leonardo Martins, Universidade Estadual de Campinas
+% Copyright (c) 2014 Leonardo Martins, Universidade Estadual de Campinas
 %
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions
@@ -79,19 +79,12 @@ function [v0, q0, s0]= qlower(obj)
   for i = 1:nu
     % forebay coefficients
     cm = get(get(uh{i},'yc'), 'cf');
+    % penstock head loss coefficients
+    cp = get(get(uh{i},'yp'), 'cf');
     % tailrace coefficients
     yf = get(uh{i},'yf');
     cj = get(yf{1,2},'cf');
-    % penstock loss coefficients
-    pc = get(uh{i},'pc');
-    cp = zeros(2,1);
-    if pc{1} == 1
-      cp(1) = 0;
-      cp(2) = pc{2}; 
-    elseif pc{1} == 2
-      cp(1) = pc{2};
-      cp(2) = 0;
-    end
+    % compute efficiency coefficients
     pe= get(uh{i},'pe');
     vm= get(uh{1},'vm');
     dn= get(uh{1},'dn');
