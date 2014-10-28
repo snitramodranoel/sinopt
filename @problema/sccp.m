@@ -24,7 +24,7 @@
 % THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 % (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 % THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-function [xx,xy,xz] = sccp(obj)
+function [x,y,z] = sccp(obj)
   % swap plants between ROR and regulation reservoir lists
   obj= swap(obj);
 
@@ -120,10 +120,10 @@ function [xx,xy,xz] = sccp(obj)
   options.cl= [b; zeros(obj.mc,1); -d];
   options.cu= options.cl;
   % set up initial primal solution
-  x= mean([options.lb'; options.ub'])';
+  w0= mean([options.lb'; options.ub'])';
   % set up initial dual solution
-  options.zl= max(abs(x),10);
-  options.zu= max(abs(x),10);
+  options.zl= max(abs(w0),10);
+  options.zu= max(abs(w0),10);
   options.lambda= ones(obj.m,1);
   % set up solver options
   options.ipopt.bound_relax_factor= 1e-06;
@@ -139,12 +139,12 @@ function [xx,xy,xz] = sccp(obj)
 
   %
   % solve problem
-  [x,~]= ipopt(x,funcs,options);
+  [w,~]= ipopt(w0,funcs,options);
   % compute solution
 
-  xx = extract_x(x);
-  xy = extrair_y(obj,x);
-  xz = extrair_z(obj,x);
+  x = extract_x(w);
+  y = extrair_y(obj,w);
+  z = extrair_z(obj,w);
   %%%%
   %%%% Build functions
   %%%%
@@ -154,9 +154,9 @@ function [xx,xy,xz] = sccp(obj)
   %
   function psi= compute_f(w)
     % unpack z variables
-    z= extrair_z(obj,w);
+    wz= extrair_z(obj,w);
     % compute complementary thermal power generation costs
-    psi= z'*Q*z + ql'*z + qc'*ones(obj.nz,1);
+    psi= wz'*Q*wz + ql'*wz + qc'*ones(obj.nz,1);
   end
 
   %
@@ -179,8 +179,8 @@ function [xx,xy,xz] = sccp(obj)
   %
   function df= compute_df(w)
     % unpack z variables
-    z= extrair_z(obj,w);
-    df= [zeros(obj.nx+obj.ny, 1); 2*Q*z + ql];
+    wz= extrair_z(obj,w);
+    df= [zeros(obj.nx+obj.ny, 1); 2*Q*wz + ql];
   end
 
   %
