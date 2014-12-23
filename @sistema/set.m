@@ -58,6 +58,12 @@ function obj= set(obj, varargin)
         obj.in= valor;
       case 'li'
         obj.li= valor;
+      case 'll'
+        obj.ll= valor;
+      case 'lo'
+        obj.lo= valor;
+      case 'lp'
+        obj.lp= valor;
       case 'mi'
         obj.mi= valor;
       case 'nc'

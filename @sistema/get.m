@@ -50,6 +50,12 @@ function valor= get(obj, propriedade)
       valor= obj.in;
     case 'li'
       valor= obj.li;
+    case 'll'
+      valor= obj.ll;
+    case 'lo'
+      valor= obj.lo;
+    case 'lp'
+      valor= obj.lp;
     case 'mi'
       valor= obj.mi;
     case 'nc'
